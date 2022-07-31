@@ -1,0 +1,168 @@
+[input]
+html_selector = "main"
+base_directory = "output"
+
+[[input.files]]
+path = "the-mathematical-backbone-of-tokenomics-a-comprehensive-exploration.html"
+url = "/the-mathematical-backbone-of-tokenomics-a-comprehensive-exploration.html"
+title = "The Mathematical Backbone of Tokenomics: A Comprehensive Exploration"
+
+[[input.files]]
+path = "from-rise-to-fall-the-untold-story-of-terras-ust-and-the-future-of-algorithmic-stablecoins.html"
+url = "/from-rise-to-fall-the-untold-story-of-terras-ust-and-the-future-of-algorithmic-stablecoins.html"
+title = "From Rise to Fall: The Untold Story of Terra's UST and the Future of Algorithmic Stablecoins"
+
+[[input.files]]
+path = "unraveling-the-secrets-of-deep-learning-for-advanced-digital-watermarking.html"
+url = "/unraveling-the-secrets-of-deep-learning-for-advanced-digital-watermarking.html"
+title = "Unraveling the Secrets of Deep Learning for Advanced Digital Watermarking"
+
+[[input.files]]
+path = "the-marvelous-world-of-federated-learning-and-edge-computing.html"
+url = "/the-marvelous-world-of-federated-learning-and-edge-computing.html"
+title = "The Marvelous World of Federated Learning and Edge Computing"
+
+[[input.files]]
+path = "from-text-to-pixels-exploring-transformers-in-the-realm-of-computer-vision.html"
+url = "/from-text-to-pixels-exploring-transformers-in-the-realm-of-computer-vision.html"
+title = "From Text to Pixels: Exploring Transformers in the Realm of Computer Vision"
+
+[[input.files]]
+path = "less-is-more-the-rise-of-lightweight-cryptography-in-a-connected-world.html"
+url = "/less-is-more-the-rise-of-lightweight-cryptography-in-a-connected-world.html"
+title = "Less is More: The Rise of Lightweight Cryptography in a Connected World"
+
+[[input.files]]
+path = "the-intersection-of-cbdcs-and-tokenomics-a-whimsical-guide-to-the-future-of-finance.html"
+url = "/the-intersection-of-cbdcs-and-tokenomics-a-whimsical-guide-to-the-future-of-finance.html"
+title = "The Intersection of CBDCs and Tokenomics: A Whimsical Guide to the Future of Finance"
+
+[[input.files]]
+path = "the-emoji-enigma-exploring-the-potential-of-emoji-powered-cryptography.html"
+url = "/the-emoji-enigma-exploring-the-potential-of-emoji-powered-cryptography.html"
+title = "The Emoji Enigma: Exploring the Potential of Emoji-Powered Cryptography"
+
+[[input.files]]
+path = "the-perfect-ai-pairing-how-neurosymbolic-ai-marries-the-best-of-neural-and-symbolic-worlds.html"
+url = "/the-perfect-ai-pairing-how-neurosymbolic-ai-marries-the-best-of-neural-and-symbolic-worlds.html"
+title = "The Perfect AI Pairing: How Neurosymbolic AI Marries the Best of Neural and Symbolic Worlds!"
+
+[[input.files]]
+path = "brain-inspired-computing-unraveling-the-secrets-of-neuromorphic-systems.html"
+url = "/brain-inspired-computing-unraveling-the-secrets-of-neuromorphic-systems.html"
+title = "Brain-Inspired Computing: Unraveling the Secrets of Neuromorphic Systems"
+
+[[input.files]]
+path = "beyond-centralization-the-rise-of-decentralized-cryptographic-identity-systems.html"
+url = "/beyond-centralization-the-rise-of-decentralized-cryptographic-identity-systems.html"
+title = "Beyond Centralization: The Rise of Decentralized Cryptographic Identity Systems"
+
+[[input.files]]
+path = "the-art-of-secret-sharing-exploring-zero-knowledge-proofs-in-secure-multiparty-computation.html"
+url = "/the-art-of-secret-sharing-exploring-zero-knowledge-proofs-in-secure-multiparty-computation.html"
+title = "The Art of Secret Sharing: Exploring Zero-Knowledge Proofs in Secure Multiparty Computation"
+
+[[input.files]]
+path = "money-meets-machine-how-ai-is-shaping-the-future-of-finance-from-risk-to-reward.html"
+url = "/money-meets-machine-how-ai-is-shaping-the-future-of-finance-from-risk-to-reward.html"
+title = "Money Meets Machine: How AI is Shaping the Future of Finance from Risk to Reward"
+
+[[input.files]]
+path = "machine-learning-and-the-multiverse-applications-of-ai-in-theoretical-physics.html"
+url = "/machine-learning-and-the-multiverse-applications-of-ai-in-theoretical-physics.html"
+title = "Machine Learning and the Multiverse: Applications of AI in Theoretical Physics"
+
+[[input.files]]
+path = "waves-of-change-the-synergy-of-artificial-intelligence-and-gravitational-wave-discovery.html"
+url = "/waves-of-change-the-synergy-of-artificial-intelligence-and-gravitational-wave-discovery.html"
+title = "Waves of Change: The Synergy of Artificial Intelligence and Gravitational Wave Discovery"
+
+[[input.files]]
+path = "joking-with-ai-the-intersection-of-machine-learning-and-comedy.html"
+url = "/joking-with-ai-the-intersection-of-machine-learning-and-comedy.html"
+title = "Joking with AI: The Intersection of Machine Learning and Comedy"
+
+[[input.files]]
+path = "asic-adventures-a-humorous-exploration-of-centralization-challenges-and-creative-solutions-in-cryptocurrency-networks.html"
+url = "/asic-adventures-a-humorous-exploration-of-centralization-challenges-and-creative-solutions-in-cryptocurrency-networks.html"
+title = "ASIC Adventures: A Humorous Exploration of Centralization Challenges and Creative Solutions in Cryptocurrency Networks"
+
+[[input.files]]
+path = "taming-the-multi-gpu-beast-strategies-for-distributed-deep-learning-success.html"
+url = "/taming-the-multi-gpu-beast-strategies-for-distributed-deep-learning-success.html"
+title = "Taming the Multi-GPU Beast: Strategies for Distributed Deep Learning Success"
+
+[[input.files]]
+path = "to-fold-or-not-to-fold-the-story-of-alphafolds-conquest-of-the-protein-folding-problem.html"
+url = "/to-fold-or-not-to-fold-the-story-of-alphafolds-conquest-of-the-protein-folding-problem.html"
+title = "To Fold or Not to Fold: The Story of AlphaFold's Conquest of the Protein Folding Problem"
+
+[[input.files]]
+path = "ai-in-pop-culture-a-look-at-the-past-present-and-future.html"
+url = "/ai-in-pop-culture-a-look-at-the-past-present-and-future.html"
+title = "AI in Pop Culture: A Look at the Past, Present, and Future"
+
+[[input.files]]
+path = "crypto-comedy-unlocking-the-funny-side-of-ai-and-cryptography-in-movies-tv-and-more.html"
+url = "/crypto-comedy-unlocking-the-funny-side-of-ai-and-cryptography-in-movies-tv-and-more.html"
+title = "Crypto-Comedy: Unlocking the Funny Side of AI and Cryptography in Movies, TV, and More"
+
+[[input.files]]
+path = "the-interplay-of-decision-trees-and-language-models-a-cheerful-perspective.html"
+url = "/the-interplay-of-decision-trees-and-language-models-a-cheerful-perspective.html"
+title = "The Interplay of Decision Trees and Language Models: A Cheerful Perspective"
+
+[[input.files]]
+path = "cross-chain-chronicles-uniting-the-blockchain-universe-through-interoperability.html"
+url = "/cross-chain-chronicles-uniting-the-blockchain-universe-through-interoperability.html"
+title = "Cross-Chain Chronicles: Uniting the Blockchain Universe Through Interoperability"
+
+[[input.files]]
+path = "unlocking-the-power-of-meta-reinforcement-learning-advancements-in-ai-and-cryptography.html"
+url = "/unlocking-the-power-of-meta-reinforcement-learning-advancements-in-ai-and-cryptography.html"
+title = "Unlocking the Power of Meta Reinforcement Learning: Advancements in AI and Cryptography"
+
+[[input.files]]
+path = "the-intersection-of-ethereum-and-privacy-a-comprehensive-guide-to-zero-knowledge-smart-contracts.html"
+url = "/the-intersection-of-ethereum-and-privacy-a-comprehensive-guide-to-zero-knowledge-smart-contracts.html"
+title = "The Intersection of Ethereum and Privacy: A Comprehensive Guide to Zero-Knowledge Smart Contracts"
+
+[[input.files]]
+path = "ai-and-information-theory-unlocking-the-secrets-of-the-black-box.html"
+url = "/ai-and-information-theory-unlocking-the-secrets-of-the-black-box.html"
+title = "AI and Information Theory: Unlocking the Secrets of the Black Box"
+
+[[input.files]]
+path = "beyond-cryptography-how-steganography-strengthens-blockchains-privacy-armor.html"
+url = "/beyond-cryptography-how-steganography-strengthens-blockchains-privacy-armor.html"
+title = "Beyond Cryptography: How Steganography Strengthens Blockchain's Privacy Armor"
+
+[[input.files]]
+path = "transforming-the-ai-landscape-a-comprehensive-guide-to-cutting-edge-transformer-research-updated-on-2021-11-09.html"
+url = "/transforming-the-ai-landscape-a-comprehensive-guide-to-cutting-edge-transformer-research-updated-on-2021-11-09.html"
+title = "Transforming the AI Landscape: A Comprehensive Guide to Cutting-Edge Transformer Research (updated on 2021-11-09)"
+
+[[input.files]]
+path = "navigating-the-world-of-consensus-algorithms-and-their-cryptographic-implications.html"
+url = "/navigating-the-world-of-consensus-algorithms-and-their-cryptographic-implications.html"
+title = "Navigating the World of Consensus Algorithms and their Cryptographic Implications"
+
+[[input.files]]
+path = "bitcoins-quantum-leap-navigating-the-cryptocurrency-landscape-in-a-post-quantum-world.html"
+url = "/bitcoins-quantum-leap-navigating-the-cryptocurrency-landscape-in-a-post-quantum-world.html"
+title = "Bitcoin's Quantum Leap: Navigating the Cryptocurrency Landscape in a Post-Quantum World"
+
+[[input.files]]
+path = "hard-but-important-zero-knowledge-proof-in-machine-learning.html"
+url = "/hard-but-important-zero-knowledge-proof-in-machine-learning.html"
+title = "Hard but Important: Zero-Knowledge Proof in Machine Learning"
+
+[[input.files]]
+path = "transformer-architecture-understanding-attention-mechanisms-and-positional-encoding-techniques.html"
+url = "/transformer-architecture-understanding-attention-mechanisms-and-positional-encoding-techniques.html"
+title = "Transformer Architecture: Understanding Attention Mechanisms and Positional Encoding Techniques"
+
+[[input.files]]
+path = "basic-mathematical-concepts-for-machine-learning.html"
+url = "/basic-mathematical-concepts-for-machine-learning.html"
+title = "Basic Mathematical Concepts for Machine Learning"
