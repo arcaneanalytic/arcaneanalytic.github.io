@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>Less is More: The Rise of Lightweight Cryptography in a Connected World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="Lightweight cryptography represents a vibrant and dynamic field within the broader realm of cryptography. Its focus on resource efficiency,..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/cryptography.html">Cryptography</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Less is More: The Rise of Lightweight Cryptography in a Connected World</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>January 19, 2022</time>
+        <div>
+          <span>&nbsp;·&nbsp;53 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-The-Need-for-Lightweight-Cryptography" title="2. The Need for Lightweight Cryptography&para;">2. The Need for Lightweight Cryptography&para;</a></li><li><a class="toc-href" href="#3.-Design-Principles-for-Lightweight-Cryptography" title="3. Design Principles for Lightweight Cryptography&para;">3. Design Principles for Lightweight Cryptography&para;</a></li><li><a class="toc-href" href="#4.-Notable-Lightweight-Cryptographic-Algorithms" title="4. Notable Lightweight Cryptographic Algorithms&para;">4. Notable Lightweight Cryptographic Algorithms&para;</a></li><li><a class="toc-href" href="#5.-Applications-of-Lightweight-Cryptography" title="5. Applications of Lightweight Cryptography&para;">5. Applications of Lightweight Cryptography&para;</a></li><li><a class="toc-href" href="#6.-Challenges-and-Future-Directions" title="6. Challenges and Future Directions&para;">6. Challenges and Future Directions&para;</a></li><li><a class="toc-href" href="#7.-Conclusion" title="7. Conclusion&para;">7. Conclusion&para;</a></li><li><a class="toc-href" href="#8.-References" title="8. References&para;">8. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><p>Greetings, dear reader! 🎉 In this fascinating blog post, we'll embark on a delightful journey exploring the vibrant world of <em>lightweight cryptography</em>. By the time you finish this mathematical rollercoaster, you'll have a newfound appreciation for the adage: "less is more"! So strap in, grab a cup of your favorite beverage, and let's dive into this exhilarating topic! 🚀</p>
+<h3 id="1.1-Lightweight-Cryptography:-A-Brief-Overview">1.1 Lightweight Cryptography: A Brief Overview<a class="anchor-link" href="#1.1-Lightweight-Cryptography:-A-Brief-Overview">&para;</a></h3><p>Lightweight cryptography, a beautiful amalgamation of <em>minimalism</em> and <em>security</em>, is a subfield of cryptography that focuses on designing cryptographic algorithms specifically tailored for resource-constrained environments. These environments include small devices such as IoT gadgets, RFID tags, and wearable tech, which often have limited processing power, memory, and energy reserves. In such cases, standard cryptographic algorithms may be too bulky or energy-consuming to be practical.</p>
+<p>Enter <em>lightweight cryptography</em>! 🌟 These algorithms are ingeniously designed to provide adequate security while minimizing the consumption of resources. They achieve this marvelous feat by utilizing simple, elegant mathematical operations that are easy to implement and execute on even the tiniest of devices. Indeed, these algorithms are akin to swans, gracefully gliding across a pond, leaving barely a ripple in their wake. 💫</p>
+<h3 id="1.2-Why-Less-Can-Be-More-in-Cryptography">1.2 Why Less Can Be More in Cryptography<a class="anchor-link" href="#1.2-Why-Less-Can-Be-More-in-Cryptography">&para;</a></h3><p>In the realm of cryptography, the conventional wisdom has long been that <em>more is better</em>. More rounds, more keys, more complexity - all of these factors contribute to enhanced security. However, as the great mathematician and philosopher Blaise Pascal once said, "I would have written a shorter letter, but I did not have the time." 😉 Reducing complexity while maintaining security is an art form, and lightweight cryptography is a testament to that.</p>
+<p>To appreciate the <em>beauty</em> and <em>efficiency</em> of lightweight cryptography, consider the following example. Let $\mathcal{C}$ be a standard cryptographic algorithm with key length $n$ and block length $m$. The algorithm's security level, $\lambda$, can be expressed as a function of $n$, $m$, and other parameters:</p>
+$$
+\lambda = f(n, m, \dots) \text{.}
+$$<p>In contrast, a lightweight cryptographic algorithm, $\mathcal{L}$, might have a shorter key length $n'$ and block length $m'$. However, it could still achieve a comparable security level, $\lambda'$, by judiciously selecting and optimizing its mathematical operations:</p>
+$$
+\lambda' = g(n', m', \dots) \text{,}
+$$<p>such that $\lambda' \approx \lambda$. The key insight here is that $\mathcal{L}$ achieves a similar security level with less complexity, less memory, and less energy consumption. It's like fitting an entire orchestra into a tiny music box, without sacrificing the symphony! 🎶</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare_security_levels</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+    <span class="n">lambda_C</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">security_level</span><span class="p">()</span>
+    <span class="n">lambda_L</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">security_level</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lambda_C</span><span class="p">,</span> <span class="n">lambda_L</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Example: comparing the security levels of a standard crypto algorithm and a lightweight one</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">StandardCryptoAlgorithm</span><span class="p">()</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">LightweightCryptoAlgorithm</span><span class="p">()</span>
+    <span class="n">lambda_C</span><span class="p">,</span> <span class="n">lambda_L</span> <span class="o">=</span> <span class="n">compare_security_levels</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Standard Crypto Security Level: </span><span class="si">{</span><span class="n">lambda_C</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Lightweight Crypto Security Level: </span><span class="si">{</span><span class="n">lambda_L</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+<p>In this majestic realm of lightweight cryptography, we are like artistic sculptors, carefully chiseling away extraneous material to reveal the elegant, streamlined form hidden within. As <a href="https://eprint.iacr.org/2007/349.pdf">Bogdanov et al</a> so eloquently described it, lightweight cryptography is "the art of making things small and fast without sacrificing the security." 🔐</p>
+<p>So now that we've established a firm foundation of understanding and appreciation for lightweight cryptography, let's delve deeper into its intricacies, its applications, and its challenges. Are you ready to continue this captivating journey with me? 😁</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-The-Need-for-Lightweight-Cryptography">2. The Need for Lightweight Cryptography<a class="anchor-link" href="#2.-The-Need-for-Lightweight-Cryptography">&para;</a></h2><p>Oh, the ever-growing world of connected devices! As we stride confidently into the future, we're constantly surrounded by a myriad of Internet of Things (IoT) devices, smart wearables, and other gadgets that have become our trusty sidekicks. 🚀 These petite powerhouses have transformed our lives, but they also need a little TLC in the form of secure communication. That's where lightweight cryptography comes to the rescue! 🦸&zwj;&male;️</p>
+<h3 id="2.1-Rise-of-the-Internet-of-Things-(IoT)">2.1 Rise of the Internet of Things (IoT)<a class="anchor-link" href="#2.1-Rise-of-the-Internet-of-Things-(IoT)">&para;</a></h3><p>The IoT landscape has expanded at an astonishing rate, with the number of connected devices predicted to reach a staggering 75.44 billion by 2025, according to Statista. These tiny warriors, ranging from home automation devices to smart city infrastructure, need cryptographic algorithms that are agile and resource-efficient to keep their secrets safe.</p>
+<p>Classic cryptographic algorithms, such as AES, RSA, or SHA-2, are often too resource-intensive for our pint-sized pals, making them less suitable for resource-constrained devices like our IoT gadgets. In this case, less truly is more! 🌟</p>
+<h3 id="2.2-Resource-Constrained-Devices-and-Environments">2.2 Resource-Constrained Devices and Environments<a class="anchor-link" href="#2.2-Resource-Constrained-Devices-and-Environments">&para;</a></h3><p>The majority of IoT devices have limited processing power, memory, and energy resources. This calls for a cryptographic approach that's tailored to their unique needs. Let's dive into the nitty-gritty of why these constraints matter:</p>
+<ul>
+<li><p><strong>Processing Power</strong>: Most IoT devices use low-power microcontrollers (MCUs) that have limited processing capabilities. Cryptographic algorithms with high computational complexity can cause sluggish performance, making our beloved devices less snappy and responsive. Ain't nobody got time for that! ⏰</p>
+</li>
+<li><p><strong>Memory</strong>: IoT devices often have limited memory, both in terms of RAM and storage. Classic cryptographic algorithms, with their large key sizes and memory requirements, can take up precious space needed for other essential functions. Lightweight cryptography comes to the rescue with its smaller key sizes and memory footprints, making it the belle of the memory ball! 💃</p>
+</li>
+<li><p><strong>Energy Resources</strong>: IoT devices are frequently battery-powered, which means energy efficiency is crucial for prolonging their battery life. Heavyweight cryptographic algorithms can drain these batteries faster than a vampire at a blood bank. 😱 Lightweight cryptography, on the other hand, can provide a secure communication solution while maintaining energy efficiency.</p>
+</li>
+</ul>
+<h3 id="2.3-Keeping-Things-Snappy-and-Secure">2.3 Keeping Things Snappy and Secure<a class="anchor-link" href="#2.3-Keeping-Things-Snappy-and-Secure">&para;</a></h3><p>Security is of paramount importance for IoT devices. Inadequate security measures can lead to data breaches, unauthorized access, and even the potential for life-threatening situations in critical systems like healthcare devices or industrial control systems. We need cryptography that is not only lightweight but also robust enough to withstand attacks from nefarious actors.</p>
+<p>For this reason, researchers have been devising lightweight cryptographic algorithms that take into consideration the unique constraints of IoT devices while providing adequate security. These algorithms aim to strike a delicate balance between security and efficiency. A key aspect of this balance is the <em>security margin</em>, which can be defined as the difference between the best-known attack complexity and the security level provided by the algorithm. The goal is to maximize the security margin while minimizing resource usage.</p>
+<p>Mathematically, the security margin can be represented as:</p>
+$$
+\text{Security Margin} = \text{Security Level} - \text{Attack Complexity}
+$$<p>In the context of lightweight cryptography, an ideal algorithm should provide a large security margin using minimal resources. As a rule of thumb, we can use the following formula to evaluate the efficiency of lightweight cryptographic algorithms:</p>
+$$
+\text{Efficiency} = \frac{\text{Security Margin}}{\text{Resource Usage}}
+$$<p>By optimizing for efficiency, we can ensure that our IoT devices stay secure while maintaining their snappy performance and preserving their precious resources. 🌟</p>
+<p>To further illustrate the importance of lightweight cryptography in resource-constrained devices, let's consider a concrete example. Imagine a wireless sensor network (WSN) used for monitoring environmental parameters in a smart city. Each sensor node is battery-powered and has limited processing capabilities. These nodes need to transmit their data securely to a central server. The communication should be encrypted to protect the confidentiality and integrity of the data. Traditional cryptographic algorithms like AES would be overkill for these tiny devices, as they would drain the battery life and consume valuable processing power.</p>
+<p>Enter lightweight cryptography! By implementing a lightweight algorithm such as PRESENT, the sensor nodes can securely transmit their data without compromising on performance or battery life. In this case, the lightweight algorithm provides just the right amount of security and efficiency to keep our smart city sensors running smoothly. 🏙️</p>
+<p>In conclusion, as we continue to embrace the IoT revolution, the need for lightweight cryptography becomes increasingly critical. By tailoring cryptographic solutions to the unique requirements of resource-constrained devices and environments, we can ensure that our connected world stays secure, efficient, and oh-so-snappy! 🌍✨</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Design-Principles-for-Lightweight-Cryptography">3. Design Principles for Lightweight Cryptography<a class="anchor-link" href="#3.-Design-Principles-for-Lightweight-Cryptography">&para;</a></h2><p>Ah, the intricate art of designing lightweight cryptographic algorithms! 🎨 In this fascinating section, we'll explore the guiding principles that shape these elegant creations. Like master chefs, we'll carefully select and blend our ingredients to concoct the perfect cryptographic dish. Bon app&eacute;tit! 🍽️</p>
+<h3 id="3.1-Minimalism:-The-Art-of-Less">3.1 Minimalism: The Art of Less<a class="anchor-link" href="#3.1-Minimalism:-The-Art-of-Less">&para;</a></h3><p>Minimalism, the cornerstone of lightweight cryptography, is all about crafting algorithms that use the fewest resources possible while still providing adequate security. This delicate balance is achieved by employing simple, efficient mathematical operations and data structures. Let's take a look at a few examples of minimalistic design in lightweight cryptography.</p>
+<ol>
+<li><p><strong>S-boxes:</strong> In traditional cryptography, S-boxes (substitution boxes) are often used to provide nonlinearity and confusion. However, S-boxes can be resource-intensive, especially in terms of memory usage. Lightweight cryptography often opts for alternative methods, such as <em>bit permutations</em> and <em>ARX</em> (Add-Rotate-XOR) operations, to achieve similar goals with lower overhead. For instance, the lightweight block cipher SPECK uses ARX operations like so:</p>
+<p>$$
+(x, y) \leftarrow (x \oplus (y \lll r), y \oplus (x \ggg r))
+$$</p>
+<p>where $x$ and $y$ are words, $\oplus$ denotes XOR, $\lll$ and $\ggg$ represent left and right rotations by $r$ bits, respectively.</p>
+</li>
+<li><p><strong>Key Scheduling:</strong> In lieu of complex key scheduling mechanisms, lightweight cryptographic algorithms often use simpler approaches that still ensure a high level of diffusion and security. For example, the key scheduling in the Simon block cipher is minimalistic and can be expressed as:</p>
+<p>$$
+K_{i+2} = (K_i \oplus (\text{ROL}^{-1}(K_{i+1}, 3)) \oplus (Z_j[i+1]) \oplus (i+1))
+$$</p>
+<p>where $K_i$ denotes the $i$-th round key, $\text{ROL}^{-1}$ represents a right rotation by a fixed number of bits, and $Z_j[i]$ is a bit from a predetermined sequence.</p>
+</li>
+</ol>
+<p>By embracing minimalism, lightweight cryptography algorithms strip away the superfluous and focus on the essentials, achieving a harmonious balance between security and resource consumption. 🌱</p>
+<h3 id="3.2-Balancing-Security-and-Performance">3.2 Balancing Security and Performance<a class="anchor-link" href="#3.2-Balancing-Security-and-Performance">&para;</a></h3><p>As with any cryptographic algorithm, security and performance must be carefully balanced in lightweight cryptography. The challenge lies in ensuring that the algorithm remains secure while also being efficient, even on devices with limited resources. To achieve this, lightweight cryptography often employs a <em>dynamic security-performance trade-off</em>, allowing users to select an appropriate level of security based on their specific needs and available resources.</p>
+<p>For instance, one could design a lightweight algorithm, $\mathcal{L}$, with a configurable security parameter, $s$, and a performance parameter, $p$:</p>
+$$
+\mathcal{L}(s, p) = \text{CryptoAlgorithm}(s, p)
+$$<p>By adjusting $s$ and $p$, users can fine-tune the balance between security and performance to suit their specific requirements. For example, a user with a resource-constrained device might opt for a lower security level, $s_1$, and a higher performance level, $p_1$, while a user with a more powerful device could choose a higher security level, $s_2$, and a lower performance level, $p_2$.</p>
+<h3 id="3.3-Flexibility:-One-Size-Doesn't-Fit-All">3.3 Flexibility: One Size Doesn't Fit All<a class="anchor-link" href="#3.3-Flexibility:-One-Size-Doesn't-Fit-All">&para;</a></h3><p>In the wondrous world of lightweight cryptography, one size most certainly does <em>not</em> fit all! 🔍 With a plethora of resource-constrained environments and applications to cater to, lightweight cryptographic algorithms must be flexible and adaptable. Here are a few ways that flexibility is achieved:</p>
+<ol>
+<li><p><strong>Parameterization:</strong> Lightweight algorithms often support a range of key and block lengths, allowing them to cater to various applications with different security and performance requirements. For example, the PRESENT block cipher supports key lengths of 80 and 128 bits, and the Grain stream cipher can be instantiated with key lengths of 80, 96, or 128 bits.</p>
+</li>
+<li><p><strong>Modular Design:</strong> Many lightweight algorithms are designed with modularity in mind, enabling users to mix and match different components based on their specific needs. For example, the PHOTON hash function family is designed around a sponge construction that can be instantiated with various permutations and padding schemes, offering users the flexibility to tailor the algorithm to their requirements.</p>
+</li>
+<li><p><strong>Hardware-Software Co-Design:</strong> Lightweight cryptography often considers both hardware and software implementations during the design process, ensuring that the algorithms perform well on a wide range of devices and platforms. This holistic approach allows lightweight cryptographic algorithms to cater to the diverse needs of the ever-growing familyof resource-constrained devices. 🤗</p>
+</li>
+</ol>
+<p>By embracing flexibility, lightweight cryptographic algorithms can adapt to the unique requirements of different applications and environments, ensuring that they remain relevant and effective in a rapidly evolving technological landscape. 🌐</p>
+<p>To illustrate the importance of flexibility, let's take a look at a Python example. Consider a lightweight block cipher with a simple Feistel structure, where the round function, $F$, is parameterized by a substitution-permutation network (SPN) with varying S-boxes and P-boxes, depending on the desired level of security and performance:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lightweight_block_cipher</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">s_box</span><span class="p">,</span> <span class="n">p_box</span><span class="p">,</span> <span class="n">num_rounds</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">split_plaintext</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">round_key_schedule</span> <span class="o">=</span> <span class="n">generate_round_keys</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">num_rounds</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">):</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">,</span> <span class="n">left</span> <span class="o">^</span> <span class="n">F</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">round_key_schedule</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">s_box</span><span class="p">,</span> <span class="n">p_box</span><span class="p">)</span>
+
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">combine_halves</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ciphertext</span>
+
+<span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">round_key</span><span class="p">,</span> <span class="n">s_box</span><span class="p">,</span> <span class="n">p_box</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">s_box_substitution</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s_box</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">p_box_permutation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p_box</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">^=</span> <span class="n">round_key</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+<p>In this example, users can customize their lightweight block cipher by choosing different S-boxes, P-boxes, and the number of rounds. This flexibility allows them to tailor the algorithm to their specific needs and resource constraints. 🛠️</p>
+<p>As we've seen, the design principles of lightweight cryptography are centered around minimalism, balancing security and performance, and flexibility. By adhering to these guiding principles, cryptographers can create elegant, efficient, and adaptable algorithms that cater to the diverse needs of resource-constrained devices and environments. 🌟</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Notable-Lightweight-Cryptographic-Algorithms">4. Notable Lightweight Cryptographic Algorithms<a class="anchor-link" href="#4.-Notable-Lightweight-Cryptographic-Algorithms">&para;</a></h2><p>Oh, the excitement! 😃 We've finally arrived at the heart of the matter, the creme de la creme of lightweight cryptography: the algorithms themselves. These petite powerhouses pack a serious punch in terms of security while maintaining their nimble nature. So without further ado, let's dive right in and explore some of the most notable lightweight cryptographic algorithms in our cryptographic arsenal!</p>
+<h3 id="4.1-Block-Ciphers:-The-Tiny-Titans">4.1 Block Ciphers: The Tiny Titans<a class="anchor-link" href="#4.1-Block-Ciphers:-The-Tiny-Titans">&para;</a></h3><p>In the realm of lightweight cryptography, block ciphers are akin to tiny titans, providing robust security while keeping resource consumption at a minimum. Let's take a closer look at two of the most noteworthy block ciphers in this field: PRESENT and Simon &amp; Speck.</p>
+<h4 id="4.1.1-PRESENT">4.1.1 PRESENT<a class="anchor-link" href="#4.1.1-PRESENT">&para;</a></h4><p>The PRESENT block cipher, introduced by <a href="https://link.springer.com/chapter/10.1007%2F978-3-540-74735-2_31">Bogdanov et al</a>, is a Substitution Permutation Network (SPN) that operates on 64-bit blocks and supports key sizes of 80 and 128 bits. It was specifically designed with hardware implementation in mind, making it perfect for resource-constrained devices. The core components of PRESENT are a substitution layer (S-box) and a permutation layer (P-layer), which together form the heart of the encryption process.</p>
+<p>The S-box is a nonlinear 4x4 lookup table, mapping 4-bit input nibbles to 4-bit output nibbles. The P-layer is a bit permutation that shuffles the bits of the 64-bit state. The key schedule generates round keys from the main key, which are XORed with the state during each round of encryption. The encryption process consists of 31 rounds, with the S-box and P-layer operations applied as follows:</p>
+$$
+\begin{aligned}
+S_{box}(x) &amp;= \text{Substitution operation}\\
+P_{layer}(x) &amp;= \text{Permutation operation}\\
+round\_key\_i &amp;= \text{Round key for round i}\\
+state &amp;= state \oplus round\_key\_i\\
+state &amp;= S_{box}(state)\\
+state &amp;= P_{layer}(state)
+\end{aligned}
+$$<p>The compact design of PRESENT makes it an ideal choice for lightweight cryptography applications, but don't let its small size fool you&mdash;it's a force to be reckoned with in terms of security! 😎</p>
+<h4 id="4.1.2-Simon-and-Speck">4.1.2 Simon and Speck<a class="anchor-link" href="#4.1.2-Simon-and-Speck">&para;</a></h4><p>Simon and Speck are a pair of block ciphers developed by the National Security Agency (NSA), specifically designed for lightweight cryptography applications. Both ciphers are based on the Feistel Network structure and were created to offer high security and efficiency in both hardware and software implementations.</p>
+<p>Simon and Speck are highly customizable, supporting a range of block sizes (32, 48, 64, 96, or 128 bits) and key sizes (64, 96, 128, 192, or 256 bits). The number of rounds depends on the chosen block and key sizes, ranging from 26 to 72 rounds.</p>
+<p>The Feistel Network structure of these ciphers consists of a series of substitution and permutation operations. These operations are applied to the input in a round-based fashion, with each round consisting of the following operations:</p>
+$$
+\begin{aligned}
+L_{i+1} &amp;= R_i\\
+R_{i+1} &amp;= L_i \oplus f(R_i, K_i)
+\end{aligned}
+$$<p>Here, $L_i$ and $R_i$ represent the left and right halves of the input block, respectively, and $f$ is a round function that combines the right half of the input with the round key, $K_i$. The round function is composed of bitwise AND, OR, and XOR operations, as well as bitwise rotation.</p>
+<p>It's worth noting that although Simon and Speck were initially met with skepticism due to their NSA origins, they have since undergone extensive cryptanalysis and have proven to be secure and efficient lightweight block ciphers. So, kudos to our cryptographic friends at the NSA! 👏</p>
+<h3 id="4.2-Stream-Ciphers:-The-Small-Speedsters">4.2 Stream Ciphers: The Small-Speedsters<a class="anchor-link" href="#4.2-Stream-Ciphers:-The-Small-Speedsters">&para;</a></h3><p>Stream ciphers, also known as small-speedsters, are another class of lightweight cryptographic algorithms that excel at providing secure encryption with minimal resource consumption. Let's take a closer look at two popular stream ciphers in the lightweight cryptography space: Trivium and Grain.</p>
+<h4 id="4.2.1-Trivium">4.2.1 Trivium<a class="anchor-link" href="#4.2.1-Trivium">&para;</a></h4><p>Trivium is a synchronous stream cipher designed by <a href="https://eprint.iacr.org/2005/002">Canni&egrave;re, Dunkelman, and Knez̆evi&cacute;</a> that operates on a 288-bit internal state and uses an 80-bit key and an 80-bit initialization vector (IV). It was one of the finalists in the eSTREAM projectand has since become a popular choice for lightweight cryptography applications.</p>
+<p>The internal state of Trivium consists of three registers, A, B, and C, with lengths of 93, 84, and 111 bits, respectively. The encryption process is initialized by loading the key and IV into the registers and then running a warm-up phase of 4 * 288 clock cycles. During this warm-up phase, the output is not used. After the warm-up, Trivium generates one key stream bit per clock cycle, which is XORed with the plaintext to produce the ciphertext (or vice versa for decryption).</p>
+<p>The update function for each clock cycle is defined as follows:</p>
+$$
+\begin{aligned}
+t_1 &amp;= s_{A,66} \oplus s_{A,93}\\
+t_2 &amp;= s_{B,69} \oplus s_{B,84}\\
+t_3 &amp;= s_{C,66} \oplus s_{C,111}\\
+z &amp;= t_1 \oplus t_2 \oplus t_3\\
+s_{A,1} &amp;= t_1 \oplus s_{A,91} \oplus (s_{A,92} \cdot s_{A,93})\\
+s_{B,1} &amp;= t_2 \oplus s_{B,78} \oplus (s_{B,82} \cdot s_{B,83})\\
+s_{C,1} &amp;= t_3 \oplus s_{C,87} \oplus (s_{C,109} \cdot s_{C,110})
+\end{aligned}
+$$<p>Here, $s_{A,i}$, $s_{B,i}$, and $s_{C,i}$ refer to the $i$-th bit of registers A, B, and C, respectively. Trivium's simplicity, combined with its impressive security and efficiency, make it a fantastic choice for lightweight cryptography applications. It's no wonder this little speedster has captured the hearts of cryptographers everywhere! 💖</p>
+<h4 id="4.2.2-Grain">4.2.2 Grain<a class="anchor-link" href="#4.2.2-Grain">&para;</a></h4><p>Grain is another synchronous stream cipher designed specifically for lightweight cryptography, introduced by <a href="https://link.springer.com/chapter/10.1007%2F11761679_2">Hell, Johansson, and Meier</a>. It operates on an 80-bit key and an 80-bit initialization vector (IV) and features a 160-bit internal state.</p>
+<p>The internal state consists of two Linear Feedback Shift Registers (LFSRs) and a Non-Linear Finite State Machine (NLFM). The LFSR and NLFM are connected through a feedback path, and their outputs are combined to generate the key stream. The update functions for the LFSRs and NLFM are as follows:</p>
+$$
+\begin{aligned}
+s_{LFSR,1} &amp;= s_{LFSR,80} \oplus s_{LFSR,62} \oplus s_{LFSR,51} \oplus s_{LFSR,38} \oplus s_{LFSR,23} \oplus s_{LFSR,13} \oplus s_{LFSR,1}\\
+s_{NLFM,1} &amp;= s_{NLFM,80} \oplus s_{NLFM,65} \oplus s_{NLFM,62} \oplus (s_{NLFM,61} \cdot s_{NLFM,60}) \oplus (s_{NLFM,50} \cdot s_{NLFM,49}) \oplus (s_{NLFM,24} \cdot s_{NLFM,23}) \oplus (s_{NLFM,13} \cdot s_{NLFM,1})
+\end{aligned}
+$$<p>The key stream is generated by XORing the outputs of the LFSR and NLFM, as well as a nonlinear feedback function applied to the NLFM:</p>
+$$
+z = s_{LFSR,1} \oplus s_{NLFM,1} \oplus h(s_{NLFM,1}, s_{NLFM,2}, \cdots, s_{NLFM,8})
+$$<p>Grain's compact design and efficient performance make it a popular choice for securing resource-constrained devices. It's yet another shining example of how less can truly be more in the world of lightweight cryptography! 🌟</p>
+<h3 id="4.3-Hash-Functions:-The-Petite-Powerhouses">4.3 Hash Functions: The Petite Powerhouses<a class="anchor-link" href="#4.3-Hash-Functions:-The-Petite-Powerhouses">&para;</a></h3><p>Ah, hash functions! The unsung heroes of cryptography, tirelessly working behind the scenes to ensure data integrity and authenticity. In this section, we'll focus on two petite powerhouses in the world of lightweight cryptography: SPONGENT and PHOTON. These algorithms prove that great things can indeed come in small packages. So, let's dive in! 🏊&zwj;&male;️</p>
+<h4 id="4.3.1-SPONGENT">4.3.1 SPONGENT<a class="anchor-link" href="#4.3.1-SPONGENT">&para;</a></h4><p>SPONGENT, a beautiful blend of "sponge" and "efficient," is a family of lightweight cryptographic hash functions introduced by <a href="https://eprint.iacr.org/2011/143.pdf">Bogdanov et al</a>. This algorithm comes in various output sizes, making it a versatile choice for diverse applications. The designers of SPONGENT diligently followed the principle of minimalism, crafting an algorithm that boasts a remarkably low hardware footprint. 🦶</p>
+<p>At the heart of SPONGENT lies the sponge construction, which is characterized by two primary operations: absorbing and squeezing. Think of it as a cryptographic sponge that soaks up data and then wrings out the hash digest. The sponge construction is based on a permutation function, <code>p</code>, which operates on a fixed-length state, <code>S</code>. Let's define <code>S</code> as follows:</p>
+$$
+S = (S_0, S_1, ..., S_{n-1})
+$$<p>Here, <code>n</code> denotes the state size. The absorbing phase processes the input message blocks, while the squeezing phase generates the hash output. The elegance of the sponge construction lies in its ability to accommodate variable input and output sizes, offering immense flexibility.</p>
+<p>The permutation function, <code>p</code>, in SPONGENT is a substitution-permutation network (SPN) that uses an <code>n</code>-bit S-box and a bitwise permutation layer, <code>&pi;</code>. They are defined as follows:</p>
+$$
+\begin{aligned}
+  S_{i+1} &amp;= S_i \oplus f_i(S_{i+1 \mod n}) \quad \text{for} \quad i = 0, 1, ..., n-1 \\
+    &pi;(S_i) &amp;= S_{(i \times d) \mod n} \quad \text{for} \quad i = 0, 1, ..., n-1
+\end{aligned}
+$$<p>In the above equations, <code>f_i</code> represents the S-box function and <code>d</code> is a constant that satisfies the condition gcd(<code>d, n</code>) = 1 to achieve a full period permutation. The permutation layer, <code>&pi;</code>, ensures that the algorithm exhibits excellent diffusion properties.</p>
+<p>Implementing SPONGENT in Python can be done as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spongent_permutation</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">s_box</span><span class="p">,</span> <span class="n">pi</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">new_state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">new_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">s_box</span><span class="p">[</span><span class="n">state</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">]]</span>
+        <span class="n">new_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pi</span><span class="p">[</span><span class="n">new_state</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">new_state</span>
+</pre></div>
+<h4 id="4.3.2-PHOTON">4.3.2 PHOTON<a class="anchor-link" href="#4.3.2-PHOTON">&para;</a></h4><p>PHOTON, the brainchild of <a href="https://eprint.iacr.org/2011/302.pdf">Guo et al</a>, is another shining star 🌟 in the lightweight cryptographic hash function galaxy. PHOTON is built upon the <a href="https://doi.org/10.1007/3-540-48285-7_18">AES</a>-inspired SubBytes-ShiftRows-MixColumns construction, which has been tweaked to accommodate lightweight applications. Like SPONGENT, PHOTON also comes in various output sizes, making it a versatile option for a wide range of scenarios.</p>
+<p>The core of PHOTON consists of an <code>n &times; n</code> state matrix, <code>A</code>. The SubBytes, ShiftRows, and MixColumns operations are applied iteratively for a fixed number of rounds, <code>r</code>. Let's define the three operations as follows:</p>
+<ol>
+<li><p><strong>SubBytes (<code>S</code>):</strong> A non-linear byte substitution operation that replaces each byte of the state matrix with a corresponding entry from a predefined S-box.</p>
+<p>$$A_{i,j} \rightarrow S(A_{i,j})$$</p>
+</li>
+<li><p><strong>ShiftRows (<code>&rho;</code>):</strong> A transposition operation that cyclically shifts the bytes in each row of the state matrix.</p>
+<p>$$A_{i,j} \rightarrow A_{i,(j+i) \mod n}$$</p>
+</li>
+<li><p><strong>MixColumns (<code>&sigma;</code>):</strong> A linear mixing operation that multiplies each column of the state matrix with a constant matrix, <code>M</code>.</p>
+<p>$$A_{j} \rightarrow M \times A_{j}$$</p>
+</li>
+</ol>
+<p>The PHOTON algorithm can be implemented in Python as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">photon_round</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">s_box</span><span class="p">,</span> <span class="n">shift_rows</span><span class="p">,</span> <span class="n">mix_columns</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">sub_bytes</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">s_box</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">shift_rows</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">mix_columns</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">state</span>
+
+<span class="k">def</span> <span class="nf">sub_bytes</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">s_box</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">s_box</span><span class="p">[</span><span class="n">byte</span><span class="p">]</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">state</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">shift_rows</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">][(</span><span class="n">j</span><span class="o">+</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">))]</span>
+
+<span class="k">def</span> <span class="nf">mix_columns</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">mix_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">matrix_mult</span><span class="p">(</span><span class="n">mix_matrix</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">matrix_mult</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">vec</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">vec</span><span class="p">))</span> <span class="o">%</span> <span class="mi">256</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mat</span><span class="p">]</span>
+</pre></div>
+<p>And there you have it! SPONGENT and PHOTON, the petite powerhouses of lightweight hash functions, are compact, efficient, and secure solutions for resource-constrained environments. They gracefully handle the delicate balance between performance and security, proving that sometimes, less is indeed more. 🎈</p>
+<p>These algorithms have opened the floodgates for further research into lightweight cryptography, and as a math professor who's passionate about cryptography, I can't help but feel a tinge of excitement! 😄 With the ever-growing demand for secure and efficient cryptographic solutions in the IoT era, I have no doubt that these petite powerhouses will continue to make waves in the field. So, let's raise a toast to SPONGENT and PHOTON, the champions of lightweight hash functions! 🥂</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Applications-of-Lightweight-Cryptography">5. Applications of Lightweight Cryptography<a class="anchor-link" href="#5.-Applications-of-Lightweight-Cryptography">&para;</a></h2><p>As our world becomes increasingly connected and our tiny digital friends proliferate, lightweight cryptography has found its way into a plethora of applications. From IoT security to contactless payment systems, lightweight cryptography plays a pivotal role in securing our digital lives. Let's explore some of these fascinating applications in more detail! 🌐✨</p>
+<h3 id="5.1-IoT-Security:-Securing-Our-Tiny-Friends">5.1 IoT Security: Securing Our Tiny Friends<a class="anchor-link" href="#5.1-IoT-Security:-Securing-Our-Tiny-Friends">&para;</a></h3><p>IoT devices are everywhere, from smart homes to intelligent transportation systems. They are the unsung heroes of our daily lives, making everything more efficient and interconnected. These little warriors face numerous security threats, ranging from eavesdropping to tampering. Lightweight cryptography swoops in like a superhero, providing the much-needed security layer to protect these devices and their data.</p>
+<p>For instance, consider a smart home environment with multiple interconnected devices such as smart thermostats, lighting systems, and security cameras. These devices need to communicate securely, and their limited resources necessitate the use of lightweight cryptographic algorithms. By employing block ciphers like PRESENT or stream ciphers like Trivium, we can ensure that our smart homes remain safe from prying eyes while still conserving resources. 🏠💡</p>
+<h3 id="5.2-RFID-Tags:-The-Contactless-Crypto-Conundrum">5.2 RFID Tags: The Contactless Crypto Conundrum<a class="anchor-link" href="#5.2-RFID-Tags:-The-Contactless-Crypto-Conundrum">&para;</a></h3><p>Radio Frequency Identification (RFID) tags are tiny, versatile, and oh-so-clever! They are used in a wide variety of applications, from inventory tracking to contactless payments. However, these small marvels are often resource-constrained and require efficient cryptographic solutions to safeguard their data.</p>
+<p>Enter lightweight hash functions like SPONGENT and PHOTON! These petite powerhouses offer an excellent balance between security and efficiency, making them perfect for RFID tag applications. By implementing these lightweight algorithms, RFID tags can securely store and transmit data without burdening their limited resources. So, the next time you tap your contactless card or breeze through a toll booth, remember to thank lightweight cryptography for keeping things secure and smooth! 💳🚗</p>
+<h3 id="5.3-Wearable-Devices:-Encrypting-Your-Fitness">5.3 Wearable Devices: Encrypting Your Fitness<a class="anchor-link" href="#5.3-Wearable-Devices:-Encrypting-Your-Fitness">&para;</a></h3><p>Our wearable devices, such as smartwatches and fitness trackers, hold a treasure trove of personal data, from our heart rates to our sleep patterns. Keeping this sensitive information secure is of utmost importance, and lightweight cryptography rises to the challenge! 💪⌚</p>
+<p>Let's take the example of a fitness tracker that continuously monitors your heart rate and other vital signs. This data needs to be securely transmitted to your smartphone for further analysis and visualization. Traditional cryptographic algorithms might be too resource-intensive for such devices, leading to reduced battery life and performance hiccups.</p>
+<p>By implementing lightweight cryptographic algorithms like Simon and Speck or Grain, we can ensure that our fitness data is securely transmitted without compromising on battery life or performance. So, go ahead and break a sweat, knowing that lightweight cryptography has got your back! 🏃&zwj;&female;️💨</p>
+<p>In conclusion, lightweight cryptography has become an integral part of our increasingly connected world. From securing our IoT devices to protecting our personal data, lightweight cryptographic algorithms provide the perfect balance of security and efficiency. As we continue to embrace the digital revolution, we can rest assured that our tiny digital companions are safe and secure, all thanks to the wonders of lightweight cryptography! 🌟🔐</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Challenges-and-Future-Directions">6. Challenges and Future Directions<a class="anchor-link" href="#6.-Challenges-and-Future-Directions">&para;</a></h2><p>In this section, we will explore some of the most pressing challenges and future directions that lightweight cryptography faces. As we delve into this fascinating realm of cryptographic research, it is crucial to remember that finding the perfect balance between security, performance, and resource constraints is not an easy task. 😅 But after all, who said cryptography was a piece of cake? 🍰 So, let's dive into the world of challenges and possibilities!</p>
+<h3 id="6.1-Security-vs.-Performance-Trade-offs:-Walking-the-Tightrope">6.1 Security vs. Performance Trade-offs: Walking the Tightrope<a class="anchor-link" href="#6.1-Security-vs.-Performance-Trade-offs:-Walking-the-Tightrope">&para;</a></h3><p>One of the most significant challenges in lightweight cryptography is striking the right balance between security and performance. In a resource-constrained environment, achieving high levels of security while maintaining optimal performance can be a daunting task. To illustrate this point, let us consider a key aspect of cryptographic security: the key size.</p>
+<p>As we know, the key size plays a crucial role in determining the security of a cryptographic algorithm. Generally, larger key sizes provide better security against brute-force attacks. However, increasing the key size also increases the computational resources required to perform encryption and decryption operations. This trade-off can be represented mathematically as follows:</p>
+$$
+\begin{aligned}
+\text{Security} \propto \text{Key Size} \\
+\text{Performance} \propto \frac{1}{\text{Key Size}}
+\end{aligned}
+$$<p>In lightweight cryptography, designers often have to make tough decisions that involve sacrificing some security to achieve better performance or vice versa. For example, choosing a smaller key size may result in faster encryption and decryption, but it may also make the algorithm more vulnerable to brute-force attacks. On the other hand, opting for a larger key size can improve security but at the cost of reduced performance.</p>
+<p>A potential solution to this challenge is to adopt a multi-objective optimization approach, which aims to optimize both security and performance simultaneously. This can be done by carefully selecting the parameters and design choices that provide the best possible trade-off between security and performance. For instance, researchers have proposed various techniques for optimizing the key schedule, round function, and other components of lightweight cryptographic algorithms to achieve this delicate balance <a href="https://eprint.iacr.org/2007/349.pdf">Bogdanov et al</a>.</p>
+<h3 id="6.2-Quantum-Computing:-The-Looming-Threat">6.2 Quantum Computing: The Looming Threat<a class="anchor-link" href="#6.2-Quantum-Computing:-The-Looming-Threat">&para;</a></h3><p>Quantum computing is an emerging technology that has the potential to revolutionize the field of cryptography. Quantum computers use the principles of quantum mechanics to perform calculations that are exponentially faster than classical computers. This speedup could pose a significant threat to the security of many cryptographic algorithms, including lightweight cryptography, by rendering them vulnerable to quantum attacks.</p>
+<p>For example, Shor's algorithm, a quantum algorithm developed by Peter Shor in 1994, can efficiently factorize large numbers and solve the discrete logarithm problem, breaking the security of widely-used cryptographic schemes such as RSA and elliptic curve cryptography (ECC). This algorithm can be represented as follows:</p>
+$$
+\begin{aligned}
+\text{Shor's Algorithm}(\text{N}) \approx \mathcal{O}(\text{poly}(\log \text{N}))
+\end{aligned}
+$$<p>Here, N is the number to be factorized, and poly(log N) represents the algorithm's time complexity, which is polynomial with respect to the logarithm of N. In contrast, the best-known classical algorithms for factorization and discrete logarithm problems have exponential time complexity.</p>
+<p>Given the potential impact of quantum computing on cryptography, it is essential to develop quantum-resistant lightweight cryptographic algorithms that can withstand quantum attacks. This area of research, known as post-quantum cryptography, explores various cryptographic primitives, including hash-based signatures, code-based cryptography, and lattice-based cryptography, to design efficient and secure algorithms for the quantum era. Recent advancements in this field show promise for the development of lightweight post-quantum cryptographic schemes that can provide robust security in resource-constrained environments <a href="https://eprint.iacr.org/2020/634.pdf">Peikert et al</a>.</p>
+<h3 id="6.3-Standardization:-Settling-on-the-Best-Lightweight-Champions">6.3 Standardization: Settling on the Best Lightweight Champions<a class="anchor-link" href="#6.3-Standardization:-Settling-on-the-Best-Lightweight-Champions">&para;</a></h3><p>A key challenge in the field of lightweight cryptography is the standardization of algorithms. With a plethora of lightweight cryptographic primitives available, it can be difficult for practitioners to choose the most suitable algorithm for their specific use case. To address this issue, organizations such as the National Institute of Standards and Technology (NIST) have initiated efforts to standardize lightweight cryptographic algorithms. These efforts include the NIST Lightweight Cryptography Project, which aims to identify and evaluate lightweight cryptographic algorithms that meet the security and performance requirements of various applications and environments.</p>
+<p>The standardization process typically involves several stages, including a call for submissions, evaluation, and selection of the most promising candidates. During this process, submitted algorithms are subjected to rigorous cryptanalysis by experts in the field. This analysis helps to identify potential weaknesses and vulnerabilities in the algorithms, allowing for improvements and refinements to be made.</p>
+<p>One example of a successful standardization effort inthe realm of lightweight cryptography is the ongoing NIST Lightweight Cryptography Standardization Process. This process started in 2016 and has attracted numerous submissions from researchers worldwide, with a diverse set of algorithms catering to various use cases and security requirements. The evaluation and selection process is still ongoing, with the final selection of standardized algorithms expected in the coming years.</p>
+<p>The standardization of lightweight cryptographic algorithms is crucial for fostering widespread adoption and ensuring interoperability between different devices and systems. Moreover, the rigorous cryptanalysis involved in the standardization process helps to improve the overall security and robustness of these algorithms, making them more resistant to attacks and vulnerabilities.</p>
+<p>However, standardization is not without its challenges. For instance, the sheer number of submissions can make the evaluation process time-consuming and resource-intensive. Additionally, due to the rapidly evolving nature of cryptographic research, newly proposed algorithms may soon become outdated or vulnerable to emerging attacks. Thus, it is essential to strike a balance between timely standardization and continuous improvement in the field of lightweight cryptography.</p>
+<h3 id="6.4-Embracing-the-Human-Factor:-Usability-and-Adoption">6.4 Embracing the Human Factor: Usability and Adoption<a class="anchor-link" href="#6.4-Embracing-the-Human-Factor:-Usability-and-Adoption">&para;</a></h3><p>As with any technology, the success of lightweight cryptography also hinges on its usability and adoption by developers, end-users, and other stakeholders. This aspect, often referred to as the "human factor," can sometimes be overlooked in the quest for the perfect balance between security and performance. However, it is vital to recognize that a highly secure and efficient algorithm is of little use if it is not widely adopted and correctly implemented.</p>
+<p>To address this challenge, we must focus on designing lightweight cryptographic algorithms that are not only secure and efficient but also easy to understand, implement and integrate into various applications and systems. This involves providing clear documentation, reference implementations, and guidelines for developers and practitioners. Moreover, efforts should be made to educate end-users about the importance of lightweight cryptography and its role in securing their devices and data.</p>
+<p>One way to improve the usability and adoption of lightweight cryptography is to develop open-source libraries and tools that facilitate the implementation and integration of these algorithms. For example, the Python community has developed several lightweight cryptography libraries, such as <a href="https://www.pycryptodome.org/en/latest/src/cipher/cipher.html">PyCrypto</a> and <a href="https://github.com/viniciuschiele/tinycrypt">TinyCrypt</a>, which provide easy-to-use interfaces for various lightweight cryptographic primitives. By making these tools readily available and accessible, we can help promote the widespread adoption of lightweight cryptography and enhance the overall security of our connected world.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Example of using PyCrypto to encrypt and decrypt using a lightweight block cipher (PRESENT)</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PRESENT</span>
+<span class="kn">from</span> <span class="nn">Crypto.Random</span> <span class="kn">import</span> <span class="n">get_random_bytes</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">get_random_bytes</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 80-bit key</span>
+<span class="n">plaintext</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'Hello world!'</span>
+
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">PRESENT</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+<span class="n">decrypted_text</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">plaintext</span> <span class="o">==</span> <span class="n">decrypted_text</span>
+</pre></div>
+<p>There's no doubt that the challenges and future directions in lightweight cryptography are as thrilling as they are complex. But as we continue to push the boundaries of what's possible in this fascinating field, we can be confident that the future of cryptography is not just secure, but also light and efficient! 💡 So, let's embrace these challenges and work together to build a brighter, lighter, and more secure future for all! 🚀</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&para;</a></h2><p>As we approach the end of this enlightening journey through the realm of lightweight cryptography, it's time to wrap up our discussion with a few key takeaways and a look at the bright, and light, future ahead! 😄</p>
+<h3 id="7.1-Embracing-the-Lightweight-Revolution">7.1 Embracing the Lightweight Revolution<a class="anchor-link" href="#7.1-Embracing-the-Lightweight-Revolution">&para;</a></h3><p>Throughout this blog post, we've delved deep into the world of lightweight cryptography, exploring its design principles, notable algorithms, and applications in a variety of scenarios. By embracing the mantra of "less is more," lightweight cryptography aims to provide robust security solutions that cater to the needs of resource-constrained environments, while maintaining a minimal footprint 🦶.</p>
+<p>One of the key aspects we've discussed is the delicate balance between security and performance. As eloquently stated by <code>$\text{Shannon}$</code> himself, "The enemy knows the system," which underscores the importance of designing cryptographic algorithms that can withstand various attack vectors, even when the adversary has complete knowledge of the system 💡. To achieve this, a myriad of complex mathematical foundations are employed, such as finite fields, nonlinear functions, and S-boxes, which provide the necessary security guarantees when appropriately combined.</p>
+<p>For instance, consider the S-box used in the PRESENT block cipher:</p>
+$$
+\begin{aligned}
+S(x) = \begin{cases}
+  0xC &amp; \text{if } x = 0 \\
+  0x5 &amp; \text{if } x = 1 \\
+  0x6 &amp; \text{if } x = 2 \\
+  \vdots &amp; \\
+  0xE &amp; \text{if } x = 0xF
+\end{cases}
+\end{aligned}
+$$<p>The S-box exhibits strong nonlinearity and helps thwart various cryptanalytic attacks, such as linear and differential cryptanalysis 🚀.</p>
+<p>Additionally, lightweight cryptosystems often employ a flexible design approach, allowing for customization and adaptability to suit specific use cases. For example, the Grain stream cipher family provides a parameterizable number of initialization rounds, enabling users to fine-tune the trade-off between security and performance ⚖️.</p>
+<h3 id="7.2-The-Future-Is-Bright,-and-Light!">7.2 The Future Is Bright, and Light!<a class="anchor-link" href="#7.2-The-Future-Is-Bright,-and-Light!">&para;</a></h3><p>As the Internet of Things (IoT) continues to expand and new technologies emerge, the demand for lightweight cryptography is only going to increase 📈. With a plethora of resource-constrained devices, ranging from RFID tags to wearable fitness devices, the need for efficient and secure cryptographic solutions will remain a top priority. As noted by <a href="https://eprint.iacr.org/2007/349">Bogdanov et al</a>, lightweight cryptography has the potential to "provide security and privacy protection to the masses."</p>
+<p>However, the future is not without its challenges. As we've mentioned earlier, the advent of quantum computing poses a significant threat to many classical cryptographic schemes, including lightweight cryptosystems. The need for post-quantum lightweight cryptography is becoming increasingly important, as researchers race against time to develop viable solutions that can withstand the quantum onslaught 🔮.</p>
+<p>Moreover, the standardization of lightweight cryptography is an ongoing process, with organizations like NIST working tirelessly to establish benchmarks and guidelines for the development and evaluation of lightweight algorithms. As we move forward, we can expect to see more standardized lightweight cryptographic solutions emerge, providing a solid foundation for the secure and efficient communication of our ever-growing interconnected world 🌐.</p>
+<p>In conclusion, lightweight cryptography represents a vibrant and dynamic field within the broader realm of cryptography. Its focus on resource efficiency, adaptability, and the delicate balance between security and performance make it an essential component in the quest for a secure and connected future. So, let's raise a toast 🥂 to the amazing world of lightweight cryptography, where less truly is more, and the future is bright, and light! 💡🎉</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-References">8. References<a class="anchor-link" href="#8.-References">&para;</a></h2><ol>
+<li><p>Bogdanov, A., Knudsen, L. R., Leander, G., Paar, C., Poschmann, A., Robshaw, M. J., ... &amp; Vikkelsoe, C. (2007). <a href="https://eprint.iacr.org/2007/349">PRESENT: An Ultra-Lightweight Block Cipher</a>. Cryptographic Hardware and Embedded Systems - CHES 2007, 450-466.</p>
+</li>
+<li><p>Beaulieu, R., Shors, D., Smith, J., Treatman-Clark, S., Weeks, B., &amp; Wingers, L. (2013). <a href="https://eprint.iacr.org/2013/404">The SIMON and SPECK Families of Lightweight Block Ciphers</a>. Cryptology ePrint Archive, Report 2013/404.</p>
+</li>
+<li><p>De Canni&egrave;re, C., &amp; Preneel, B. (2008). <a href="https://link.springer.com/chapter/10.1007/978-3-540-68351-3_2">Trivium: A Stream Cipher Construction Inspired by Block Cipher Design Principles</a>. In Information Security and Cryptology - ICISC 2007 (pp. 171-186). Springer, Berlin, Heidelberg.</p>
+</li>
+<li><p>Hell, M., Johansson, T., &amp; Meier, W. (2007). <a href="https://link.springer.com/chapter/10.1007/11799513_24">Grain: A Stream Cipher for Constrained Environments</a>. In International Workshop on Radio Frequency Identification: Security and Privacy Issues (pp. 123-137). Springer, Berlin, Heidelberg.</p>
+</li>
+<li><p>Bogdanov, A., Guo, J., Mikhalev, V., &amp; Rijmen, V. (2019). <a href="https://link.springer.com/chapter/10.1007/978-3-030-20074-9_1">SPONGENT: The Design Space of Lightweight Cryptographic Hashing</a>. In Lightweight Cryptography (pp. 3-28). Springer, Cham.</p>
+</li>
+<li><p>Guo, J., Peyrin, T., &amp; Poschmann, A. (2011). <a href="https://link.springer.com/chapter/10.1007/978-3-642-22792-9_37">The PHOTON Family of Lightweight Hash Functions</a>. In Advances in Cryptology - CRYPTO 2011 (pp. 222-239). Springer, Berlin, Heidelberg.</p>
+</li>
+<li><p>National Institute of Standards and Technology (NIST). (2019). <a href="https://csrc.nist.gov/Projects/Lightweight-Cryptography">Lightweight Cryptography Project</a>. Retrieved from NIST website.</p>
+</li>
+<li><p>Wikipedia. (2021). <a href="https://en.wikipedia.org/wiki/Finite_field">Finite Field</a>. Retrieved from Wikipedia website.</p>
+</li>
+<li><p>Wikipedia. (2021). <a href="https://en.wikipedia.org/wiki/S-box">S-box</a>. Retrieved from Wikipedia website.</p>
+</li>
+<li><p>Wikipedia. (2021). <a href="https://en.wikipedia.org/wiki/Internet_of_things">Internet of Things (IoT)</a>. Retrieved from Wikipedia website.</p>
+</li>
+<li><p>Wikipedia. (2021). <a href="https://en.wikipedia.org/wiki/Radio-frequency_identification">RFID</a>. Retrieved from Wikipedia website.</p>
+</li>
+<li><p>Wikipedia. (2021). <a href="https://en.wikipedia.org/wiki/Quantum_computing">Quantum Computing</a>. Retrieved from Wikipedia website.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/block-ciphers.html">block ciphers</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/hash-functions.html">hash functions</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/iot.html">IoT</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/lightweight-cryptography.html">lightweight cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/present.html">PRESENT</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/quantum-computing.html">quantum computing</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/rfid.html">RFID</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/simon-and-speck.html">Simon and Speck</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/stream-ciphers.html">stream ciphers</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/wearable-devices.html">wearable devices</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/from-text-to-pixels-exploring-transformers-in-the-realm-of-computer-vision.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">From Text to Pixels: Exploring Transformers in the Realm of Computer Vision</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/the-intersection-of-cbdcs-and-tokenomics-a-whimsical-guide-to-the-future-of-finance.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">The Intersection of CBDCs and Tokenomics: A Whimsical Guide to the Future of Finance</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

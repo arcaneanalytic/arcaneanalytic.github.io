@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>The Marvelous World of Federated Learning and Edge Computing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="The world of federated learning in edge computing is full of challenges and opportunities, just waiting for you to explore and conquer." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">The Marvelous World of Federated Learning and Edge Computing</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>April 03, 2022</time>
+        <div>
+          <span>&nbsp;·&nbsp;45 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-The-Nuts-and-Bolts-of-Edge-Computing-🔩" title="2. The Nuts and Bolts of Edge Computing 🔩&para;">2. The Nuts and Bolts of Edge Computing 🔩&para;</a></li><li><a class="toc-href" href="#3.-Federated-Learning-Meets-Edge-Computing:-A-Love-Story-for-the-Ages-💞" title="3. Federated Learning Meets Edge Computing: A Love Story for the Ages 💞&para;">3. Federated Learning Meets Edge Computing: A Love Story for the Ages 💞&para;</a></li><li><a class="toc-href" href="#4.-Real-World-Applications:-Federated-Learning-and-Edge-Computing-in-Action-🌟" title="4. Real-World Applications: Federated Learning and Edge Computing in Action 🌟&para;">4. Real-World Applications: Federated Learning and Edge Computing in Action 🌟&para;</a></li><li><a class="toc-href" href="#5.-Challenges-and-Opportunities:-Navigating-the-Federated-Edge-Landscape-🧭" title="5. Challenges and Opportunities: Navigating the Federated Edge Landscape 🧭&para;">5. Challenges and Opportunities: Navigating the Federated Edge Landscape 🧭&para;</a></li><li><a class="toc-href" href="#6.-Conclusion:-Embracing-the-Power-of-Federated-Learning-in-Edge-Computing-🤗" title="6. Conclusion: Embracing the Power of Federated Learning in Edge Computing 🤗&para;">6. Conclusion: Embracing the Power of Federated Learning in Edge Computing 🤗&para;</a></li><li><a class="toc-href" href="#7.-References" title="7. References&para;">7. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><h3 id="1.1-The-Magical-Intersection-of-Federated-Learning-and-Edge-Computing-🪄">1.1 The Magical Intersection of Federated Learning and Edge Computing 🪄<a class="anchor-link" href="#1.1-The-Magical-Intersection-of-Federated-Learning-and-Edge-Computing-🪄">&para;</a></h3><p>Greetings, esteemed colleagues and fellow enthusiasts of the arcane arts of artificial intelligence! 🧙&zwj;&male;️ As we stand at the precipice of a new era in AI and cryptography, I cannot help but feel a sense of exhilaration as we explore the powerful combination of federated learning and edge computing. Together, these two seemingly disparate fields weave a tapestry of innovation that is revolutionizing data privacy and AI in ways we could have only dreamed of just a few short years ago. 🌟🌌</p>
+<p>Federated learning, for the uninitiated, is a novel approach to training AI models in a decentralized manner, whereby each participant, or "node," retains its own data and only shares model updates, thereby preserving privacy. 🕵️&zwj;&male;️ In its most basic form, federated learning can be expressed using the following formula:</p>
+$$
+\Theta_{global} = \sum_{k=1}^{K} w_k \Theta_{local}^{(k)}
+$$<p>where $\Theta_{global}$ represents the globally aggregated model parameters, $w_k$ denotes the weight associated with the $k$-th participant, and $\Theta_{local}^{(k)}$ are the locally updated model parameters from participant $k$. This elegantly simple formula belies the intricate dance of mathematical wizardry that takes place behind the scenes, as participants collaborate to create a global model that is both accurate and privacy-preserving. 🎩✨</p>
+<p>Edge computing, on the other hand, is a paradigm shift in the way we process and analyze data, moving computational tasks from centralized data centers to the very edges of the network, where the data is generated. This paradigm enables real-time processing and analysis of data, reduces latency, and conserves bandwidth. It is, in essence, a beautiful and harmonious marriage of convenience and efficiency. 💒💍</p>
+<p>And so, we find ourselves at the enchanting crossroads of federated learning and edge computing. 🧭 But why, you may ask, are these two technologies so perfectly suited for one another? To answer this question, let us delve into the underlying principles of each field.</p>
+<p>In the realm of federated learning, we seek to preserve privacy and maintain control over data, while still harnessing the collective power of a diverse and distributed network of devices. This can be achieved by training local models on each device and then aggregating their updates into a global model. A commonly used algorithm for this purpose is Federated Averaging, proposed by McMahan et al. in their seminal work <a href="https://arxiv.org/abs/1602.05629">Communication-Efficient Learning of Deep Networks from Decentralized Data</a>. The Federated Averaging algorithm can be expressed as follows:</p>
+<ol>
+<li>Initialize a global model, $\Theta_{global}$</li>
+<li>For each participant $k$, do the following in parallel:<ol>
+<li>Train a local model, $\Theta_{local}^{(k)}$, on participant $k$'s data for a fixed number of epochs</li>
+<li>Compute the participant's weight, $w_k$, typically as the ratio of the participant's data size to the total data size</li>
+<li>Compute the participant's update, $\Delta\Theta^{(k)} = \Theta_{local}^{(k)} - \Theta_{global}$</li>
+</ol>
+</li>
+<li>Aggregate the updates from all participants: $\Delta\Theta_{global} = \sum_{k=1}^{K} w_k \Delta\Theta^{(k)}$</li>
+<li>Update the global model: $\Theta_{global} \leftarrow \Theta_{global} + \Delta\Theta_{global}$</li>
+<li>Repeat steps 2-4 until convergence</li>
+</ol>
+<p>Now, let us consider the world of edge computing, where data is generated, processed, and analyzed at the very periphery of the network. In this setting, each device, or "edge node," has limited computational resources and operates under constraints such as energy consumption, latency, and bandwidth. These constraints necessitate the development of efficient algorithms, capable of extracting valuable insights from data while minimizing the amount of communication between nodes.</p>
+<p>The convergence of federated learning and edge computing is, in many ways, a match made in heaven. 🌈🕊️ By training local models on edge nodes and aggregating their updates in a privacy-preserving manner, we can create a truly decentralized and efficient AI system. Moreover, the use of edge computing allows us to process data in real-time and make use of valuable insights that would otherwise be lost in the aether of time and space. 🌌⏳</p>
+<p>So, dear reader, I hope you will join me on this exhilarating journey through the cosmos of federated learning and edge computing. Together, we will explore the deepest recesses of mathematical theory and themost innovative applications, all while maintaining a sense of wonder and levity that only the pursuit of arcane knowledge can inspire. 📚✨</p>
+<p>In the coming sections of this treatise, we will delve into the fundamental building blocks of edge computing, from devices and networks to data centers and cloud infrastructure. Armed with this newfound understanding, we will then venture forth to the celestial realm where federated learning and edge computing intertwine in a most serendipitous dance of synergy and mutual benefit. 💃🕺</p>
+<p>As we traverse this vast expanse of knowledge, we will encounter the practical implementation of federated learning on the edge, replete with intricate algorithms and sophisticated optimization techniques. Our odyssey will not be complete without a foray into the real-world applications of these wondrous technologies, from privacy-preserving smart devices in the Internet of Things (IoT) 🏠🔐 to secure and collaborative medical AI in the realm of healthcare.💉🩺</p>
+<p>But, fear not! For our journey will not end there. We shall also navigate the challenges and opportunities that lay before us in this rapidly evolving landscape, discussing the unique hurdles that must be overcome to achieve success in the federated edge domain, as well as the boundless possibilities for future advancements and innovations. 🚀🌠</p>
+<p>And so, without further ado, let us embark on this grand adventure into the captivating world of federated learning in edge computing. Hold onto your hats, dear readers, for we are in for an exhilarating and enlightening ride! 🎢🌈</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-The-Nuts-and-Bolts-of-Edge-Computing-🔩">2. The Nuts and Bolts of Edge Computing 🔩<a class="anchor-link" href="#2.-The-Nuts-and-Bolts-of-Edge-Computing-🔩">&para;</a></h2><h3 id="2.1-What-Is-Edge-Computing,-and-Why-Should-I-Care?-🤔">2.1 What Is Edge Computing, and Why Should I Care? 🤔<a class="anchor-link" href="#2.1-What-Is-Edge-Computing,-and-Why-Should-I-Care?-🤔">&para;</a></h3><p>Edge computing, my dear reader, is nothing short of a technological marvel! In a nutshell, it refers to the practice of processing data closer to the source or the edge of the network. This is in contrast to the traditional method of transmitting data to centralized data centers or cloud servers for processing. Edge computing aims to alleviate network latency, reduce bandwidth usage, and improve data privacy 🛡️.</p>
+<p>Now, why should you care? Well, let me tell you a secret: edge computing is revolutionizing the way data-driven applications work, making them faster, more secure, and more efficient 🚀. This means that if you're interested in cutting-edge technology (pun intended), edge computing should definitely be on your radar.</p>
+<p>But wait, there's more! In the context of our topic, federated learning, edge computing plays a critical role in enabling privacy-preserving AI. How, you ask? Stick around, and you'll find out! 😉</p>
+<h3 id="2.2-Key-Components-of-Edge-Computing:-The-Building-Blocks-of-Success-🏗️">2.2 Key Components of Edge Computing: The Building Blocks of Success 🏗️<a class="anchor-link" href="#2.2-Key-Components-of-Edge-Computing:-The-Building-Blocks-of-Success-🏗️">&para;</a></h3><p>To truly appreciate the magic of edge computing, we must first understand its key components. Let's explore these building blocks together, shall we?</p>
+<ol>
+<li><p><strong>Edge Devices</strong>: These are the stars of the show. 🌟 Edge devices are the physical or virtual devices that generate, process, or consume data at the edge of the network. Examples include IoT devices, smartphones, and sensors. To enable edge computing, these devices are often equipped with specialized hardware for data processing, such as Graphics Processing Units (GPUs) or Tensor Processing Units (TPUs).</p>
+</li>
+<li><p><strong>Edge Networks</strong>: The unsung heroes, edge networks connect edge devices to each other and to the broader internet. These networks can be wired or wireless and include technologies like 5G, Wi-Fi, and mesh networks. The speed, latency, and reliability of these networks are crucial for the success of edge computing applications.</p>
+</li>
+<li><p><strong>Edge Data Centers</strong>: Sometimes, the edge devices require a little extra processing power. In such cases, edge data centers come to the rescue! 💪 These are smaller, localized data centers that provide additional computing resources close to the edge devices. This enables faster response times and reduced data transmission costs compared to traditional data centers.</p>
+</li>
+<li><p><strong>Cloud Infrastructure</strong>: Yes, you read that right! Despite the focus on local processing, cloud infrastructure still plays a vital role in edge computing. It provides large-scale storage and computing resources, facilitating tasks such as data analytics, model training, and long-term storage.</p>
+</li>
+</ol>
+<p>Now that we've laid the groundwork, let's dive into some math! As we explore edge computing in federated learning, one challenge we face is optimizing the communication between edge devices and the central server. To tackle this, we can employ techniques such as quantization and sparsification. Consider the following formula for quantization:</p>
+$$
+\begin{aligned}
+q(\boldsymbol{x}) = \boldsymbol{x} + \boldsymbol{e},
+\end{aligned}
+$$<p>where $\boldsymbol{x}$ represents the original data, $\boldsymbol{e}$ is the quantization error, and $q(\boldsymbol{x})$ is the quantized data. The goal here is to minimize the quantization error while reducing the size of the data transmitted. Sparsification, on the other hand, involves transmitting only a subset of the data. For example, we could transmit only the gradient updates with the largest magnitude, reducing the communication overhead.</p>
+<p>In Python, you could implement a basic quantization algorithm as follows:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">quantize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">num_bits</span><span class="p">):</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="n">step_size</span> <span class="o">=</span> <span class="n">max_val</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">num_bits</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">quantized_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">data</span> <span class="o">/</span> <span class="n">step_size</span><span class="p">)</span> <span class="o">*</span> <span class="n">step_size</span>
+    <span class="k">return</span> <span class="n">quantized_data</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">])</span>
+<span class="n">quantized_data</span> <span class="o">=</span> <span class="n">quantize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<p>Here, we've defined a simple quantization function that takes an input array and the number of bits for quantization. This function calculates the step size based on the maximum absolute value of the input data, and then quantizes the data using this step size.</p>
+<p>Now that we have a better understanding of edge computing and its components, we can appreciate how it perfectly complements federated learning. By processing data at the edge, we enable privacy-preserving AI, reduce communication overhead, and improve model training efficiency. In the next section, we'll explore this magical combination in more detail. So buckle up, and get ready for a thrilling ride! 🎢</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Federated-Learning-Meets-Edge-Computing:-A-Love-Story-for-the-Ages-💞">3. Federated Learning Meets Edge Computing: A Love Story for the Ages 💞<a class="anchor-link" href="#3.-Federated-Learning-Meets-Edge-Computing:-A-Love-Story-for-the-Ages-💞">&para;</a></h2><p>Once upon a time, in the enchanting land of data privacy and artificial intelligence, two star-crossed techniques met and fell in love, giving birth to an extraordinary union of technology. This story is all about the magical fusion of Federated Learning and Edge Computing, a tale that will forever change the way we think about data privacy, AI, and distributed computing. So, without further ado, let us embark on this captivating journey! 🚀</p>
+<h3 id="3.1-The-Perfect-Pair:-How-Federated-Learning-and-Edge-Computing-Complement-Each-Other-🍐">3.1 The Perfect Pair: How Federated Learning and Edge Computing Complement Each Other 🍐<a class="anchor-link" href="#3.1-The-Perfect-Pair:-How-Federated-Learning-and-Edge-Computing-Complement-Each-Other-🍐">&para;</a></h3><p>Federated Learning (FL) and Edge Computing are like the peanut butter and jelly of the tech world; they just go so well together! 😋 Together, they form a powerful dynamic duo that addresses some of the most pressing challenges in AI, including data privacy, security, and latency. Let's take a closer look at how these two lovebirds complement each other so well.</p>
+<p>First and foremost, FL is a distributed learning paradigm that trains AI models collaboratively across multiple devices while keeping the data on the local devices. By doing so, it mitigates privacy risks, as sensitive data never leaves the device. Edge Computing, on the other hand, is a computing paradigm that brings computation and data storage closer to the data source, thereby reducing latency and bandwidth usage.</p>
+<p>The marriage of these two techniques creates a potent combination that tackles some of the biggest hurdles in modern AI. To better illustrate their synergies, let's consider the following equation for federated learning:</p>
+$$
+\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t+1}} = \textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}} - \textcolor{magenta}{\eta} \sum_{\textcolor{cyan}{k}=1}^{\textcolor{cyan}{K}} \textcolor{green}{n_k} \textcolor{purple}{\nabla} \textcolor{orange}{L_k}(\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}})
+$$<p>In this formula, $\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}}$ represents the global model weights at time $t$, $\textcolor{magenta}{\eta}$ is the learning rate, $\textcolor{cyan}{K}$ is the total number of devices, and $\textcolor{green}{n_k}$ is the number of local data samples on device $k$. The term $\textcolor{purple}{\nabla} \textcolor{orange}{L_k}(\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}})$ represents the gradient of the local loss function $L_k$ with respect to the model weights.</p>
+<p>By combining FL with Edge Computing, we can leverage the best of both worlds. Edge devices can perform local model training using their native data, minimizing privacy risks, while the central server can aggregate the locally computed gradients to update the global model. This process significantly reduces communication overhead, as only model updates need to be transmitted, not the raw data. Here's a simple example of federated learning in action using TensorFlow and Python:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_federated</span> <span class="k">as</span> <span class="nn">tff</span>
+
+<span class="c1"># Load and preprocess data</span>
+<span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">tff</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">emnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">preprocessed_train_data</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+
+<span class="c1"># Create federated learning model and process</span>
+<span class="n">model_fn</span> <span class="o">=</span> <span class="n">create_federated_learning_model</span>
+<span class="n">federated_averaging_process</span> <span class="o">=</span> <span class="n">tff</span><span class="o">.</span><span class="n">learning</span><span class="o">.</span><span class="n">build_federated_averaging_process</span><span class="p">(</span><span class="n">model_fn</span><span class="p">)</span>
+
+<span class="c1"># Train the model</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">federated_averaging_process</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">round_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_rounds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">state</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="n">federated_averaging_process</span><span class="o">.</span><span class="n">next</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">preprocessed_train_data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Round </span><span class="si">{</span><span class="n">round_num</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">metrics</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h3 id="3.2-Implementing-Federated-Learning-on-the-Edge:-A-Step-by-Step-Guide-to-Success-🚶&zwj;&male;️">3.2 Implementing Federated Learning on the Edge: A Step-by-Step Guide to Success 🚶&zwj;&male;️<a class="anchor-link" href="#3.2-Implementing-Federated-Learning-on-the-Edge:-A-Step-by-Step-Guide-to-Success-🚶&zwj;&male;️">&para;</a></h3><p>Embarking on the journey of implementing Federated Learning in Edge Computing environments may seem daunting at first. Fear not, dear reader, for we shall guide you through this voyage with a step-by-step roadmap to ensure your success! 🗺️</p>
+<ol>
+<li><p><strong>Design the Federated Learning System</strong>: The first step is to design a robust federated learning system that effectively distributes the learning process across multiple edge devices. This involves selecting an appropriate learning algorithm, such as Federated Averaging or Secure Multi-Party Computation, as well as defining the communication protocol for exchanging model updates.</p>
+</li>
+<li><p><strong>Model Training and Validation</strong>: Next, partition your dataset across the edge devices, ensuring each device has a representative subset ofthe data. Train local models on each device using techniques like stochastic gradient descent (SGD) or adaptive optimization algorithms like Adam. To prevent overfitting, it's essential to perform validation using a separate dataset, either locally or at the central server.</p>
+</li>
+<li><p><strong>Model Aggregation</strong>: After the edge devices have trained their local models, it's time for the central server to aggregate the model updates. This can be achieved using various techniques, such as simple averaging, weighted averaging, or more advanced aggregation methods like geometric median or trimmed mean.</p>
+</li>
+</ol>
+<p>Consider the following aggregation formula for weighted averaging:</p>
+$$
+\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t+1}} = \sum_{\textcolor{cyan}{k}=1}^{\textcolor{cyan}{K}} \textcolor{green}{\alpha_k} \textcolor{purple}{\Delta_k}(\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}})
+$$<p>In this equation, $\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t+1}}$ represents the updated global model weights, $\textcolor{cyan}{K}$ is the total number of devices, $\textcolor{green}{\alpha_k}$ is the weighting factor for each device $k$, and $\textcolor{purple}{\Delta_k}(\textcolor{blue}{\boldsymbol{w}}_{\textcolor{red}{t}})$ denotes the model update from device $k$.</p>
+<ol>
+<li><p><strong>Model Deployment</strong>: Once the global model is updated, the central server must efficiently distribute the new model weights back to the edge devices. This process should be optimized to minimize latency and bandwidth usage, ensuring a seamless and efficient learning process.</p>
+</li>
+<li><p><strong>Monitoring and Evaluation</strong>: Continuously monitor the performance of the federated learning system by tracking relevant metrics, such as model accuracy, communication overhead, and privacy leakage. Evaluate the system against established benchmarks and iterate on the design as needed to improve performance and address any shortcomings.</p>
+</li>
+<li><p><strong>Privacy and Security</strong>: Throughout the entire process, it's crucial to maintain data privacy and ensure the security of the federated learning system. Techniques like differential privacy, homomorphic encryption, and secure multi-party computation can help protect sensitive data and model updates during the training and aggregation process.</p>
+</li>
+</ol>
+<p>By following these steps, you'll be well on your way to implementing a successful federated learning system on the edge. Remember that this journey is not without its challenges, but with patience, perseverance, and perhaps a little bit of pixie dust ✨, you'll be able to harness the power of this magical combination for your AI and privacy needs. Happy exploring! 🧭</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Real-World-Applications:-Federated-Learning-and-Edge-Computing-in-Action-🌟">4. Real-World Applications: Federated Learning and Edge Computing in Action 🌟<a class="anchor-link" href="#4.-Real-World-Applications:-Federated-Learning-and-Edge-Computing-in-Action-🌟">&para;</a></h2><h3 id="4.1-The-Internet-of-Things-(IoT)-Goes-Private:-Privacy-Preserving-Smart-Devices-🏠">4.1 The Internet of Things (IoT) Goes Private: Privacy-Preserving Smart Devices 🏠<a class="anchor-link" href="#4.1-The-Internet-of-Things-(IoT)-Goes-Private:-Privacy-Preserving-Smart-Devices-🏠">&para;</a></h3><p>IoT devices are everywhere, from smart homes to industrial automation. These little wonders collect massive amounts of data, making them perfect candidates for federated learning and edge computing. By combining these technologies, we can create privacy-preserving IoT applications that are not only efficient but also respectful of user privacy. 😇</p>
+<p>Imagine a smart home filled with edge devices, such as thermostats, security cameras, and smart speakers. Each device collects data, which can be used to train AI models. With federated learning, these devices can collaboratively train models without sharing raw data, thus preserving privacy. Edge computing ensures that the model training takes place on the devices themselves, further reducing the risk of data exposure.</p>
+<p>One key challenge in this setting is the efficient aggregation of local model updates, especially when the devices have limited communication resources. To address this, we can leverage techniques such as asynchronous updates and gradient compression. For example, we can use the Local SGD algorithm, which involves devices performing multiple local updates before sharing their model parameters with a central server. The formula for Local SGD can be written as:</p>
+$$
+\begin{aligned}
+\boldsymbol{w}_{t+1}^{(i)} = \boldsymbol{w}_t^{(i)} - \eta_t \nabla f_i(\boldsymbol{w}_t^{(i)}),
+\end{aligned}
+$$<p>where $\boldsymbol{w}_t^{(i)}$ represents the model parameters at time $t$ for device $i$, $\eta_t$ is the learning rate, and $\nabla f_i(\boldsymbol{w}_t^{(i)})$ is the gradient of the local loss function for device $i$.</p>
+<p>A Python implementation of the Local SGD algorithm could look like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">local_sgd</span><span class="p">(</span><span class="n">device_data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_function</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">local_epochs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">device_data</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">local_epochs</span><span class="p">):</span>
+            <span class="n">gradients</span> <span class="o">=</span> <span class="n">loss_function</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">gradients</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># device_data: List of data for each device</span>
+<span class="c1"># initial_model: Initial model parameters</span>
+<span class="c1"># loss_function: An object with a gradient method</span>
+<span class="c1"># learning_rate: The learning rate for SGD</span>
+<span class="c1"># local_epochs: Number of local updates per device</span>
+</pre></div>
+<p>This is just a glimpse of the possibilities that federated learning and edge computing bring to the IoT world. The synergy between these technologies will continue to unlock new and exciting applications, all while protecting our precious data. 🛡️</p>
+<h3 id="4.2-Healthcare-on-the-Edge:-Secure-and-Collaborative-Medical-AI-💉">4.2 Healthcare on the Edge: Secure and Collaborative Medical AI 💉<a class="anchor-link" href="#4.2-Healthcare-on-the-Edge:-Secure-and-Collaborative-Medical-AI-💉">&para;</a></h3><p>Healthcare is a domain where privacy is of paramount importance. From medical records to medical imaging, patient data must be handled with utmost care. Federated learning and edge computing offer a perfect solution to this conundrum, allowing healthcare institutions to collaborate on AI research while keeping sensitive patient data secure. 🏥</p>
+<p>Consider a network of hospitals, each with their own edge devices, such as electronic health record systems or medical imaging equipment. These devices can train local AI models using federated learning, enabling the hospitals to share insights without exposing individual patient data. Edge computing ensures that the data stays on local devices, only sharing model updates with the central server.</p>
+<p>One challenge in this context is the heterogeneity of the data and the devices. To tackle this, we can employ techniques like personalized federated learning, which adapts the global model to the specific needs of each hospital or edge device. A popular approach to personalized federated learning is to use the Federated Averaging algorithm (FedAvg) with a personalized learning rate for each device. The FedAvg update rule can be expressed as:</p>
+$$
+\begin{aligned}
+\boldsymbol{w}_{t+1}^{(i)} = \boldsymbol{w}_t^{(i)} - \eta_t^{(i)} \nabla f_i(\boldsymbol{w}_t^{(i)}),
+\end{aligned}
+$$<p>where $\boldsymbol{w}_t^{(i)}$ represents the model parameters at time $t$ for device $i$, $\eta_t^{(i)}$ is the personalized learning rate for device $i$, and $\nabla f_i(\boldsymbol{w}_t^{(i)})$ is the gradient of the local loss function for device $i$.</p>
+<p>A Python implementation of the personalized Federated Averaging algorithm could look like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">personalized_fedavg</span><span class="p">(</span><span class="n">device_data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_function</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">local_epochs</span><span class="p">):</span>
+    <span class="n">device_models</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">device_data</span><span class="p">):</span>
+        <span class="n">local_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">local_epochs</span><span class="p">):</span>
+            <span class="n">gradients</span> <span class="o">=</span> <span class="n">loss_function</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">local_model</span><span class="p">)</span>
+            <span class="n">local_model</span> <span class="o">-=</span> <span class="n">learning_rate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">gradients</span>
+        <span class="n">device_models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">local_model</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">device_models</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># device_data: List of data for each device</span>
+<span class="c1"># initial_model: Initial model parameters</span>
+<span class="c1"># loss_function: An object with a gradient method</span>
+<span class="c1"># learning_rate: A list of personalized learning rates for each device</span>
+<span class="c1"># local_epochs: Number of local updates per device</span>
+</pre></div>
+<p>The use of federated learning and edge computing in healthcare is not limited to medical research. It can also directly impact patient outcomes by enabling personalized treatment recommendations, predictive analytics, and real-time decision support. For instance, a wearable device monitoring a patient's vital signs could use edge computing to run AI algorithms that detect anomalies and suggest timely interventions. 🚑</p>
+<p>The future of healthcare is bright, thanks to the powerful combination of federated learning and edge computing. As these technologies continue to evolve, we can expect even greater strides in medical research and patient care, all while ensuring the highest standards of privacy and data security. 💊</p>
+<p>The real-world applications we've discussed so far are just the tip of the iceberg. As federated learning and edge computing mature, we'll see a plethora of new use cases and innovations in various domains, all powered by the magic of decentralized, privacy-preserving AI. 🚀</p>
+<p>In the next section, we'll discuss the challenges and opportunities that lie ahead in the federated edge landscape. Strap in for a thrilling journey into the future! 🚀🌌</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Challenges-and-Opportunities:-Navigating-the-Federated-Edge-Landscape-🧭">5. Challenges and Opportunities: Navigating the Federated Edge Landscape 🧭<a class="anchor-link" href="#5.-Challenges-and-Opportunities:-Navigating-the-Federated-Edge-Landscape-🧭">&para;</a></h2><h3 id="5.1-Overcoming-Hurdles:-Addressing-the-Unique-Challenges-of-Federated-Learning-on-the-Edge-🚧">5.1 Overcoming Hurdles: Addressing the Unique Challenges of Federated Learning on the Edge 🚧<a class="anchor-link" href="#5.1-Overcoming-Hurdles:-Addressing-the-Unique-Challenges-of-Federated-Learning-on-the-Edge-🚧">&para;</a></h3><p>Federated learning in edge computing presents its own unique set of challenges, but fret not! With great challenges come great opportunities for innovation and growth. Let's dive deep into these hurdles and explore strategies to overcome them. 🌊</p>
+<p><strong>1. Heterogeneity of edge devices and networks:</strong> Edge devices come in all shapes, sizes, and capabilities. They range from powerful smartphones 📱 to resource-constrained sensors 🌡️. This diversity presents challenges in designing federated learning algorithms that can effectively adapt to varying compute and communication capabilities. A possible solution is to adopt a resource-aware approach, where the algorithm dynamically adapts to the available resources. For example, consider the following optimization problem:</p>
+$$
+\begin{aligned}
+    \text{minimize} \quad &amp; f(x) = \sum_{i=1}^N f_i(x) \\
+    \text{subject to} \quad &amp; x \in \mathcal{X}
+\end{aligned}
+$$<p>The objective is to minimize the sum of $f_i(x)$, where $f_i(x)$ represents the local loss function for the $i$-th device. To handle heterogeneity, we can use a weighted optimization problem that takes into account device capabilities:</p>
+$$
+\begin{aligned}
+    \text{minimize} \quad &amp; F(x) = \sum_{i=1}^N w_i f_i(x) \\
+    \text{subject to} \quad &amp; x \in \mathcal{X}
+\end{aligned}
+$$<p>Here, $w_i$ represents the weight assigned to the $i$-th device, which can be based on its computational power, communication bandwidth, or data quality.</p>
+<p><strong>2. Communication efficiency:</strong> In federated learning, edge devices need to exchange model updates frequently, which requires efficient communication protocols. A possible solution is to use communication-efficient algorithms, such as gradient sparsification and quantization techniques. For example, consider the following update rule for a gradient descent algorithm:</p>
+$$
+x_{t+1} = x_t - \alpha_t \nabla F(x_t)
+$$<p>To reduce communication costs, we can employ gradient sparsification by selecting only the top-$k$ elements of the gradient vector:</p>
+$$
+x_{t+1} = x_t - \alpha_t S_k(\nabla F(x_t))
+$$<p>where $S_k(\cdot)$ represents the sparsification operator that selects the top-$k$ elements in magnitude.</p>
+<p><strong>3. Privacy and security concerns:</strong> Federated learning on the edge aims to preserve data privacy, but there are still potential security risks, such as model poisoning and inference attacks. To address these concerns, we can employ techniques like secure aggregation, differential privacy, and cryptographic methods. For instance, in a secure aggregation protocol, the edge devices encrypt their model updates using homomorphic encryption, allowing the aggregation to be performed without decrypting the individual updates:</p>
+$$
+\text{Enc}\left(\frac{1}{N}\sum_{i=1}^N \text{Enc}(g_i)\right) = \frac{1}{N}\sum_{i=1}^N \text{Enc}(g_i)
+$$<p>Here, $\text{Enc}(\cdot)$ denotes the encryption function, and $g_i$ represents the model update from the $i$-th device.</p>
+<h3 id="5.2-Opportunities-Abound:-The-Future-of-Federated-Learning-and-Edge-Computing-💡">5.2 Opportunities Abound: The Future of Federated Learning and Edge Computing 💡<a class="anchor-link" href="#5.2-Opportunities-Abound:-The-Future-of-Federated-Learning-and-Edge-Computing-💡">&para;</a></h3><p>As we venture forth into the exciting world of federated learning and edge computing, there are countless opportunities to explore and innovate. Here are some ideas to spark your curiosity and set your imagination ablaze! 🎇</p>
+<p><strong>1. Cross-device learning and collaboration:</strong> With the growing number of edge devices, there is an immense potential for cross-device learning and collaboration. By enabling devices to share knowledge and resources, we can unlock new possibilities for personalized AI applications and improved user experiences. For example, consider the following collaborative filtering problem:</p>
+$$
+\begin{aligned}
+    \text{minimize} \quad &amp; \sum_{(u, i) \in \mathcal{R}} L(r_{ui}, x_u^\top y_i) + \lambda (\|x_u\|^2 + \|y_i\|^2) \\
+    \text{subject to} \quad &amp; x_u \in \mathbb{R}^d, y_i \in \mathbb{R}^d
+\end{aligned}
+$$<p>Here, $r_{ui}$ denotes the rating that user $u$ assigns to item $i$, and $x_u, y_i$ represent the latent factors for users and items, respectively. In a federatedlearning setting, we can train personalized recommendation models on edge devices and leverage cross-device collaboration to improve the overall model quality.</p>
+<p><strong>2. Federated transfer learning:</strong> By combining federated learning with transfer learning, we can leverage pre-trained models to accelerate the training process and improve the performance of edge devices with limited data. Suppose we have a pre-trained model $M_\text{pre}$, whose weights are represented by $W_\text{pre}$. To adapt this model to the federated learning setting, we can fine-tune it using the local data on edge devices:</p>
+$$
+W_{t+1} = W_t - \alpha_t \nabla F(W_t; D_t),
+$$<p>where $W_t$ denotes the current weights, $F(\cdot; D_t)$ represents the local loss function with respect to the data $D_t$ on the $t$-th device, and $\nabla F(\cdot)$ denotes the gradient of the loss function. This approach allows us to harness the power of pre-trained models while preserving the privacy of the local data.</p>
+<p><strong>3. Robust and fair federated learning:</strong> Ensuring the robustness and fairness of federated learning algorithms is a critical challenge and an opportunity for future research. To achieve this goal, we can employ techniques such as adversarial training, robust optimization, and fair resource allocation. For example, consider the following fairness-aware optimization problem:</p>
+$$
+\begin{aligned}
+    \text{minimize} \quad &amp; \sum_{i=1}^N w_i f_i(x) \\
+    \text{subject to} \quad &amp; x \in \mathcal{X}, \\
+    &amp; \text{Fairness}(x) \geq \tau,
+\end{aligned}
+$$<p>where $\text{Fairness}(x)$ denotes a fairness measure (e.g., demographic parity, equal opportunity), and $\tau$ represents the minimum fairness threshold. By incorporating fairness constraints into the optimization problem, we can ensure that the federated learning algorithm provides equitable benefits to all participating devices.</p>
+<p><strong>4. Emerging applications and innovative use cases:</strong> As federated learning and edge computing technologies continue to advance, we can expect to see a plethora of new applications and use cases emerging in various domains, such as autonomous vehicles 🚗, smart cities 🌆, and digital twin technologies 🌐. These applications will bring about new challenges and opportunities for research and innovation, driving the future growth of federated learning and edge computing.</p>
+<p>In conclusion, the world of federated learning in edge computing is full of challenges and opportunities, just waiting for you to explore and conquer. So, strap on your thinking cap 🎓, put on your lab coat 👩&zwj;🔬, and get ready to embark on a thrilling journey through the federated edge landscape! 🚀</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Conclusion:-Embracing-the-Power-of-Federated-Learning-in-Edge-Computing-🤗">6. Conclusion: Embracing the Power of Federated Learning in Edge Computing 🤗<a class="anchor-link" href="#6.-Conclusion:-Embracing-the-Power-of-Federated-Learning-in-Edge-Computing-🤗">&para;</a></h2><p>As we come to the end of our enchanting journey through the mesmerizing world of federated learning in edge computing, it's time to reflect on the key takeaways and marvel at the potential of this remarkable technological synergy. Throughout this blog post, we've delved into the intricacies of edge computing and federated learning, dissecting their complementary nature, and exploring how they enable a new era of data privacy and AI innovation.</p>
+<p>We've witnessed firsthand how the confluence of federated learning and edge computing has brought forth an unprecedented level of data privacy and security. By keeping sensitive data on edge devices and only sharing updates to model parameters, we're able to ensure that personal information remains safe and secure, while still reaping the benefits of collaborative AI. This paradigm shift will undoubtedly have far-reaching implications across various domains, empowering businesses and individuals to harness the power of AI without sacrificing their privacy. 😇</p>
+<p>The interplay of federated learning and edge computing has not only paved the way for privacy-preserving applications in the realms of IoT and healthcare, but it also holds great promise for the future of AI. As we continue to push the boundaries of these technologies, we can expect to uncover even more groundbreaking use cases and transformative innovations that have yet to be imagined. 🌌</p>
+<p>One of the cornerstones of federated learning in edge computing is the ability to adapt and optimize algorithms for the unique constraints of edge devices. We have discussed the importance of personalized learning rates in the Federated Averaging algorithm, for example:</p>
+$$
+\begin{aligned}
+\boldsymbol{w}_{t+1}^{(i)} = \boldsymbol{w}_t^{(i)} - \eta_t^{(i)} \nabla f_i(\boldsymbol{w}_t^{(i)}),
+\end{aligned}
+$$<p>where the personalized learning rate $\eta_t^{(i)}$ plays a crucial role in optimizing the performance of federated learning on edge devices.</p>
+<p>As we forge ahead into the uncharted territory of federated learning in edge computing, it's essential that we remain vigilant in addressing the unique challenges that come with this exciting new frontier. Overcoming hurdles such as communication efficiency, device heterogeneity, and model security will be crucial in unlocking the full potential of federated learning on the edge. 🚀</p>
+<p>But fear not, intrepid explorers of the federated edge landscape, for the future holds boundless opportunities to innovate and overcome these challenges. With continued research and development, we can expect to see breakthroughs in algorithmic efficiency, privacy-preserving techniques, and new paradigms for distributed AI. So, buckle up and get ready for an exhilarating ride as we venture forth into the brave new world of federated learning in edge computing! 🌠</p>
+<p>In conclusion, we hope that this blog post has ignited your curiosity and inspired you to delve deeper into the fascinating realm of federated learning in edge computing. Remember, knowledge is power, and by understanding the transformative potential of this magical synergy, you too can join the ranks of those working to revolutionize the world of AI and data privacy. Onward, dear reader, and may your journey be filled with discovery, innovation, and success! 🌟🚀💫</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-References">7. References<a class="anchor-link" href="#7.-References">&para;</a></h2><ol>
+<li><p>McMahan, H. Brendan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise Aguera y Arcas. <a href="https://arxiv.org/abs/1602.05629">"Communication-Efficient Learning of Deep Networks from Decentralized Data"</a>. arXiv preprint arXiv:1602.05629 (2016).</p>
+</li>
+<li><p>Bonawitz, Keith, et al. <a href="https://arxiv.org/abs/1902.01046">"Towards Federated Learning at Scale: System Design"</a>. arXiv preprint arXiv:1902.01046 (2019).</p>
+</li>
+<li><p>Kairouz, Peter, et al. <a href="https://arxiv.org/abs/1912.04977">"Advances and Open Problems in Federated Learning"</a>. arXiv preprint arXiv:1912.04977 (2019).</p>
+</li>
+<li><p>Li, Tian, et al. <a href="https://ieeexplore.ieee.org/abstract/document/9084770">"Federated Learning: Challenges, Methods, and Future Directions"</a>. IEEE Signal Processing Magazine 37.3 (2020): 50-60.</p>
+</li>
+<li><p>Yang, Q., et al. <a href="https://doi.org/10.1145/3219819.3219822">"Federated Machine Learning: Concept and Applications"</a>. ACM Transactions on Intelligent Systems and Technology (TIST) 10.2 (2019): 1-19.</p>
+</li>
+<li><p>Satyanarayanan, Mahadev. <a href="https://www.computer.org/csdl/magazine/co/2017/01/mco2017010012/13rRUx0xP6U">"The Emergence of Edge Computing"</a>. Computer 50.1 (2017): 30-39.</p>
+</li>
+<li><p>Shi, Weisong, Jie Cao, Quan Zhang, Youhuizi Li, and Lanyu Xu. <a href="https://doi.org/10.1109/JIOT.2016.2579198">"Edge Computing: Vision and Challenges"</a>. IEEE Internet of Things Journal 3.5 (2016): 637-646.</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Federated_learning">Federated Learning</a>. Wikipedia.</p>
+</li>
+<li><p>Rieke, Nicola, et al. <a href="https://arxiv.org/abs/2003.08119">"The Future of Digital Health with Federated Learning"</a>. arXiv preprint arXiv:2003.08119 (2020).</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Edge_computing">Edge Computing</a>. Wikipedia.</p>
+</li>
+<li><p>Wang, Shiqiang, et al. <a href="https://ieeexplore.ieee.org/abstract/document/8417741">"Adaptive Federated Learning in Resource Constrained Edge Computing Systems"</a>. IEEE Journal on Selected Areas in Communications 37.6 (2019): 1205-1221.</p>
+</li>
+<li><p>Chiang, Mung, and Tao Zhang. <a href="https://doi.org/10.1109/JIOT.2016.2584538">"Fog and IoT: An Overview of Research Opportunities"</a>. IEEE Internet of Things Journal 3.6 (2016): 854-864.</p>
+</li>
+<li><p>Sattler, Felix, et al. <a href="https://arxiv.org/abs/1903.02891">"Robust and Communication-Efficient Federated Learning from Non-IID Data"</a>. IEEE Transactions on Neural Networks and Learning Systems 31.9 (2020): 3400-3413.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cloud-computing.html">cloud computing</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/collaboration.html">collaboration</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/data-security.html">data security</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/decentralized-data.html">decentralized data</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/deployment.html">deployment</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/edge-computing.html">edge computing</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/federated-learning.html">federated learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/healthcare.html">healthcare</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/iot.html">iot</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/machine-learning.html">machine learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/model-training.html">model training</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/networking.html">networking</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/privacy.html">privacy</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/smart-devices.html">smart devices</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/unraveling-the-secrets-of-deep-learning-for-advanced-digital-watermarking.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">Unraveling the Secrets of Deep Learning for Advanced Digital Watermarking</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/from-text-to-pixels-exploring-transformers-in-the-realm-of-computer-vision.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">From Text to Pixels: Exploring Transformers in the Realm of Computer Vision</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

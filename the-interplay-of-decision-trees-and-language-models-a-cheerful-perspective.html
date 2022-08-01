@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>The Interplay of Decision Trees and Language Models: A Cheerful Perspective</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="In this blog post, we will explore a variety of basic mathematical concepts that underpin many machine learning algorithms." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">The Interplay of Decision Trees and Language Models: A Cheerful Perspective</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>July 02, 2020</time>
+        <div>
+          <span>&nbsp;·&nbsp;37 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-The-Basics-of-Decision-Trees" title="2. The Basics of Decision Trees&para;">2. The Basics of Decision Trees&para;</a></li><li><a class="toc-href" href="#3.-Large-Language-Models" title="3. Large Language Models&para;">3. Large Language Models&para;</a></li><li><a class="toc-href" href="#4.-Decision-Trees-in-Large-Language-Models" title="4. Decision Trees in Large Language Models&para;">4. Decision Trees in Large Language Models&para;</a></li><li><a class="toc-href" href="#5.-The-Role-of-Cryptography-in-AI-and-Decision-Trees" title="5. The Role of Cryptography in AI and Decision Trees&para;">5. The Role of Cryptography in AI and Decision Trees&para;</a></li><li><a class="toc-href" href="#6.-Conclusion" title="6. Conclusion&para;">6. Conclusion&para;</a></li><li><a class="toc-href" href="#7.-References" title="7. References&para;">7. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><h3 id="1.1-A-Positive-Outlook-on-Machine-Learning-and-Decision-Trees">1.1 A Positive Outlook on Machine Learning and Decision Trees<a class="anchor-link" href="#1.1-A-Positive-Outlook-on-Machine-Learning-and-Decision-Trees">&para;</a></h3><p>Greetings, fellow AI enthusiasts and cryptography aficionados! I am delighted to delve into the fascinating world of decision trees and large language models with you. As a math professor, it is my utmost pleasure to explore these topics with optimism and humor, shedding light on the intricacies of these two essential components of artificial intelligence.</p>
+<p>Machine learning has been making remarkable strides in recent years, and decision trees play a significant role in this progress. As a powerful tool for classification and regression, decision trees have paved the way for more advanced algorithms and data modeling techniques. In the words of the great mathematician Ada Lovelace, "The engine can arrange and combine its numerical quantities exactly as if they were letters or any other general symbols." Indeed, decision trees are the embodiment of this vision, transforming data into knowledge and insights.</p>
+<h3 id="1.2-The-Power-of-Humor-in-Explaining-Complex-Concepts">1.2 The Power of Humor in Explaining Complex Concepts<a class="anchor-link" href="#1.2-The-Power-of-Humor-in-Explaining-Complex-Concepts">&para;</a></h3><p>Before we dive into the nitty-gritty of decision trees, let me emphasize the importance of humor in explaining complex concepts. As the famous mathematician and writer Lewis Carroll once said, "It is a poor sort of memory that only works backward." Humor has a magical way of making sense of the abstract and complex, allowing us to forge connections between seemingly unrelated topics. So, let's engage our sense of humor as we explore decision trees and large language models, and remember that laughter is the best medicine for the mind!</p>
+<p>Now, let's embark on our journey through the enchanting forest of decision trees, starting with an equation that elegantly captures their essence:</p>
+$$
+\begin{aligned}
+\text{Information Gain} (S, A) = \text{Entropy}(S) - \sum_{v \in \text{Values}(A)} \left(\frac{|S_v|}{|S|}\right) \times \text{Entropy}(S_v)
+\end{aligned}
+$$<p>This formula represents the information gain, a measure of the reduction in entropy (uncertainty) when splitting a dataset $S$ based on an attribute $A$. The higher the information gain, the better the attribute for splitting the data. The term $\text{Values}(A)$ denotes the set of possible values for attribute $A$, while $S_v$ refers to the subset of $S$ with the value $v$ for attribute $A$. Finally, the entropy of a dataset $S$ is calculated using the following formula:</p>
+$$
+\text{Entropy}(S) = -\sum_{c \in \text{Classes}} p(c) \times \log_2 p(c)
+$$<p>where $\text{Classes}$ represents the set of possible class labels, and $p(c)$ is the proportion of instances in $S$ belonging to class $c$.</p>
+<p>In the spirit of positivity, let us celebrate the beauty of these formulas and the power they hold in uncovering the secrets hidden within our data. As the renowned computer scientist Donald Knuth once said, "Science is knowledge which we understand so well that we can teach it to a computer." Indeed, decision trees are a testament to our ever-growing understanding of the world around us, and the role that large language models play in this quest for knowledge cannot be overstated.</p>
+<p>In the following sections, we will explore the basics of decision trees and large language models, their intersection with cryptography, and the exciting future possibilities of these remarkable technologies. So, put on your thinking caps, and let's dive into the captivating world of AI and cryptography, armed with a sense of humor and an insatiable curiosity!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-The-Basics-of-Decision-Trees">2. The Basics of Decision Trees<a class="anchor-link" href="#2.-The-Basics-of-Decision-Trees">&para;</a></h2><h3 id="2.1-How-Decision-Trees-Work:-A-Light-Hearted-Explanation">2.1 How Decision Trees Work: A Light-Hearted Explanation<a class="anchor-link" href="#2.1-How-Decision-Trees-Work:-A-Light-Hearted-Explanation">&para;</a></h3><p>Imagine you're a detective trying to solve a perplexing mystery by asking a series of yes-or-no questions. Each question brings you closer to the truth, gradually narrowing down the possible outcomes. This process is strikingly similar to how decision trees work in machine learning, with the ultimate goal of predicting a target value from a set of input features. Think of decision trees as the Sherlock Holmes of algorithms, always seeking to uncover the hidden patterns within data!</p>
+<p>A decision tree is constructed by recursively splitting the dataset based on the feature that provides the maximum information gain. In other words, the algorithm chooses the attribute that best splits the data into distinct subsets. The information gain is calculated using entropy, a measure of the impurity of a dataset. Entropy is given by the following formula:</p>
+$$
+H(S) = - \sum_{i=1}^n p_i \log_2 p_i
+$$<p>where $S$ is the dataset and $p_i$ is the probability of a data point belonging to the $i^{th}$ class. The information gain is then calculated as the difference between the entropy before and after the split:</p>
+$$
+\text{Information Gain} (S, A) = H(S) - \sum_{v \in \text{Values}(A)} \frac{|S_v|}{|S|} H(S_v)
+$$<p>Here, $A$ is the attribute being considered for the split, and $S_v$ is the subset of the dataset with the value $v$ for attribute $A$.</p>
+<h3 id="2.2-Key-Terminology-in-Decision-Trees">2.2 Key Terminology in Decision Trees<a class="anchor-link" href="#2.2-Key-Terminology-in-Decision-Trees">&para;</a></h3><p>Before diving into the depths of decision tree algorithms, let's familiarize ourselves with some essential terminology:</p>
+<ol>
+<li><strong>Node</strong>: A point in the decision tree where a feature is evaluated. It represents a question or decision point.</li>
+<li><strong>Edge</strong>: A connection between nodes, representing the outcome of a decision.</li>
+<li><strong>Root Node</strong>: The topmost node in the tree, where the decision-making process begins.</li>
+<li><strong>Internal Node</strong>: A node that has at least one child node. It represents a decision point based on a specific feature.</li>
+<li><strong>Leaf Node</strong>: A terminal node with no child nodes, representing the final decision or prediction.</li>
+</ol>
+<h3 id="2.3-Benefits-and-Limitations-of-Decision-Trees">2.3 Benefits and Limitations of Decision Trees<a class="anchor-link" href="#2.3-Benefits-and-Limitations-of-Decision-Trees">&para;</a></h3><p>Decision trees offer several advantages, such as:</p>
+<ol>
+<li><strong>Easy Interpretability</strong>: Decision trees are highly visual and can be easily understood, even by non-experts.</li>
+<li><strong>Minimal Data Preprocessing</strong>: They require little data preprocessing, such as normalization or scaling.</li>
+<li><strong>Handling Categorical and Numerical Data</strong>: Decision trees can work with both categorical and numerical data, making them highly versatile.</li>
+</ol>
+<p>However, decision trees also have some limitations:</p>
+<ol>
+<li><strong>Overfitting</strong>: Without proper pruning, decision trees can become overly complex, leading to overfitting.</li>
+<li><strong>Unstable</strong>: Small changes in the data can result in drastically different trees, making them somewhat unstable.</li>
+</ol>
+<p>Now that we have a basic understanding of decision trees, let's explore an example using Python's Scikit-learn library to illustrate the process:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Load the iris dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+
+<span class="c1"># Split the data into training and testing sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Create and train the decision tree classifier</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Make predictions on the test set and calculate the accuracy</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Decision tree accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<p>This example demonstrates how to create, train, and evaluate a decision tree classifier using the iris dataset. For a more in-depth understanding of decision trees, I highly recommend reading <a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.1984.10477048">Breiman et al's</a> classic paper on the topic.</p>
+<p>Now that we have laid the foundation for decision trees, let's move on to large language models and explore how these two powerful technologies can work together. And remember, as we delve into the complex world of AI, never underestimate the power of a good laugh and a positive attitude!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Large-Language-Models">3. Large Language Models<a class="anchor-link" href="#3.-Large-Language-Models">&para;</a></h2><h3 id="3.1-Understanding-the-Role-of-Language-Models-in-AI">3.1 Understanding the Role of Language Models in AI<a class="anchor-link" href="#3.1-Understanding-the-Role-of-Language-Models-in-AI">&para;</a></h3><p>Ah, language models! The wondrous art of teaching machines to understand and generate human language with the finesse of a seasoned poet. Language models are a cornerstone in the field of natural language processing (NLP), allowing AI to comprehend and produce text that is coherent, contextually appropriate, and, dare I say, almost human-like.</p>
+<p>In the world of AI, language models are typically built using machine learning algorithms that learn to predict the next word in a sequence, given the context of the previous words. The most widely used approach for this is known as <em>n-grams</em> - a method that simply can't resist the allure of the limelight. Formally, the probability of a word given its context can be expressed as:</p>
+$$
+P(w_i|w_1, w_2, ..., w_{i-1}) \approx P(w_i|w_{i-(n-1)}, ..., w_{i-1})
+$$<p>Now, hold on to your hats because we're diving into the big leagues! Recent advancements in NLP have given rise to transformative language models such as the Transformers (cue dramatic music). These models employ a mechanism called <em>self-attention</em> to capture dependencies between words in a sequence, regardless of their distance. The self-attention mechanism can be mathematically represented by:</p>
+$$
+\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$<p>where $Q$, $K$, and $V$ are queries, keys, and values, respectively, and $d_k$ is the dimension of the key vectors. If this equation doesn't tickle your mathematical fancy, I don't know what will!</p>
+<h3 id="3.2-GPT-3-and-Other-Notable-Large-Language-Models">3.2 GPT-3 and Other Notable Large Language Models<a class="anchor-link" href="#3.2-GPT-3-and-Other-Notable-Large-Language-Models">&para;</a></h3><p>Enter the era of colossal language models! With models like GPT-3 (<a href="https://arxiv.org/abs/2005.14165">Radford et al</a>), we've witnessed the dawn of AI systems capable of generating impressively coherent and contextually accurate text. GPT-3, with its whopping 175 billion parameters, has set a new benchmark in the NLP realm, proving that size indeed matters when it comes to language models.</p>
+<p>But let's not forget about our other language model celebrities. BERT (<a href="https://arxiv.org/abs/1810.04805">Devlin et al</a>) and T5 (<a href="https://arxiv.org/abs/1910.10683">Raffel et al</a>) are also part of this esteemed club, each making significant contributions to the field. What sets them apart is their unique approach to training: BERT uses a masked language model, while T5 leverages a text-to-text transfer learning framework.</p>
+<h3 id="3.3-The-Intersection-of-Language-Models-and-Cryptography">3.3 The Intersection of Language Models and Cryptography<a class="anchor-link" href="#3.3-The-Intersection-of-Language-Models-and-Cryptography">&para;</a></h3><p>Now, you might be wondering how cryptography fits into this linguistic jamboree. Well, my dear reader, the answer lies in the art of <em>adversarial attacks</em> and <em>robustness</em>. Large language models, like any other machine learning model, are vulnerable to adversarial attacks that can manipulate their outputs. This is where cryptographic techniques can swoop in to save the day!</p>
+<p>One particular approach to enhancing the robustness of language models is known as <em>differential privacy</em> (<a href="https://doi.org/10.1007/11681878_14">Dwork et al</a>). By adding carefully calibrated noise to the model's training process, we can preserve data privacy while ensuring the model remains functional. The formal definition of $(\epsilon, \delta)$-differential privacy is:</p>
+$$
+\Pr[\mathcal{M}(D) \in S] \leq e^\epsilon \Pr[\mathcal{M}(D') \in S] + \delta
+$$<p>where $\mathcal{M}$ is the mechanism, $D$ and $D'$ are datasets differing by one element, $S$ is a set of possible outputs, and $\epsilon$ and $\delta$ are privacy parameters. This elegant concept allows us to strike a balance between privacy and utility, all while keeping our language models safe and sound.</p>
+<p>As an AI aficionado with a penchant for optimism and humor, I must say that the intersection of decision trees, large language models, and cryptography is an exhilarating new frontier. Stay tuned for more thrilling adventures at the nexus of machine learning, NLP, and cryptography!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Decision-Trees-in-Large-Language-Models">4. Decision Trees in Large Language Models<a class="anchor-link" href="#4.-Decision-Trees-in-Large-Language-Models">&para;</a></h2><h3 id="4.1-How-Decision-Trees-Can-Enhance-Language-Models">4.1 How Decision Trees Can Enhance Language Models<a class="anchor-link" href="#4.1-How-Decision-Trees-Can-Enhance-Language-Models">&para;</a></h3><p>In the realm of artificial intelligence, the marriage between decision trees and large language models is as exciting as it is promising! Imagine a world where the clarity of decision trees mingles with the sheer power of language models, creating an AI powerhouse that's both insightful and expressive. 😄</p>
+<p>To understand how decision trees can enhance language models, let's first consider the probabilistic nature of language models. Given a sequence of words, a language model computes the probability of the next word in the sequence. Mathematically, this can be represented as:</p>
+$$
+P(w_i | w_1, w_2, ..., w_{i-1})
+$$<p>Now, let's introduce decision trees into the mix. By incorporating decision trees, we can create a hierarchical structure that captures the relationships between words and their contexts. This allows for a more fine-grained understanding of the text and a more accurate prediction of the next word.</p>
+<p>Consider the following example: Given the sentence "The cat climbed up the...", we want to predict the next word. A decision tree could be designed to first evaluate whether the next word is a noun, verb, adjective, or another part of speech. Then, based on that information, it could traverse down the tree and make a more informed decision on the specific word to predict. This process can be represented as:</p>
+$$
+\begin{aligned}
+&amp;P(w_i | w_1, w_2, ..., w_{i-1}) = \\
+&amp;\sum_{x \in \text{POS}} P(x | w_1, w_2, ..., w_{i-1}) \cdot P(w_i | x, w_1, w_2, ..., w_{i-1})
+\end{aligned}
+$$<p>Where $\text{POS}$ denotes the set of all possible parts of speech.</p>
+<h3 id="4.2-Case-Studies:-Implementing-Decision-Trees-in-Language-Models">4.2 Case Studies: Implementing Decision Trees in Language Models<a class="anchor-link" href="#4.2-Case-Studies:-Implementing-Decision-Trees-in-Language-Models">&para;</a></h3><p>Incorporating decision trees in language models has been explored in various research studies. For instance, <a href="https://doi.org/10.1162/089976602753284456">Bengio et al</a> proposed using a hierarchical structure to model the relationships between words and their contexts. This approach not only improves computational efficiency but also enables the model to capture long-range dependencies in the text.</p>
+<p>Another intriguing example is the work by <a href="http://www.cs.toronto.edu/~amnih/papers/hlbl.pdf">Mnih and Hinton</a>, which introduced the Hierarchical Log-Bilinear Language Model (HLBL). In this model, a decision tree is used to hierarchically cluster words based on their co-occurrence probabilities. By traversing the tree, the model can better predict the next word in a given context.</p>
+<h3 id="4.3-Challenges-and-Future-Directions">4.3 Challenges and Future Directions<a class="anchor-link" href="#4.3-Challenges-and-Future-Directions">&para;</a></h3><p>While the combination of decision trees and large language models holds great potential, it also presents its fair share of challenges. For example, as the size of the decision tree grows, the computational complexity can become quite daunting. This is especially true when dealing with large language models like GPT-3.</p>
+<p>Another challenge lies in finding the optimal tree structure for a given language model. An improperly constructed decision tree may lead to suboptimal performance, so it is crucial to find the right balance between tree depth and breadth.</p>
+<p>Despite these challenges, the future of decision trees and large language models is bright and full of potential! As researchers continue to explore new techniques and approaches, we can expect further advances in this exciting field. So, let's put on our lab coats, crack a smile, and dive into the world of decision trees and language models with optimism and humor! 😃</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-The-Role-of-Cryptography-in-AI-and-Decision-Trees">5. The Role of Cryptography in AI and Decision Trees<a class="anchor-link" href="#5.-The-Role-of-Cryptography-in-AI-and-Decision-Trees">&para;</a></h2><p>Ah, cryptography! The secret sauce that keeps our digital world secure and private, while adding a touch of mystery to the AI realm. In this section, we'll dive into the fascinating world of cryptography and explore its role in AI, particularly within the context of decision trees. Get ready for some exhilarating math and a few good laughs along the way!</p>
+<h3 id="5.1-Ensuring-Security-and-Privacy-in-AI-Systems">5.1 Ensuring Security and Privacy in AI Systems<a class="anchor-link" href="#5.1-Ensuring-Security-and-Privacy-in-AI-Systems">&para;</a></h3><p>As AI systems become more ubiquitous, the need for securing and preserving the privacy of data has never been more crucial. Cryptographic techniques can help us achieve these goals, even when dealing with the intricate structure of decision trees. Secure Multi-Party Computation (SMPC) is a cryptographic method that allows multiple parties to jointly compute a function over their inputs while keeping each input private.</p>
+<p>Consider this "encrypted" joke to lighten the mood:</p>
+<blockquote><p>Why do cryptographers always carry a spare key? Because they love their "private" keys!</p>
+</blockquote>
+<p>Now, let's delve into an essential cryptographic technique called Homomorphic Encryption (HE). HE allows us to perform computations on encrypted data without decrypting it first, which is perfect for preserving privacy in AI systems. An HE scheme is often defined by the following tuple:</p>
+$$
+(\text{KeyGen}, \text{Encrypt}, \text{Decrypt}, \text{Eval})
+$$<p>where $\text{KeyGen}$ generates a key pair, $\text{Encrypt}$ encrypts plaintext data, $\text{Decrypt}$ decrypts ciphertext, and $\text{Eval}$ performs computations on ciphertexts. A popular HE scheme is the Learning With Errors (LWE) based cryptosystem, introduced by Regev <a href="https://doi.org/10.1145/1060590.1060603">Regev et al</a>.</p>
+<h3 id="5.2-Cryptographic-Techniques-for-Protecting-Decision-Trees">5.2 Cryptographic Techniques for Protecting Decision Trees<a class="anchor-link" href="#5.2-Cryptographic-Techniques-for-Protecting-Decision-Trees">&para;</a></h3><p>To protect decision trees, we can employ several cryptographic techniques. Here, we'll discuss two main methods: Secure Decision Tree Evaluation (SDTE) and Privacy-Preserving Decision Trees (PPDT).</p>
+<h4 id="5.2.1-Secure-Decision-Tree-Evaluation-(SDTE)">5.2.1 Secure Decision Tree Evaluation (SDTE)<a class="anchor-link" href="#5.2.1-Secure-Decision-Tree-Evaluation-(SDTE)">&para;</a></h4><p>SDTE aims to securely evaluate a decision tree without revealing the tree's structure or the data used for evaluation. Yao's Garbled Circuits (GC) is a popular technique to achieve SDTE <a href="https://doi.org/10.1145/800221.806932">Yao et al</a>. In a nutshell, GC involves garbling the circuit representation of a decision tree and securely evaluating it using Oblivious Transfer (OT) protocols. To illustrate this concept, let's consider the following decision tree with two features, $x_1$ and $x_2$:</p>
+<pre><code>          x1 &lt;= a
+         /        \
+    x2 &lt;= b      x2 &lt;= c
+   /    \         /    \
+leaf1 leaf2   leaf3 leaf4</code></pre>
+<p>To garble this tree, we represent it as a Boolean circuit, which we can evaluate using Yao's GC and OT protocols. The garbled circuit ensures the privacy of the tree structure and input data.</p>
+<h4 id="5.2.2-Privacy-Preserving-Decision-Trees-(PPDT)">5.2.2 Privacy-Preserving Decision Trees (PPDT)<a class="anchor-link" href="#5.2.2-Privacy-Preserving-Decision-Trees-(PPDT)">&para;</a></h4><p>PPDT aims to build decision trees from distributed data while preserving the privacy of each party's data. We can achieve this using secure aggregation protocols like Secure Sum and Secure Set Intersection. For example, to compute the information gain for a particular feature, we can use the following secure sum protocol:</p>
+<ol>
+<li>Each party $i$ computes its local contribution $c_i$ to the global count.</li>
+<li>Each party $i$ adds a random value $r_i$ to its local contribution, creating a "masked" value $m_i = c_i + r_i$.</li>
+<li>Each party sends its masked value $m_i$ to the next party in a circular manner.</li>
+<li>The last party receives the sum of masked values, $m = \sum{m_i}$, and sends it to the first party.</li>
+<li>The first party subtracts the sum of random values, $r = \sum{r_i}$, to obtain the global count, $c = m - r$.</li>
+</ol>
+<p>This protocol allows us to compute global counts securely without revealing individual parties' data.</p>
+<p>In conclusion, cryptography plays an essential role in securing AI systems and decision trees. By employing techniques like Homomorphic Encryption, Secure Decision Tree Evaluation, and Privacy-Preserving Decision Trees, we can ensure the security and privacy of data while still enabling effective AI applications. As we move forward in this exciting field, let's not forget the importance of positivity, humor, and curiosity in making complex concepts more approachable and enjoyable.</p>
+<p>Now, let's encrypt this section with a smile and move on to the exciting conclusion!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Conclusion">6. Conclusion<a class="anchor-link" href="#6.-Conclusion">&para;</a></h2><p>Oh, what a delightful journey we've been on, exploring the enchanting world of decision trees and large language models! Let's take a moment to appreciate the ingenuity of researchers and mathematicians who've brought us to this point. As we reach the conclusion of our adventure, let's summarize the key takeaways and look forward to the future with a smile.</p>
+<h3 id="6.1-The-Exciting-Future-of-Decision-Trees-and-Large-Language-Models">6.1 The Exciting Future of Decision Trees and Large Language Models<a class="anchor-link" href="#6.1-The-Exciting-Future-of-Decision-Trees-and-Large-Language-Models">&para;</a></h3><p>The fusion of decision trees and large language models offers numerous possibilities for the future of AI research. By incorporating decision trees into language models, we can potentially enhance the interpretability of AI systems. This is especially important in critical applications, such as healthcare or finance, where comprehensibility is vital. One such example is the integration of decision trees in the attention mechanism of transformers.</p>
+<p>Imagine a future where AI systems can seamlessly communicate complex mathematical concepts, such as Fourier series, using decision trees. The AI could generate a decision tree representation of the Fourier series:</p>
+$$
+\begin{aligned}
+  F(x) &amp;= \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\cos(\frac{2\pi nx}{T}) + b_n\sin(\frac{2\pi nx}{T}) \\
+  a_n &amp;= \frac{2}{T} \int_{0}^{T} f(x)\cos(\frac{2\pi nx}{T}) dx \\
+  b_n &amp;= \frac{2}{T} \int_{0}^{T} f(x)\sin(\frac{2\pi nx}{T}) dx
+\end{aligned}
+$$<p>This representation could be complemented with a light-hearted analogy, such as comparing the Fourier series to a symphony orchestra, where each instrument plays a harmonic part to create a beautiful piece of music.</p>
+<h3 id="6.2-A-Final-Note-on-the-Importance-of-Positivity-and-Humor-in-AI-Research">6.2 A Final Note on the Importance of Positivity and Humor in AI Research<a class="anchor-link" href="#6.2-A-Final-Note-on-the-Importance-of-Positivity-and-Humor-in-AI-Research">&para;</a></h3><p>As we continue to explore the marvelous world of AI, let's not forget our faithful companions: positivity, humor, and curiosity. By maintaining an optimistic outlook and infusing our work with light-heartedness, we can make complex topics more approachable and enjoyable for everyone.</p>
+<p>Embrace the power of humor, my dear friends, for as the great physicist Richard Feynman once said, "The first principle is that you must not fool yourself, and you are the easiest person to fool." In other words, we must be able to laugh at our own mistakes and learn from them.</p>
+<p>So, let's move forward with excitement and enthusiasm, as we continue to uncover the mysteries of decision trees, large language models, and cryptography. And remember, the future is as bright as our collective imagination!</p>
+<p>As a parting gift, here's a Python snippet that generates a simple decision tree using the popular <code>scikit-learn</code> library:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span><span class="p">,</span> <span class="n">export_text</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">export_text</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">'feature_names'</span><span class="p">]))</span>
+</pre></div>
+<p>With this snippet, you can visualize the decision tree's structure and marvel at the simplicity and elegance of this powerful tool. May it inspire you to explore the vast and exciting realm of AI with a smile on your face and a spring in your step!</p>
+<p>For further reading, I highly recommend the work of <a href="https://arxiv.org/abs/2006.10862">Bengio et al</a>, which explores the potential of decision trees in transformers and <a href="https://doi.org/10.1023/A:1010933404324">Breiman et al</a> for a deeper understanding of decision trees and their ensembling techniques.</p>
+<p>Now, let's march onward into the vibrant future of AI, hand in hand with positivity, humor, and curiosity!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-References">7. References<a class="anchor-link" href="#7.-References">&para;</a></h2><ol>
+<li>Quinlan, J. R. (1986). Induction of Decision Trees. <em>Machine Learning</em>, 1(1), 81-106. <a href="https://link.springer.com/article/10.1007/BF00116251">Link</a></li>
+<li>Breiman, L., Friedman, J., Stone, C. J., &amp; Olshen, R. A. (1984). <em>Classification and Regression Trees</em>. CRC Press. <a href="https://www.crcpress.com/Classification-and-Regression-Trees/Breiman-Friedman-Olshen-Stone/p/book/9780412048418">Link</a></li>
+<li>Radford, A., Narasimhan, K., Salimans, T., &amp; Sutskever, I. (2018). Improving Language Understanding by Generative Pre-training. <em>OpenAI</em>. <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">Link</a></li>
+<li>Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., ... Amodei, D. (2020). Language Models are Few-Shot Learners. <em>arXiv preprint arXiv:2005.14165</em>. <a href="https://arxiv.org/abs/2005.14165">Link</a></li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning</em>. MIT Press. <a href="http://www.deeplearningbook.org">Link</a></li>
+<li>Goldberg, Y. (2016). A Primer on Neural Network Models for Natural Language Processing. <em>Journal of Artificial Intelligence Research</em>, 57, 345-420. <a href="https://jair.org/index.php/jair/article/view/11057">Link</a></li>
+<li>Rivest, R. L., Adleman, L., &amp; Dertouzos, M. L. (1978). On Data Banks and Privacy Homomorphisms. <em>Foundations of Secure Computation</em>, 4(11), 169-180. <a href="https://archive.org/details/foundationsofsec00dobl/page/169">Link</a></li>
+<li>Gentry, C. (2009). Fully Homomorphic Encryption Using Ideal Lattices. <em>Proceedings of the 41st Annual ACM Symposium on Theory of Computing</em>, 169-178. <a href="https://dl.acm.org/doi/10.1145/1536414.1536440">Link</a></li>
+<li>Decision Trees - <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Decision_tree">Link</a></li>
+<li>Language Model - <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Language_model">Link</a></li>
+<li>Cryptography - <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Cryptography">Link</a></li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-privacy.html">ai privacy</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-security.html">ai security</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/computational-linguistics.html">computational linguistics</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cryptography.html">cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/decision-trees.html">decision trees</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/gpt-3.html">gpt-3</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/humor.html">humor</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/language-processing.html">language processing</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/large-language-models.html">large language models</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/machine-learning.html">machine learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/positivity.html">positivity</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/crypto-comedy-unlocking-the-funny-side-of-ai-and-cryptography-in-movies-tv-and-more.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">Crypto-Comedy: Unlocking the Funny Side of AI and Cryptography in Movies, TV, and More</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/cross-chain-chronicles-uniting-the-blockchain-universe-through-interoperability.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">Cross-Chain Chronicles: Uniting the Blockchain Universe Through Interoperability</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

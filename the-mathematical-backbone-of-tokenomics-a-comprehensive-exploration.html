@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>The Mathematical Backbone of Tokenomics: A Comprehensive Exploration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="As the cryptocurrency ecosystem continues to evolve, mathematical innovation will undoubtedly play an increasingly important role in driving the..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/blockchain.html">Blockchain</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">The Mathematical Backbone of Tokenomics: A Comprehensive Exploration</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>June 19, 2022</time>
+        <div>
+          <span>&nbsp;·&nbsp;49 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-Token-Distribution-Models" title="2. Token Distribution Models&para;">2. Token Distribution Models&para;</a></li><li><a class="toc-href" href="#3.-Token-Valuation-Models" title="3. Token Valuation Models&para;">3. Token Valuation Models&para;</a></li><li><a class="toc-href" href="#4.-Game-Theory-in-Tokenomics" title="4. Game Theory in Tokenomics&para;">4. Game Theory in Tokenomics&para;</a></li><li><a class="toc-href" href="#5.-Stability-and-Risk-Management" title="5. Stability and Risk Management&para;">5. Stability and Risk Management&para;</a></li><li><a class="toc-href" href="#6.-Practical-Applications-and-Examples" title="6. Practical Applications and Examples&para;">6. Practical Applications and Examples&para;</a></li><li><a class="toc-href" href="#7.-Conclusion" title="7. Conclusion&para;">7. Conclusion&para;</a></li><li><a class="toc-href" href="#8.-References" title="8. References&para;">8. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><p>Greetings, fellow mathematicians and cryptographers! 🎉 Today, we have the pleasure of delving into the exciting world of Tokenomics, where mathematics and cryptography collide to create groundbreaking innovations in the field of cryptocurrencies. As a math professor with a penchant for artificial intelligence and cryptography, I'm thrilled to be your guide on this fascinating journey. Get ready to explore the intricate mathematical underpinnings of tokenomics and discover how they shape the crypto ecosystem. Let's jump right in! 😄</p>
+<h3 id="1.1-The-Role-of-Math-in-Tokenomics">1.1 The Role of Math in Tokenomics<a class="anchor-link" href="#1.1-The-Role-of-Math-in-Tokenomics">&para;</a></h3><p>Tokenomics, a portmanteau of "token" and "economics," refers to the study of token design and management in blockchain systems. Mathematics plays a crucial role in tokenomics, providing the foundation for various models and algorithms that govern the distribution, valuation, and overall behavior of tokens within their respective ecosystems.</p>
+<p>One of the core mathematical concepts in tokenomics is the <em>probability theory</em>, which is used to model uncertainties and risks associated with token valuation and distribution. In tokenomics, probability theory is often applied in the form of stochastic processes, such as the <em>Markov Chain Monte Carlo (MCMC)</em> method. MCMC allows us to simulate the behavior of tokens under various circumstances, ultimately aiding in the development of robust tokenomic models.</p>
+<p>A classic example of a probability distribution used in tokenomics is the <em>Poisson distribution</em>. The probability mass function (PMF) of a Poisson distribution can be represented as:</p>
+$$
+P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!}
+$$<p>where $k$ is the number of occurrences, $\lambda$ is the average rate of occurrence, and $e$ is the base of the natural logarithm.</p>
+<p>Apart from probability theory, tokenomics also heavily relies on <em>graph theory</em>, <em>game theory</em>, and <em>optimization techniques</em>, among other mathematical disciplines. These concepts help design efficient and secure token distribution mechanisms, optimize consensus algorithms, and create incentive structures for various stakeholders in the crypto ecosystem.</p>
+<h3 id="1.2-Importance-of-Tokenomics-in-the-Crypto-Ecosystem">1.2 Importance of Tokenomics in the Crypto Ecosystem<a class="anchor-link" href="#1.2-Importance-of-Tokenomics-in-the-Crypto-Ecosystem">&para;</a></h3><p>Tokenomics is of paramount importance in the crypto ecosystem, as it directly influences the adoption, growth, and stability of cryptocurrencies and blockchain projects. The fundamental objective of tokenomics is to create a sustainable and thriving token ecosystem, ensuring that it remains attractive to investors, developers, and users alike.</p>
+<p>A well-designed tokenomic model can provide the following benefits:</p>
+<ol>
+<li><strong>Fair and transparent token distribution</strong>: A carefully crafted token distribution model can prevent centralization and ensure that tokens are distributed fairly among participants.</li>
+<li><strong>Incentivization of network participants</strong>: Tokenomics plays a vital role in designing incentive mechanisms that encourage users to participate in the network, thereby promoting its growth and stability.</li>
+<li><strong>Stability and risk management</strong>: Tokenomic models can help mitigate risks and maintain stability in the crypto ecosystem, through mechanisms such as stablecoins and decentralized finance (DeFi) protocols.</li>
+<li><strong>Valuation and investment</strong>: Tokenomics provides a framework for evaluating the intrinsic value of tokens, enabling investors to make informed decisions about their investments in the crypto space.</li>
+</ol>
+<p>In summary, tokenomics is indispensable in the world of cryptocurrencies and blockchain technology. The intricate dance of mathematics and cryptography in tokenomics is not only intellectually stimulating but also essential for the development and success of countless blockchain projects.</p>
+<p>As we venture deeper into the realm of tokenomics, let's not forget to appreciate the beauty and elegance of the mathematical concepts that underpin this fascinating field. After all, as the great mathematician Carl Friedrich Gauss once said, "Mathematics is the queen of the sciences, and arithmetic is the queen of mathematics." 👑</p>
+<p>Ready to dive into the world of token distribution models, valuation mechanisms, and game theory? Let's go! 💪</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Token-Distribution-Models">2. Token Distribution Models<a class="anchor-link" href="#2.-Token-Distribution-Models">&para;</a></h2><p>Mathematics and tokenomics are like peanut butter and jelly, a delightful combination that brings joy to the world of cryptocurrency! 🌍 In this section, we'll dive into the fascinating realm of token distribution models, which are the mathematical foundations of how tokens are distributed within a cryptocurrency ecosystem. There are several distribution models, each with its unique mathematical properties, so buckle up and let's begin our journey through these captivating models. 🚀</p>
+<h3 id="2.1-Fixed-Supply-Distribution">2.1 Fixed Supply Distribution<a class="anchor-link" href="#2.1-Fixed-Supply-Distribution">&para;</a></h3><p>A fixed supply distribution is a token distribution model where the total supply of tokens is predetermined and remains constant throughout the life of the project. This distribution model is as simple as it is elegant, and can be represented by the following formula:</p>
+$$
+S_t = S_0
+$$<p>where $S_t$ represents the total supply of tokens at any given time $t$, and $S_0$ is the initial supply of tokens. This model, due to its predictability, has been adopted by some major cryptocurrencies like Bitcoin. A key implication of the fixed supply distribution is that the token's value may appreciate over time as the demand for the tokens increases, but the supply remains constant.</p>
+<h3 id="2.2-Inflationary-Distribution">2.2 Inflationary Distribution<a class="anchor-link" href="#2.2-Inflationary-Distribution">&para;</a></h3><p>Inflationary distribution, on the other hand, introduces a variable supply of tokens in the ecosystem. The total supply of tokens increases over time at a predetermined rate, emulating the inflationary nature of fiat currencies. This distribution model can be represented by the following formula:</p>
+$$
+S_t = S_0 \cdot (1 + r)^t
+$$<p>where $r$ is the annual inflation rate, and other symbols are the same as before. This model is often used in Proof-of-Stake (PoS) systems, where the inflation rate serves as a reward for validators securing the network. Inflationary distribution helps maintain incentives for network participants but can dilute the value of existing tokens if not managed properly.</p>
+<h3 id="2.3-Deflationary-Distribution">2.3 Deflationary Distribution<a class="anchor-link" href="#2.3-Deflationary-Distribution">&para;</a></h3><p>Deflationary distribution is the antithesis of inflationary distribution. In this model, the total supply of tokens decreases over time, often due to a process called "token burning." The supply reduction can be a function of various factors, such as transaction fees or other network activities. The mathematical representation of a deflationary distribution can be expressed as:</p>
+$$
+S_t = S_0 - \sum_{i=1}^t B_i
+$$<p>where $B_i$ represents the number of tokens burned at each time step $i$. The deflationary model is often used in projects that aim to create scarcity, driving up the value of the remaining tokens.</p>
+<h3 id="2.4-Bonding-Curves">2.4 Bonding Curves<a class="anchor-link" href="#2.4-Bonding-Curves">&para;</a></h3><p>Bonding curves are an innovative token distribution model that dynamically adjusts token prices based on supply and demand. A bonding curve is a mathematical function that defines the relationship between the token supply and its price. The curve is often designed to be monotonically increasing, meaning that the token price increases with the supply. One common example of a bonding curve is a polynomial function of the form:</p>
+$$
+P(S_t) = a \cdot S_t^b
+$$<p>where $P(S_t)$ represents the token price at a given supply $S_t$, and $a$ and $b$ are constants that determine the shape of the curve.</p>
+<p>Bonding curves are often used in decentralized finance (DeFi) projects like automated market makers (AMMs). When tokens are bought or sold, the bonding curve is used to determine the token price, and the corresponding amount of tokens is minted or burned to maintain the curve's integrity.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">bonding_curve</span><span class="p">(</span><span class="n">supply</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">supply</span><span class="o">**</span><span class="n">b</span>
+
+<span class="n">supplies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">bonding_curve</span><span class="p">(</span><span class="n">supplies</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supplies</span><span class="p">,</span> <span class="n">prices</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Token Supply'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Token Price'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Bonding Curve Example'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<p>The Python code above demonstrates how to create and visualize a bonding curve using NumPy and Matplotlib. The function <code>bonding_curve</code> takes the token supply and curve constants as inputs and returns the token price. We then generate a range of token supplies, calculate the corresponding prices, and plot the curve.</p>
+<p>Bonding curves offer a unique and mathematically sophisticated approach to token distribution. They help maintain a fair token price and incentivize early adoption by rewarding early participants with lower prices.</p>
+<p>In summary, token distribution models form the mathematical backbone of cryptocurrency ecosystems. Each model has its unique characteristics, and the choice of distribution model depends on the project's goals and desired token behavior. Whether it's the simplicity of fixed supply, the steady growth of inflationary distribution, the scarcity-driven deflationary model, or the dynamic bonding curves, mathematics plays a pivotal role in shaping the tokenomics of the crypto world. 🧮💰</p>
+<p>Stay tuned for the next section, where we'll dive into token valuation models and explore how math helps us understand the value of these digital assets! 📈</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Token-Valuation-Models">3. Token Valuation Models<a class="anchor-link" href="#3.-Token-Valuation-Models">&para;</a></h2><p>Token valuation models are the crown jewels of tokenomics, allowing us to peer into the future and estimate the value of digital assets. 💎🔮 These models are underpinned by advanced mathematical theories and provide essential insights for investors, developers, and enthusiasts alike. In this section, we'll delve into three prominent token valuation models: Net Present Value (NPV), Metcalfe's Law, and the Network Value to Transactions (NVT) Ratio. So, hold on to your hats and let's embark on this awe-inspiring mathematical adventure! 🎩🎢</p>
+<h3 id="3.1-Net-Present-Value-(NPV)">3.1 Net Present Value (NPV)<a class="anchor-link" href="#3.1-Net-Present-Value-(NPV)">&para;</a></h3><p>Net Present Value (NPV) is a financial metric that helps us estimate the value of an investment by considering the present value of its future cash flows. In the context of tokenomics, NPV can be used to evaluate the expected value of a token based on its projected cash flows, such as staking rewards or revenue generated by the underlying protocol. The NPV formula is as follows:</p>
+$$
+\text{NPV} = \sum_{t=1}^n \frac{CF_t}{(1 + r)^t}
+$$<p>where $CF_t$ represents the cash flow at time $t$, $r$ is the discount rate, and $n$ is the total number of periods. The discount rate accounts for the time value of money, reflecting the fact that a dollar today is worth more than a dollar tomorrow.</p>
+<p>To illustrate the NPV concept, let's consider a simple example: Alice invests in a DeFi project that promises to generate annual cash flows of $100 for the next five years. With a discount rate of 10%, the NPV of her investment can be calculated as:</p>
+<div class="highlight"><pre><span></span><span class="n">cash_flows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">discount_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">npv</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">cf</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">discount_rate</span><span class="p">)</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">cf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cash_flows</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">)])</span>
+<span class="n">npv</span>
+</pre></div>
+<p>In this example, Alice's investment would have an NPV of approximately $379.08.</p>
+<p>While NPV is widely used in traditional finance, it may have limitations when applied to crypto-assets due to their unique characteristics and inherent uncertainties.</p>
+<h3 id="3.2-Metcalfe's-Law">3.2 Metcalfe's Law<a class="anchor-link" href="#3.2-Metcalfe's-Law">&para;</a></h3><p>Metcalfe's Law is a powerful concept that originates from the field of network science. It states that the value of a network is proportional to the square of the number of its participants. In tokenomics, Metcalfe's Law can be applied to estimate the value of a cryptocurrency based on its user base. The formula for Metcalfe's Law is:</p>
+$$
+V = k \cdot N^2
+$$<p>where $V$ represents the network value, $N$ is the number of users, and $k$ is a proportionality constant. Metcalfe's Law has been used to model the value of various cryptocurrencies, including Bitcoin and Ethereum.</p>
+<p>Here's a Python code snippet that demonstrates the application of Metcalfe's Law:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metcalfe_law</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="n">users</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">user_counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">]</span>
+<span class="n">network_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">metcalfe_law</span><span class="p">(</span><span class="n">users</span><span class="p">)</span> <span class="k">for</span> <span class="n">users</span> <span class="ow">in</span> <span class="n">user_counts</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">user_counts</span><span class="p">,</span> <span class="n">network_values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Number of Users'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Network Value'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Metcalfe</span><span class="se">\'</span><span class="s1">s Law Example'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<p>This code defines a function <code>metcalfe_law</code> that calculates the network value based on the number of users and a proportionality constant. We then generate a range of user counts and calculate the corresponding network values. Finally, we plot the relationship between the number of users and the network value, illustrating the power of Metcalfe's Law in action.</p>
+<p>It's worth noting that Metcalfe's Law has its critics, as it assumes a homogenous user base and does not account for the varying degrees of user engagement. However, it remains a popular valuation model in the crypto space due to its simplicity and historical track record.</p>
+<h3 id="3.3-Network-Value-to-Transactions-(NVT)-Ratio">3.3 Network Value to Transactions (NVT) Ratio<a class="anchor-link" href="#3.3-Network-Value-to-Transactions-(NVT)-Ratio">&para;</a></h3><p>The Network Value to Transactions (NVT) Ratio is a valuation metric specifically tailored to cryptocurrencies. It is often referred to as the "crypto P/E ratio," drawing a parallel to the Price-to-Earnings ratio used in stock valuation. The NVT Ratio compares the network value of a cryptocurrency to the value of transactions conducted on its blockchain. A lower NVT Ratio indicates that a cryptocurrency is potentially undervalued relative to its transaction volume. The NVT Ratio can be calculated as:</p>
+$$
+\text{NVT Ratio} = \frac{\text{Network Value}}{\text{Transaction Volume}}
+$$<p>To demonstrate the NVT Ratio, let's consider a hypothetical cryptocurrency with a network value of <code>$1,000,000</code> and a daily transaction volume of <code>$100,000</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">network_value</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">transaction_volume</span> <span class="o">=</span> <span class="mi">100000</span>
+
+<span class="n">nvt_ratio</span> <span class="o">=</span> <span class="n">network_value</span> <span class="o">/</span> <span class="n">transaction_volume</span>
+<span class="n">nvt_ratio</span>
+</pre></div>
+<p>In this example, the NVT Ratio would be 10, which may be used to compare the valuation of this cryptocurrency to others in the market.</p>
+<p>It's important to recognize that the NVT Ratio has limitations, as it relies on accurate transaction volume data, which can be challenging to obtain for some cryptocurrencies. Additionally, the ratio may not account for off-chain transactions or other value-transfer mechanisms within a crypto ecosystem.</p>
+<p>In conclusion, token valuation models, such as NPV, Metcalfe's Law, and the NVT Ratio, provide valuable insights into the potential value of digital assets. These mathematical models help us navigate the intricate crypto landscape and make informed decisions about investments and development strategies. 📊🧠</p>
+<p>Up next, we'll explore the exciting world of game theory in tokenomics, where we'll uncover the mathematical secrets behind incentive mechanisms, consensus algorithms, and more! 🕹️🔐</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Game-Theory-in-Tokenomics">4. Game Theory in Tokenomics<a class="anchor-link" href="#4.-Game-Theory-in-Tokenomics">&para;</a></h2><p>Game theory plays a pivotal role in tokenomics, as it allows us to model and analyze the strategic interactions between various agents within a crypto ecosystem. 🎲🚀 By understanding these interactions, we can design more effective incentive mechanisms, consensus algorithms, and token distribution strategies. In this section, we'll explore Nash equilibria, incentive mechanisms, and the great battle between Proof-of-Work and Proof-of-Stake consensus algorithms. So, buckle up and let's dive into the fascinating world of game theory! 🌊🏄&zwj;&male;️</p>
+<h3 id="4.1-Nash-Equilibria">4.1 Nash Equilibria<a class="anchor-link" href="#4.1-Nash-Equilibria">&para;</a></h3><p>Nash equilibria, named after the brilliant mathematician John Nash, are a fundamental concept in game theory. A Nash equilibrium occurs when no player in a strategic game has an incentive to deviate from their current strategy, given the strategies of all other players. In the context of tokenomics, Nash equilibria can be used to study the stability and convergence of various economic models and incentive mechanisms. 🧩🔒</p>
+<p>The Nash equilibrium can be formally defined as follows: for a game with $n$ players and strategy sets $S_1, S_2, ..., S_n$, a strategy profile $(s_1^*, s_2^*, ..., s_n^*)$ is a Nash equilibrium if, for each player $i$,</p>
+$$
+u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*), \text{ for all } s_i \in S_i,
+$$<p>where $u_i$ is the utility function for player $i$, and $s_{-i}^*$ denotes the strategies of all players except player $i$.</p>
+<p>To illustrate the concept of Nash equilibria, let's consider the classic example of the Prisoner's Dilemma. Two prisoners are held in separate cells and cannot communicate. They are given the option to either betray each other (B) or remain silent (S). The payoff matrix for this game is as follows:</p>
+<pre><code>           Prisoner A
+          -------------
+          | S  |  B  |
+          |----|-----|
+Prisoner  | S  | -1, -1  |
+B         |----|-----|
+          | B  | -3, 0  |
+          -------------</code></pre>
+<p>In this game, the Nash equilibrium is (B, B), where both prisoners betray each other. This is because, given the other prisoner's choice, each prisoner has no incentive to deviate from betraying the other.</p>
+<h3 id="4.2-Incentive-Mechanisms">4.2 Incentive Mechanisms<a class="anchor-link" href="#4.2-Incentive-Mechanisms">&para;</a></h3><p>Incentive mechanisms are the heart and soul of tokenomics, as they drive the behaviors of various participants within a crypto ecosystem. By leveraging game theory, we can design incentive mechanisms that encourage desired behaviors, such as maintaining network security, allocating resources efficiently, and promoting long-term sustainability. 🏗️🌳</p>
+<p>A well-known example of an incentive mechanism is the token rewards provided to miners in Proof-of-Work consensus algorithms, such as Bitcoin. These rewards incentivize miners to contribute computational resources to the network, which in turn secures the blockchain against attacks. Similarly, token staking and delegation in Proof-of-Stake algorithms provide economic incentives for validators to maintain the network's integrity.</p>
+<p>Designing effective incentive mechanisms often requires striking a delicate balance between encouraging desired behaviors and mitigating potential risks, such as centralization or collusion. This is where the power of game theory comes into play, as it allows us to model and analyze the strategic interactions between various agents, ultimately guiding the design of robust and sustainable tokenomic systems. 🎯</p>
+<h3 id="4.3-Proof-of-Work-vs.-Proof-of-Stake">4.3 Proof-of-Work vs. Proof-of-Stake<a class="anchor-link" href="#4.3-Proof-of-Work-vs.-Proof-of-Stake">&para;</a></h3><p>Proof-of-Work (PoW) and Proof-of-Stake (PoS) are two major consensus algorithms that utilize game theory to maintain the security and integrity of a blockchain. These algorithms differ in their approaches, but both are designed to encourage positive network behavior and deter malicious activities. Let's explore each of these consensus mechanisms and their tokenomic implications. 🛡️⚔️</p>
+<h4 id="4.3.1-Proof-of-Work">4.3.1 Proof-of-Work<a class="anchor-link" href="#4.3.1-Proof-of-Work">&para;</a></h4><p>Proof-of-Work (PoW) is a consensus algorithm that requires participants (miners) to solve complex mathematical puzzles to validate and add new blocks to the blockchain. Miners compete to find a solution, and the first miner to solve the puzzle is rewarded with newly minted tokens and transaction fees. This competition for rewards drives miners to invest in powerful computational resources, which in turn secures the network against attacks.</p>
+<p>The PoW mechanism can be modeled as a non-cooperative game, where miners must decide whether to invest in additional computational resources to increase their chances of winning the block reward. The Nash equilibrium of this game is a situation where miners invest in resources until their expected profits equal the costs of their investments.</p>
+<p>However, PoW has been criticized for its high energy consumption, centralization risks, and the potential for mining cartels. This has led to the development of alternative consensus algorithms, such as Proof-of-Stake.</p>
+<h4 id="4.3.2-Proof-of-Stake">4.3.2 Proof-of-Stake<a class="anchor-link" href="#4.3.2-Proof-of-Stake">&para;</a></h4><p>Proof-of-Stake (PoS) is a consensus algorithm that selects validators based on their token holdings (stake) rather than their computational resources. Validators are chosen randomly or based on the size of their stake, and they are responsible for validating and adding new blocks to the blockchain. Validators are rewarded with newly minted tokens and transaction fees, providing an economic incentive for them to maintain the network's integrity.</p>
+<p>The PoS mechanism can also be modeled as a game, where participants must decide whether to stake their tokens or not. In this game, the Nash equilibrium occurs when participants stake their tokens in proportion to their confidence in the network's security and the potential rewards. PoS addresses some of the limitations of PoW, such as energy consumption and centralization risks, but it introduces new challenges, such as the "nothing-at-stake" problem and potential long-range attacks.</p>
+<p>In summary, both Proof-of-Work and Proof-of-Stake consensus algorithms employ game theory to maintain the security and integrity of a blockchain. By understanding the strategic interactions between various agents within these systems, we can design more robust and sustainable tokenomic models. 🌐🔗</p>
+<p>And that wraps up our exciting journey through game theory in tokenomics! Next up, we'll delve into the world of stability and risk management, where we'll explore the mathematics behind stablecoins, decentralized finance (DeFi) protocols, and risk metrics. Stay tuned! 📈🔮</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Stability-and-Risk-Management">5. Stability and Risk Management<a class="anchor-link" href="#5.-Stability-and-Risk-Management">&para;</a></h2><p>In the world of tokenomics, stability and risk management are crucial for the long-term success of a project. As we venture into this exciting realm, we'll examine stablecoins, decentralized finance (DeFi) protocols, and risk metrics, all of which play a vital role in maintaining a robust crypto ecosystem. So, buckle up, and let's dive right in! 🚀🔐</p>
+<h3 id="5.1-Stablecoins">5.1 Stablecoins<a class="anchor-link" href="#5.1-Stablecoins">&para;</a></h3><p>Stablecoins are cryptocurrencies designed to maintain a stable value, usually pegged to a reserve of assets such as fiat currencies, commodities, or other cryptocurrencies. The primary goal of stablecoins is to offer the benefits of cryptocurrencies, like decentralization and ease of use, while minimizing price volatility. There are several types of stablecoins, including collateralized, algorithmic, and hybrid models. Let's explore the math behind some of these models.</p>
+<h4 id="5.1.1-Collateralized-Stablecoins">5.1.1 Collateralized Stablecoins<a class="anchor-link" href="#5.1.1-Collateralized-Stablecoins">&para;</a></h4><p>Collateralized stablecoins are backed by a reserve of assets, such as fiat currencies or other cryptocurrencies. The most common type of collateralized stablecoin is the fiat-collateralized stablecoin, which is pegged to a specific fiat currency, like the US dollar. The value of these stablecoins is maintained through a combination of over-collateralization and arbitrage.</p>
+<p>Suppose we have a stablecoin pegged to the US dollar, with a 1:1 ratio. The reserve ratio, denoted by $\rho$, is given by:</p>
+$$
+\rho = \frac{\text{Value of the collateral}}{\text{Value of the stablecoin}}
+$$<p>To maintain stability, the reserve ratio must be greater than or equal to one, i.e., $\rho \geq 1$. If the reserve ratio falls below one, arbitrageurs can profit by buying the undervalued stablecoin and redeeming it for the collateral, thereby driving the price back to equilibrium.</p>
+<h4 id="5.1.2-Algorithmic-Stablecoins">5.1.2 Algorithmic Stablecoins<a class="anchor-link" href="#5.1.2-Algorithmic-Stablecoins">&para;</a></h4><p>Algorithmic stablecoins are not backed by collateral but instead rely on complex algorithms and smart contracts to maintain a stable value. The primary mechanism for achieving stability is through the adjustment of the token supply. When the stablecoin's price rises above its target, the algorithm increases the supply, which decreases the price. Conversely, when the price falls below the target, the algorithm reduces the supply, increasing the price.</p>
+<p>Consider a simple algorithmic stablecoin model, where the target price $P_t$ is equal to the market price $P_m$ plus the error term $\epsilon$:</p>
+$$
+P_t = P_m + \epsilon
+$$<p>The error term is proportional to the difference between the market price and the target price:</p>
+$$
+\epsilon = k (P_m - P_t)
+$$<p>Where $k$ is a positive constant. The algorithm adjusts the token supply based on the error term, which helps maintain the stablecoin's price close to the target value.</p>
+<h3 id="5.2-Decentralized-Finance-(DeFi)-Protocols">5.2 Decentralized Finance (DeFi) Protocols<a class="anchor-link" href="#5.2-Decentralized-Finance-(DeFi)-Protocols">&para;</a></h3><p>Decentralized Finance (DeFi) protocols are a collection of financial applications built on blockchain technology, aiming to disintermediate traditional financial institutions and provide a more accessible, transparent, and efficient financial system. The mathematical models employed in DeFi protocols are crucial for maintaining stability and minimizing risks.</p>
+<p>For instance, lending protocols like Compound and Aave use interest rate models to determine borrowing and lending rates based on supply and demand. These models can be expressed as:</p>
+$$
+\text{Interest Rate} = \text{Base Rate} + \text{Utilization Ratio} \times \text{Slope}
+$$<p>Where the utilization ratio is the ratio of borrowed funds to available liquidity, and the slope is a parameter that determines the responsiveness of interest rates to changes in the utilization ratio. By using these models, DeFi protocols can optimize rates to balance the needs of borrowers and lenders, ensuring that the protocol remains attractive and stable.</p>
+<p>Another important aspect of DeFi protocols is the management of collateral in lending and borrowing operations. Typically, users deposit collateral to borrow assets, and the collateral must be over-collateralized to minimize the risk of defaults. The collateral factor, denoted by $c$, is the ratio of the borrowed amount to the value of the collateral:</p>
+$$
+c = \frac{\text{Borrowed Amount}}{\text{Value of Collateral}}
+$$<p>The collateral factor must be less than one, i.e., $c &lt; 1$, to ensure that the value of the collateral is greater than the borrowed amount. If the value of the collateral falls below a specified threshold, the protocol may liquidate the position to protect the system.</p>
+<h3 id="5.3-Risk-Metrics-and-Indicators">5.3 Risk Metrics and Indicators<a class="anchor-link" href="#5.3-Risk-Metrics-and-Indicators">&para;</a></h3><p>In the context of tokenomics, risk metrics and indicators are essential tools for assessing the stability and health of a project. Various metrics can be used to evaluate different aspects of a project's risk, such as liquidity risk, credit risk, and market risk.</p>
+<h4 id="5.3.1-Value-at-Risk-(VaR)">5.3.1 Value at Risk (VaR)<a class="anchor-link" href="#5.3.1-Value-at-Risk-(VaR)">&para;</a></h4><p>Value at Risk (VaR) is a widely used risk metric that estimates the potential loss in value of a portfolio over a specific time horizon and at a given confidence level. Mathematically, VaR can be defined as:</p>
+$$
+\text{VaR}_\alpha (X) = F_X^{-1}(\alpha)
+$$<p>Where $X$ represents the portfolio's return distribution, $F_X^{-1}$ is the inverse of the cumulative distribution function, and $\alpha$ is the confidence level. VaR provides a concise measure of the maximum potential loss a portfolio could experience, which helps investors assess and manage risks.</p>
+<h4 id="5.3.2-Conditional-Value-at-Risk-(CVaR)">5.3.2 Conditional Value at Risk (CVaR)<a class="anchor-link" href="#5.3.2-Conditional-Value-at-Risk-(CVaR)">&para;</a></h4><p>Conditional Value at Risk (CVaR), also known as Expected Shortfall (ES), is a risk measure that calculates the expected loss of a portfolio, given that the loss exceeds the VaR threshold. CVaR can be expressed as:</p>
+$$
+\text{CVaR}_\alpha (X) = \frac{1}{1-\alpha} \int_{-\infty}^{\text{VaR}_\alpha (X)} x f_X(x) \, dx
+$$<p>Where $f_X(x)$ is the probability density function of the portfolio's return distribution. CVaR is a more robust risk measure than VaR, as it considers tail risks and accounts for the magnitude of extreme losses.</p>
+<h4 id="5.3.3-Risk-Adjusted-Performance-Metrics">5.3.3 Risk-Adjusted Performance Metrics<a class="anchor-link" href="#5.3.3-Risk-Adjusted-Performance-Metrics">&para;</a></h4><p>Risk-adjusted performance metrics, such as the Sharpe ratio and the Sortino ratio, are used to evaluate the performance of a portfolio or investment strategy relative to its risk. The Sharpe ratio is calculated as:</p>
+$$
+\text{Sharpe Ratio} = \frac{\text{Portfolio Return} - \text{Risk-Free Rate}}{\text{Portfolio Standard Deviation}}
+$$<p>The Sortino ratio, on the other hand, considers only downside risk and is defined as:</p>
+$$
+\text{Sortino Ratio} = \frac{\text{Portfolio Return} - \text{Risk-Free Rate}}{\text{Downside Standard Deviation}}
+$$<p>These risk-adjusted performance metrics help investors and portfolio managers to make informed decisions and select strategies that offer the best risk-return trade-offs.</p>
+<p>In conclusion, stability and risk management are vital aspects of tokenomics that help maintain a resilient crypto ecosystem. By leveraging mathematical models and metrics, we can better understand and manage the inherent risks associated with cryptocurrencies and DeFi protocols, ultimately leading to more sustainable growth and innovation in the space.</p>
+<p>As the crypto ecosystem continues to evolve, so will the mathematical models and techniques used to manage risk and maintain stability. In the future, we may see the development of more sophisticated models that incorporate machine learning and artificial intelligence, allowing for even greater adaptability and resilience in the face of market turbulence and uncertainty.</p>
+<p>Moreover, the integration of traditional finance and DeFi will likely lead to the adoption of more advanced risk management practices from the world of traditional finance, further enhancing the stability and robustness of the crypto ecosystem. As tokenomics continues to grow and mature, it's crucial that we maintain a strong focus on stability and risk management, ensuring that the potential of blockchain technology is fully realized while mitigating the risks associated with this new frontier of finance.</p>
+<p>Embrace the future with a smile and keep pushing the boundaries of what's possible in the world of tokenomics! 😄🌟🚀</p>
+<p>And remember, as we navigate the complex world of stability and risk management in tokenomics, collaboration between mathematicians, cryptographers, and other experts will be key to driving innovation and ensuring the long-term success of the crypto ecosystem. So let's continue to explore, learn, and grow together in this exciting journey! 🎓🔗💡</p>
+<p>Stay tuned for the next section, where we'll delve into practical applications and examples of tokenomics, further illustrating the power and potential of mathematical models in shaping the future of finance.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Practical-Applications-and-Examples">6. Practical Applications and Examples<a class="anchor-link" href="#6.-Practical-Applications-and-Examples">&para;</a></h2><p>The world of tokenomics is vast and complex, with countless fascinating examples showcasing the power and potential of mathematical models in shaping the future of finance. In this section, we'll delve into some of the most iconic and groundbreaking cases, illustrating how mathematics has played a pivotal role in the development of these innovative projects. 🌐🔢💪</p>
+<h3 id="6.1-Bitcoin-and-Its-Halving-Mechanism">6.1 Bitcoin and Its Halving Mechanism<a class="anchor-link" href="#6.1-Bitcoin-and-Its-Halving-Mechanism">&para;</a></h3><p>Let's begin our journey with the OG of cryptocurrencies: Bitcoin! Launched in 2009 by the enigmatic and pseudonymous Satoshi Nakamoto, Bitcoin has since become the de facto standard for digital currencies, leading the way for countless other cryptocurrencies and blockchain projects. 🚀🎆</p>
+<p>One of the most notable aspects of Bitcoin's tokenomics is its halving mechanism, which ensures a controlled and predictable supply of new coins entering the market. This mechanism was carefully designed to mimic the process of mining precious metals like gold, with the rate of new bitcoins entering the market gradually decreasing over time.</p>
+<p>The halving mechanism works as follows: every 210,000 blocks (approximately every four years), the block reward for miners is cut in half. Initially, the block reward was 50 bitcoins, and it has since undergone three halvings, resulting in a current reward of 6.25 bitcoins per block.</p>
+<p>The halving mechanism can be mathematically represented as:</p>
+$$
+R_n = \frac{R_0}{2^n}
+$$<p>where $R_n$ is the block reward after the $n$-th halving, and $R_0$ is the initial block reward (50 bitcoins). This elegant mathematical model ensures that the total supply of bitcoins will never exceed 21 million, thus creating scarcity and helping to maintain its value.</p>
+<h3 id="6.2-Ethereum-and-Its-Transition-to-Ethereum-2.0">6.2 Ethereum and Its Transition to Ethereum 2.0<a class="anchor-link" href="#6.2-Ethereum-and-Its-Transition-to-Ethereum-2.0">&para;</a></h3><p>Ethereum, another titan in the world of cryptocurrencies, has also incorporated innovative mathematical concepts into its tokenomics. Developed by the brilliant Vitalik Buterin, Ethereum is a decentralized, open-source blockchain that supports smart contracts and has spawned a vast ecosystem of decentralized applications (dApps) and decentralized finance (DeFi) projects. 🌍💡🔗</p>
+<p>One of the most significant ongoing developments in Ethereum is its transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) system, known as Ethereum 2.0. This change aims to make the Ethereum network more secure, scalable, and energy-efficient, paving the way for a new era of decentralized technology.</p>
+<p>The PoS mechanism in Ethereum 2.0, known as the Beacon Chain, is designed to achieve consensus by relying on validators who stake their ether (ETH) to propose and validate new blocks. Validators are chosen to propose blocks based on a combination of their stake and a randomization process called RANDAO, which uses a clever cryptographic technique to ensure unpredictability and minimize the potential for manipulation.</p>
+<p>The rewards for validators in Ethereum 2.0 are dynamically adjusted based on the total amount of ether staked in the network. This is achieved through a mathematical formula that calculates the annual percentage return (APR) for validators:</p>
+$$
+APR = \frac{R_\text{base}}{\sqrt{T_\text{staked}}}
+$$<p>where $R_\text{base}$ is the base annual reward per validator and $T_\text{staked}$ is the total amount of ether staked in the network. This formula encourages more validators to participate in the network by offering higher rewards when the total staked ether is low and gradually reducing rewards as the network becomes more decentralized and secure.</p>
+<h3 id="6.3-DeFi-Projects-with-Unique-Tokenomic-Models">6.3 DeFi Projects with Unique Tokenomic Models<a class="anchor-link" href="#6.3-DeFi-Projects-with-Unique-Tokenomic-Models">&para;</a></h3><p>DeFi, short for Decentralized Finance, has emerged as a rapidly growing sector within the blockchain space, offering a wide array of financial services such as lending, borrowing, asset management, and trading, all powered by decentralized technologies. DeFi projects have introduced numerous innovative tokenomic models, showcasing the power of mathematics in shaping the future of finance. Let's explore a few notable examples. 🧙&zwj;&male;️🔮💸</p>
+<h4 id="6.3.1-Uniswap-and-Its-Constant-Product-Market-Maker-Model">6.3.1 Uniswap and Its Constant Product Market Maker Model<a class="anchor-link" href="#6.3.1-Uniswap-and-Its-Constant-Product-Market-Maker-Model">&para;</a></h4><p>Uniswap, a decentralized exchange (DEX) built on Ethereum, has revolutionized the way we trade cryptocurrencies. Unlike traditional order book-based exchanges, Uniswap employs a constant product market maker (CPMM) model, which uses an automated liquidity provider (LP) system to facilitate trades.</p>
+<p>The CPMM model relies on a simple, yet powerful mathematical formula:</p>
+$$
+x * y = k
+$$<p>where $x$ and $y$ are the quantities of two assets in a liquidity pool, and $k$ is a constant value. This formula ensures that the product of the assets' quantities remains constant, even as the quantities change due to trades.</p>
+<p>In Uniswap, users can swap tokens by adding or removing liquidity from the pools, causing the quantities of the assets to change. The CPMM model automatically adjusts the price of the tokens to maintain the constant product, enabling efficient price discovery and minimal slippage.</p>
+<h4 id="6.3.2-Compound-and-Its-Interest-Rate-Model">6.3.2 Compound and Its Interest Rate Model<a class="anchor-link" href="#6.3.2-Compound-and-Its-Interest-Rate-Model">&para;</a></h4><p>Compound, a leading DeFi lending and borrowing platform, has implemented a unique interest rate model that dynamically adjusts borrowing and lending rates based on supply and demand. This model allows Compound to maintain an efficient and competitive market for various crypto assets.</p>
+<p>The interest rate model is governed by the following equation:</p>
+$$
+i = a * U^b
+$$<p>where $i$ is the interest rate, $U$ is the utilization rate (the ratio of borrowed assets to total assets), and $a$ and $b$ are parameters that can be fine-tuned by the platform to achieve the desired interest rate behavior.</p>
+<p>As the utilization rate increases, the interest rate rises to incentivize more users to supply assets and discourage borrowing, helping to maintain a healthy balance between supply and demand.</p>
+<h4 id="6.3.3-Yearn-Finance-and-Its-Automated-Yield-Farming-Strategies">6.3.3 Yearn Finance and Its Automated Yield Farming Strategies<a class="anchor-link" href="#6.3.3-Yearn-Finance-and-Its-Automated-Yield-Farming-Strategies">&para;</a></h4><p>Yearn Finance is another prominent DeFi project that aims to optimize yield farming by automatically reallocating users' funds to the most profitable lending and liquidity provision opportunities. The platform employs complex algorithms and strategies to ensure that users earn the highest possible returns on their investments.</p>
+<p>Yearn Finance's strategies are governed by mathematical models that take into account factors such as asset prices, interest rates, and liquidity to determine the optimal allocation of funds across various DeFi protocols. By continuously monitoring and adjusting its strategies, Yearn Finance can provide users with an efficient and hassle-free way to maximize their returns in the rapidly evolving DeFi landscape.</p>
+<p>These are just a few examples of the many innovative tokenomic models found in DeFi projects, demonstrating the versatility and power of mathematics in shaping the future of decentralized finance. As the DeFi space continues to evolve and mature, we can expect to see even more groundbreaking mathematical models and algorithms that push the boundaries of what's possible in finance. 🎉📈🔥</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&para;</a></h2><h3 id="7.1-The-Future-of-Tokenomics-and-Mathematical-Innovation">7.1 The Future of Tokenomics and Mathematical Innovation<a class="anchor-link" href="#7.1-The-Future-of-Tokenomics-and-Mathematical-Innovation">&para;</a></h3><p>Throughout this blog post, we have explored the profound impact of mathematics on the realm of tokenomics, from token distribution models and valuation methods to game theory, stability mechanisms, and real-world applications. 🌏💫 As the cryptocurrency ecosystem continues to evolve, mathematical innovation will undoubtedly play an increasingly important role in driving the development of novel and sophisticated tokenomic models.</p>
+<p>In the near future, we can expect to see the emergence of even more advanced mathematical techniques and theories, such as multi-dimensional bonding curves, deep reinforcement learning for market-making algorithms, and complex stochastic models for risk management. 📚🧠💡</p>
+<p>Moreover, the intersection of tokenomics, artificial intelligence, and cryptography will likely yield groundbreaking discoveries that can further enhance the efficiency, security, and sustainability of decentralized finance and blockchain-based systems. The synergy of these disciplines will create a fertile ground for innovations, ultimately pushing the boundaries of what we can achieve in the digital economy. 🚀🌌</p>
+<h3 id="7.2-Encouraging-Collaboration-Between-Math-and-Cryptography">7.2 Encouraging Collaboration Between Math and Cryptography<a class="anchor-link" href="#7.2-Encouraging-Collaboration-Between-Math-and-Cryptography">&para;</a></h3><p>As we have seen, the application of mathematics in tokenomics has far-reaching consequences, shaping the way we design, analyze, and optimize blockchain-based financial systems. To maximize the potential of this powerful relationship, it is essential to foster collaboration between mathematicians, cryptographers, and other experts in the field. 🤝🌟</p>
+<p>Academic institutions, research labs, and industry leaders should strive to create interdisciplinary environments that encourage the exchange of ideas and the development of innovative solutions to the challenges faced by the cryptocurrency ecosystem. By bridging the gap between mathematical theory and practical application, we can ensure that the future of tokenomics is built on a solid foundation of rigorous analysis, creativity, and ingenuity. 🧪🔬🔧</p>
+<p>In conclusion, the role of mathematics in tokenomics cannot be overstated. As we continue to explore the vast possibilities of the cryptocurrency universe, let us remember the wise words of Galileo Galilei: "Mathematics is the language with which God has written the universe." 🌠✍️ And with this language, we will undoubtedly unlock new secrets and reshape the future of finance for generations to come. 💖🌈🎉</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-References">8. References<a class="anchor-link" href="#8.-References">&para;</a></h2><ol>
+<li><p>Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. <a href="https://bitcoin.org/bitcoin.pdf">Whitepaper</a>.</p>
+</li>
+<li><p>Buterin, V. (2013). Ethereum White Paper: A Next-Generation Smart Contract and Decentralized Application Platform. <a href="https://ethereum.org/en/whitepaper/">Whitepaper</a>.</p>
+</li>
+<li><p>Wood, G. (2014). Ethereum: A secure decentralised generalised transaction ledger. <a href="https://ethereum.github.io/yellowpaper/paper.pdf">Yellow Paper</a>.</p>
+</li>
+<li><p>Hileman, G., &amp; Rauchs, M. (2017). Global Cryptocurrency Benchmarking Study. University of Cambridge. <a href="https://www.jbs.cam.ac.uk/wp-content/uploads/2021/08/global-cryptocurrency-benchmarking-2017.pdf">Report</a>.</p>
+</li>
+<li><p>Cong, L. W., Li, Y., &amp; Wang, N. (2018). Tokenomics: Dynamic Adoption and Valuation. <a href="https://arxiv.org/abs/1812.02865">arXiv preprint</a>.</p>
+</li>
+<li><p>Peterson, C. L. (2018). An Introduction to the Cryptocurrency Market Mechanism Design Space. <a href="https://medium.com/@ChrisLundkvist/an-introduction-to-the-cryptocurrency-market-mechanism-design-space-6bdfc6c2d8d1">Medium article</a>.</p>
+</li>
+<li><p>Chohan, U. W. (2018). Cryptoeconomics &ndash; The Economics of Tokenization. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3238472">SSRN paper</a>.</p>
+</li>
+<li><p>Easley, D., O'Hara, M., &amp; Basu, S. (2019). From mining to markets: The evolution of bitcoin transaction fees. Journal of Financial Economics, 134(1), 91-109. <a href="https://doi.org/10.1016/j.jfineco.2019.03.005">doi</a>.</p>
+</li>
+<li><p>Metcalfe, R. L. (1973). Network Growth Dynamics in Local and Metropolitan Areas. MIT. <a href="https://dspace.mit.edu/handle/1721.1/5731">Thesis</a>.</p>
+</li>
+<li><p>Burniske, C., &amp; Tatar, J. (2017). Cryptoassets: The Innovative Investor's Guide to Bitcoin and Beyond. McGraw Hill Professional.</p>
+</li>
+<li><p>Szabo, N. (1997). Formalizing and Securing Relationships on Public Networks. First Monday, 2(9). <a href="https://firstmonday.org/ojs/index.php/fm/article/view/548">Article</a>.</p>
+</li>
+<li><p>Ethereum 2.0 <a href="https://en.wikipedia.org/wiki/Ethereum_2.0">Wikipedia page</a>.</p>
+</li>
+<li><p>Chainlink <a href="https://chain.link/">Official Website</a>.</p>
+</li>
+<li><p>Uniswap <a href="https://uniswap.org/">Official Website</a>.</p>
+</li>
+<li><p>Aave <a href="https://aave.com/">Official Website</a>.</p>
+</li>
+</ol>
+<p>Please note that this reference list is not exhaustive, and there are many other resources available for further exploration of the various concepts discussed in this blog post. The inclusion of these resources is for informational purposes only and does not imply endorsement or affiliation.</p>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/blockchain.html">blockchain</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cryptocurrency.html">cryptocurrency</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/defi.html">defi</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/distribution-models.html">distribution models</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ethereum-20.html">ethereum 2.0</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/game-theory.html">game theory</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/mathematics.html">mathematics</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/stablecoins.html">stablecoins</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/tokenomics.html">tokenomics</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/valuation-models.html">valuation models</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 rounded-l-lg"></div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/from-rise-to-fall-the-untold-story-of-terras-ust-and-the-future-of-algorithmic-stablecoins.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">From Rise to Fall: The Untold Story of Terra's UST and the Future of Algorithmic Stablecoins</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

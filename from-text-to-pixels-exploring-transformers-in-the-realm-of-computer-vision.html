@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>From Text to Pixels: Exploring Transformers in the Realm of Computer Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="Throughout this blog post, we've delved into the captivating realm of Vision Transformers, discussing their origins, key concepts, notable..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">From Text to Pixels: Exploring Transformers in the Realm of Computer Vision</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>February 23, 2022</time>
+        <div>
+          <span>&nbsp;·&nbsp;47 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-Background:-From-NLP-to-Computer-Vision" title="2. Background: From NLP to Computer Vision&para;">2. Background: From NLP to Computer Vision&para;</a></li><li><a class="toc-href" href="#3.-Key-Concepts:-Understanding-Vision-Transformers" title="3. Key Concepts: Understanding Vision Transformers&para;">3. Key Concepts: Understanding Vision Transformers&para;</a></li><li><a class="toc-href" href="#4.-Notable-Vision-Transformer-Architectures" title="4. Notable Vision Transformer Architectures&para;">4. Notable Vision Transformer Architectures&para;</a></li><li><a class="toc-href" href="#5.-Practical-Applications-of-Vision-Transformers" title="5. Practical Applications of Vision Transformers&para;">5. Practical Applications of Vision Transformers&para;</a></li><li><a class="toc-href" href="#6.-Future-Directions-and-Challenges" title="6. Future Directions and Challenges&para;">6. Future Directions and Challenges&para;</a></li><li><a class="toc-href" href="#7.-Conclusion" title="7. Conclusion&para;">7. Conclusion&para;</a></li><li><a class="toc-href" href="#8.-References" title="8. References&para;">8. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><p>Greetings, fellow AI enthusiasts and visionaries! 👋 Today, we embark on an exciting journey into the fascinating world of Transformers and their role in the realm of computer vision. As an optimistic, positive, and humorous math professor, I'll be your guide on this thrilling adventure. So buckle up and get ready to explore the wonders of artificial intelligence! 🚀</p>
+<h3 id="1.1-Brief-overview-of-Transformers-in-NLP">1.1 Brief overview of Transformers in NLP<a class="anchor-link" href="#1.1-Brief-overview-of-Transformers-in-NLP">&para;</a></h3><p>Transformers, first introduced by <a href="https://arxiv.org/abs/1706.03762">Vaswani et al</a> in their groundbreaking paper "Attention is All You Need," have revolutionized the field of natural language processing (NLP). At their core, Transformers rely on the self-attention mechanism, which enables the model to learn complex relationships and dependencies among words in a given text. By using multi-head self-attention and a series of feed-forward layers, the Transformer model has achieved state-of-the-art performance in numerous NLP tasks, such as machine translation, sentiment analysis, and question answering, to name a few.</p>
+<p>Mathematically, the self-attention mechanism can be expressed as follows:</p>
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^{\top}}{\sqrt{d_k}}\right)V
+$$<p>where $Q$, $K$, and $V$ represent the query, key, and value matrices, respectively, and $d_k$ is the dimensionality of the key vectors.</p>
+<h3 id="1.2-Introducing-the-potential-of-Transformers-in-computer-vision">1.2 Introducing the potential of Transformers in computer vision<a class="anchor-link" href="#1.2-Introducing-the-potential-of-Transformers-in-computer-vision">&para;</a></h3><p>Given the remarkable success of Transformers in NLP, researchers began to wonder: can these powerful models also excel in the realm of computer vision? 🤔 Traditionally, convolutional neural networks (CNNs) have been the go-to choice for computer vision tasks, such as image classification and object detection. However, recent developments have shown that Transformers can indeed offer significant advantages over traditional CNNs, opening up a whole new world of possibilities in the field of computer vision.</p>
+<p>The potential of Transformers in computer vision lies in their ability to model long-range dependencies and learn from global context. This is in contrast to the local receptive fields of CNNs, which are limited in capturing global information. The self-attention mechanism, which forms the backbone of Transformer models, allows them to capture complex patterns and relationships between pixels in an image, making them an appealing choice for computer vision tasks.</p>
+<h3 id="1.3-Scope-of-the-blog-post">1.3 Scope of the blog post<a class="anchor-link" href="#1.3-Scope-of-the-blog-post">&para;</a></h3><p>In this blog post, we will delve deep into the world of Transformers and their application in computer vision. We will begin by providing a brief background on the evolution of Transformers in NLP and the early attempts at adapting them for computer vision tasks. Next, we will explore the key concepts underlying vision Transformers, such as the role of self-attention, tokenization of image data, positional encoding, and the scaling and computational challenges that come with these models.</p>
+<p>Subsequently, we will discuss notable vision Transformer architectures, including ViT (Vision Transformer), DeiT (Data-efficient Image Transformers), and Swin Transformer, among others. Moreover, we will examine the practical applications of vision Transformers in areas such as image classification, object detection and segmentation, image generation and inpainting, and multimodal tasks.</p>
+<p>Lastly, we will contemplate the future directions and challenges in the field of AI-driven computer vision, touching upon topics like model efficiency, hardware considerations, generalization and transfer learning, ethical concerns, and potential applications in 3D computer vision.</p>
+<p>So, without further ado, let's embark on this exhilarating voyage into the captivating universe of Transformers in computer vision! 🌌😄</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Background:-From-NLP-to-Computer-Vision">2. Background: From NLP to Computer Vision<a class="anchor-link" href="#2.-Background:-From-NLP-to-Computer-Vision">&para;</a></h2><h3 id="2.1-Evolution-of-Transformers-in-NLP">2.1 Evolution of Transformers in NLP<a class="anchor-link" href="#2.1-Evolution-of-Transformers-in-NLP">&para;</a></h3><p>The journey of transformers in natural language processing (NLP) began with the groundbreaking paper by Vaswani et al. in 2017, titled "Attention is All You Need" <a href="https://arxiv.org/abs/1706.03762">(source)</a>. This revolutionary work introduced the transformer architecture, which rapidly became the leading force in NLP tasks. At the heart of this architecture is the self-attention mechanism, which enables transformers to effectively capture long-range dependencies in sequences, outshining traditional recurrent and convolutional neural networks.</p>
+<p>The transformer architecture is built upon the concept of self-attention, which can be mathematically represented as:</p>
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+$$<p>Here, $Q$, $K$, and $V$ are the query, key, and value matrices, respectively, and $d_k$ is the dimension of the key vectors. The self-attention mechanism allows the model to weigh the importance of each token in the sequence relative to the others, creating a strong foundation for understanding complex language structures 😄.</p>
+<h3 id="2.2-Early-attempts-at-adapting-Transformers-for-computer-vision-tasks">2.2 Early attempts at adapting Transformers for computer vision tasks<a class="anchor-link" href="#2.2-Early-attempts-at-adapting-Transformers-for-computer-vision-tasks">&para;</a></h3><p>Recognizing the impressive capabilities of transformers in NLP, researchers began to investigate their potential in computer vision tasks. One of the early adaptations of transformers for computer vision was the work of Carion et al., who proposed DETR (DEtection TRansformer) in their paper "End-to-End Object Detection with Transformers" <a href="https://arxiv.org/abs/2005.12872">(source)</a>. DETR demonstrated that transformers could be combined with convolutional neural networks (CNNs) for object detection. The model replaced the traditional region proposal networks and non-maximum suppression post-processing with a transformer encoder-decoder architecture:</p>
+$$
+\begin{aligned}
+    \text{Encoder: } &amp;\mathrm{CNN}(I) \xrightarrow{\text{Flatten}} \mathrm{TransformerEncoder}(P) \\
+    \text{Decoder: } &amp;\mathrm{TransformerDecoder}(P, O) \xrightarrow{\text{Bbox and Class}} \mathrm{Predictions}
+\end{aligned}
+$$<p>Here, $I$ is the input image, $P$ is the set of image patches or pixels, and $O$ is the set of object queries. This pioneering work laid the foundation for further exploration of transformers in computer vision tasks 🚀.</p>
+<h3 id="2.3-Recent-breakthroughs-in-Transformer-based-computer-vision-models">2.3 Recent breakthroughs in Transformer-based computer vision models<a class="anchor-link" href="#2.3-Recent-breakthroughs-in-Transformer-based-computer-vision-models">&para;</a></h3><p>The game-changing moment for transformers in computer vision came with the introduction of the Vision Transformer (ViT) by Dosovitskiy et al. in their paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" <a href="https://arxiv.org/abs/2010.11929">(source)</a>. ViT demonstrated that transformers could directly process image data by dividing it into non-overlapping fixed-size patches and linearly embedding them into a sequence of tokens. The tokenized input is then processed by a standard transformer architecture:</p>
+$$
+\begin{aligned}
+    \mathrm{Patchify}(I, P) &amp;\xrightarrow{\text{Linear Embedding}} X \\
+    X &amp;\xrightarrow{\text{Transformer}} Z \\
+    Z &amp;\xrightarrow{\text{Classifier}} \mathrm{Predictions}
+\end{aligned}
+$$<p>Here, $I$ is the input image, $P$ is the patch size, $X$ is the sequence of patch tokens, and $Z$ is the output of the transformer. This groundbreaking work showed that transformers alone could achieve state-of-the-art performance on popular computer vision benchmarks, sparking a wave of research in the area 🌊.</p>
+<p>This overview of the evolution of transformers from NLP to computer vision sets the stage for diving deeper into the fascinating world of Vision Transformers. Stay tuned and get ready to be amazed! 😃</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Key-Concepts:-Understanding-Vision-Transformers">3. Key Concepts: Understanding Vision Transformers<a class="anchor-link" href="#3.-Key-Concepts:-Understanding-Vision-Transformers">&para;</a></h2><h3 id="3.1-The-role-of-self-attention-in-computer-vision">3.1 The role of self-attention in computer vision<a class="anchor-link" href="#3.1-The-role-of-self-attention-in-computer-vision">&para;</a></h3><p>The self-attention mechanism, the driving force behind transformers, plays a pivotal role in computer vision tasks as well. By capturing long-range dependencies, self-attention allows vision transformers to effectively model global contextual information, which is essential in understanding the spatial relationships between different regions of an image 🖼️. This is in stark contrast to convolutional neural networks (CNNs), which rely on local receptive fields and pooling operations to aggregate information over increasing spatial extents.</p>
+<p>The multi-head self-attention mechanism, often used in vision transformers, can be expressed as:</p>
+$$
+\mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}\left(\mathrm{head}_1, \ldots, \mathrm{head}_h\right)W^O
+$$$$
+\text{where } \mathrm{head}_i = \mathrm{Attention}(QW^Q_i, KW^K_i, VW^V_i)
+$$<p>Here, $Q$, $K$, and $V$ are the query, key, and value matrices, and $W^Q_i$, $W^K_i$, and $W^V_i$ are the learned weight matrices for each head $i$. By employing multiple heads, the model can focus on different aspects of the input, leading to a richer understanding of the image content 🧠.</p>
+<h3 id="3.2-Tokenization-of-image-data">3.2 Tokenization of image data<a class="anchor-link" href="#3.2-Tokenization-of-image-data">&para;</a></h3><p>Tokenization is a crucial step in adapting transformers for computer vision tasks. In the case of vision transformers, the input image is divided into non-overlapping fixed-size patches, which are then linearly embedded into a sequence of tokens. This process can be described by the following equation:</p>
+$$
+X = \mathrm{Tokenize}(I, P) = \mathrm{Reshape}\left(\mathrm{LinearEmbedding}\left(\mathrm{Patchify}(I, P)\right)\right)
+$$<p>Here, $I$ is the input image, $P$ is the patch size, and $X$ is the sequence of patch tokens. By breaking down the image into tokens, vision transformers can process the image data in a similar fashion to how they handle text data in NLP tasks 📚.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="k">class</span> <span class="nc">ImageTokenizer</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_size</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">num_channels</span><span class="p">,</span> <span class="n">embed_dim</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_size</span> <span class="o">=</span> <span class="n">image_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patch_size</span> <span class="o">=</span> <span class="n">patch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_patches</span> <span class="o">=</span> <span class="p">(</span><span class="n">image_size</span> <span class="o">//</span> <span class="n">patch_size</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear_embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">num_channels</span> <span class="o">*</span> <span class="n">patch_size</span> <span class="o">*</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">embed_dim</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">images</span><span class="p">):</span>
+        <span class="n">batch_size</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">patches</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">unfold</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_size</span><span class="p">)</span><span class="o">.</span><span class="n">unfold</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch_size</span><span class="p">)</span>
+        <span class="n">patches</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_patches</span><span class="p">)</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_embedding</span><span class="p">(</span><span class="n">patches</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tokens</span>
+</pre></div>
+<h3 id="3.3-Positional-encoding-in-vision-Transformers">3.3 Positional encoding in vision Transformers<a class="anchor-link" href="#3.3-Positional-encoding-in-vision-Transformers">&para;</a></h3><p>As transformers are permutation-equivariant by design, positional encoding is necessary to provide the model with information about the spatial arrangement of the tokens. In vision transformers, this is achieved by adding learnable positional embeddings to the token embeddings:</p>
+$$
+X_{\mathrm{pos}} = X + E
+$$<p>Here, $X$ is the sequence of patch tokens, and $E$ is the matrix of positional embeddings. This simple yet effective approach allows the model to grasp the spatial structure of the input image, which is vital for understanding the relationships between different regions 🌐.</p>
+<h3 id="3.4-Scaling-and-computational-challenges">3.4 Scaling and computational challenges<a class="anchor-link" href="#3.4-Scaling-and-computational-challenges">&para;</a></h3><p>Scaling vision transformers to larger input sizes and deeper architectures can lead to significant computational challenges, given the quadratic complexity of the self-attention mechanism. To address this issue, researchers have devised various techniques, such as the local self-attention employed in the Swin Transformer by Liu et al. <a href="https://arxiv.org/abs/2103.14030">(source)</a>. Local self-attention reduces the complexity by limiting the attention to a fixed-size local neighborhood, which can be expressed as:</p>
+$$
+\mathrm{LocalAttention}(Q, K, V, W) = \mathrm{Concat}\left(\mathrm{Attention}(Q_{w_1}, K_{w_1}, V_{w_1}), \ldots, \mathrm{Attention}(Q_{w_n}, K_{w_n}, V_{w_n})\right)
+$$<p>Here, $Q$, $K$, and $V$ are the query, key, and value matrices, $W$ is the local window size, and $Q_{w_i}$, $K_{w_i}$, and $V_{w_i}$ are the query, key, and value matrices foreach window $w_i$. By restricting the attention scope, local self-attention dramatically reduces the computational burden without sacrificing much of the global contextual information 🚀.</p>
+<p>Another approach to overcome the computational challenges is to employ sparse attention mechanisms, such as the Long Range Arena (LRA) method proposed by Tay et al. <a href="https://arxiv.org/abs/2011.04006">(source)</a>. Sparse attention reduces the number of attended positions while maintaining a balance between local and global contextual information, thus offering a more computationally efficient alternative to full self-attention.</p>
+<p>An illustration of the sparse attention mechanism can be represented as:</p>
+$$
+\mathrm{SparseAttention}(Q, K, V, S) = \mathrm{Concat}\left(\mathrm{Attention}(Q_{s_1}, K_{s_1}, V_{s_1}), \ldots, \mathrm{Attention}(Q_{s_n}, K_{s_n}, V_{s_n})\right)
+$$<p>Here, $Q$, $K$, and $V$ are the query, key, and value matrices, $S$ is the sparsity pattern, and $Q_{s_i}$, $K_{s_i}$, and $V_{s_i}$ are the query, key, and value matrices for each sparse attended position $s_i$. By incorporating sparse attention, vision transformers can be scaled more effectively while keeping the computational costs in check 📈.</p>
+<h3 id="3.5-🧪-Advanced-training-strategies-for-Vision-Transformers">3.5 🧪 Advanced training strategies for Vision Transformers<a class="anchor-link" href="#3.5-🧪-Advanced-training-strategies-for-Vision-Transformers">&para;</a></h3><p>To further enhance the performance of vision transformers, researchers have experimented with advanced training strategies, such as the knowledge distillation technique employed in DeiT (Data-efficient Image Transformers) by Touvron et al. <a href="https://arxiv.org/abs/2012.12877">(source)</a>. In knowledge distillation, a smaller student model learns from a larger teacher model, which helps the student model achieve better performance than it would through traditional supervised training alone.</p>
+<p>The knowledge distillation loss can be defined as:</p>
+$$
+\mathcal{L}_{\mathrm{KD}}(y_s, y_t, T) = \frac{1}{N} \sum_{i=1}^N \left\lVert \frac{\mathrm{exp}(y_s^i / T)}{\sum_{j=1}^N \mathrm{exp}(y_s^j / T)} - \frac{\mathrm{exp}(y_t^i / T)}{\sum_{j=1}^N \mathrm{exp}(y_t^j / T)} \right\rVert_2^2
+$$<p>Here, $y_s$ and $y_t$ are the logits of the student and teacher models, respectively, $T$ is the temperature hyperparameter, and $N$ is the number of classes. By incorporating knowledge distillation, vision transformers can achieve better performance with fewer training samples, making them more data-efficient and accessible for real-world applications 💡.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">def</span> <span class="nf">knowledge_distillation_loss</span><span class="p">(</span><span class="n">student_logits</span><span class="p">,</span> <span class="n">teacher_logits</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
+    <span class="n">student_probs</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">student_logits</span> <span class="o">/</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">teacher_probs</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">teacher_logits</span> <span class="o">/</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">student_probs</span><span class="p">,</span> <span class="n">teacher_probs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">loss</span>
+</pre></div>
+<p>By understanding these key concepts, we can better appreciate the inner workings of vision transformers and how they have been adapted to tackle challenging computer vision tasks. Having a solid grasp of these concepts will also enable us to further explore the potential of transformers in computer vision, driving the field towards new frontiers 😄.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Notable-Vision-Transformer-Architectures">4. Notable Vision Transformer Architectures<a class="anchor-link" href="#4.-Notable-Vision-Transformer-Architectures">&para;</a></h2><p>Ah, the moment we've all been waiting for&mdash;the grand reveal of the most prominent vision Transformer architectures! 🎉🤩 In this section, we will dive deep into the inner workings of these revolutionary models and unravel the intricacies that make them exceptional. So, put on your thinking caps and let's get started! 🧠</p>
+<h3 id="4.1-ViT-(Vision-Transformer)">4.1 ViT (Vision Transformer)<a class="anchor-link" href="#4.1-ViT-(Vision-Transformer)">&para;</a></h3><p>ViT, or Vision Transformer, introduced by <a href="https://arxiv.org/abs/2010.11929">Dosovitskiy et al</a>, marked a significant milestone in the application of Transformers to computer vision tasks. The key idea behind ViT is to treat an image as a sequence of flat non-overlapping patches, analogous to the way Transformers treat text as a sequence of tokens.</p>
+<p>Given an input image of size $H \times W$, ViT divides the image into $P = \frac{H \times W}{p^2}$ patches of size $p \times p$. Each patch is then linearly embedded into a $d$-dimensional vector, forming the input token sequence for the Transformer. To incorporate positional information, positional embeddings are added to the patch embeddings.</p>
+<p>The architecture of ViT can be summarized by the following equation:</p>
+$$
+\text{ViT}(x) = \text{Transformer}(\text{PatchEmbed}(x) + \text{PosEmbed})
+$$<p>where $\text{PatchEmbed}$ represents the patch embeddings, and $\text{PosEmbed}$ denotes the positional embeddings.</p>
+<p>The ViT model's output is processed through a linear classification head to obtain predictions for various computer vision tasks, such as image classification.</p>
+<h3 id="4.2-DeiT-(Data-efficient-Image-Transformers)">4.2 DeiT (Data-efficient Image Transformers)<a class="anchor-link" href="#4.2-DeiT-(Data-efficient-Image-Transformers)">&para;</a></h3><p>While ViT demonstrated the potential of Transformers in computer vision, it heavily relied on massive amounts of data and extensive pre-training. To address this limitation, DeiT (Data-efficient Image Transformers) was introduced by <a href="https://arxiv.org/abs/2012.12877">Touvron et al</a>. DeiT aimed to provide a more data-efficient training approach while maintaining state-of-the-art performance.</p>
+<p>DeiT employed knowledge distillation, a technique that transfers knowledge from a larger, pre-trained teacher model (typically a CNN) to a smaller, student Transformer model. The student model learns from the teacher's softened output probabilities, encouraging the student to mimic the teacher's behavior. The distillation loss can be expressed as:</p>
+$$
+L_{\text{distill}} = \text{KL}\left(\frac{\text{softmax}(\hat{y}_{\text{teacher}} / T)}{\text{softmax}(\hat{y}_{\text{student}} / T)}\right)
+$$<p>where $\text{KL}$ denotes the Kullback-Leibler divergence, $\hat{y}_{\text{teacher}}$ and $\hat{y}_{\text{student}}$ are the logits of the teacher and student models, respectively, and $T$ is the temperature used to soften the probabilities.</p>
+<p>DeiT showcased that with the help of knowledge distillation, vision Transformers could achieve competitive performance on standard computer vision benchmarks even with relatively smaller amounts of data.</p>
+<h3 id="4.3-Swin-Transformer">4.3 Swin Transformer<a class="anchor-link" href="#4.3-Swin-Transformer">&para;</a></h3><p>The Swin Transformer, proposed by <a href="https://arxiv.org/abs/2103.14030">Liu et al</a>, is yet another groundbreaking architecture that further pushes the boundaries of vision Transformers. Swin Transformer introduced a hierarchical structure that processes images at multiple scales, making it more suitable for a wide range of computer vision tasks, including object detection and semantic segmentation.</p>
+<p>Swin Transformer's architecture is built upon the concept of "shifted windows," where non-over lapping windows are applied to the input feature maps, allowing the model to capture local information at different scales. By shifting these windows at each layer, the model can effectively integrate both local and global context. The resulting architecture is not only computationally efficient but also highly scalable.</p>
+<p>The Swin Transformer can be described as a sequence of Swin Transformer blocks, each consisting of a shifted window operation, multi-head self-attention, and a feed-forward layer:</p>
+$$
+\text{SwinBlock}(x) = \text{FFN}\left(\text{MSA}(\text{ShiftedWindow}(x))\right)
+$$<p>where $\text{MSA}$ denotes multi-head self-attention, and $\text{FFN}$ represents the feed-forward network.</p>
+<p>A key advantage of the Swin Transformer is its flexibility in handling various computer vision tasks. For image classification, a global average pooling layer followed by a linear classifier can be applied to the final feature map. For object detection and segmentation, the multi-scale feature maps from different layers can be used as input to the respective heads.</p>
+<h3 id="4.4-Additional-architectures-worth-mentioning">4.4 Additional architectures worth mentioning<a class="anchor-link" href="#4.4-Additional-architectures-worth-mentioning">&para;</a></h3><p>While we've covered some of the most influential vision Transformer architectures, the field is rapidly evolving, with numerous other models emerging to tackle different aspects of computer vision. Some of these noteworthy architectures include:</p>
+<ol>
+<li><p><strong>CvT (Convolutional Vision Transformers)</strong>: Proposed by <a href="https://arxiv.org/abs/2103.15808">Wu et al</a>, CvT combines the strengths of both convolutional layers and self-attention to create a hybrid architecture that achieves state-of-the-art performance across various vision tasks.</p>
+</li>
+<li><p><strong>T2T-ViT (Tokens-to-Token Vision Transformers)</strong>: Introduced by <a href="https://arxiv.org/abs/2101.11986">Yuan et al</a>, T2T-ViT employs a tokens-to-token (T2T) module to iteratively aggregate local information and generate global tokens, making it a more computationally efficient alternative to the standard ViT model.</p>
+</li>
+<li><p><strong>CoaT (Co-Attention Transformers)</strong>: Developed by <a href="https://arxiv.org/abs/2106.04803">Dai et al</a>, CoaT incorporates co-attention mechanisms between different layers of the Transformer, allowing the model to capture richer semantic information and improve performance in tasks like image classification and object detection.</p>
+</li>
+</ol>
+<p>As the field of computer vision continues to grow and evolve, we can expect even more innovative and diverse Transformer architectures to emerge, further pushing the boundaries of what is possible with these versatile models. So, let's keep our eyes peeled for new developments and continue exploring the exciting world of vision Transformers! 😄🔍</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Practical-Applications-of-Vision-Transformers">5. Practical Applications of Vision Transformers<a class="anchor-link" href="#5.-Practical-Applications-of-Vision-Transformers">&para;</a></h2><p>Vision Transformers have successfully demonstrated their potential in various computer vision tasks, proving that their exceptional capabilities are not only limited to the world of natural language processing. In this section, we will explore some of the key practical applications of Vision Transformers, delving into the details of how these models have revolutionized the field of computer vision. Hold onto your hats, folks! It's going to be an exciting ride! 🚀</p>
+<h3 id="5.1-Image-classification">5.1 Image classification<a class="anchor-link" href="#5.1-Image-classification">&para;</a></h3><p>Image classification, one of the most fundamental tasks in computer vision, aims to assign a specific label to an input image based on its content. Vision Transformers have excelled in this area, surpassing traditional convolutional neural networks (CNNs). To understand how Vision Transformers tackle image classification, let's dive into the ViT architecture, as proposed by Dosovitskiy et al. <sup class="footnote-ref" id="fnref-1^"><a href="#fn-1^">1</a></sup>.</p>
+<p>Initially, the image is tokenized into a sequence of non-overlapping patches, typically of size $16 \times 16$. These patches are then linearly embedded into flat vectors, forming a sequence of tokens. The position embeddings are added to the token embeddings, enabling the model to recognize spatial information. The final sequence is passed through a stack of Transformer layers, and the classification head predicts the class label based on the output corresponding to the special <code>[CLS]</code> token.</p>
+<p>A key advantage offered by Vision Transformers is their ability to process images at varying resolutions. This can be achieved by changing the number of patches, allowing for the extraction of more fine-grained features. For example, consider the following equation:</p>
+$$
+\begin{aligned}
+    \text{Image resolution} = R &amp; = H \times W \\
+    \text{Number of patches} = N &amp; = \frac{R}{P^2}
+\end{aligned}
+$$<p>Here, $H$ and $W$ are the height and width of the image, $P$ is the patch size, and $N$ is the number of patches. By changing the patch size, the model can easily adapt to various image resolutions.</p>
+<h3 id="5.2-Object-detection-and-segmentation">5.2 Object detection and segmentation<a class="anchor-link" href="#5.2-Object-detection-and-segmentation">&para;</a></h3><p>Object detection and segmentation are more advanced computer vision tasks that require not only classifying objects within an image but also localizing them using bounding boxes (detection) or pixel-wise masks (segmentation). Vision Transformers have demonstrated exceptional performance in these areas as well, often exceeding the capabilities of traditional CNNs.</p>
+<p>Carion et al. <sup class="footnote-ref" id="fnref-2^"><a href="#fn-2^">2</a></sup> introduced the Detection Transformer (DETR), a novel end-to-end object detection model that leverages the power of Transformers. In DETR, the input image is first passed through a CNN backbone to extract a feature map, which is then flattened and fed into a Transformer encoder. The Transformer decoder attends both to the output of the encoder and a fixed set of learned object queries, resulting in a set of predictions for the class labels and bounding box coordinates.</p>
+<p>A particular advantage of DETR is its ability to handle cases with varying numbers of objects. This is achieved through the use of a fixed-size set of object queries, allowing the model to predict a predefined maximum number of objects. If the number of objects in the image is less than this maximum, the model predicts "no object" for the remaining queries.</p>
+<p>For the segmentation task, a natural extension of DETR called Mask-DETR has been proposed. In addition to the bounding box coordinates, Mask-DETR also predicts a binary mask for each object, enabling pixel-wise segmentation.</p>
+<h3 id="5.3-Image-generation-and-inpainting">5.3 Image generation and inpainting<a class="anchor-link" href="#5.3-Image-generation-and-inpainting">&para;</a></h3><p>Vision Transformers have also made significant strides in the field of image generation and inpainting, tasks that involve synthesizing plausible images from scratch or filling in missing regions in an input image.</p>
+<p>One notable example is the Generative Pre-trained Transformer (GPT) <sup class="footnote-ref" id="fnref-3^"><a href="#fn-3^">3</a></sup>, which can generate coherent and contextually meaningful images by conditioning the model on a textual input. The key to GPT's success lies in its self-attention mechanism, allowing the model to capture long-range dependencies and generate complex visual patterns.</p>
+<p>In the context of image inpainting, Chen et al. <sup class="footnote-ref" id="fnref-4^"><a href="#fn-4^">4</a></sup> proposed the Patch Transformers for Image Inpainting (PTII) model. PTII first decomposes the input image into a set of patches and then employs a Transformer to model the relationships between these patches. By conditioning the model on partial image observations and sampling from the learned distribution, PTII can generate plausible completions for the missing regions.</p>
+<h3 id="5.4-Multimodal-tasks">5.4 Multimodal tasks<a class="anchor-link" href="#5.4-Multimodal-tasks">&para;</a></h3><p>Finally, Vision Transformers have shown great promise in tackling multimodal tasks, which involve processing and reasoning over multiple data modalities, such as text and images. Examples of such tasks include visual question answering, image captioning, and visual grounding.</p>
+<p>One representative model for multimodal tasks is the CLIP (Contrastive Language-Image Pretraining) model by Radford et al. <sup class="footnote-ref" id="fnref-5^"><a href="#fn-5^">5</a></sup>. CLIP jointly learns representations for both images and text by maximizing the similarity between semanticallyrelated image-text pairs. By leveraging a Vision Transformer for image encoding and a Transformer for text encoding, CLIP can effectively capture the intricate relationships between the two modalities.</p>
+<p>For instance, in the visual question answering task, CLIP can be fine-tuned to predict the answer to a given question about an image. The image is processed using the Vision Transformer, while the question is processed using the text Transformer. The resulting embeddings are combined and passed through a classification head to produce the final answer.</p>
+<p>Let's take a look at an example of how CLIP can be fine-tuned for visual question answering in Python:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">CLIPProcessor</span><span class="p">,</span> <span class="n">CLIPModel</span>
+
+<span class="c1"># Load the pretrained CLIP model and processor</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">CLIPModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">"openai/clip-vit-base-patch32"</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">CLIPProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">"openai/clip-vit-base-patch32"</span><span class="p">)</span>
+
+<span class="c1"># Prepare the image and question input</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>  <span class="c1"># image_data is a NumPy array representing the image</span>
+<span class="n">question</span> <span class="o">=</span> <span class="s2">"What color is the ball?"</span>
+
+<span class="c1"># Process the inputs and obtain the embeddings</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">question</span><span class="p">,</span> <span class="n">images</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">image_embeddings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_image_features</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">text_embeddings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_text_features</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="c1"># Combine the embeddings and pass through the classification head</span>
+<span class="n">combined_embeddings</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">image_embeddings</span><span class="p">,</span> <span class="n">text_embeddings</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">answer_logits</span> <span class="o">=</span> <span class="n">classification_head</span><span class="p">(</span><span class="n">combined_embeddings</span><span class="p">)</span>  <span class="c1"># classification_head is a custom linear layer</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">answer_logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<p>By seamlessly integrating the power of Vision Transformers with text Transformers, models like CLIP have opened up new possibilities for tackling complex multimodal tasks that require a deep understanding of both visual and textual information.</p>
+<p>🤖 That's it, folks! We've explored the exciting world of Vision Transformers and their practical applications in various computer vision tasks. But don't worry, the journey doesn't end here! There's still plenty more to discover in the remaining sections of this blog post. So go on, brave explorers, and uncover the secrets that lie ahead! 🌟</p>
+<div class="footnotes">
+<hr/>
+<ol><li id="fn-1^"><p>Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., ... &amp; Houlsby, N. (2021). <a href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a>. In Proceedings of the International Conference on Learning Representations (ICLR).<a class="footnote" href="#fnref-1^">&larrhk;</a></p></li>
+<li id="fn-2^"><p>Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A., &amp; Zagoruyko, S. (2020). <a href="https://arxiv.org/abs/2005.12872">End-to-End Object Detection with Transformers</a>. In Proceedings of the European Conference on Computer Vision (ECCV).<a class="footnote" href="#fnref-2^">&larrhk;</a></p></li>
+<li id="fn-3^"><p>Radford, A., Narasimhan, K., Salimans, T., &amp; Sutskever, I. (2018). <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a>.<a class="footnote" href="#fnref-3^">&larrhk;</a></p></li>
+<li id="fn-4^"><p>Chen, Y., Chen, X., &amp; Zou, Y. (2021). <a href="https://arxiv.org/abs/2106.15943">Patch Transformers for Image Inpainting</a>. arXiv preprint arXiv:2106.15943.<a class="footnote" href="#fnref-4^">&larrhk;</a></p></li>
+<li id="fn-5^"><p>Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., ... &amp; Sutskever, I. (2021). <a href="https://arxiv.org/abs/2103.00020">Learning Transferable Visual Models From Natural Language Supervision</a>. arXiv preprint arXiv:2103.00020.<a class="footnote" href="#fnref-5^">&larrhk;</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Future-Directions-and-Challenges">6. Future Directions and Challenges<a class="anchor-link" href="#6.-Future-Directions-and-Challenges">&para;</a></h2><p>As we delve deeper into the world of vision Transformers and their potential applications, it is essential to acknowledge the future directions and challenges in this burgeoning field. In this section, we will discuss several key areas that warrant further exploration and address the obstacles that researchers and practitioners may encounter along the way. 🚀</p>
+<h3 id="6.1-Model-efficiency-and-hardware-considerations">6.1 Model efficiency and hardware considerations<a class="anchor-link" href="#6.1-Model-efficiency-and-hardware-considerations">&para;</a></h3><p>One of the most pressing challenges for vision Transformer models is their computational complexity and memory requirements. While these models have demonstrated excellent performance, they often come at the cost of increased resource consumption, hindering their deployment in resource-constrained environments, such as mobile devices or edge computing.</p>
+<p>Efforts have been made to address this challenge by developing more efficient architectures like DeiT or T2T-ViT. However, further research is required to strike the optimal balance between performance and resource efficiency. Potential research directions include knowledge distillation, model pruning, and quantization techniques that can reduce the model size and computational complexity without sacrificing performance.</p>
+<h3 id="6.2-Generalization-and-transfer-learning">6.2 Generalization and transfer learning<a class="anchor-link" href="#6.2-Generalization-and-transfer-learning">&para;</a></h3><p>Another challenge for vision Transformers lies in their ability to generalize and transfer learned features to novel tasks and domains. While pretraining on large-scale datasets has proven to be an effective strategy for improving model performance, it is crucial to investigate the extent to which these models can adapt to new tasks with limited labeled data.</p>
+<p>A promising direction for future research is the development of unsupervised and self-supervised learning techniques that can leverage the vast amounts of unlabeled visual data available. Furthermore, exploring methods to enhance the transferability of learned features, such as meta-learning, domain adaptation, and few-shot learning, can lead to more versatile and robust vision Transformer models.</p>
+<h3 id="6.3-Transformers-in-3D-computer-vision">6.3 Transformers in 3D computer vision<a class="anchor-link" href="#6.3-Transformers-in-3D-computer-vision">&para;</a></h3><p>While vision Transformers have made significant strides in 2D image understanding, their application to 3D computer vision tasks, such as point cloud processing, 3D object recognition, and 3D scene understanding, remains an open research question. Adapting Transformer architectures to handle 3D data presents unique challenges, such as the irregular and unordered nature of point cloud data and the need for efficient hierarchical representations.</p>
+<p>A potential research direction is to explore novel attention mechanisms and positional encoding schemes tailored to the unique properties of 3D data. Additionally, investigating the integration of vision Transformers with traditional 3D processing techniques, such as voxelization or graph-based methods, can offer valuable insights into the development of more effective 3D computer vision models.</p>
+<h3 id="6.4-Ethical-considerations-in-AI-driven-computer-vision">6.4 Ethical considerations in AI-driven computer vision<a class="anchor-link" href="#6.4-Ethical-considerations-in-AI-driven-computer-vision">&para;</a></h3><p>As vision Transformers become increasingly prevalent in various applications, it is crucial to consider the ethical implications of AI-driven computer vision technologies. Bias in training data can lead to unfair and discriminatory outcomes, while the widespread deployment of surveillance systems raises privacy concerns. Moreover, the use of AI-generated deepfakes and manipulated images can have severe consequences in areas such as politics, media, and security.</p>
+<p>To address these concerns, researchers must prioritize the development of fair, accountable, and transparent AI models, as well as robust methods for detecting and mitigating bias in training data. Furthermore, the AI community must engage in interdisciplinary collaboration with experts in fields such as ethics, law, and social sciences to develop guidelines, regulations, and best practices that ensure the responsible and equitable use of AI-driven computer vision technologies.</p>
+<p>In conclusion, the future of vision Transformers is both exciting and challenging, with numerous opportunities for innovation and exploration. By addressing these challenges and pushing the boundaries of what is possible with Transformer-based computer vision models, we can unlock the full potential of these powerful tools and revolutionize the field of computer vision as we know it. So, let's buckle up and enjoy the ride! 🎢🌟</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&para;</a></h2><p>Oh, what a journey we've had! 🚀 As we wrap up this fascinating dive into the world of Vision Transformers, let's take a moment to recap the key points and explore the implications of this technology on the field of computer vision. Additionally, we'll issue a call to action for further research and exploration. So, buckle up and let's get ready for an <em>enlightening</em> conclusion! 💡</p>
+<h3 id="7.1-Recap-of-the-key-points">7.1 Recap of the key points<a class="anchor-link" href="#7.1-Recap-of-the-key-points">&para;</a></h3><p>Throughout this blog post, we've delved into the captivating realm of Vision Transformers, discussing their origins, key concepts, notable architectures, practical applications, future directions, and challenges. We've witnessed how Transformers, originally designed for NLP tasks, have evolved and adapted to conquer the realm of computer vision. 🌄</p>
+<p>We touched on the role of self-attention in computer vision, which allows the model to weigh the importance of different parts of an image by considering their relationships. The tokenization process, which involves splitting images into smaller patches and linearizing them, enables Vision Transformers to handle image data. We also discussed positional encoding, which endows the model with the ability to discern spatial information.</p>
+<p>The discussion on notable architectures brought us to ViT, DeiT, and Swin Transformer, among others. These models have each made significant contributions to the field of computer vision and paved the way for new advances. 🏗️</p>
+<p>Practical applications include image classification, object detection and segmentation, image generation and inpainting, and multimodal tasks. These applications have wide-ranging implications for various industries and sectors, making Vision Transformers a game-changing technology. 🎮</p>
+<p>Lastly, we considered some of the future directions and challenges, including model efficiency, hardware considerations, generalization, transfer learning, 3D computer vision, and ethical considerations in AI-driven computer vision.</p>
+<h3 id="7.2-The-potential-impact-of-Vision-Transformers-on-the-field-of-computer-vision">7.2 The potential impact of Vision Transformers on the field of computer vision<a class="anchor-link" href="#7.2-The-potential-impact-of-Vision-Transformers-on-the-field-of-computer-vision">&para;</a></h3><p>The advent of Vision Transformers is undoubtedly a turning point in the field of computer vision. By combining the power of self-attention mechanisms with the versatility and expressiveness of Transformers, researchers have unlocked a treasure trove of possibilities. 🗝️💰</p>
+<p>The potential impact of Vision Transformers is immense. For instance, they can lead to significant improvements in image recognition tasks, such as identifying rare species in the wild or detecting tumors in medical imaging. Moreover, their ability to process and generate images with high fidelity could revolutionize fields like art, design, and entertainment. 🎨🎞️</p>
+<p>Furthermore, Vision Transformers can be combined with other AI technologies, such as reinforcement learning or robotics, to create more sophisticated and capable AI systems. These systems could be used to navigate complex environments, perform delicate tasks, or even interact with humans in more natural ways. 🤖🤝</p>
+<p>However, with great power comes great responsibility. As Vision Transformers become more advanced and ubiquitous, it is crucial to address the ethical and social implications of this technology, ensuring that it is used for the greater good and not for nefarious purposes. 🕊️</p>
+<h3 id="7.3-A-call-to-action-for-further-research-and-exploration">7.3 A call to action for further research and exploration<a class="anchor-link" href="#7.3-A-call-to-action-for-further-research-and-exploration">&para;</a></h3><p>The exciting world of Vision Transformers is just beginning to unfold, and there's still so much more to discover! 🌌 As researchers and practitioners, we have a unique opportunity to shape the future of this field and uncover new applications, techniques, and insights.</p>
+<p>So, dear reader, let's join forces and embark on this exciting journey together! Push the boundaries of your knowledge, embrace your curiosity, and dive headfirst into the world of Vision Transformers. And who knows? Maybe you'll be the one to unlock the next groundbreaking discovery. 🔓</p>
+<p>As the famous mathematician and philosopher Alfred North Whitehead once said:</p>
+<blockquote><p>"Seek simplicity, and distrust it." 🧐</p>
+</blockquote>
+<p>In the ever-evolving field of computer vision, may we continue to strive for simplicity while remaining critical and curious. As we embark on this new chapter, let's remain optimistic and embrace the challenges that lie ahead, for they will surely lead us to groundbreaking discoveries and a brighter future. 🌞</p>
+<p>And with that, we conclude our thrilling exploration of Vision Transformers in computer vision. On behalf of the entire team at Arcane Analytic, we thank you for joining us on this incredible journey, and we look forward to sharing more exciting adventures in the world of AI with you soon! 🚀🌠</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-References">8. References<a class="anchor-link" href="#8.-References">&para;</a></h2><ol>
+<li><p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... &amp; Polosukhin, I. (2017). Attention is All You Need. <a href="https://arxiv.org/abs/1706.03762">arXiv:1706.03762</a></p>
+</li>
+<li><p>Devlin, J., Chang, M.-W., Lee, K., &amp; Toutanova, K. (2018). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. <a href="https://arxiv.org/abs/1810.04805">arXiv:1810.04805</a></p>
+</li>
+<li><p>Radford, A., Narasimhan, K., Salimans, T., &amp; Sutskever, I. (2018). Improving Language Understanding by Generative Pre-Training. <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">OpenAI Blog</a></p>
+</li>
+<li><p>Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., ... &amp; Houlsby, N. (2020). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. <a href="https://arxiv.org/abs/2010.11929">arXiv:2010.11929</a></p>
+</li>
+<li><p>Touvron, H., Vedaldi, A., Douze, M., &amp; J&eacute;gou, H. (2021). Training data-efficient image transformers &amp; distillation through attention. <a href="https://arxiv.org/abs/2106.05237">arXiv:2106.05237</a></p>
+</li>
+<li><p>Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., ... &amp; Guo, B. (2021). Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. <a href="https://arxiv.org/abs/2103.14030">arXiv:2103.14030</a></p>
+</li>
+<li><p>Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A., &amp; Zagoruyko, S. (2020). End-to-End Object Detection with Transformers. <a href="https://arxiv.org/abs/2005.12872">arXiv:2005.12872</a></p>
+</li>
+<li><p>Chen, M., Radford, A., Sutskever, I., &amp; Vaswani, A. (2021). Generative Pre-training Transformer 3 (GPT-3). <a href="https://arxiv.org/abs/2005.14165">arXiv:2005.14165</a></p>
+</li>
+<li><p>Wikipedia contributors. (2021). Transformer (machine learning model). In Wikipedia, The Free Encyclopedia. Retrieved from <a href="https://en.wikipedia.org/w/index.php?title=Transformer_(machine_learning_model">https://en.wikipedia.org/w/index.php?title=Transformer_(machine_learning_model)&amp;oldid=1056381939</a>&amp;oldid=1056381939)</p>
+</li>
+<li><p>Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., ... &amp; Agarwal, S. (2020). Language Models are Few-Shot Learners. <a href="https://arxiv.org/abs/2005.14165">arXiv:2005.14165</a></p>
+</li>
+<li><p>Karras, T., Laine, S., &amp; Aila, T. (2017). A Style-Based Generator Architecture for Generative Adversarial Networks. <a href="https://arxiv.org/abs/1812.04948">arXiv:1812.04948</a></p>
+</li>
+<li><p>Wang, X., Girshick, R., Gupta, A., &amp; He, K. (2018). Non-local Neural Networks. <a href="https://arxiv.org/abs/1711.07971">arXiv:1711.07971</a></p>
+</li>
+<li><p>Zheng, S., Lu, J., Zhao, H., Zhu, X., Luo, Z., Wang, Y., ... &amp; Wang, L. (2020). Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers. <a href="https://arxiv.org/abs/2012.15840">arXiv:2012.15840</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-ethics.html">ai ethics</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/computer-vision.html">computer vision</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/deep-learning.html">deep learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/image-processing.html">image processing</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/nlp.html">nlp</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/self-attention.html">self-attention</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/transfer-learning.html">transfer learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/transformers.html">transformers</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/vision-transformer-architectures.html">vision transformer architectures</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/the-marvelous-world-of-federated-learning-and-edge-computing.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">The Marvelous World of Federated Learning and Edge Computing</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/less-is-more-the-rise-of-lightweight-cryptography-in-a-connected-world.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">Less is More: The Rise of Lightweight Cryptography in a Connected World</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

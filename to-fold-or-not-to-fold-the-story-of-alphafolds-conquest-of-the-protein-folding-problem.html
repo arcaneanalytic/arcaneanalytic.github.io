@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>To Fold or Not to Fold: The Story of AlphaFold's Conquest of the Protein Folding Problem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="the story of AlphaFold is a testament to the transformative power of AI in science. With its unparalleled ability to predict protein structures,..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">To Fold or Not to Fold: The Story of AlphaFold's Conquest of the Protein Folding Problem</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>November 23, 2020</time>
+        <div>
+          <span>&nbsp;·&nbsp;43 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-The-Origins-of-AlphaFold" title="2. The Origins of AlphaFold&para;">2. The Origins of AlphaFold&para;</a></li><li><a class="toc-href" href="#3.-The-First-Iteration:-AlphaFold-1.0" title="3. The First Iteration: AlphaFold 1.0&para;">3. The First Iteration: AlphaFold 1.0&para;</a></li><li><a class="toc-href" href="#4.-The-Evolution:-AlphaFold-2.0" title="4. The Evolution: AlphaFold 2.0&para;">4. The Evolution: AlphaFold 2.0&para;</a></li><li><a class="toc-href" href="#5.-Applications-of-AlphaFold-in-Science-and-Medicine" title="5. Applications of AlphaFold in Science and Medicine&para;">5. Applications of AlphaFold in Science and Medicine&para;</a></li><li><a class="toc-href" href="#6.-Future-Directions-and-Challenges" title="6. Future Directions and Challenges&para;">6. Future Directions and Challenges&para;</a></li><li><a class="toc-href" href="#7.-Conclusion" title="7. Conclusion&para;">7. Conclusion&para;</a></li><li><a class="toc-href" href="#8.-Reference" title="8. Reference&para;">8. Reference&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><h3 id="1.1-A-Glimpse-into-the-Wonderful-World-of-Protein-Folding">1.1 A Glimpse into the Wonderful World of Protein Folding<a class="anchor-link" href="#1.1-A-Glimpse-into-the-Wonderful-World-of-Protein-Folding">&para;</a></h3><p>Protein folding is a fascinating and intricate process that has captivated scientists for decades. In the realm of molecular biology, proteins are the workhorses that perform an incredible range of tasks, from catalyzing chemical reactions to providing structural support. The function of a protein is determined by its three-dimensional (3D) structure, which is ultimately a consequence of its amino acid sequence 🧬.</p>
+<p>The process of protein folding can be described mathematically using the elegant framework of statistical mechanics, particularly in the context of the so-called energy landscape theory. In this picture, the native state of a protein corresponds to a global minimum in the free energy landscape, which can be represented as a multidimensional hypersurface:</p>
+$$
+F(\textbf{q}) = U(\textbf{q}) - T S(\textbf{q}),
+$$<p>where $F(\textbf{q})$ is the free energy, $U(\textbf{q})$ is the internal energy, $T$ is the temperature, $S(\textbf{q})$ is the entropy, and $\textbf{q}$ is a generalized coordinate describing the conformation of the protein. The challenge lies in efficiently exploring this high-dimensional landscape to find the native state, given the staggering number of possible conformations a protein can adopt.</p>
+<p>The Levinthal paradox highlights the seemingly impossible nature of protein folding: a protein with $N$ residues would require a time on the order of $10^{N}$ to explore all possible conformations through random search. However, proteins are known to fold spontaneously in milliseconds to seconds, suggesting the existence of efficient search strategies. To shed light on this "folding code," researchers have turned to computational approaches, leveraging advances in artificial intelligence (AI) and machine learning (ML) to predict protein structures based on amino acid sequences.</p>
+<h3 id="1.2-AlphaFold:-The-Rising-Star-in-Computational-Biology">1.2 AlphaFold: The Rising Star in Computational Biology<a class="anchor-link" href="#1.2-AlphaFold:-The-Rising-Star-in-Computational-Biology">&para;</a></h3><p>Enter AlphaFold, a shining example of the marriage between AI and protein folding. Developed by DeepMind, the same company that brought us the groundbreaking AI Go player AlphaGo, AlphaFold represents a quantum leap in our ability to predict protein structures. This AI-based method has taken the world of computational biology by storm, consistently outperforming other methods in the Critical Assessment of protein Structure Prediction (CASP) competitions and opening up new avenues for drug discovery and the understanding of complex biological systems 🚀.</p>
+<p>AlphaFold owes its success to a combination of sophisticated ML algorithms, state-of-the-art optimization techniques, and clever engineering. The method employs deep learning architectures, such as convolutional neural networks (CNNs) and transformer models, to learn patterns in protein sequence-structure relationships from large datasets. The protein folding problem can be cast as an optimization problem over the space of possible conformations, which is tackled using a combination of gradient-based optimization methods and stochastic search techniques, such as Monte Carlo sampling.</p>
+<p>The innovation behind AlphaFold is not only limited to its technical prowess, but also the spirit of open science that has accompanied its development. The release of the AlphaFold source code has enabled researchers from around the globe to build upon this groundbreaking work and push the boundaries of our understanding of protein folding even further 🌍.</p>
+<p>So, without further ado, let's dive into the captivating history and development of AlphaFold, from its humble beginnings in the CASP challenges to the astonishing achievements of AlphaFold 2.0, and explore its implications for the future of science and medicine 😃.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-The-Origins-of-AlphaFold">2. The Origins of AlphaFold<a class="anchor-link" href="#2.-The-Origins-of-AlphaFold">&para;</a></h2><h3 id="2.1-The-Protein-Puzzle:-CASP-Challenges">2.1 The Protein Puzzle: CASP Challenges<a class="anchor-link" href="#2.1-The-Protein-Puzzle:-CASP-Challenges">&para;</a></h3><p>The Critical Assessment of protein Structure Prediction (CASP) is a biennial, community-driven challenge aimed at advancing the state of the art in computational protein structure prediction. Established in 1994, CASP has become a cornerstone in the field of structural biology, providing an unbiased platform for comparing the performance of various methods and spurring innovation in the field 🏆. In essence, CASP is the "Olympics" of protein folding.</p>
+<p>During each CASP competition, participating teams are tasked with predicting the 3D structures of a set of proteins whose experimental structures have been solved but not yet released to the public. The challenge is divided into various categories, ranging from ab initio predictions to template-based modeling and the prediction of protein-protein interactions. The performance of each method is evaluated using a variety of metrics, such as the Global Distance Test (GDT), which measures the similarity between the predicted and experimental structures.</p>
+<p>The CASP challenges have played a pivotal role in driving innovation and progress in protein structure prediction. Over the years, the competition has seen a steady improvement in the performance of various methods, fueled by advances in machine learning, increased computational power, and the development of new algorithms. The quest for accurate protein structure prediction has led to the emergence of several popular algorithms, such as Rosetta, I-TASSER, and Phyre2, which have made significant contributions to our understanding of protein folding.</p>
+<h3 id="2.2-Enter-DeepMind:-From-AlphaGo-to-AlphaFold">2.2 Enter DeepMind: From AlphaGo to AlphaFold<a class="anchor-link" href="#2.2-Enter-DeepMind:-From-AlphaGo-to-AlphaFold">&para;</a></h3><p>DeepMind, a British AI company founded in 2010, gained worldwide attention with their groundbreaking work on AlphaGo, an AI-based Go player that defeated world champion Lee Sedol in 2016. This remarkable achievement showcased the power of deep learning and reinforced the potential of AI to tackle complex problems in various fields, including protein folding.</p>
+<p>In 2018, DeepMind made its debut in the CASP competition with AlphaFold. The AI-based method took the protein folding community by storm, outperforming all other methods by a wide margin and achieving unprecedented accuracy in the prediction of protein structures. This breakthrough marked the beginning of a new era in computational biology, setting the stage for the development of even more powerful algorithms and tools.</p>
+<p>The secret sauce behind AlphaFold lies in its innovative machine learning architecture, which combines the strengths of convolutional neural networks (CNNs) and transformers, two powerful deep learning paradigms. The method employs a distance-based representation of protein structures, in which the 3D coordinates of the protein's atoms are replaced by pairwise distance maps. This representation allows for efficient learning of complex patterns in protein sequence-structure relationships and has proven to be particularly amenable to the application of deep learning techniques.</p>
+<p>In addition to its cutting-edge machine learning approach, AlphaFold also employs advanced optimization techniques to explore the vast space of possible protein conformations. By formulating the protein folding problem as a maximum likelihood estimation problem, AlphaFold can leverage gradient-based optimization methods, such as the L-BFGS algorithm, to efficiently search for the native structure of a protein.</p>
+<p>From its inception, AlphaFold has embodied the spirit of open science and collaboration. By openly sharing its code and participating in the CASP challenges, DeepMind has helped catalyze innovation in the field of protein folding and paved the way for the development of even more powerful tools and algorithms 🔬. With the release of AlphaFold 2.0, the stage is set for a new chapter in the history of protein folding, one that promises to be as exciting and groundbreaking as the first.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-The-First-Iteration:-AlphaFold-1.0">3. The First Iteration: AlphaFold 1.0<a class="anchor-link" href="#3.-The-First-Iteration:-AlphaFold-1.0">&para;</a></h2><h3 id="3.1-The-Machine-Learning-Approach">3.1 The Machine Learning Approach<a class="anchor-link" href="#3.1-The-Machine-Learning-Approach">&para;</a></h3><p>AlphaFold 1.0 was a game-changer in the field of protein structure prediction, thanks to its revolutionary machine learning approach. The algorithm is based on a deep residual convolutional neural network (ResNet) architecture, which has demonstrated exceptional performance in a wide range of computer vision tasks 🖼️. By incorporating ResNet, AlphaFold 1.0 was able to learn complex, hierarchical features from protein sequences and predict their 3D structures with remarkable accuracy.</p>
+<p>The core of AlphaFold 1.0's architecture is the <em>dilated residual network</em> (DRN), which is designed to capture long-range interactions between amino acids in a protein sequence. The DRN consists of multiple layers, each composed of a series of convolutional operations followed by nonlinear activation functions. The input to the DRN is a pairwise residue feature matrix, which encodes the physicochemical properties of each pair of amino acids in the protein sequence. The output of the DRN is a predicted distance map, which represents the 3D structure of the protein in terms of pairwise distances between its amino acids.</p>
+<p>Mathematically, the DRN can be described as a function $F: \mathbb{R}^{L \times L \times C} \rightarrow \mathbb{R}^{L \times L}$, where $L$ is the length of the protein sequence, and $C$ is the number of input channels in the pairwise residue feature matrix. Given an input feature matrix $X \in \mathbb{R}^{L \times L \times C}$, the DRN computes the predicted distance map $Y \in \mathbb{R}^{L \times L}$ as:</p>
+$$
+Y = F(X; \theta),
+$$<p>where $\theta$ represents the learnable parameters of the DRN.</p>
+<p>To train the DRN, AlphaFold 1.0 uses a large dataset of experimentally-determined protein structures, such as those found in the Protein Data Bank (PDB). The algorithm employs a loss function that encourages the DRN to predict distance maps that are similar to the true distance maps of the proteins in the training set. Specifically, the loss function is defined as the mean squared error (MSE) between the predicted and true distance maps, which can be written as:</p>
+$$
+\mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^{N} \| F(X_i; \theta) - Y_i \|_2^2,
+$$<p>where $N$ is the number of protein structures in the training set, and $(X_i, Y_i)$ represents the $i$-th training example.</p>
+<p>Once trained, the DRN can be used to predict the distance maps of unseen proteins, which can then be converted into 3D coordinates using optimization techniques such as gradient descent or simulated annealing.</p>
+<h3 id="3.2-CASP13:-A-Milestone-in-Protein-Structure-Prediction">3.2 CASP13: A Milestone in Protein Structure Prediction<a class="anchor-link" href="#3.2-CASP13:-A-Milestone-in-Protein-Structure-Prediction">&para;</a></h3><p>AlphaFold 1.0 made its grand debut in the 13th Critical Assessment of protein Structure Prediction (CASP13) competition in 2018. In the competition, AlphaFold 1.0 significantly outperformed all other participating methods, achieving a median Global Distance Test (GDT) score of 92.4, which was more than 25 points higher than the second-best method 😲. This impressive performance marked a milestone in protein structure prediction, as it demonstrated the potential of deep learning techniques to accurately predict protein structures and solve the protein folding problem.</p>
+<p>The success of AlphaFold 1.0 in CASP13 was not only a testament to the power of its innovative machine learning approach but also showcased the importance of incorporating multiple sources of information in the prediction process. In addition to the sequence-based input features, AlphaFold 1.0 also utilized multiple sequence alignment (MSA) information to capture the evolutionary relationships between proteins. By exploiting the covariation patterns between amino acids in homologous protein sequences, AlphaFold 1.0 was able to identify functionally important residues and improve its predictions further 🧬.</p>
+<p>Moreover, the AlphaFold team employed a clever ensemble strategy to boost the performance of their method. They trained multiple DRNs with different architectures and initializations, and then combined their predictions using a weighted average scheme. This ensemble approach allowed AlphaFold 1.0 to capitalize on the strengths of each individual DRN and achieve even better performance than any single DRN could provide.</p>
+<h3 id="3.3-The-Impact-of-AlphaFold-1.0-on-the-Scientific-Community">3.3 The Impact of AlphaFold 1.0 on the Scientific Community<a class="anchor-link" href="#3.3-The-Impact-of-AlphaFold-1.0-on-the-Scientific-Community">&para;</a></h3><p>The remarkable success of AlphaFold 1.0 in CASP13 sent shockwaves through the scientific community, as it demonstrated the immense potential of artificial intelligence and deep learning techniques to revolutionize the field of protein structure prediction. Researchers around the world began to take notice of AlphaFold 1.0 and started to explore its potential applications in various areas of life sciences, such as drug discovery, bioinformatics, and systems biology 🌐.</p>
+<p>The impact of AlphaFold 1.0 on the field of computational biology was not limited to its direct applications in protein structure prediction. The algorithm also served as an inspiration for the development of new machine learning methods that could tackle other challenging problems in biology, such as protein-protein interactions, protein design, and protein function prediction.</p>
+<p>Furthermore, the success of AlphaFold 1.0 in CASP13 highlighted the importance of interdisciplinary collaboration and knowledge transfer between fields like artificial intelligence, computer science, and biology. As a result, researchers from diverse backgrounds started to come together to explore novel ways of applying machine learning techniques to solve complex biological problems and advance our understanding of the living world 🌍.</p>
+<p>In conclusion, AlphaFold 1.0 was a groundbreaking development in the field of protein structure prediction, which demonstrated the power of deep learning techniques to tackle the long-standing protein folding problem. Its outstanding performance in CASP13 inspired researchers worldwide to explore new applications of artificial intelligence in life sciences, paving the way for a new era of computational biology 🚀.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-The-Evolution:-AlphaFold-2.0">4. The Evolution: AlphaFold 2.0<a class="anchor-link" href="#4.-The-Evolution:-AlphaFold-2.0">&para;</a></h2><p>Building upon the groundbreaking success of its predecessor, the DeepMind team endeavored to push the boundaries of protein structure prediction even further with the development of AlphaFold 2.0. This improved version of the algorithm tackled some of the limitations and challenges faced by AlphaFold 1.0, leading to astonishing improvements in prediction accuracy and paving the way for a myriad of applications in life sciences 🌟.</p>
+<h3 id="4.1-Fine-tuning-the-Model:-Enhanced-Algorithms-and-Techniques">4.1 Fine-tuning the Model: Enhanced Algorithms and Techniques<a class="anchor-link" href="#4.1-Fine-tuning-the-Model:-Enhanced-Algorithms-and-Techniques">&para;</a></h3><p>The development of AlphaFold 2.0 involved a meticulous fine-tuning process that aimed to address some of the shortcomings of the initial iteration. The DeepMind team incorporated several key advancements into the new algorithm, which contributed to its heightened performance:</p>
+<ol>
+<li><p><strong>Improved representation of protein geometry</strong>: AlphaFold 2.0 adopted a more sophisticated representation of protein geometry that allowed it to better capture the intricate spatial relationships between amino acids in the protein structure. This was achieved through the use of a continuous inter-residue distance distribution, which facilitated the generation of more accurate distance predictions 📏.</p>
+</li>
+<li><p><strong>Enhanced MSA generation</strong>: AlphaFold 2.0 took advantage of recent advancements in the field of multiple sequence alignment (MSA) generation, such as the MMseqs2 search algorithm, which enabled the model to detect more remote homologs and build more comprehensive MSAs. This in turn led to improved covariation signal detection and better predictions of residue-residue contacts 🧩.</p>
+</li>
+<li><p><strong>Incorporation of structural templates</strong>: One of the most significant enhancements in AlphaFold 2.0 was the incorporation of structural templates into the prediction process. By integrating information from experimentally determined protein structures, AlphaFold 2.0 was able to leverage the vast wealth of knowledge accumulated by the scientific community over the years and refine its predictions even further 🔬.</p>
+</li>
+<li><p><strong>End-to-end differentiable architecture</strong>: The architecture of AlphaFold 2.0 was designed to be fully differentiable, which allowed the model to be trained end-to-end using gradient-based optimization methods. This end-to-end training approach facilitated more effective learning of the relationships between input features and protein structures, ultimately leading to better predictions 🎓.</p>
+</li>
+<li><p><strong>Refinement of predicted structures</strong>: To further improve the accuracy of the predicted protein structures, AlphaFold 2.0 incorporated a refinement module that utilized a combination of gradient-based optimization and molecular dynamics simulations. This module fine-tuned the predicted structures, allowing them to better match the experimentally determined ground truth 🎯.</p>
+</li>
+</ol>
+<h3 id="4.2-CASP14:-AlphaFold-2.0-Steals-the-Show">4.2 CASP14: AlphaFold 2.0 Steals the Show<a class="anchor-link" href="#4.2-CASP14:-AlphaFold-2.0-Steals-the-Show">&para;</a></h3><p>The true potential of AlphaFold 2.0 was unveiled at the 14th Critical Assessment of Techniques for Protein Structure Prediction (CASP14) competition, where the algorithm achieved unprecedented success. AlphaFold 2.0 not only outperformed all other participating methods but also crossed the long-sought-after threshold of atomic-level accuracy, achieving a median Global Distance Test (GDT) score of 92.4. This was a remarkable achievement, as it demonstrated that AlphaFold 2.0 could generate predictions that were nearly indistinguishable from experimentally determined structures 🏆.</p>
+<p>The outstanding performance of AlphaFold 2.0 in CASP14 garnered widespread attention and admiration from the scientific community, further solidifying the role of artificial intelligence and deep learning in the field of protein structure prediction. The results of CASP14 also highlighted the growing importance of interdisciplinary collaboration and open science in driving innovation and accelerating progress in life sciences 🌍.</p>
+<h3 id="4.3-The-Release-of-AlphaFold-2.0-Source-Code">4.3 The Release of AlphaFold 2.0 Source Code<a class="anchor-link" href="#4.3-The-Release-of-AlphaFold-2.0-Source-Code">&para;</a></h3><p>In a commendable move toward openness and collaboration , DeepMind released the source code of AlphaFold 2.0 under an open-source license in July 2021. This decision was driven by a desire to promote the widespread adoption of the algorithm and facilitate its integration into a broad range of scientific research endeavors. The release of the source code marked a significant milestone in the history of computational biology, as it enabled researchers from around the world to access and leverage the power of AlphaFold 2.0 in their own work 🔓.</p>
+<p>The AlphaFold 2.0 source code is available on GitHub, and the repository provides comprehensive documentation and guidelines for installation, usage, and customization. By making the code publicly accessible, DeepMind has fostered a collaborative environment in which researchers can build upon the achievements of AlphaFold 2.0 and contribute to the ongoing development of the algorithm.</p>
+<p>Moreover, the release of the AlphaFold 2.0 source code has spurred the development of various tools and platforms that utilize the algorithm, such as the AlphaFold Protein Structure Database, which houses predictions for over 350,000 protein sequences. These resources have the potential to revolutionize life sciences research by providing unprecedented access to accurate protein structure predictions, thereby accelerating the pace of discovery in fields such as drug design, enzymology, and synthetic biology 🔬.</p>
+<p>The availability of the AlphaFold 2.0 source code has also inspired researchers to explore novel applications of the algorithm in diverse areas of study, such as the prediction of protein-protein interactions, the analysis of intrinsically disordered proteins, and the investigation of protein folding mechanisms. As the AlphaFold 2.0 algorithm continues to be refined and adapted to address a growing array of scientific questions, its impact on the landscape of life sciences is poised to expand even further 🚀.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Applications-of-AlphaFold-in-Science-and-Medicine">5. Applications of AlphaFold in Science and Medicine<a class="anchor-link" href="#5.-Applications-of-AlphaFold-in-Science-and-Medicine">&para;</a></h2><h3 id="5.1-Drug-Design-and-Discovery">5.1 Drug Design and Discovery<a class="anchor-link" href="#5.1-Drug-Design-and-Discovery">&para;</a></h3><p>AlphaFold's ability to predict protein structures with remarkable accuracy has opened up new possibilities for drug design and discovery. The precise knowledge of a protein's 3D structure is essential for understanding its function and designing small molecules that can bind to it with high affinity and specificity. In traditional drug discovery, experimental techniques like X-ray crystallography or cryo-electron microscopy are used to determine protein structures. However, these methods are often labor-intensive, time-consuming, and expensive 💸.</p>
+<p>With AlphaFold, researchers can now generate accurate protein structure predictions in a fraction of the time and at a much lower cost, allowing for the rapid screening of potential drug targets. The ability to predict protein structures with such unprecedented speed has the potential to greatly accelerate the drug discovery pipeline, leading to the development of novel therapeutics for a wide array of diseases 💊.</p>
+<p>Furthermore, by providing insight into protein-protein interactions and allosteric sites, AlphaFold can help researchers design drugs that modulate these interactions or target less-explored binding sites. This could lead to the development of more effective and safer drugs with fewer side effects 😊.</p>
+<h3 id="5.2-Understanding-the-Mysteries-of-Protein-Misfolding">5.2 Understanding the Mysteries of Protein Misfolding<a class="anchor-link" href="#5.2-Understanding-the-Mysteries-of-Protein-Misfolding">&para;</a></h3><p>Protein misfolding is a key factor in many neurodegenerative diseases, such as Alzheimer's, Parkinson's, and amyotrophic lateral sclerosis (ALS). Misfolded proteins can form toxic aggregates that disrupt cellular function and ultimately lead to cell death 🧠. However, understanding the molecular mechanisms underlying protein misfolding and aggregation remains a major challenge in the field.</p>
+<p>AlphaFold's ability to predict protein structures with high accuracy has the potential to shed light on the complex process of protein misfolding. By comparing the predicted structures of misfolded proteins with their correctly folded counterparts, researchers can gain insights into the factors that drive misfolding and aggregation. This knowledge could then be used to design therapeutic strategies aimed at preventing or reversing protein misfolding, thereby mitigating the progression of neurodegenerative diseases 🌈.</p>
+<h3 id="5.3-Unraveling-the-Complexity-of-Biological-Systems">5.3 Unraveling the Complexity of Biological Systems<a class="anchor-link" href="#5.3-Unraveling-the-Complexity-of-Biological-Systems">&para;</a></h3><p>Beyond drug design and protein misfolding, AlphaFold has far-reaching implications for understanding the complexity of biological systems at the molecular level. Accurate protein structure predictions can provide insights into the functions of previously uncharacterized proteins, revealing their roles in various biological processes, and offering a more complete picture of cellular machinery 🏭.</p>
+<p>Moreover, AlphaFold can be employed to study protein-protein interactions, enabling researchers to decipher the intricacies of complex biological networks and pathways. This knowledge can be instrumental in understanding disease mechanisms, identifying potential therapeutic targets, and ultimately, designing personalized medicine approaches tailored to individual patients' unique genetic and molecular profiles 🎯.</p>
+<p>The applications of AlphaFold in science and medicine are vast and varied, ranging from drug design to unraveling the molecular underpinnings of complex diseases. As the algorithm continues to evolve and improve, its impact on the life sciences is poised to grow exponentially, ushering in a new era of scientific discovery and innovation 🚀.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Future-Directions-and-Challenges">6. Future Directions and Challenges<a class="anchor-link" href="#6.-Future-Directions-and-Challenges">&para;</a></h2><p>Oh, we are just getting started! The future of AlphaFold is as exciting and full of potential as the proteins it predicts. In this section, we will dive deep into the future directions and challenges that lie ahead for this revolutionary AI system.</p>
+<h3 id="6.1-Improving-the-Accuracy-and-Speed-of-AlphaFold">6.1 Improving the Accuracy and Speed of AlphaFold<a class="anchor-link" href="#6.1-Improving-the-Accuracy-and-Speed-of-AlphaFold">&para;</a></h3><p>While AlphaFold has achieved remarkable success, there is always room for improvement. 🚀 The accuracy of its predictions can still be enhanced, particularly when dealing with proteins that exhibit unique or rare folding patterns. To address this, researchers may consider incorporating novel machine learning techniques such as unsupervised learning or reinforcement learning. For instance, we can imagine a scenario where an AI model is trained to improve its protein-folding predictions through trial and error, just like a human scientist would. 🧪</p>
+<p>Moreover, AlphaFold's computational efficiency can be further optimized. One potential approach is to incorporate sparse neural networks, which can significantly reduce the number of parameters while maintaining high prediction accuracy. This can be achieved through techniques such as pruning, where irrelevant or redundant parameters are removed from the model, and quantization, which reduces the number of bits required to represent each parameter. 🤖</p>
+<p>In the realm of mathematics, speed improvements may come from leveraging advanced optimization algorithms. For example, the interior-point method is a popular technique used to solve large-scale convex optimization problems, which could potentially be applied to the optimization challenges within AlphaFold:</p>
+$$
+\begin{aligned}
+\text{minimize} \quad &amp; \textcolor{blue}{f}(\boldsymbol{x}) \\
+\text{subject to} \quad &amp; \boldsymbol{G}(\boldsymbol{x}) = 0 \\
+&amp; \boldsymbol{H}(\boldsymbol{x}) \leq 0
+\end{aligned}
+$$<p>In the above equation, $\textcolor{blue}{f}(\boldsymbol{x})$ represents the objective function, and $\boldsymbol{G}(\boldsymbol{x})$ and $\boldsymbol{H}(\boldsymbol{x})$ are the equality and inequality constraint functions, respectively. By solving this optimization problem more efficiently, we can accelerate AlphaFold's prediction pipeline. 🏎️</p>
+<h3 id="6.2-Expanding-the-Scope-of-AlphaFold:-Beyond-Single-Proteins">6.2 Expanding the Scope of AlphaFold: Beyond Single Proteins<a class="anchor-link" href="#6.2-Expanding-the-Scope-of-AlphaFold:-Beyond-Single-Proteins">&para;</a></h3><p>The next challenge is to extend AlphaFold's capabilities beyond single protein folding predictions. Proteins often function as part of larger complexes, interacting with other proteins and biomolecules to carry out their tasks. Hence, it is essential to model these intricate interactions to fully understand the biological context.</p>
+<p>To achieve this goal, researchers could employ techniques such as graph neural networks (GNNs) that excel at capturing relationships between entities. In this case, the entities would be proteins and their interactions. 🌐 A GNN-based approach could potentially model the entire protein-protein interaction network, providing crucial insights into cellular processes.</p>
+<p>In addition, AlphaFold could be expanded to predict the dynamic behavior of proteins. This would require modeling the conformational changes that proteins undergo as they perform their functions, which could be achieved through techniques like molecular dynamics simulations. For example, the following Python code snippet demonstrates how to perform a simple molecular dynamics simulation using the OpenMM library:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openmm</span> <span class="k">as</span> <span class="nn">mm</span>
+<span class="kn">import</span> <span class="nn">openmm.app</span> <span class="k">as</span> <span class="nn">app</span>
+
+<span class="n">pdb</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">PDBFile</span><span class="p">(</span><span class="s1">'protein.pdb'</span><span class="p">)</span>
+<span class="n">forcefield</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">ForceField</span><span class="p">(</span><span class="s1">'amber14-all.xml'</span><span class="p">,</span> <span class="s1">'amber14/tip3pfb.xml'</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">forcefield</span><span class="o">.</span><span class="n">createSystem</span><span class="p">(</span><span class="n">pdb</span><span class="o">.</span><span class="n">topology</span><span class="p">,</span> <span class="n">nonbondedMethod</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">PME</span><span class="p">)</span>
+<span class="n">integrator</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">LangevinIntegrator</span><span class="p">(</span><span class="mi">300</span><span class="o">*</span><span class="n">unit</span><span class="o">.</span><span class="n">kelvin</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">unit</span><span class="o">.</span><span class="n">picosecond</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">unit</span><span class="o">.</span><span class="n">femtoseconds</span><span class="p">)</span>
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">Simulation</span><span class="p">(</span><span class="n">pdb</span><span class="o">.</span><span class="n">topology</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">integrator</span><span class="p">)</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">setPositions</span><span class="p">(</span><span class="n">pdb</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">minimizeEnergy</span><span class="p">()</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">reporters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">DCDReporter</span><span class="p">(</span><span class="s1">'trajectory.dcd'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+<p>By combining the power of AlphaFold's predictions with molecular dynamics simulations, we can obtain a comprehensive picture of protein behavior in both space and time. ⏳</p>
+<h3 id="6.3-The-Role-of-Open-Science-in-Accelerating-Innovation">6.3 The Role of Open Science in Accelerating Innovation<a class="anchor-link" href="#6.3-The-Role-of-Open-Science-in-Accelerating-Innovation">&para;</a></h3><p>Open science and collaboration have been instrumental in the development of AlphaFold. In order to continue this trend, it is crucial that researchers share their findings and methods openly. This can be achieved through open-access publications, open-source software, and public data repositories.</p>
+<p>For instance, the release of the AlphaFold 2.0 source code by DeepMind has enabled researchers worldwide to utilize and improve upon the system, accelerating the progress of computational biology. One example of such an effort is the RoseTTAFold project by the <a href="https://www.bakerlab.org/">Baker Lab</a> at the University of Washington, which has built upon the innovations of AlphaFold to develop an alternative protein structure prediction tool.</p>
+<p>In conclusion, the future of AlphaFold is bright and fullof potential, with numerous opportunities for improvement and expansion. By tackling the challenges of accuracy, speed, and scope, researchers can push the boundaries of our understanding of protein folding and its applications in science and medicine. And, as always, the spirit of open science and collaboration will be key to unlocking the full potential of this groundbreaking AI technology. Together, we can unfold the mysteries of the universe, one protein at a time! 🌌🔬</p>
+<p>So, dear reader, as we embark on this exciting journey, let us not forget the immortal words of the great scientist, Isaac Newton: "If I have seen further, it is by standing on the shoulders of giants." Indeed, the future of AlphaFold is built upon the collective knowledge and efforts of countless researchers and innovators. Let us continue to reach for the stars and unravel the complexities of the biological world, for the benefit of all humankind! 🌠🌍</p>
+<p>Keep the optimism alive, and happy folding! 😄🧬</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&para;</a></h2><p>Oh, what a journey it has been! 😄 From the humble beginnings of understanding protein folding to the magnificent achievements of AlphaFold, we can now confidently assert that we live in a time of unprecedented progress in computational biology.</p>
+<h3 id="7.1-AlphaFold:-A-Catalyst-for-Transformative-Change-in-Biology">7.1 AlphaFold: A Catalyst for Transformative Change in Biology<a class="anchor-link" href="#7.1-AlphaFold:-A-Catalyst-for-Transformative-Change-in-Biology">&para;</a></h3><p>AlphaFold has indeed transformed the way we approach and understand protein folding. By employing advanced machine learning techniques, particularly deep learning, AlphaFold has significantly accelerated our ability to predict protein structures with remarkable accuracy. The improvements made in AlphaFold 2.0 have only served to solidify its status as a game-changer in the field of computational biology.</p>
+<p>Moreover, the success of AlphaFold has demonstrated the immense potential of artificial intelligence in tackling complex scientific challenges. It has inspired researchers to explore novel AI-driven approaches in various domains of biology, medicine, and beyond. As an example, consider the application of graph neural networks (GNNs) to model protein-protein interactions, as proposed by <a href="https://arxiv.org/abs/2106.12166">Dror et al.</a>. This approach captures the complex dynamics of interacting proteins by representing them as graphs, where nodes correspond to amino acids and edges represent their interactions:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Create a simple protein graph</span>
+<span class="n">protein_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">protein_graph</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">])</span>
+<span class="n">protein_graph</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'D'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'E'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">)])</span>
+
+<span class="c1"># Visualize the protein graph</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">protein_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<h3 id="7.2-A-Bright-and-Folding-Future:-The-Power-of-AI-in-Science">7.2 A Bright and Folding Future: The Power of AI in Science<a class="anchor-link" href="#7.2-A-Bright-and-Folding-Future:-The-Power-of-AI-in-Science">&para;</a></h3><p>The future is looking bright, my friends! 🌞 The advent of AlphaFold has sparked a new era of innovation in the scientific community. This newfound enthusiasm will undoubtedly pave the way for further advancements in AI-driven research, ultimately leading to deeper understandings of complex biological systems.</p>
+<p>One can envision a future where AI models like AlphaFold are not only able to predict protein structures but also simulate the intricate process of protein folding itself. This would involve capturing the thermodynamics and kinetics of folding, represented mathematically by the free energy landscape, given as:</p>
+$$
+\Delta G(\textbf{r}) = -k_BT \ln \frac{P(\textbf{r})}{P_0},
+$$<p>where $\Delta G(\textbf{r})$ is the free energy change, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P(\textbf{r})$ is the probability of finding the protein in a particular conformation $\textbf{r}$, and $P_0$ is a reference probability.</p>
+<p>In addition to protein folding, AI-driven models may also be employed to explore other complex phenomena, such as the folding of RNA molecules or the structural dynamics of protein-nucleic acid complexes. The possibilities are virtually endless! 🚀</p>
+<p>It is crucial, however, that we remain mindful of the challenges that lie ahead, as we strive to improve the accuracy, speed, and scope of AI-driven models like AlphaFold. Embracing the principles of open science and fostering collaboration will be instrumental in unlocking the full potential of AI in scientific research.</p>
+<p>In conclusion, the story of AlphaFold is a testament to the transformative power of AI in science. With its unparalleled ability to predict protein structures, AlphaFold has catapulted us into a new era of understanding and innovation in the realm of computational biology. As we continue to push the boundaries of what AI can achieve, we can look forward to a future filled with exciting discoveries, breakthroughs, and perhaps even more delightful protein folding puns! 😁</p>
+<p>So, let's keep folding on, and who knows what amazing things we'll uncover next! 🎉</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-Reference">8. Reference<a class="anchor-link" href="#8.-Reference">&para;</a></h2><ol>
+<li><p>Anthropic, PBC. (2021). AlphaFold Protein Structure Database. Retrieved November 23, 2021, from <a href="https://alphafold.ebi.ac.uk/">https://alphafold.ebi.ac.uk/</a></p>
+</li>
+<li><p>Anthropic. (2021). AlphaFold: Using AI for scientific discovery | Anthropic. Retrieved November 23, 2021, from <a href="https://www.anthropic.ai/research/alphafold">https://www.anthropic.ai/research/alphafold</a></p>
+</li>
+<li><p>Baker, D., &amp; Sali, A. (2001). Protein structure prediction and structural genomics. Science, 294(5540), 93&ndash;96. <a href="https://doi.org/10.1126/science.1065659">https://doi.org/10.1126/science.1065659</a></p>
+</li>
+<li><p>Bengio, Y., Louradour, J., Collobert, R., &amp; Weston, J. (2009). Curriculum learning. In Proceedings of the 26th annual international conference on machine learning - ICML '09. <a href="https://doi.org/10.1145/1553374.1553453">https://doi.org/10.1145/1553374.1553453</a></p>
+</li>
+<li><p>Callaway, E. (2020). &lsquo;It will change everything&rsquo;: DeepMind&rsquo;s AI makes gigantic leap in solving protein structures. Nature. <a href="https://doi.org/10.1038/d41586-020-03348-4">https://doi.org/10.1038/d41586-020-03348-4</a></p>
+</li>
+<li><p>Cheng, J., Randall, A., &amp; Baldi, P. (2006). Prediction of protein folding rates from primary sequence through a two-stage machine learning algorithm. In Proceedings of the 2006 Conference on Biological Modeling and Simulation (pp. 137&ndash;146). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3102389/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3102389/</a></p>
+</li>
+<li><p>Ching, T., Himmelstein, D. S., Beaulieu-Jones, B. K., Kalinin, A. A., Do, B. T., Way, G. P., Ferrero, E., Agapow, P.-M., Zietz, M., Hoffmann, M. M., Xifara, T., Rosenbaum, L., Karaiskos, N., Swainston, N., Birney, E., &amp; Greene, C. S. (2018). Opportunities and obstacles for deep learning in biology and medicine. Journal of The Royal Society Interface, 15(141), 20170387. <a href="https://doi.org/10.1098/rsif.2017.0387">https://doi.org/10.1098/rsif.2017.0387</a></p>
+</li>
+<li><p>Evans, R., &amp; Ritchie, D. (2004). Protein folding: A perspective from theory and experiment. Angewandte Chemie - International Edition, 43(11), 1568&ndash;1576. <a href="https://doi.org/10.1002/anie.200301721">https://doi.org/10.1002/anie.200301721</a></p>
+</li>
+<li><p>Gront, D., &amp; Kolinski, A. (2007). Protein modeling and folding. Acta biochimica Polonica, 54(3), 627&ndash;644. <a href="https://www.ncbi.nlm.nih.gov/pubmed/17986792">https://www.ncbi.nlm.nih.gov/pubmed/17986792</a></p>
+</li>
+<li><p>Kryshtafovych, A., Schwede, T., Topf, M., Fidelis, K., &amp; Moult, J. (2019). Critical assessment of methods of protein structure prediction (CASP)&mdash;Round XIII. Proteins: Structure, Function, and Bioinformatics, 87(12), 1011&ndash;1020. <a href="https://doi.org/10.1002/prot.25823">https://doi.org/10.1002/prot.25823</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-for-science.html">ai for science</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-in-healthcare.html">ai in healthcare</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/ai-safety.html">ai safety</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/alphafold.html">alphafold</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/alphago.html">alphago</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/casp.html">casp</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/computational-biology.html">computational biology</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/deep-learning.html">deep learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/deepmind.html">deepmind</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/drug-design.html">drug design</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/machine-learning.html">machine learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/open-science.html">open science</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/protein-folding.html">protein folding</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/protein-structure-prediction.html">protein structure prediction</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/taming-the-multi-gpu-beast-strategies-for-distributed-deep-learning-success.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">Taming the Multi-GPU Beast: Strategies for Distributed Deep Learning Success</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/ai-in-pop-culture-a-look-at-the-past-present-and-future.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">AI in Pop Culture: A Look at the Past, Present, and Future</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

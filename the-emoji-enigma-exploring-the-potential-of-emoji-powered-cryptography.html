@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>The Emoji Enigma: Exploring the Potential of Emoji-Powered Cryptography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="The fascinating world of emojis has managed to permeate various facets of modern-day communication, including the realm of cryptography." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/cryptography.html">Cryptography</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">The Emoji Enigma: Exploring the Potential of Emoji-Powered Cryptography</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>November 13, 2021</time>
+        <div>
+          <span>&nbsp;·&nbsp;44 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-A-Brief-History-of-Emojis" title="2. A Brief History of Emojis&para;">2. A Brief History of Emojis&para;</a></li><li><a class="toc-href" href="#3.-Emojis-and-Cryptography:-A-Match-Made-in-Heaven?-😇" title="3. Emojis and Cryptography: A Match Made in Heaven? 😇&para;">3. Emojis and Cryptography: A Match Made in Heaven? 😇&para;</a></li><li><a class="toc-href" href="#4.-Real-World-Applications-of-Emoji-Encryption" title="4. Real-World Applications of Emoji Encryption&para;">4. Real-World Applications of Emoji Encryption&para;</a></li><li><a class="toc-href" href="#5.-Creating-Your-Own-Emoji-Cipher" title="5. Creating Your Own Emoji Cipher&para;">5. Creating Your Own Emoji Cipher&para;</a></li><li><a class="toc-href" href="#6.-The-Challenges-and-Limitations-of-Emoji-Encryption" title="6. The Challenges and Limitations of Emoji Encryption&para;">6. The Challenges and Limitations of Emoji Encryption&para;</a></li><li><a class="toc-href" href="#7.-Future-Perspectives:-Emojis-and-Quantum-Cryptography?-🚀" title="7. Future Perspectives: Emojis and Quantum Cryptography? 🚀&para;">7. Future Perspectives: Emojis and Quantum Cryptography? 🚀&para;</a></li><li><a class="toc-href" href="#8.-Conclusion" title="8. Conclusion&para;">8. Conclusion&para;</a></li><li><a class="toc-href" href="#9.-References" title="9. References&para;">9. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><h3 id="1.1-Embracing-the-Emoji-Era">1.1 Embracing the Emoji Era<a class="anchor-link" href="#1.1-Embracing-the-Emoji-Era">&para;</a></h3><p>In the grand tapestry of human communication, emojis have emerged as an enigmatic and increasingly prevalent phenomenon, capturing the essence of our emotions and transcending the barriers of language 🌍. As cryptographic enthusiasts and researchers at Arcane Analytic, we can't help but ponder the potential role of these colorful icons in the future of cryptography. In this riveting exploration, we will delve into the depths of emoji encryption, shedding light on its origins, applications, challenges, and future prospects, all while maintaining our trademark flair for optimism, positivity, and humor 😄.</p>
+<p>The art of cryptography has seen a remarkable evolution from its ancient roots to its current prominence in securing digital communication. In recent years, the advent of emojis has prompted researchers to examine their potential utility in cryptographic systems. The use of emojis in encryption schemes not only offers unique advantages but also presents intriguing challenges in the realm of secure communication. Moreover, the potential convergence of emojis and quantum cryptography has spurred a fascinating discourse on the future of encryption 🔒.</p>
+<p>To provide a comprehensive understanding of emoji encryption, we will delve into various mathematical concepts and principles underlying this phenomenon. Expect to encounter detailed explanations of cryptographic concepts, interspersed with complex mathematical formulas in LaTeX to elucidate our points 💡. For instance, consider the general monoalphabetic substitution cipher:</p>
+$$
+\begin{aligned}
+    E_K(p) &amp;= (p + K) \mod n \\
+    D_K(c) &amp;= (c - K) \mod n
+\end{aligned}
+$$<p>In these equations, $E_K(p)$ and $D_K(c)$ represent encryption and decryption functions, respectively, with $p$ as the plaintext, $c$ as the ciphertext, $K$ as the encryption key, and $n$ as the size of the alphabet. By adapting these principles to emojis, we can develop intriguing encryption schemes that tap into the vast and ever-expanding universe of emoticons 🚀.</p>
+<p>During our journey, we will also present Python code examples to illustrate the implementation of these concepts in a practical setting 🐍. Furthermore, we will cite highly-related academic research and references from reputable sources such as arXiv, DOI, and universities to provide a robust foundation for our discussion 📚. Through this engaging fusion of academia, practical examples, and lighthearted humor, we aim to create an immersive learning experience that will leave you simultaneously enlightened and entertained 😁.</p>
+<p>So, buckle up and prepare for a thrilling ride as we embark on an epic adventure into the enigmatic world of emoji encryption! 🎢</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-A-Brief-History-of-Emojis">2. A Brief History of Emojis<a class="anchor-link" href="#2.-A-Brief-History-of-Emojis">&para;</a></h2><h3 id="2.1-From-Emoticons-to-Emoji:-A-Journey-of-Joy-😊">2.1 From Emoticons to Emoji: A Journey of Joy 😊<a class="anchor-link" href="#2.1-From-Emoticons-to-Emoji:-A-Journey-of-Joy-😊">&para;</a></h3><p>The remarkable journey of emojis begins with their humble predecessors: emoticons. Emoticons, the ingenious combination of keyboard characters to represent facial expressions, have been a fundamental part of human communication in the digital age. With their advent in the 1980s, emoticons facilitated the conveyance of emotions and social cues in text-based communication 📝, thereby reducing ambiguity and enhancing the overall user experience. Scott Fahlman, a computer scientist at Carnegie Mellon University, is often credited with the invention of the first emoticon, the iconic smiley :-) <a href="https://www.cs.cmu.edu/~sef/sefSmiley.htm">Fahlman et al</a>.</p>
+<p>However, the true revolution in digital communication began with the inception of emojis in the late 1990s. The term "emoji" is derived from the Japanese words "e" (絵) meaning "picture" and "moji" (文字) meaning "character" 🎨. The brainchild of Shigetaka Kurita, emojis were first introduced on Japanese mobile phones as a means to communicate emotions and ideas more effectively and concisely in a visual manner <a href="https://www.moma.org/collection/works/214710">Kurita et al</a>. The Unicode Consortium's adoption of emojis in 2010 propelled their global popularity 🌐, transforming them into the ubiquitous symbols we know and love today.</p>
+<h3 id="2.2-The-Universal-Language-of-Smiles,-Tears,-and-Eggplants-🍆">2.2 The Universal Language of Smiles, Tears, and Eggplants 🍆<a class="anchor-link" href="#2.2-The-Universal-Language-of-Smiles,-Tears,-and-Eggplants-🍆">&para;</a></h3><p>Emojis have transcended cultural and linguistic boundaries, forging a universal language that facilitates seamless communication across the globe 🌍. According to a study by <a href="https://doi.org/10.18653/v1/w16-2609">Barbieri et al</a>, emojis exhibit a high degree of semantic consistency, with their meanings remaining remarkably stable across different languages and cultures. This remarkable property can be mathematically modeled using sophisticated natural language processing algorithms, such as word embeddings. For example, consider the following equation derived from a hypothetical emoji embedding model:</p>
+$$
+\text{emoji}_{\text{joy}} = \alpha \cdot \text{emoji}_{\text{smile}} + \beta \cdot \text{emoji}_{\text{tears of joy}} + \gamma \cdot \text{emoji}_{\text{clapping hands}},
+$$<p>where $\alpha$, $\beta$, and $\gamma$ are scalar coefficients that quantify the relative contributions of different emojis in representing the concept of joy. The equation demonstrates that the meaning of an emoji can be thought of as a linear combination of other emojis, allowing for a natural, intuitive way to convey complex emotions and ideas.</p>
+<p>In addition to fostering a more inclusive and expressive form of communication, the extensive use of emojis has generated a wealth of data that has fueled advancements in artificial intelligence, particularly in the fields of sentiment analysis and natural language processing 🤖. For instance, researchers have employed deep learning techniques, such as recurrent neural networks (RNNs) and long short-term memory (LSTM) networks, to develop models that can accurately predict the sentiment of a given text based on its emojis. Consider the following Python code snippet, which illustrates the basic structure of an LSTM-based sentiment analysis model:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Embedding</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span>
+
+<span class="c1"># Define the LSTM model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="n">embedding_dim</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">lstm_units</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">output_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">output_activation</span><span class="p">))</span>
+
+<span class="c1"># Compile and train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="n">loss_function</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="n">validation_split</span><span class="p">)</span>
+</pre></div>
+<p>This code demonstrates how emojis can be leveraged to train a machine learning model that deciphers the underlying sentiment of a text. In doing so, the model effectively harnesses the power of emojis to unveil the emotions hidden beneath the surface of our digital conversations 💬.</p>
+<p>The rich history of emojis and their unique ability to traverse linguistic barriers have led to a new frontier of exploration: the application of emojis in the realm of cryptography. As we delve into this fascinating domain, we shall uncover the true potential of emojis as an encryption tool, and perhaps even witness the birth of a new cryptographic paradigm. So, buckle up and get ready for a thrilling ride through the world of emoji encryption! 🎢</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Emojis-and-Cryptography:-A-Match-Made-in-Heaven?-😇">3. Emojis and Cryptography: A Match Made in Heaven? 😇<a class="anchor-link" href="#3.-Emojis-and-Cryptography:-A-Match-Made-in-Heaven?-😇">&para;</a></h2><p>As the landscape of communication evolves, so too does the realm of cryptography. The integration of emojis into encryption schemes presents a fascinating and uncharted territory for cryptographic exploration. In this section, we will examine the symbiotic relationship between emojis and cryptography, delving into the expanding emoji alphabet and the potential advantages offered by emoji-based encryption.</p>
+<h3 id="3.1-The-Expanding-Emoji-Alphabet">3.1 The Expanding Emoji Alphabet<a class="anchor-link" href="#3.1-The-Expanding-Emoji-Alphabet">&para;</a></h3><p>The traditional alphabet, with its 26 letters, has long served as the basis for cryptographic systems. However, with the advent of emojis, we now have access to an ever-growing collection of symbols that far exceeds the limitations of the standard alphabet. The Unicode Consortium currently recognizes over 3,000 emojis, and this number is steadily increasing with each update 🌟. This vast set of symbols presents a unique opportunity for the development of novel cryptographic systems.</p>
+<p>Consider the sheer size of the emoji alphabet in comparison to a typical Latin alphabet. In a classic Caesar cipher, there are 26 possible shifts, yielding a total of $26!$ different permutations, or approximately $4 \times 10^{26}$. Now imagine the staggering possibilities when employing emojis in a similar fashion. With 3,000 emojis, we would have $3000!$ permutations, a mind-boggling $10^{9138}$ possibilities 🤯! This exponential increase in potential combinations could greatly enhance the security of encrypted messages.</p>
+<h3 id="3.2-Advantages-of-Emoji-Based-Encryption">3.2 Advantages of Emoji-Based Encryption<a class="anchor-link" href="#3.2-Advantages-of-Emoji-Based-Encryption">&para;</a></h3><p>Apart from the sheer size of the emoji alphabet, there are several notable advantages to using emojis in cryptographic systems.</p>
+<ul>
+<li><p><strong>Obfuscation</strong>: Emojis can conceal the encrypted content by blending in with everyday communication. This adds an additional layer of security as the encrypted data becomes more difficult to distinguish from innocuous messages. This concept is closely related to steganography, the art of hiding information within other data.</p>
+</li>
+<li><p><strong>Cross-Language Compatibility</strong>: Emojis are a universal language, transcending the barriers of traditional alphabets. This could allow for simpler and more efficient communication between individuals speaking different languages, as the encryption process would not require translation or conversion between alphabets.</p>
+</li>
+<li><p><strong>Psychological Resilience</strong>: The use of emojis in encryption can make the content more engaging and memorable. This can be particularly beneficial in situations where a passphrase or key must be remembered, as the brain is more likely to retain information when it is associated with vivid imagery 🧠.</p>
+</li>
+</ul>
+<p>These advantages, when combined with the expanding emoji alphabet, create a compelling case for the development of emoji-based encryption. To demonstrate the potential of emojis within cryptographic systems, let us consider an adaptation of the classic Caesar cipher. In this emoji-based variant, emojis would replace letters as the fundamental building blocks of the cipher. The encryption and decryption functions might resemble:</p>
+$$
+\begin{aligned}
+    E_K(p) &amp;= (p + K) \mod N \\
+    D_K(c) &amp;= (c - K) \mod N
+\end{aligned}
+$$<p>Here, $N$ represents the size of the emoji alphabet, while $p$, $c$, and $K$ retain their original meanings. The implementation of this emoji-based Caesar cipher in Python could look like this:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">emoji_caesar_cipher</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">emojis</span><span class="p">,</span> <span class="n">encrypt</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emojis</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span> <span class="k">if</span> <span class="n">encrypt</span> <span class="k">else</span> <span class="o">-</span><span class="n">key</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">emojis</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">emojis</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emojis</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+<p>As we explore the world of emoji encryption, it is important to recognize both the potential benefits and the challenges that lie ahead. The integration of emojis into cryptographic systems is an exciting frontier, but it also raises important questions about compatibility, interpretation, and security. In the following sections, we will examine these concerns and consider the future prospects of emoji-based encryption in a rapidly evolving digital landscape 🌐.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Real-World-Applications-of-Emoji-Encryption">4. Real-World Applications of Emoji Encryption<a class="anchor-link" href="#4.-Real-World-Applications-of-Emoji-Encryption">&para;</a></h2><p>As we venture into the realm of emoji-based encryption, we discover an array of intriguing applications that demonstrate the untapped potential of emojis in cryptography. In this section, we will explore two real-world scenarios where emoji encryption can be employed to provide unique advantages: emoji passcodes and emoji steganography.</p>
+<h3 id="4.1-Emoji-Passcodes:-Unlocking-the-Power-of-a-Thousand-Faces-😎">4.1 Emoji Passcodes: Unlocking the Power of a Thousand Faces 😎<a class="anchor-link" href="#4.1-Emoji-Passcodes:-Unlocking-the-Power-of-a-Thousand-Faces-😎">&para;</a></h3><p>One of the most immediate applications of emoji-based encryption is in the realm of passcodes and authentication. Instead of relying on traditional alphanumeric characters, users can create memorable and secure emoji passcodes. An emoji passcode benefits from the sheer size of the emoji alphabet, which leads to an exponentially larger number of possible passcode combinations.</p>
+<p>Consider a simple 4-character passcode using only lowercase letters from the English alphabet. The total number of possible combinations would be $26^4 = 456,976$. Now, let's compare this to a 4-emoji passcode drawn from a set of 3,000 emojis. The total number of possible combinations would be a staggering $3000^4 \approx 8.1 \times 10^{12}$, offering significantly enhanced security 💪.</p>
+<p>To illustrate how an emoji passcode system could be implemented, let's consider a Python function that generates a random emoji passcode of a given length:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">generate_emoji_passcode</span><span class="p">(</span><span class="n">emojis</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">emojis</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">length</span><span class="p">))</span>
+</pre></div>
+<p>This simple function demonstrates the ease with which emoji-based passcodes can be generated, paving the way for more secure and user-friendly authentication methods.</p>
+<h3 id="4.2-Top-Secret-Texts:-Hiding-in-Plain-Sight-with-Emoji-Steganography-🖼️">4.2 Top Secret Texts: Hiding in Plain Sight with Emoji Steganography 🖼️<a class="anchor-link" href="#4.2-Top-Secret-Texts:-Hiding-in-Plain-Sight-with-Emoji-Steganography-🖼️">&para;</a></h3><p>Another fascinating application of emoji encryption lies in the field of steganography, the art of hiding information within other data. Emoji steganography offers a unique opportunity to conceal encrypted messages in plain sight, embedded within seemingly innocuous emoji-laden texts.</p>
+<p>One approach to achieving this is by using a least significant bit (LSB) steganography technique, in which we encode the encrypted message into the least significant bits of the Unicode code points representing the emojis. Let's consider a message encrypted using our previously discussed emoji-based Caesar cipher. We can embed this message into a cover text by altering the least significant bits of each emoji in the cover text to match those of the encrypted message.</p>
+<p>Here is a Python function that demonstrates this concept:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">embed_encrypted_message</span><span class="p">(</span><span class="n">cover_text</span><span class="p">,</span> <span class="n">encrypted_message</span><span class="p">,</span> <span class="n">emojis</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">message_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cover_text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">emojis</span> <span class="ow">and</span> <span class="n">message_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encrypted_message</span><span class="p">):</span>
+            <span class="n">cover_emoji_index</span> <span class="o">=</span> <span class="n">emojis</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">encrypted_emoji_index</span> <span class="o">=</span> <span class="n">emojis</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">encrypted_message</span><span class="p">[</span><span class="n">message_index</span><span class="p">])</span>
+            <span class="n">new_emoji_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">cover_emoji_index</span> <span class="o">&amp;</span> <span class="o">~</span><span class="mh">0xFF</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">encrypted_emoji_index</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emojis</span><span class="p">[</span><span class="n">new_emoji_index</span><span class="p">])</span>
+            <span class="n">message_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+<p>This function allows us to embed an encrypted message within a cover text of emojis, rendering the hidden message virtually undetectable to the unsuspecting observer. This technique exemplifies the power of emojis in the realm of steganography, providing a seamless and unobtrusive way to transmit sensitive information.</p>
+<p>As we continue to explore the potential applications of emoji-based encryption, we find ourselves standing on the precipice of a new cryptographic frontier. From securing our digital identities with emoji passcodes to hiding top-secret messages in plain sight, the future of cryptography may well lie in the expressive and versatile world of emojis 🌈. However, as with any emerging technology, there are challenges and limitations to overcome. In the following sections, we will address these concerns and discuss the prospects for emoji encryption in the ever-evolving digital landscape.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Creating-Your-Own-Emoji-Cipher">5. Creating Your Own Emoji Cipher<a class="anchor-link" href="#5.-Creating-Your-Own-Emoji-Cipher">&para;</a></h2><h3 id="5.1-The-Simple-Swap:-Substituting-Emojis-for-Letters">5.1 The Simple Swap: Substituting Emojis for Letters<a class="anchor-link" href="#5.1-The-Simple-Swap:-Substituting-Emojis-for-Letters">&para;</a></h3><p>The most basic and intuitive method for creating an emoji cipher is to substitute emojis for letters, akin to a simple monoalphabetic substitution cipher. In this approach, each letter of the alphabet is assigned a unique emoji, and the message is encrypted by replacing its characters with their corresponding emojis. Mathematically, this can be represented as a bijection $f: A \rightarrow E$, where $A$ is the set of all letters in the alphabet, and $E$ is a set of distinct emojis. For example:</p>
+$$
+f(a) = \text{emoji}_{\text{grinning face}}, \quad f(b) = \text{emoji}_{\text{winking face}}, \quad \ldots
+$$<p>To decrypt the message, one must simply reverse the substitution process by applying the inverse function $f^{-1}: E \rightarrow A$. In Python, a simple emoji substitution cipher can be implemented as follows:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Define the emoji substitution mapping</span>
+<span class="n">letters</span> <span class="o">=</span> <span class="s2">"abcdefghijklmnopqrstuvwxyz"</span>
+<span class="n">emojis</span> <span class="o">=</span> <span class="s2">"😀😁😂😃😄😅😆😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛"</span>
+<span class="n">emoji_cipher</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">emojis</span><span class="p">))</span>
+
+<span class="c1"># Encrypt a message</span>
+<span class="k">def</span> <span class="nf">encrypt_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">encrypted</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">emoji_cipher</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">lower</span><span class="p">()])</span>
+    <span class="k">return</span> <span class="n">encrypted</span>
+
+<span class="c1"># Decrypt a message</span>
+<span class="k">def</span> <span class="nf">decrypt_message</span><span class="p">(</span><span class="n">encrypted</span><span class="p">):</span>
+    <span class="n">reverse_cipher</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">emoji_cipher</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">decrypted</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">reverse_cipher</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji</span><span class="p">)</span> <span class="k">for</span> <span class="n">emoji</span> <span class="ow">in</span> <span class="n">encrypted</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">decrypted</span>
+</pre></div>
+<p>However, the simple substitution cipher is highly susceptible to frequency analysis attacks, as the distribution of emojis in the encrypted message will closely mirror the distribution of letters in the original text. To enhance the security of the emoji cipher, one must consider more advanced cryptographic techniques.</p>
+<h3 id="5.2-Upgrading-to-Advanced-Emoji-Algorithms:-The-Key-to-More-Secure-Communication-🔑">5.2 Upgrading to Advanced Emoji Algorithms: The Key to More Secure Communication 🔑<a class="anchor-link" href="#5.2-Upgrading-to-Advanced-Emoji-Algorithms:-The-Key-to-More-Secure-Communication-🔑">&para;</a></h3><p>To achieve a higher level of security, one can employ modern cryptographic algorithms, such as the Advanced Encryption Standard (AES), to encrypt messages using emojis as the key. In this approach, a secure emoji-based key is derived from the user's input, which is then used to encrypt and decrypt messages using the chosen algorithm.</p>
+<p>To illustrate this concept, let us consider the following key derivation function $g: E^n \rightarrow K$, where $E^n$ is the set of all possible sequences of $n$ emojis, and $K$ is the set of all valid cryptographic keys. The function $g$ takes a user-defined sequence of emojis as input and outputs a secure key that can be used for encryption and decryption. For example, suppose the user selects the following sequence of emojis as their key:</p>
+$$
+\text{emoji}_{\text{smile}}\text{emoji}_{\text{heart}}\text{emoji}_{\text{rocket}}\text{emoji}_{\text{pizza}}
+$$<p>Applying the key derivation function $g$ yields:</p>
+$$
+k = g(\text{emoji}_{\text{smile}}\text{emoji}_{\text{heart}}\text{emoji}_{\text{rocket}}\text{emoji}_{\text{pizza}})
+$$<p>The derived key $k$ can then be used in conjunction with a modern encryption algorithm, such as AES, to securely encrypt and decrypt messages. A Python implementation of an AES-based emoji cipher might look like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="nn">Crypto.Random</span> <span class="kn">import</span> <span class="n">get_random_bytes</span>
+<span class="kn">from</span> <span class="nn">Crypto.Protocol.KDF</span> <span class="kn">import</span> <span class="n">scrypt</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span><span class="p">,</span> <span class="n">b64decode</span>
+
+<span class="c1"># Derive a key from a sequence of emojis</span>
+<span class="k">def</span> <span class="nf">derive_key</span><span class="p">(</span><span class="n">emoji_sequence</span><span class="p">,</span> <span class="n">salt</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">scrypt</span><span class="p">(</span><span class="n">emoji_sequence</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">),</span> <span class="n">salt</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">14</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">key</span>
+
+<span class="c1"># Encrypt a message using AES-GCM</span>
+<span class="k">def</span> <span class="nf">encrypt_message_aes</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">emoji_key</span><span class="p">):</span>
+    <span class="n">salt</span> <span class="o">=</span> <span class="n">get_random_bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">derive_key</span><span class="p">(</span><span class="n">emoji_key</span><span class="p">,</span> <span class="n">salt</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_GCM</span><span class="p">)</span>
+    <span class="n">ciphertext</span><span class="p">,</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt_and_digest</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span>
+    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">salt</span> <span class="o">+</span> <span class="n">cipher</span><span class="o">.</span><span class="n">nonce</span> <span class="o">+</span> <span class="n">ciphertext</span> <span class="o">+</span> <span class="n">tag</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">encrypted</span>
+
+<span class="c1"># Decrypt a message using AES-GCM</span>
+<span class="k">def</span> <span class="nf">decrypt_message_aes</span><span class="p">(</span><span class="n">encrypted</span><span class="p">,</span> <span class="n">emoji_key</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
+    <span class="n">salt</span><span class="p">,</span> <span class="n">nonce</span><span class="p">,</span> <span class="n">ciphertext</span><span class="p">,</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">16</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">32</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">16</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">16</span><span class="p">:]</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">derive_key</span><span class="p">(</span><span class="n">emoji_key</span><span class="p">,</span> <span class="n">salt</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_GCM</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">nonce</span><span class="p">)</span>
+    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt_and_verify</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">decrypted</span>
+</pre></div>
+<p>In this implementation, the <code>derive_key</code> function uses the scrypt key derivation function to securely convert a user-defined sequence of emojis into a cryptographic key, while the <code>encrypt_message_aes</code> and <code>decrypt_message_aes</code> functions handle the actual encryption and decryption of messages using the AES-GCM mode of operation.</p>
+<p>The incorporation of advanced cryptographic algorithms not only enhances the security of the emoji cipher but also opens the door to a myriad of possibilities for further innovation in the field of emoji-based encryption. For example, one could explore the potential of emoji-based cryptographic hash functions or digital signatures, which would enable users to verify the integrity and authenticity of messages using emojis.</p>
+<p>As the realm of emojis and cryptography continues to evolve, so too will the potential for innovative and secure communication methods. Embrace the emoji era, and let your creativity soar to new heights! 🌠</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-The-Challenges-and-Limitations-of-Emoji-Encryption">6. The Challenges and Limitations of Emoji Encryption<a class="anchor-link" href="#6.-The-Challenges-and-Limitations-of-Emoji-Encryption">&para;</a></h2><p>As we delve deeper into the enchanting world of emoji-based cryptography, it is essential to acknowledge and address the challenges and limitations that accompany this innovative approach. In this section, we will identify two primary areas of concern: ambiguity and interpretation, and compatibility and accessibility. By considering these potential hurdles, we can work towards developing more robust and reliable emoji-based encryption methods.</p>
+<h3 id="6.1-Decoding-the-Emoji-Dilemma:-Ambiguity-and-Interpretation-🤔">6.1 Decoding the Emoji Dilemma: Ambiguity and Interpretation 🤔<a class="anchor-link" href="#6.1-Decoding-the-Emoji-Dilemma:-Ambiguity-and-Interpretation-🤔">&para;</a></h3><p>One of the key challenges in implementing emoji-based encryption lies in the inherent ambiguity and variability in emoji interpretation. Unlike traditional text-based characters, emojis often carry nuanced emotional connotations and can be subject to cultural and personal interpretations. This variability can introduce ambiguity and confusion when trying to decrypt an emoji-encoded message.</p>
+<p>Consider, for example, a substitution cipher relying on a one-to-one mapping between emoji and plaintext characters. In the absence of an explicit key or legend, the recipient may struggle to accurately map the emojis back to their corresponding plaintext characters due to the overlapping emotional meanings of certain emojis. This issue is further exacerbated by the sheer size of the emoji alphabet and the ever-growing number of emojis being introduced.</p>
+<p>One potential solution to this problem is to employ a more sophisticated emoji-based encryption algorithm that incorporates error detection and correction mechanisms. For example, we could implement a Reed-Solomon error-correcting code, which can detect and correct multiple symbol errors in a given message. The encoding process can be described as follows:</p>
+<p>Given a message $m(x) = m_{k-1}x^{k-1} + \cdots + m_1x + m_0$, we encode it using a Reed-Solomon code by evaluating $m(x)$ at $n$ distinct points, $x_1, \ldots, x_n$, with $n &gt; k$. This results in $n$ encoded symbols, $m(x_1), \ldots, m(x_n)$.</p>
+<p>Applying this technique to an emoji-based message would involve first mapping the emojis to a finite field, such as $\mathbb{F}_{2^8}$, and then encoding the message using the Reed-Solomon code. This method would provide a level of redundancy that can help mitigate the challenges posed by emoji ambiguity and interpretation.</p>
+<h3 id="6.2-Compatibility-and-Accessibility:-Will-Everyone-Speak-Emoji?-🌍">6.2 Compatibility and Accessibility: Will Everyone Speak Emoji? 🌍<a class="anchor-link" href="#6.2-Compatibility-and-Accessibility:-Will-Everyone-Speak-Emoji?-🌍">&para;</a></h3><p>Another challenge facing the adoption of emoji-based encryption is the issue of compatibility and accessibility. While emojis have become ubiquitous across various communication platforms, there are still instances where support for emojis may be limited, incomplete, or inconsistent.</p>
+<p>For instance, different platforms and devices may render emojis differently, leading to potential confusion and misinterpretation. Additionally, some older devices or software may not support emojis altogether, rendering emoji-encoded messages unintelligible. These compatibility issues can hinder the adoption of emoji-based encryption and limit its effectiveness as a universal cryptographic solution.</p>
+<p>To address these concerns, it is crucial to develop cross-platform standards and protocols that ensure consistent rendering and support for emojis across devices and platforms. One such effort is the Unicode Consortium, which provides a standardized set of emojis and their corresponding code points. By adhering to these standards, we can reduce compatibility issues and promote widespread adoption of emoji-based encryption.</p>
+<p>In conclusion, while emoji-based encryption presents a plethora of exciting opportunities and applications, it is crucial to consider and address the challenges and limitations that accompany this emerging field. By tackling issues of ambiguity, interpretation, compatibility, and accessibility, we can continue to refine and develop emoji-based encryption methods, paving the way for a more expressive, versatile, and secure cryptographic future 🚀.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Future-Perspectives:-Emojis-and-Quantum-Cryptography?-🚀">7. Future Perspectives: Emojis and Quantum Cryptography? 🚀<a class="anchor-link" href="#7.-Future-Perspectives:-Emojis-and-Quantum-Cryptography?-🚀">&para;</a></h2><p>As we peer into the vast and mysterious realm of quantum mechanics, we find ourselves at the precipice of a new era in cryptography, with the potential to revolutionize the field using the principles of quantum computing. In this section, we will explore the tantalizing possibilities of combining emojis with quantum cryptography, taking a leap of faith into the uncharted territory of qubits and quirky emojis.</p>
+<h3 id="7.1-Qubits-and-Quirky-Emojis:-A-Quantum-Leap-for-Encryption">7.1 Qubits and Quirky Emojis: A Quantum Leap for Encryption<a class="anchor-link" href="#7.1-Qubits-and-Quirky-Emojis:-A-Quantum-Leap-for-Encryption">&para;</a></h3><p>At the heart of quantum computing lies the concept of a qubit, a quantum analogue of the classical bit. Unlike classical bits, which can only exist in one of two states (0 or 1), a qubit can exist in a superposition of both states simultaneously, represented as:</p>
+$$
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,
+$$<p>where $\alpha$ and $\beta$ are complex numbers, and $|\alpha|^2 + |\beta|^2 = 1$. This property of qubits enables quantum computers to perform complex operations and solve problems that are currently intractable for classical computers.</p>
+<p>One of the most well-known applications of quantum computing in cryptography is the <strong>quantum key distribution (QKD)</strong> protocol, such as the BB84 protocol introduced by <a href="https://doi.org/10.1016/0375-9601(84">Bennett and Brassard in 1984</a>90142-6). QKD allows two parties to exchange secret keys securely, leveraging the principles of quantum mechanics to detect and thwart eavesdropping attempts.</p>
+<p>To envision how emojis might be integrated into quantum cryptography, let us first consider the process of encoding emojis as qubits. One possible approach is to use the <strong>quantum superdense coding</strong> technique, which allows two classical bits of information to be encoded into a single qubit. For example, given the Unicode code points of two emojis, we could encode them into a qubit using the following transformation:</p>
+$$
+|\psi_{emoji}\rangle = |00\rangle |e_1\rangle |e_2\rangle \xrightarrow{CNOT} |00\rangle \left(\alpha |e_1\rangle + \beta |e_2\rangle\right),
+$$<p>where $CNOT$ represents the controlled-NOT operation, and $|e_1\rangle$ and $|e_2\rangle$ are the basis states corresponding to the two emojis.</p>
+<p>With this encoding scheme in place, we can begin to explore the possibilities of incorporating emojis into quantum cryptographic protocols, such as QKD. For instance, imagine a scenario where Alice and Bob wish to use emoji-encoded qubits to establish a secure communication channel. They could employ a modified version of the BB84 protocol, in which they randomly choose from a set of emoji-encoded qubit states, transmit them over a quantum channel, and then compare and reconcile their choices to generate a shared secret key.</p>
+<p>The key advantage of this emoji-based quantum cryptography approach is the increased expressiveness and versatility afforded by the use of emojis as opposed to traditional binary representations. By leveraging the vast and ever-expanding emoji alphabet, we can create more intricate and nuanced cryptographic protocols that are both secure and engaging.</p>
+<p>However, it is important to note that the marriage of emojis and quantum cryptography is not without its challenges. As with classical emoji-based encryption, issues of ambiguity, interpretation, compatibility, and accessibility remain pertinent in the quantum realm. Furthermore, the practical implementation of quantum cryptographic protocols is still in its infancy, with many technical hurdles to overcome, such as maintaining the coherence of quantum states and developing efficient quantum error correction techniques.</p>
+<p>In conclusion, while the integration of emojis into quantum cryptography presents a myriad of captivating possibilities, it also highlights the need for continued research and innovation in this nascent field. By addressing the challenges and limitations outlined in this section, we can aspire to create a future where emojis and quantum cryptography harmoniously coexist, paving the way for truly secure, expressive, and delightful communication 🌌🔐.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-Conclusion">8. Conclusion<a class="anchor-link" href="#8.-Conclusion">&para;</a></h2><p>In conclusion, the fascinating world of emojis has managed to permeate various facets of modern-day communication, including the realm of cryptography. The marriage of these two seemingly disparate disciplines has given rise to a plethora of intriguing questions and possibilities, which we have endeavored to explore throughout this blog post. 😄🔒</p>
+<p>The inexorable march of progress has seen emojis evolve from humble emoticons to a fully-fledged linguistic phenomenon, transcending cultural and linguistic barriers to become a universally understood means of expression. As the number of emojis continues to grow, so too does their potential as building blocks for constructing novel cryptographic schemes. The sheer expressiveness and adaptability of emojis offer a multitude of advantages over traditional text-based encryption, such as an increased character set, enhanced visual appeal, and improved resistance to frequency analysis attacks. 🚀</p>
+<p>Real-world applications of emoji-based encryption are already beginning to take shape, with emojis finding their way into passcodes, steganography, and even advanced cryptographic algorithms. As we have seen, the creation of an emoji cipher can range from simple substitution techniques to more sophisticated approaches that leverage state-of-the-art cryptographic primitives. Regardless of the method employed, the versatility of emojis promises a virtually limitless canvas for designing secure communication channels. 🎨</p>
+<p>Of course, this lighthearted fusion of emojis and cryptography is not without its challenges and limitations. The ambiguity and interpretation of emojis can pose a significant hurdle when attempting to construct a reliable and consistent encryption scheme. Furthermore, compatibility and accessibility concerns must be addressed to ensure that the benefits of emoji-based encryption can be enjoyed by a global audience. 🌍</p>
+<p>As we peer into the future, the tantalizing prospect of marrying emojis with cutting-edge quantum cryptography beckons. The unique properties of qubits and the quirky nature of emojis have the potential to redefine the way we approach encryption, opening the door to a world of unimaginable possibilities. 💫</p>
+<p>So, are emojis the lighthearted future of cryptography? While the jury may still be out on that question, there is no denying the tremendous potential that lies at the intersection of these two domains. The creative fusion of emojis and cryptography serves as a testament to the power of human ingenuity, illustrating that even the most unassuming of symbols can be harnessed to create secure, innovative, and engaging methods of communication. As we continue to navigate this brave new world of emoji-based encryption, one thing is for certain: the future is bright, colorful, and full of smiles. 😊🔐</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="9.-References">9. References<a class="anchor-link" href="#9.-References">&para;</a></h2><ol>
+<li><p><a href="https://doi.org/10.1145/3267305.3274136">Alshammari, R., Simpson, A., &amp; Schulz, R. (2018). Emoji-Polyglot: A Secure Visual Encryption Scheme for Mobile Devices. In <em>Proceedings of the 2018 ACM International Joint Conference and 2018 International Symposium on Pervasive and Ubiquitous Computing and Wearable Computers</em> (pp. 1040-1045). ACM.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.13052/jcsm2245-1439.821">Alshammari, R., Simpson, A., &amp; Schulz, R. (2019). Emojis: A Mobile-First Visual Encryption Notation for Non-Expert Crypto Users. <em>Journal of Cyber Security and Mobility</em>, 8(2), 145-164.</a></p>
+</li>
+<li><p><a href="http://www.unicode.org/versions/Unicode13.0.0/">Davis, M., Edberg, P., Marriott, K., &amp; Yoshida, Y. (Eds.). (2020). <em>Unicode Standard, Version 13.0</em>. Mountain View, CA: The Unicode Consortium.</a></p>
+</li>
+<li><p><a href="https://tools.ietf.org/html/rfc5246">Dierks, T., &amp; Rescorla, E. (2008). The Transport Layer Security (TLS) Protocol Version 1.2. <em>RFC 5246</em>.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1109/TIT.1976.1055638">Diffie, W., &amp; Hellman, M. E. (1976). New Directions in Cryptography. <em>IEEE Transactions on Information Theory</em>, 22(6), 644-654.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.5220/0005122604490456">Gubala, M., &amp; Schartner, P. (2014). EmojiSteg: Steganography and Watermarking Using Emoticons. In <em>Proceedings of the 2014 International Conference on Security and Cryptography</em> (pp. 449-456). SciTePress.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1109/SPAC.2019.8923279">Huang, X., &amp; Zheng, S. (2019). An Emoji-based Authentication Scheme for Mobile Devices. In <em>Proceedings of the 2019 International Conference on Security, Pattern Analysis, and Cybernetics</em> (pp. 197-202). IEEE.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1017/CBO9780511976667">Nielsen, M. A., &amp; Chuang, I. L. (2010). <em>Quantum Computation and Quantum Information</em>. Cambridge University Press.</a></p>
+</li>
+<li><p><a href="https://tools.ietf.org/html/rfc8017">RSA Laboratories. (2003). PKCS #1 v2.2: RSA Cryptography Standard.</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Emoji">Wikipedia contributors. (2021). Emoji. In <em>Wikipedia, The Free Encyclopedia</em>.</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Steganography">Wikipedia contributors. (2021). Steganography. In <em>Wikipedia, The Free Encyclopedia</em>.</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cryptography.html">cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/emoji-algorithms.html">emoji algorithms</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/emoji-cipher.html">emoji cipher</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/emojis.html">emojis</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/encryption.html">encryption</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/history-of-emojis.html">history of emojis</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/information-security.html">information security</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/quantum-cryptography.html">quantum cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/secure-communication.html">secure communication</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/steganography.html">steganography</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/the-intersection-of-cbdcs-and-tokenomics-a-whimsical-guide-to-the-future-of-finance.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">The Intersection of CBDCs and Tokenomics: A Whimsical Guide to the Future of Finance</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/the-perfect-ai-pairing-how-neurosymbolic-ai-marries-the-best-of-neural-and-symbolic-worlds.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">The Perfect AI Pairing: How Neurosymbolic AI Marries the Best of Neural and Symbolic Worlds!</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

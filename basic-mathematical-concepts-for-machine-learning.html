@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>Basic Mathematical Concepts for Machine Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="In this blog post, we will explore a variety of basic mathematical concepts that underpin many machine learning algorithms." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Basic Mathematical Concepts for Machine Learning</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>May 11, 2018</time>
+        <div>
+          <span>&nbsp;·&nbsp;37 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Gaussian-Processes" title="1. Gaussian Processes&para;">1. Gaussian Processes&para;</a></li><li><a class="toc-href" href="#2.-Kernel-Methods-and-Kernels" title="2. Kernel Methods and Kernels&para;">2. Kernel Methods and Kernels&para;</a></li><li><a class="toc-href" href="#3.-Taylor-Series-Expansion" title="3. Taylor Series Expansion&para;">3. Taylor Series Expansion&para;</a></li><li><a class="toc-href" href="#4.-Vector-to-vector-Derivatives" title="4. Vector-to-vector Derivatives&para;">4. Vector-to-vector Derivatives&para;</a></li><li><a class="toc-href" href="#5.-Differential-Equations" title="5. Differential Equations&para;">5. Differential Equations&para;</a></li><li><a class="toc-href" href="#6.-Central-Limit-Theorem" title="6. Central Limit Theorem&para;">6. Central Limit Theorem&para;</a></li><li><a class="toc-href" href="#7.-Bayesian-Inference" title="7. Bayesian Inference&para;">7. Bayesian Inference&para;</a></li><li><a class="toc-href" href="#8.-Optimization" title="8. Optimization&para;">8. Optimization&para;</a></li><li><a class="toc-href" href="#9.-Regularization" title="9. Regularization&para;">9. Regularization&para;</a></li><li><a class="toc-href" href="#10.-Dimensionality-Reduction" title="10. Dimensionality Reduction&para;">10. Dimensionality Reduction&para;</a></li><li><a class="toc-href" href="#11.-Conclusion" title="11. Conclusion&para;">11. Conclusion&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this blog post, we will explore a variety of basic mathematical concepts that underpin many machine learning algorithms.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Gaussian-Processes">1. Gaussian Processes<a class="anchor-link" href="#1.-Gaussian-Processes">&para;</a></h2><p>Gaussian Processes (GPs) are non-parametric methods for modeling a multivariate Gaussian probability distribution over a collection of random variables. GPs assume a prior over functions and update the posterior over functions based on the observed data points.</p>
+<p>Given a collection of data points $\{x^{(1)}, \dots, x^{(N)}\}$, GPs assume that they follow a jointly multivariate Gaussian distribution, defined by a mean function $\mu(x)$ and a covariance matrix $\Sigma(x)$. Each entry at location $(i, j)$ in the covariance matrix $\Sigma(x)$ is defined by a kernel function $\Sigma_{i, j} = K(x^{(i)}, x^{(j)})$, also known as a covariance function. The core idea is that if two data points are considered similar by the kernel function, their function outputs should also be close.</p>
+<p>The joint distribution of the observed outputs $y^{(1)}, \dots, y^{(N)}$ and the prediction at a test point $y^*$ is given by:</p>
+$$
+\begin{aligned}
+\begin{bmatrix}
+y \\
+y^*
+\end{bmatrix}
+\sim \mathcal{N} \left( \begin{bmatrix}
+\mu(X) \\
+\mu(x^*)
+\end{bmatrix}, \begin{bmatrix}
+\Sigma(X, X) &amp; \Sigma(X, x^*) \\
+\Sigma(x^*, X) &amp; \Sigma(x^*, x^*)
+\end{bmatrix} \right)
+\end{aligned}
+$$<p>where $\Sigma(X, X)$ is the covariance matrix of the observed data points, $\Sigma(X, x^*)$ and $\Sigma(x^*, X)$ are the covariance matrices between the observed data points and the test point, and $\Sigma(x^*, x^*)$ is the covariance of the test point.</p>
+<p>To make a prediction at the test point $x^*$, we compute the conditional distribution $p(y^* | x^*, X, y)$. Using properties of the multivariate Gaussian distribution, we obtain:</p>
+$$
+\begin{aligned}
+y^* | x^*, X, y &amp;\sim \mathcal{N} \Bigg( \mu(x^*) + \Sigma(x^*, X) \Sigma(X, X)^{-1} (y - \mu(X)), \\
+&amp;\qquad \Sigma(x^*, x^*) - \Sigma(x^*, X) \Sigma(X, X)^{-1} \Sigma(X, x^*) \Bigg)
+\end{aligned}
+$$<p>This conditional distribution provides the predictive mean and variance at the test point $x^*$, which can be used for making predictions and quantifying uncertainty.</p>
+<p>In summary, Gaussian Processes provide a powerful and flexible approach to modeling complex relationships between data points. They have been used in a wide range of applications, from regression and classification tasks to optimization and reinforcement learning. By understanding the underlying principles of GPs, we can better appreciate their strengths and limitations, and make informed choices when using them in practice.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Kernel-Methods-and-Kernels">2. Kernel Methods and Kernels<a class="anchor-link" href="#2.-Kernel-Methods-and-Kernels">&para;</a></h2><p>Kernels are fundamental components in various machine learning algorithms, particularly in non-parametric, instance-based techniques. A <em>kernel</em> is essentially a similarity function between two data points, $K: \mathcal{X} \times \mathcal{X} \to \mathbb{R}$. It describes how sensitive the prediction for one data sample is to the prediction for the other, or in other words, how similar two data points are. The kernel should be symmetric, $K(x, x') = K(x', x)$.</p>
+<p>Depending on the problem structure, some kernels can be decomposed into two feature maps, one corresponding to one data point, and the kernel value is an inner product of these two features: $K(x, x') = \langle \varphi(x), \varphi(x') \rangle$.</p>
+<h3 id="Common-Kernel-Functions">Common Kernel Functions<a class="anchor-link" href="#Common-Kernel-Functions">&para;</a></h3><ol>
+<li><em>Linear Kernel</em>: $K(x, x') = x^\top x'$</li>
+<li><em>Polynomial Kernel</em>: $K(x, x') = (x^\top x' + c)^d$, where $c$ and $d$ are constants</li>
+<li><em>Radial Basis Function (RBF) Kernel / Gaussian Kernel</em>: $K(x, x') = \exp(-\frac{\lVert x - x' \rVert^2}{2\sigma^2})$, where $\sigma^2$ is a constant</li>
+<li><em>Sigmoid Kernel</em>: $K(x, x') = \tanh(\alpha x^\top x' + \beta)$, where $\alpha$ and $\beta$ are constants</li>
+</ol>
+<p>Kernel methods are a type of non-parametric, instance-based machine learning algorithms. Assuming we have known all the labels of training samples $\{x^{(i)}, y^{(i)}\}$, the label for a new input $x$ is predicted by a weighted sum $\sum_{i} K(x^{(i)}, x)y^{(i)}$. Popular kernel methods include <em>Support Vector Machines</em> (SVMs) and <em>Kernel Principal Component Analysis</em> (Kernel PCA).</p>
+<h3 id="Representer-Theorem">Representer Theorem<a class="anchor-link" href="#Representer-Theorem">&para;</a></h3><p>The <em>Representer Theorem</em> is a fundamental result in kernel methods, which states that the optimal solution of a regularized problem in a Reproducing Kernel Hilbert Space (RKHS) can be expressed as a linear combination of kernel functions evaluated at the training points:</p>
+$$ f^*(x) = \sum_{i=1}^N \alpha_i K(x^{(i)}, x) $$<p>The Representer Theorem is widely used in the derivation of kernel-based algorithms and ensures that these algorithms can be effectively implemented in practice.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Taylor-Series-Expansion">3. Taylor Series Expansion<a class="anchor-link" href="#3.-Taylor-Series-Expansion">&para;</a></h2><p>The Taylor series expansion is a powerful mathematical tool used to approximate functions as an infinite sum of terms based on the function's derivatives. It enables us to express a function, $f(x)$, in terms of its derivatives evaluated at a specific point, $x = a$. The Taylor series expansion can be written as:</p>
+$$ f(x) = f(a) + \sum_{k=1}^\infty \frac{1}{k!} (x - a)^k \nabla^k_x f(x)\Big\vert_{x=a} $$<p>where $\nabla^k$ denotes the $k$-th derivative. The Taylor series is particularly useful in situations where the function is too complex to compute directly, or when we need to obtain a simpler, more tractable approximation of the function.</p>
+<p>The first-order Taylor expansion, also known as the linear approximation, only includes the first term of the Taylor series:</p>
+$$ f(x) \approx f(a) + (x - a) \nabla_x f(x)\Big\vert_{x=a} $$<p>This linear approximation is often used as a starting point for more advanced mathematical analysis or numerical methods, such as Newton's method for finding roots of a function. The higher-order terms in the Taylor series can be used to obtain a more accurate approximation of the function, but at the cost of increased complexity.</p>
+<p>In some cases, it is useful to consider the Taylor series expansion in multiple dimensions. For a multivariate function, $f(\mathbf{x})$, where $\mathbf{x} \in \mathbb{R}^n$, the Taylor series expansion can be written as:</p>
+$$ f(\mathbf{x}) = f(\mathbf{a}) + \sum_{k=1}^\infty \frac{1}{k!} (\mathbf{x} - \mathbf{a})^k \nabla^k_{\mathbf{x}} f(\mathbf{x})\Big\vert_{\mathbf{x}=\mathbf{a}} $$<p>where $\nabla^k_{\mathbf{x}}$ denotes the $k$-th derivative with respect to the vector $\mathbf{x}$.</p>
+<p>The Taylor series expansion has widespread applications in various fields, including machine learning, optimization, numerical analysis, and physics. By understanding and leveraging the properties of Taylor series expansions, researchers can develop more effective and efficient algorithms to tackle complex problems.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Vector-to-vector-Derivatives">4. Vector-to-vector Derivatives<a class="anchor-link" href="#4.-Vector-to-vector-Derivatives">&para;</a></h2><p>Vector-to-vector derivatives are crucial in understanding the behavior of functions that map from one vector space to another. The Jacobian matrix is a key concept in this context, representing the first-order partial derivatives of a vector-valued function with respect to its input vector.</p>
+<p>Given an input vector $\mathbf{x} \in \mathbb{R}^n$ (as a column vector) and a function $f: \mathbb{R}^n \to \mathbb{R}^m$, the derivative of $f$ with respect to $\mathbf{x}$ is an $m\times n$ matrix, also known as the Jacobian matrix:</p>
+$$ J = \frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} \frac{\partial f_1}{\partial x_1} &amp; \dots &amp;\frac{\partial f_1}{\partial x_n} \\ \vdots &amp; &amp; \\ \frac{\partial f_m}{\partial x_1} &amp; \dots &amp;\frac{\partial f_m}{\partial x_n} \\ \end{bmatrix} \in \mathbb{R}^{m \times n} $$<p>Throughout this section, integer subscript(s) are used to refer to a single entry out of a vector or matrix value; i.e., $x_i$ indicates the $i$-th value in the vector $\mathbf{x}$, and $f_i(\cdot)$ is the $i$-th entry in the output of the function.</p>
+<p>The gradient of a vector with respect to a vector is defined as $\nabla_\mathbf{x} f = J^\top \in \mathbb{R}^{n \times m}$, and this formation is also valid when $m=1$ (i.e., scalar output).</p>
+<p>Consider a scalar function $g(\mathbf{x}) = \mathbf{a}^\top \mathbf{x}$, where $\mathbf{a} \in \mathbb{R}^n$ and $\mathbf{x} \in \mathbb{R}^n$. The gradient of $g$ with respect to $\mathbf{x}$ can be computed as:</p>
+$$ \nabla_\mathbf{x} g = \begin{bmatrix} \frac{\partial g}{\partial x_1} \\ \vdots \\ \frac{\partial g}{\partial x_n} \end{bmatrix} = \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \mathbf{a} $$<p>Now, consider a more complex example. Let $h(\mathbf{x}) = \mathbf{x}^\top A \mathbf{x}$, where $A \in \mathbb{R}^{n \times n}$ is a symmetric matrix, and $\mathbf{x} \in \mathbb{R}^n$. The gradient of $h$ with respect to $\mathbf{x}$ can be computed as:</p>
+$$
+\begin{align*}
+\nabla_\mathbf{x} h &amp;= \begin{bmatrix} 
+                            \frac{\partial h}{\partial x_1} \\ 
+                            \vdots \\ 
+                            \frac{\partial h}{\partial x_n} 
+                         \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \frac{\partial (\mathbf{x}^\top A \mathbf{x})}{\partial x_1} \\ 
+      \vdots \\ 
+      \frac{\partial (\mathbf{x}^\top A \mathbf{x})}{\partial x_n} 
+   \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \frac{\partial (\sum_{i=1}^n \sum_{j=1}^n x_i A_{i,j} x_j)}{\partial x_1} \\ 
+      \vdots \\ 
+      \frac{\partial (\sum_{i=1}^n \sum_{j=1}^n x_i A_{i,j} x_j)}{\partial x_n} 
+   \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \sum_{i=1}^n \sum_{j=1}^n \frac{\partial (x_i A_{i,j} x_j)}{\partial x_1} \\ 
+      \vdots \\ 
+      \sum_{i=1}^n \sum_{j=1}^n \frac{\partial (x_i A_{i,j} x_j)}{\partial x_n} 
+   \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \sum_{j=1}^n A_{1,j} x_j + \sum_{i=1}^n x_i A_{i,1} \\ 
+      \vdots \\ 
+      \sum_{j=1}^n A_{n,j} x_j + \sum_{i=1}^n x_i A_{i,n} 
+   \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \sum_{j=1}^n A_{1,j} x_j + \sum_{i=1}^n A_{i,1} x_i \\ 
+      \vdots \\ 
+      \sum_{j=1}^n A_{n,j} x_j + \sum_{i=1}^n A_{i,n} x_i 
+   \end{bmatrix} \\
+&amp;= \begin{bmatrix} 
+      \sum_{j=1}^n (A_{1,j} + A_{j,1}) x_j \\ 
+      \vdots \\ 
+      \sum_{j=1}^n (A_{n,j} + A_{j,n}) x_j 
+   \end{bmatrix} \\
+&amp;= (A + A^\top) \mathbf{x}
+\end{align*}
+$$<p>In this example, the gradient of the quadratic form $\mathbf{x}^\top A \mathbf{x}$ is computed as $(A + A^\top) \mathbf{x}$, where $A$ is a symmetric matrix.</p>
+<p>Vector-to-vector derivatives play a crucial role in understanding the behavior of functions in machine learning algorithms. Their applications include computing gradients for optimization, sensitivity analysis, and understanding how changes in input variables affect the output. Understanding and working with vector-to-vector derivatives is essential for machine learning practitioners and researchers.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Differential-Equations">5. Differential Equations<a class="anchor-link" href="#5.-Differential-Equations">&para;</a></h2><p>Differential equations describe the relationship between one or multiple functions and their derivatives. There are two main types of differential equations:</p>
+<h3 id="5.1-Ordinary-Differential-Equations-(ODEs)">5.1 Ordinary Differential Equations (ODEs)<a class="anchor-link" href="#5.1-Ordinary-Differential-Equations-(ODEs)">&para;</a></h3><p>Ordinary Differential Equations (ODEs) contain only an unknown function of one random variable. ODEs are the primary form of differential equations used in this post. A general form of ODE appears as:</p>
+$$ F\left(x, y, \frac{dy}{dx}, \dots, \frac{d^ny}{dx^n}\right) = 0 $$<h4 id="5.1.1-First-Order-ODEs">5.1.1 First-Order ODEs<a class="anchor-link" href="#5.1.1-First-Order-ODEs">&para;</a></h4><p>First-order ODEs involve only the first derivative of the function. They can be written as:</p>
+$$ F\left(x, y, \frac{dy}{dx}\right) = 0 $$<h4 id="5.1.2-Second-Order-ODEs">5.1.2 Second-Order ODEs<a class="anchor-link" href="#5.1.2-Second-Order-ODEs">&para;</a></h4><p>Second-order ODEs involve the second derivative of the function. They can be expressed as:</p>
+$$ F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}\right) = 0 $$<h3 id="5.2-Partial-Differential-Equations-(PDEs)">5.2 Partial Differential Equations (PDEs)<a class="anchor-link" href="#5.2-Partial-Differential-Equations-(PDEs)">&para;</a></h3><p>Partial Differential Equations (PDEs) contain unknown multivariable functions and their partial derivatives. The general form of a PDE can be written as:</p>
+$$ F\left(x_1, x_2, \dots, x_n, u, \frac{\partial u}{\partial x_1}, \frac{\partial u}{\partial x_2}, \dots, \frac{\partial u}{\partial x_n}\right) = 0 $$<p>where $u = u(x_1, x_2, \dots, x_n)$ is the unknown function.</p>
+<h4 id="5.2.1-Linear-PDEs">5.2.1 Linear PDEs<a class="anchor-link" href="#5.2.1-Linear-PDEs">&para;</a></h4><p>Linear PDEs are a special class of PDEs where the unknown function and its partial derivatives appear only in the first power and are not multiplied by one another.</p>
+<h4 id="5.2.2-Nonlinear-PDEs">5.2.2 Nonlinear PDEs<a class="anchor-link" href="#5.2.2-Nonlinear-PDEs">&para;</a></h4><p>Nonlinear PDEs involve unknown functions and their partial derivatives that are nonlinear in nature, meaning that they can appear in higher powers or multiplied by one another.</p>
+<h3 id="5.3-Solution-Methods-for-Differential-Equations">5.3 Solution Methods for Differential Equations<a class="anchor-link" href="#5.3-Solution-Methods-for-Differential-Equations">&para;</a></h3><p>Various solution methods can be employed to solve differential equations, including analytical methods such as separation of variables, integrating factors, and the method of undetermined coefficients, as well as numerical methods like Euler's method, Runge-Kutta methods, and finite difference methods.</p>
+<p>For example, the separation of variables (Fourier method) can be used when all the terms containing one variable can be moved to one side, while the other terms are all moved to the other side:</p>
+$$ \begin{aligned} \text{Given }a\text{ is a constant scalar:}\quad\frac{dy}{dx} &amp;= ay \\ \text{Move same variables to the same side:}\quad\frac{dy}{y} &amp;= adx \\ \text{Put integral on both sides:}\quad\int \frac{dy}{y} &amp;= \int adx \\ \ln (y) &amp;= ax + C' \\ \text{Finally}\quad y &amp;= e^{ax + C'} = C e^{ax} \end{aligned} $$<p>Understanding differential equations is crucial in various fields, including physics, engineering, and economics, as they often model real-world phenomena and systems.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Central-Limit-Theorem">6. Central Limit Theorem<a class="anchor-link" href="#6.-Central-Limit-Theorem">&para;</a></h2><p>The Central Limit Theorem (CLT) is a fundamental theorem in probability theory that states that the sum or average of a large number of independent and identically distributed (i.i.d.) random variables approaches a Gaussian distribution, regardless of the original distribution of the individual variables.</p>
+<p>Let $x_1, x_2, \dots, x_N$ be a collection of i.i.d. random variables with mean $\mu$ and variance $\sigma^2$. The CLT states that when $N$ becomes very large, the sample mean $\bar{x}$ converges to a Gaussian distribution:</p>
+$$ \bar{x} = \frac{1}{N}\sum_{i=1}^N x_i \xrightarrow{d} \mathcal{N}(\mu, \frac{\sigma^2}{N})\quad\text{as }N \to \infty $$<p>Here, $\xrightarrow{d}$ denotes convergence in distribution. To illustrate the convergence, let $S_N = x_1 + x_2 + \dots + x_N$. Then, we can rewrite the CLT as follows:</p>
+$$ \frac{S_N - N\mu}{\sqrt{N}\sigma} \xrightarrow{d} \mathcal{N}(0, 1) $$<p>The proof of the CLT relies on characteristic functions and the continuity theorem for characteristic functions. Let $\phi_X(t) = \mathbb{E}[e^{itX}]$ be the characteristic function of a random variable $X$. Using the property $\phi_{aX + b}(t) = e^{itb}\phi_X(at)$ and the independence of the random variables, we can derive the characteristic function of the standardized sum:</p>
+$$
+\begin{aligned}
+\phi_{\frac{S_N - N\mu}{\sqrt{N}\sigma}}(t) &amp;= \phi_{\frac{1}{\sqrt{N}\sigma}(S_N - N\mu)}(t) \\
+&amp;= \phi_{\frac{1}{\sqrt{N}\sigma}(x_1 + x_2 + \dots + x_N - N\mu)}(t) \\
+&amp;= \prod_{i=1}^N \phi_{\frac{x_i - \mu}{\sqrt{N}\sigma}}(t) \\
+&amp;= \left[\phi_{\frac{X - \mu}{\sqrt{N}\sigma}}(t)\right]^N
+\end{aligned}
+$$<p>By applying Taylor series expansion to $\phi_{\frac{X - \mu}{\sqrt{N}\sigma}}(t)$, we can show that the limit of the characteristic function converges to the characteristic function of the standard Gaussian distribution:</p>
+$$ \lim_{N \to \infty} \phi_{\frac{S_N - N\mu}{\sqrt{N}\sigma}}(t) = \phi_{\mathcal{N}(0, 1)}(t) $$<p>The CLT has profound implications for statistical inference, hypothesis testing, and machine learning. It is the foundation for many parametric statistical methods, such as the t-test and linear regression, and provides justification for using Gaussian distributions as priors in Bayesian methods and as assumptions in various machine learning algorithms.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Bayesian-Inference">7. Bayesian Inference<a class="anchor-link" href="#7.-Bayesian-Inference">&para;</a></h2><p>Bayesian inference is a statistical method that updates probabilities based on observed data, using Bayes' theorem. In machine learning, Bayesian methods can be applied to model uncertainty, update beliefs about model parameters, and make predictions.</p>
+<p>Bayes' theorem is expressed as:</p>
+$$ P(H|D) = \frac{P(D|H)P(H)}{P(D)} $$<p>where $P(H|D)$ is the posterior probability of hypothesis $H$ given data $D$, $P(D|H)$ is the likelihood of data $D$ given hypothesis $H$, $P(H)$ is the prior probability of hypothesis $H$, and $P(D)$ is the probability of observing data $D$. In the context of machine learning, $H$ can represent model parameters, and $D$ represents observed data.</p>
+<p>For example, consider a simple Bayesian linear regression model:</p>
+$$ y = \mathbf{w}^{\top} \mathbf{x} + \epsilon $$<p>where $y$ is the target variable, $\mathbf{w}$ is a weight vector, $\mathbf{x}$ is an input vector, and $\epsilon$ is a Gaussian noise term with zero mean and variance $\sigma^2$. We can assume a Gaussian prior on the weights $\mathbf{w}$:</p>
+$$ P(\mathbf{w}) = \mathcal{N}(\mathbf{w} | \mathbf{0}, \Sigma_p) $$<p>Given observed data $D = \{(\mathbf{x}_i, y_i)\}_{i=1}^n$, the likelihood function is:</p>
+$$ P(D|\mathbf{w}) = \prod_{i=1}^n \mathcal{N}(y_i | \mathbf{w}^{\top} \mathbf{x}_i, \sigma^2) $$<p>Using Bayes' theorem, we can compute the posterior distribution over the weights:</p>
+$$ P(\mathbf{w}|D) = \frac{P(D|\mathbf{w})P(\mathbf{w})}{P(D)} $$<p>In practice, we often need to compute the marginal likelihood or evidence $P(D)$, which is given by:</p>
+$$ P(D) = \int P(D|\mathbf{w})P(\mathbf{w}) d\mathbf{w} $$<p>This integral can be difficult to compute analytically, especially for high-dimensional or complex models. As a result, various approximate inference techniques, such as Markov Chain Monte Carlo (MCMC) methods, variational inference, and Laplace approximation, have been developed to estimate the posterior distribution or marginal likelihood.</p>
+<p>In conclusion, Bayesian inference provides a powerful framework for incorporating prior knowledge, modeling uncertainty, and updating beliefs as new data is observed. By understanding the underlying principles and methods, we can better apply Bayesian techniques to machine learning tasks and develop more robust and accurate models.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-Optimization">8. Optimization<a class="anchor-link" href="#8.-Optimization">&para;</a></h2><p>Optimization is the process of finding the best solution to a problem by minimizing or maximizing an objective function. In machine learning, optimization algorithms are used to find the best model parameters that minimize the error or loss function. Common optimization techniques include gradient descent, stochastic gradient descent, and more advanced methods such as L-BFGS, AdaGrad, RMSprop, and Adam.</p>
+<p>One of the most popular optimization methods is gradient descent. Given a differentiable loss function $L(\theta)$, where $\theta$ is the parameter vector, gradient descent iteratively updates the parameters using the negative gradient of the loss function:</p>
+$$
+\theta^{(t+1)} = \theta^{(t)} - \alpha \nabla L(\theta^{(t)})
+$$<p>where $\alpha$ is the learning rate, and $\nabla L(\theta^{(t)})$ is the gradient of the loss function with respect to the parameters at iteration $t$. The gradient can be computed using the chain rule of derivatives, as follows:</p>
+$$
+\begin{aligned}
+\nabla L(\theta) &amp;= \frac{\partial L}{\partial \theta} \\
+&amp;= \frac{\partial L}{\partial y} \frac{\partial y}{\partial \theta}
+\end{aligned}
+$$<p>In stochastic gradient descent (SGD), instead of computing the gradient using the entire dataset, we use a random subset of the data (a mini-batch) to approximate the true gradient. This introduces some noise but can significantly speed up the convergence:</p>
+$$
+\theta^{(t+1)} = \theta^{(t)} - \alpha \nabla L_{\text{mini-batch}}(\theta^{(t)})
+$$<p>More advanced optimization methods often adapt the learning rate for each parameter based on their individual gradients. For example, the AdaGrad algorithm computes a running sum of the squared gradients and adjusts the learning rate for each parameter as follows:</p>
+$$
+\begin{aligned}
+G_{t+1} &amp;= G_t + \nabla L(\theta^{(t)}) \odot \nabla L(\theta^{(t)}) \\
+\theta^{(t+1)} &amp;= \theta^{(t)} - \frac{\alpha}{\sqrt{G_{t+1} + \epsilon}} \odot \nabla L(\theta^{(t)})
+\end{aligned}
+$$<p>where $G_t$ is the running sum of the squared gradients, $\odot$ denotes element-wise multiplication, and $\epsilon$ is a small constant to prevent division by zero.</p>
+<p>In conclusion, optimization is a crucial aspect of machine learning, as it allows us to find the best model parameters that minimize the error or loss function. By understanding the various optimization techniques and their properties, we can better choose the most appropriate method for a specific problem and improve the efficiency and effectiveness of our models.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="9.-Regularization">9. Regularization<a class="anchor-link" href="#9.-Regularization">&para;</a></h2><p>Regularization is a technique used in machine learning to prevent overfitting and improve generalization by introducing additional constraints or penalties to the objective function. Regularization methods add a regularization term $\Omega(\theta)$ to the loss function $L(\theta, \mathcal{D})$ to create a new regularized loss function:</p>
+$$ \tilde{L}(\theta, \mathcal{D}) = L(\theta, \mathcal{D}) + \lambda \Omega(\theta) $$<p>where $\lambda$ is a regularization parameter that controls the balance between fitting the data and the complexity of the model, and $\theta$ represents the model parameters.</p>
+<p>Two common regularization methods are L1 and L2 regularization:</p>
+<ol>
+<li><p><strong>L1 regularization (Lasso)</strong>: This method adds an L1 penalty, which is proportional to the absolute value of the model parameters:</p>
+<p>$$ \Omega(\theta) = \sum_{i=1}^{n} |\theta_i| $$</p>
+<p>L1 regularization promotes sparsity in the model parameters, as it encourages some parameters to be exactly zero. This can be useful for feature selection.</p>
+</li>
+<li><p><strong>L2 regularization (Ridge)</strong>: This method adds an L2 penalty, which is proportional to the square of the magnitude of the model parameters:</p>
+<p>$$ \Omega(\theta) = \sum_{i=1}^{n} \theta_i^2 $$</p>
+<p>L2 regularization encourages the model parameters to be small but not necessarily zero. It can help prevent overfitting by avoiding extreme parameter values.</p>
+</li>
+</ol>
+<p>When optimizing the regularized loss function, we can use gradient-based methods such as gradient descent. The gradient of the regularized loss function with respect to the model parameters is given by:</p>
+$$ \nabla_{\theta} \tilde{L}(\theta, \mathcal{D}) = \nabla_{\theta} L(\theta, \mathcal{D}) + \lambda \nabla_{\theta} \Omega(\theta) $$<p>For L1 regularization, the gradient of the regularization term is given by the element-wise sign of the model parameters:</p>
+$$
+\nabla_{\theta} \Omega(\theta) = \text{sign}(\theta) = \begin{cases}
+   1 &amp; \text{if } \theta &gt; 0 \\
+   0 &amp; \text{if } \theta = 0 \\
+   -1 &amp; \text{if } \theta &lt; 0
+   \end{cases}
+$$<p>For L2 regularization, the gradient of the regularization term is given by the element-wise product of the model parameters:</p>
+$$ \nabla_{\theta} \Omega(\theta) = 2\theta $$<p>Regularization is a powerful tool for preventing overfitting and improving the generalization capabilities of machine learning models by controlling their complexity.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="10.-Dimensionality-Reduction">10. Dimensionality Reduction<a class="anchor-link" href="#10.-Dimensionality-Reduction">&para;</a></h2><p>Dimensionality reduction is the process of reducing the number of features or variables in a dataset while preserving its essential structure and relationships. This is particularly useful for visualizing high-dimensional data, reducing computational complexity, and mitigating the curse of dimensionality.</p>
+<p>One common dimensionality reduction technique is Principal Component Analysis (PCA). PCA aims to find a lower-dimensional subspace that maximizes the variance of the projected data. Given a dataset $X \in \mathbb{R}^{n \times d}$, where $n$ is the number of samples and $d$ is the number of features, the covariance matrix of the data is given by:</p>
+$$
+\Sigma = \frac{1}{n} X^T X \in \mathbb{R}^{d \times d}
+$$<p>PCA finds the eigenvectors and eigenvalues of the covariance matrix, which correspond to the principal components and the variances explained by these components, respectively. Let $\lambda_i$ and $v_i$ denote the $i$-th eigenvalue and eigenvector of $\Sigma$, respectively. The eigenvectors and eigenvalues satisfy the following relationship:</p>
+$$
+\Sigma v_i = \lambda_i v_i
+$$<p>By selecting the top $k$ eigenvectors corresponding to the $k$ largest eigenvalues, we can project the original data onto a lower-dimensional subspace:</p>
+$$
+Z = X V_k \in \mathbb{R}^{n \times k}
+$$<p>where $V_k \in \mathbb{R}^{d \times k}$ is the matrix formed by the top $k$ eigenvectors. This results in a reduced representation of the original data with $k$ dimensions.</p>
+<p>Another popular dimensionality reduction technique is t-Distributed Stochastic Neighbor Embedding (t-SNE). t-SNE aims to find a lower-dimensional representation of the data that preserves the pairwise distances between data points. Given a pairwise distance matrix $D \in \mathbb{R}^{n \times n}$ for the original data, t-SNE minimizes the divergence between two probability distributions, one representing the pairwise similarities in the original space and the other in the lower-dimensional space. The Kullback-Leibler (KL) divergence between these two distributions is given by:</p>
+$$
+C = \mathrm{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}
+$$<p>where $p_{ij}$ and $q_{ij}$ denote the probabilities of pairwise similarities in the original and lower-dimensional spaces, respectively. The t-SNE algorithm optimizes the lower-dimensional representation by minimizing the KL divergence using gradient descent.</p>
+<p>In summary, dimensionality reduction techniques like PCA and t-SNE play an essential role in various machine learning applications, such as data visualization, feature extraction, and noise reduction. By understanding these techniques and their underlying principles, practitioners can make informed choices when selecting appropriate methods for their specific tasks.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="11.-Conclusion">11. Conclusion<a class="anchor-link" href="#11.-Conclusion">&para;</a></h2><p>In conclusion, we have explored various basic mathematical concepts that underpin many machine learning algorithms. Understanding these concepts is essential for researchers and practitioners alike, as they provide the foundation for developing and implementing state-of-the-art machine learning models.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><ol>
+<li><p>Gaussian Processes</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1110.5678">Gaussian Processes for Machine Learning (GPML) Toolbox</a></li>
+</ul>
+</li>
+<li><p>Kernel Methods and Kernels</p>
+<ul>
+<li><a href="https://arxiv.org/abs/cs/9602027">A Tutorial on Support Vector Machines for Pattern Recognition</a></li>
+<li><a href="https://arxiv.org/abs/0701907">Kernel Methods in Machine Learning</a></li>
+</ul>
+</li>
+<li><p>Taylor Series Expansion</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1603.06065">Taylor Approximation in Learning Algorithms</a></li>
+</ul>
+</li>
+<li><p>Vector-to-vector Derivatives</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1802.01528">Matrix Calculus in Neural Networks</a></li>
+</ul>
+</li>
+<li><p>Differential Equations</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1806.07366">Neural Ordinary Differential Equations</a></li>
+</ul>
+</li>
+<li><p>Central Limit Theorem</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2008.10596">A Primer on the Central Limit Theorem for Data Science</a></li>
+</ul>
+</li>
+<li><p>Bayesian Inference</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1807.02811">A Tutorial on Bayesian Optimization</a></li>
+<li><a href="https://arxiv.org/abs/cs/9603104">Bayesian Learning for Neural Networks</a></li>
+</ul>
+</li>
+<li><p>Optimization</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1609.04747">An Overview of Gradient Descent Optimization Algorithms</a></li>
+</ul>
+</li>
+<li><p>Regularization</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2105.05407">Regularization and Bayesian Learning in Machine Learning: Tutorial and Survey</a></li>
+</ul>
+</li>
+<li><p>Dimensionality Reduction</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1403.2877">A Survey of Dimensionality Reduction Techniques</a></li>
+<li><a href="https://arxiv.org/abs/1404.1100">Principal Component Analysis</a></li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/algorithms.html">algorithms</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/machine-learning.html">machine learning</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/mathematical.html">mathematical</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/transformer-architecture-understanding-attention-mechanisms-and-positional-encoding-techniques.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">Transformer Architecture: Understanding Attention Mechanisms and Positional Encoding Techniques</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

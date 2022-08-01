@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>Beyond Cryptography: How Steganography Strengthens Blockchain's Privacy Armor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="Steganography and Blockchain's joint venture has the potential to revolutionize the way we approach privacy and security in the digital age. It's..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/cryptography.html">Cryptography</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Beyond Cryptography: How Steganography Strengthens Blockchain's Privacy Armor</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>January 23, 2019</time>
+        <div>
+          <span>&nbsp;·&nbsp;43 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a><ul><li><a class="toc-href" href="#2.-Blockchain-Technology-and-Cryptography" title="2. Blockchain Technology and Cryptography&para;">2. Blockchain Technology and Cryptography&para;</a></li><li><a class="toc-href" href="#3.-Steganography-Techniques-Applied-to-Blockchain" title="3. Steganography Techniques Applied to Blockchain&para;">3. Steganography Techniques Applied to Blockchain&para;</a></li><li><a class="toc-href" href="#4.-Use-Cases-and-Applications-of-Steganography-in-Blockchain" title="4. Use Cases and Applications of Steganography in Blockchain&para;">4. Use Cases and Applications of Steganography in Blockchain&para;</a></li><li><a class="toc-href" href="#5.-Potential-Challenges-and-Limitations" title="5. Potential Challenges and Limitations&para;">5. Potential Challenges and Limitations&para;</a></li><li><a class="toc-href" href="#6.-Future-Prospects-of-Steganography-and-Blockchain" title="6. Future Prospects of Steganography and Blockchain&para;">6. Future Prospects of Steganography and Blockchain&para;</a></li><li><a class="toc-href" href="#7.-Conclusion" title="7. Conclusion&para;">7. Conclusion&para;</a></li><li><a class="toc-href" href="#8.-References" title="8. References&para;">8. References&para;</a></li></ul></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h1><p>Greetings, esteemed readers of the Arcane Analytic blog! As a math professor with a flair for the dramatic and a penchant for all things cryptic, I'm ecstatic to dive into the fascinating world of steganography and its applications in blockchain technology. So grab your slide rules, secure your tin foil hats, and let's embark on a thrilling journey through the land of hidden messages and distributed ledgers!</p>
+<h3 id="1.1-What-is-Steganography?">1.1 What is Steganography?<a class="anchor-link" href="#1.1-What-is-Steganography?">&para;</a></h3><p>Steganography, derived from the Greek words <em>steganos</em> (covered) and <em>graphein</em> (writing), is the art and science of hiding information within other seemingly innocuous data, be it images, text, audio, or even video files. This clever concealment technique has been used for centuries, dating back to ancient civilizations that used hidden messages in pottery or tattooed them on messengers' scalps. Ah, those were the days!</p>
+<p>In the realm of digital steganography, we employ a variety of algorithms to embed secret data within other files. One popular approach is the Least Significant Bit (LSB) method, which replaces the least significant bits of an image's pixel values with the bits of the secret message. This can be represented mathematically as:</p>
+$$
+\begin{aligned}
+    I'(x, y) = \begin{cases}
+        \text{I}(x, y) - 1, &amp; \text{if } M(x, y) = 1 \text{ and } \text{I}(x, y)\mod 2 = 0 \\
+        \text{I}(x, y) + 1, &amp; \text{if } M(x, y) = 0 \text{ and } \text{I}(x, y)\mod 2 = 1 \\
+        \text{I}(x, y), &amp; \text{otherwise} \\
+    \end{cases}
+\end{aligned}
+$$<p>where $I(x, y)$ denotes the original image's pixel value at coordinates $(x, y)$, $I'(x, y)$ is the modified pixel value, and $M(x, y)$ is the secret message bit.</p>
+<p>Here's a Python snippet to illustrate the LSB embedding process:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">lsb_steganography</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">msg_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">msg_idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+                <span class="n">bit</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="n">msg_idx</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">bit</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">msg_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">image</span>
+</pre></div>
+<h3 id="1.2-The-Importance-of-Privacy-and-Security-in-the-Digital-Age">1.2 The Importance of Privacy and Security in the Digital Age<a class="anchor-link" href="#1.2-The-Importance-of-Privacy-and-Security-in-the-Digital-Age">&para;</a></h3><p>In an era where data breaches and cyber attacks are as frequent as coffee breaks, the need for robust privacy and security measures is paramount. Fortunately, this is where steganography and blockchain can join forces like a cryptographically-secure dynamic duo!</p>
+<p>Blockchain technology, as you may know, is a decentralized digital ledger that provides a high level of security and transparency through cryptography and consensus algorithms. The power of blockchain lies in its ability to securely store data across a distributed network of nodes, making it resistant to data tampering and single points of failure. This makes it a prime candidate for integrating with steganography to create even more secure and private data storage and communication solutions.</p>
+<p>So, without further ado, let's dive into the depths of blockchain and steganography, and explore their harmonious symphony in the world of secure data management. Stay tuned, dear reader, for the excitement has just begun!</p>
+<p><a href="https://arxiv.org/abs/1801.05760">Simonetti et al</a> have provided an excellent overview of steganography and its applications in computer science, which I highly recommend for those seeking an even deeper understanding. But for now, let's continue our journey through the mesmerizing world of hidden messages and cryptographic wonders!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Blockchain-Technology-and-Cryptography">2. Blockchain Technology and Cryptography<a class="anchor-link" href="#2.-Blockchain-Technology-and-Cryptography">&para;</a></h2><p>Ah, the magical world of blockchain and cryptography! In this section, we'll delve into the fascinating realm of these technologies, exploring their fundamentals and intricacies. So, buckle up and prepare for an exciting journey through the land of cryptographic puzzles and distributed ledgers!</p>
+<h3 id="2.1-The-Fundamentals-of-Blockchain">2.1 The Fundamentals of Blockchain<a class="anchor-link" href="#2.1-The-Fundamentals-of-Blockchain">&para;</a></h3><p>Blockchain, often hailed as the <em>digital panacea</em> for modern-day woes, is a decentralized and distributed digital ledger technology. It comprises a series of immutable data records called <em>blocks</em> that are linked together using cryptography. Each block typically contains a timestamp, transaction data, and a cryptographic hash of the previous block<sup class="footnote-ref" id="fnref-1^"><a href="#fn-1^">1</a></sup>. The first block in a blockchain is called the <em>genesis block</em>.</p>
+<p>Now, let's do some mathemagic! The cryptographic hash function, denoted as $H(\cdot)$, is a one-way function that maps data of arbitrary size to a fixed-size output. Given a block $B_i$, its hash is computed as:</p>
+$$
+H(B_i) = H(\text{previous hash} \,||\, \text{timestamp} \,||\, \text{transaction data} \,||\, \text{nonce})
+$$<p>Where '||' denotes concatenation and $\text{nonce}$ is a random value that makes the hash satisfy a certain condition<sup class="footnote-ref" id="fnref-2^"><a href="#fn-2^">2</a></sup>. The condition is usually a <em>proof-of-work</em> (PoW) puzzle, which requires the hash to be less than a certain target value.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="k">def</span> <span class="nf">compute_hash</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Compute the hash of a block in the blockchain.</span>
+<span class="sd">    """</span>
+    <span class="n">block_data</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">'previous_hash'</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">'timestamp'</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">'transaction_data'</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">'nonce'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">block_data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">valid_proof</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Check if the computed hash of the block is less than the target value.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">target</span>
+</pre></div>
+<h3 id="2.2-Cryptography-in-Blockchain">2.2 Cryptography in Blockchain<a class="anchor-link" href="#2.2-Cryptography-in-Blockchain">&para;</a></h3><p>The security of a blockchain hinges on the power of cryptography. In the world of blockchain, two primary cryptographic algorithms play a starring role<sup class="footnote-ref" id="fnref-3^"><a href="#fn-3^">3</a></sup>: asymmetric key cryptography and cryptographic hash functions. Let's unveil the secrets behind these enigmatic algorithms, shall we?</p>
+<h4 id="2.2.1-Asymmetric-Key-Cryptography">2.2.1 Asymmetric Key Cryptography<a class="anchor-link" href="#2.2.1-Asymmetric-Key-Cryptography">&para;</a></h4><p>Asymmetric key cryptography, also known as <em>public-key cryptography</em>, involves the use of two distinct yet mathematically related keys: a public key and a private key<sup class="footnote-ref" id="fnref-4^"><a href="#fn-4^">4</a></sup>. The public key is used to encrypt data, while the private key is used to decrypt it. In the context of blockchain, public-key cryptography enables secure transactions and digital signatures, ensuring data integrity and non-repudiation.</p>
+<p>For instance, the widely-used Elliptic Curve Digital Signature Algorithm (ECDSA) can be represented as follows:</p>
+<ul>
+<li><p>Key pair generation: $(\text{private key} \, d, \text{public key} \, Q) \leftarrow \text{ECDSA}.\text{KeyGen}()$</p>
+</li>
+<li><p>Signature generation: $\text{signature} \, \sigma \leftarrow \text{ECDSA}.\text{Sign}(d, m)$, where $m$ is the message.</p>
+</li>
+<li><p>Signature verification: $\text{ECDSA}.\text{Verify}(Q, m, \sigma) \in \{\text{Accept}, \text{Reject}\}$</p>
+</li>
+</ul>
+<h4 id="2.2.2-Cryptographic-Hash-Functions">2.2.2 Cryptographic Hash Functions<a class="anchor-link" href="#2.2.2-Cryptographic-Hash-Functions">&para;</a></h4><p>Cryptographic hash functions, as mentioned earlier, are one-way functions that map data of arbitrary size to a fixed-size output. They exhibit several desirable properties<sup class="footnote-ref" id="fnref-5^"><a href="#fn-5^">5</a></sup> such as:</p>
+<ol>
+<li>Determinism: $H(x) = H(x)$ for all $x$.</li>
+<li>Preimage resistance: Given $y$, it's computationally infeasible to find $x$ such that $H(x) = y$.</li>
+<li>Second preimage resistance: Given $x$, it's computationally infeasible to find $x' \neq x$ such that $H(x) = H(x')$.</li>
+<li>Collision resistance: It's computationally infeasible to find distinct $x$ and $x'$ such that $H(x) = H(x')$.</li>
+</ol>
+<p>These properties make cryptographic hash functions an essential building block in the blockchain's structure, ensuring its integrity, immutability, and security.</p>
+<p>And with that, we've unraveled the enigma of blockchain technology and cryptography! Stay tuned for more cryptographic adventures as we explore steganography techniques applied to blockchain in the next section.</p>
+<div class="footnotes">
+<hr/>
+<ol><li id="fn-1^"><p><a href="https://bitcoin.org/bitcoin.pdf">Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.</a><a class="footnote" href="#fnref-1^">&larrhk;</a></p></li>
+<li id="fn-2^"><p><a href="https://arxiv.org/abs/1112.4980">Rosenfeld, M. (2011). Analysis of Bitcoin Pooled Mining Reward Systems.</a><a class="footnote" href="#fnref-2^">&larrhk;</a></p></li>
+<li id="fn-3^"><p><a href="http://cacr.uwaterloo.ca/hac/">Menezes, A. J., Van Oorschot, P. C., &amp; Vanstone, S. A. (1996). Handbook of Applied Cryptography. CRC Press.</a><a class="footnote" href="#fnref-3^">&larrhk;</a></p></li>
+<li id="fn-4^"><p><a href="https://doi.org/10.1109/TIT.1976.1055638">Diffie, W., &amp; Hellman, M. (1976). New directions in cryptography. IEEE Transactions on Information Theory.</a><a class="footnote" href="#fnref-4^">&larrhk;</a></p></li>
+<li id="fn-5^"><p><a href="https://www.crcpress.com/Cryptography-Theory-and-Practice/Stinson/p/book/9781584885085">Stinson, D. R. (2006). Cryptography: Theory and Practice. CRC Press.</a><a class="footnote" href="#fnref-5^">&larrhk;</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Steganography-Techniques-Applied-to-Blockchain">3. Steganography Techniques Applied to Blockchain<a class="anchor-link" href="#3.-Steganography-Techniques-Applied-to-Blockchain">&para;</a></h2><p>In the realm of blockchain technology, steganography breathes new life into data privacy and security. This section delves deep into the fascinating world of steganographic techniques applied to blockchain. Buckle up, dear reader, for an adventure in the arcane art of hidden data!</p>
+<h3 id="3.1-Image-based-Steganography">3.1 Image-based Steganography<a class="anchor-link" href="#3.1-Image-based-Steganography">&para;</a></h3><p>The first technique to grace our journey is image-based steganography, an ingenious method where secret data is camouflaged within the pixels of an image. The Least Significant Bit (LSB) method is a popular choice, as it modifies the least important bits of the image data, rendering the alterations imperceptible to the human eye. Mathematically, this can be represented as:</p>
+$$
+\begin{aligned}
+ I'_{i,j} = \begin{cases}
+   I_{i,j} &amp; \text{if } d_{k} = 0 \\
+   I_{i,j} - 1 &amp; \text{if } d_{k} = 1 \text{ and } I_{i,j} \equiv 1 \pmod{2} \\
+   I_{i,j} + 1 &amp; \text{if } d_{k} = 1 \text{ and } I_{i,j} \equiv 0 \pmod{2}
+ \end{cases}
+\end{aligned}
+$$<p>where $I_{i,j}$ is the original pixel value, $I'_{i,j}$ is the modified pixel value, and $d_{k}$ is the secret data bit.</p>
+<p>In the world of blockchain, image-based steganography could be employed to conceal transaction data, ensuring an extra layer of confidentiality. The following Python code snippet illustrates the LSB method:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lsb_embed</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">byte_to_bits</span><span class="p">(</span><span class="n">byte</span><span class="p">):</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">pixel</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+                <span class="n">new_pixel</span> <span class="o">=</span> <span class="n">modify_pixel</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="n">bit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">new_pixel</span> <span class="o">!=</span> <span class="n">pixel</span><span class="p">:</span>
+                    <span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_pixel</span>
+                    <span class="k">break</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">width</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> <span class="o">%</span> <span class="n">height</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">image</span>
+</pre></div>
+<h3 id="3.2-Text-based-Steganography">3.2 Text-based Steganography<a class="anchor-link" href="#3.2-Text-based-Steganography">&para;</a></h3><p>Next up is text-based steganography, which involves hiding data within text documents. A popular approach is the Zero-Width Space (ZWSP) method. In this technique, secret data is encoded using zero-width characters (like zero-width space or zero-width non-joiner), which are invisible to the naked eye but can be detected by computers.</p>
+<p>Let $T = t_1t_2...t_n$ be the cover text and $D = d_1d_2...d_m$ be the secret data. The encoding function $f: D \rightarrow Z$, where $Z$ is the set of zero-width characters, can be defined as:</p>
+$$
+f(d_i) = \begin{cases}
+   Z_1 &amp; \text{if } d_i = 0 \\
+   Z_2 &amp; \text{if } d_i = 1
+\end{cases}
+$$<p>When applied to blockchain, text-based steganography could be utilized to obscure metadata in smart contracts or even hide the transaction details within seemingly innocuous text messages. Behold the Python code snippet that demonstrates the ZWSP method:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zwsp_embed</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">zero_width_space</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'</span><span class="se">\u200B</span><span class="s1">'</span>
+    <span class="n">zero_width_non_joiner</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'</span><span class="se">\u200C</span><span class="s1">'</span>
+    <span class="n">encoded_data</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">zero_width_space</span> <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s1">'0'</span> <span class="k">else</span> <span class="n">zero_width_non_joiner</span> <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">text</span> <span class="o">+</span> <span class="n">encoded_data</span>
+</pre></div>
+<h3 id="3.3-Audio-based-Steganography">3.3 Audio-based Steganography<a class="anchor-link" href="#3.3-Audio-based-Steganography">&para;</a></h3><p>Lastly, we arrive at audio-based steganography, a method that conceals data within audio files. One popular technique is the Least Significant Bit Coding (LSBC), which modifies the least significant bits of audio samples, just like its image-based counterpart. Given an audio file with samples $S = s_1s_2...s_n$ and secret data $D = d_1d_2...d_m$, the LSBC encoding function can be expressed as:</p>
+$$
+\begin{aligned}
+  S'_{i} = \begin{cases}
+    S_{i} &amp; \text{if } d_{k} = 0 \\
+    S_{i} - 1 &amp; \text{if } d_{k} = 1 \text{ and } S_{i} \equiv 1 \pmod{2} \\
+    S_{i} + 1 &amp; \text{if } d_{k} = 1 \text{ and } S_{i} \equiv 0 \pmod{2}
+  \end{cases}
+\end{aligned}
+$$<p>LSBC could be employed in blockchain systems to store data in audio files, such as transaction logs, ensuring confidentiality and reducing the need for large amounts of storage. The following Python code snippet showcases the LSBC method:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lsbc_embed</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">byte_to_bits</span><span class="p">(</span><span class="n">byte</span><span class="p">):</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">sample</span> <span class="o">=</span> <span class="n">audio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">new_sample</span> <span class="o">=</span> <span class="n">modify_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">new_sample</span> <span class="o">!=</span> <span class="n">sample</span><span class="p">:</span>
+                    <span class="n">audio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_sample</span>
+                    <span class="k">break</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">audio</span>
+</pre></div>
+<p>And there you have it! A whirlwind tour of steganography techniques applied to blockchain. With these methods in our arsenal, we can conquer the digital landscape and protect our precious data from prying eyes! Remember, my fellow cryptographers: the pen may be mightier than the sword, but steganography is the true guardian of privacy in the digital age.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Use-Cases-and-Applications-of-Steganography-in-Blockchain">4. Use Cases and Applications of Steganography in Blockchain<a class="anchor-link" href="#4.-Use-Cases-and-Applications-of-Steganography-in-Blockchain">&para;</a></h2><p>Oh boy, are we in for a treat today! Steganography and blockchain, when combined, can create some fantastic applications that will make you appreciate the beauty of mathematics and cryptography even more. In this section, we will delve into three exciting use cases: confidential transactions, secure messaging, and data integrity and ownership verification. So buckle up, my fellow math enthusiasts, and let's dive into the wonderful world of steganographic applications in blockchain!</p>
+<h3 id="4.1-Confidential-Transactions">4.1 Confidential Transactions<a class="anchor-link" href="#4.1-Confidential-Transactions">&para;</a></h3><p>Confidential transactions (CTs) are a fantastic way to enhance privacy in the blockchain world. They allow users to conceal the transaction amounts while still maintaining the integrity and security of the blockchain. The magic behind CTs is <em>Pedersen commitments</em> and <em>range proofs</em>. Let me explain.</p>
+<p>A Pedersen commitment, denoted as $C$, is a cryptographic scheme that allows you to commit to a value, say $v$, without revealing it. Mathematically, it can be expressed as:</p>
+$$
+C = vH + rG
+$$<p>Here, $H$ and $G$ are generators on an elliptic curve, and $r$ is a random blinding factor. The transaction amount is hidden in $vH$, and the blinding factor $r$ ensures that the value of $v$ remains confidential.</p>
+<p>Now, to prevent negative values and other shenanigans, we use range proofs. Range proofs allow you to prove that a committed value is within a specific range without revealing the actual value. In a nutshell, range proofs leverage <em>bulletproofs</em>, a non-interactive zero-knowledge proof system. The proof $\pi$ can be written as:</p>
+$$
+\pi = \text{Bulletproof}(C, v, r, [v_{min}, v_{max}])
+$$<p>In blockchain, the combination of Pedersen commitments and range proofs ensures the privacy and validity of transaction amounts in confidential transactions<sup class="footnote-ref" id="fnref-1^"><a href="#fn-1^">1</a></sup>.</p>
+<h3 id="4.2-Secure-Messaging">4.2 Secure Messaging<a class="anchor-link" href="#4.2-Secure-Messaging">&para;</a></h3><p>Imagine being able to send messages on the blockchain with the same level of privacy and security as your favorite end-to-end encrypted messaging app. Steganography can make this dream come true! By leveraging text-based steganography, we can hide messages within seemingly innocuous data, such as transaction metadata or even smart contract code.</p>
+<p>For example, you can use the <em>null cipher</em> to hide a message in plain sight by cleverly arranging the characters of the cover text. Suppose Alice wants to send the message "HELLO" to Bob. She could use the following Python code to create a null cipher steganographic message:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">null_cipher</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">cover_text</span><span class="p">):</span>
+    <span class="n">message_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">stego_text</span> <span class="o">=</span> <span class="s2">""</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cover_text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">message</span><span class="p">[</span><span class="n">message_index</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="n">stego_text</span> <span class="o">+=</span> <span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">message_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stego_text</span> <span class="o">+=</span> <span class="n">char</span>
+
+        <span class="k">if</span> <span class="n">message_index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">stego_text</span>
+</pre></div>
+<p>By using this code, Alice could hide her message in a cover text like "How are you? Everything looks lovely today!" The capitalized letters spell out the hidden message "HELLO."</p>
+<h3 id="4.3-Data-Integrity-and-Ownership-Verification">4.3 Data Integrity and Ownership Verification<a class="anchor-link" href="#4.3-Data-Integrity-and-Ownership-Verification">&para;</a></h3><p>As data becomes increasingly valuable, ensuring its integrity and proving ownership have never been more critical. Steganography, combined with blockchain's immutable ledger, can create a powerful solution to this problem.</p>
+<p>For instance, let's explore image-based steganography to embed a unique digital watermark in an image. This watermark could be the hash of the owner's public key, which can be verified against the blockchain's record of ownership. The watermark can be embedded using an algorithm such as the <em>least significant bit (LSB) method</em><sup class="footnote-ref" id="fnref-2^"><a href="#fn-2^">2</a></sup>.</p>
+<p>In Python, the LSB method can be implemented using the following code snippet:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">lsb_watermark</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">watermark_bits</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">pixels</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="n">watermark_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pixels</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">watermark_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">):</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">&amp;</span> <span class="mh">0xFE</span><span class="p">)</span> <span class="o">|</span> <span class="nb">int</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">[</span><span class="n">watermark_index</span><span class="p">])</span>
+                <span class="n">watermark_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">watermark_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">):</span>
+                <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">&amp;</span> <span class="mh">0xFE</span><span class="p">)</span> <span class="o">|</span> <span class="nb">int</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">[</span><span class="n">watermark_index</span><span class="p">])</span>
+                <span class="n">watermark_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">watermark_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">):</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xFE</span><span class="p">)</span> <span class="o">|</span> <span class="nb">int</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">[</span><span class="n">watermark_index</span><span class="p">])</span>
+                <span class="n">watermark_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">pixels</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">watermark_index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">):</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">watermark_index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">watermark_bits</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">image</span>
+</pre></div>
+<p>By embedding the digital watermark in the image, artists can prove their ownership and protect their intellectual property. Furthermore, the combination of steganography and blockchain can be used to verify the integrity of the data, ensuring that it has not been tampered with or altered.</p>
+<p>In conclusion, the synergy between steganography and blockchain technology opens up a world of possibilities for exciting applications. From confidential transactions to secure messaging and data integrity, the potential of this combination is limitless. So, my fellow math lovers, let us rejoice in the beauty of steganography and blockchain, and explore even more fantastic applications together!</p>
+<div class="footnotes">
+<hr/>
+<ol><li id="fn-1^"><p><a href="https://eprint.iacr.org/2017/1066.pdf">B&uuml;nz et al</a><a class="footnote" href="#fnref-1^">&larrhk;</a></p></li>
+<li id="fn-2^"><p><a href="https://link.springer.com/chapter/10.1007/3-540-45472-1_7">Johnson et al</a><a class="footnote" href="#fnref-2^">&larrhk;</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Potential-Challenges-and-Limitations">5. Potential Challenges and Limitations<a class="anchor-link" href="#5.-Potential-Challenges-and-Limitations">&para;</a></h2><p>Ah, challenges! The spice of life, and the main ingredient to make any scientific endeavor thrilling. Let's dive into the potential challenges and limitations of combining steganography and blockchain. Buckle up, folks!</p>
+<h3 id="5.1-Detection-and-Countermeasures">5.1 Detection and Countermeasures<a class="anchor-link" href="#5.1-Detection-and-Countermeasures">&para;</a></h3><p>Despite the artful craft of steganography, there's always a chance that hidden data will be detected. For example, statisticians could employ steganalysis techniques, such as those based on the chi-square test, to detect hidden information in image-based steganography<sup class="footnote-ref" id="fnref-1^"><a href="#fn-1^">1</a></sup>. A chi-square test, for those who love a good formula, can be expressed as:</p>
+$$
+\chi^2 = \sum_{i=1}^{n} \frac{(O_i - E_i)^2}{E_i}
+$$<p>Where $O_i$ are the observed frequencies, $E_i$ the expected frequencies, and $n$ the number of categories.</p>
+<p>One possible countermeasure is to use advanced steganographic techniques, such as adaptive steganography, which modifies the embedding process based on the image's characteristics<sup class="footnote-ref" id="fnref-2^"><a href="#fn-2^">2</a></sup>. This method can be expressed mathematically by:</p>
+$$
+\begin{aligned}
+\text{if } &amp;\text{image complexity} &lt; \text{threshold} \\
+&amp;\text{use less invasive embedding technique} \\
+\text{else} \\
+&amp;\text{use more aggressive embedding technique}
+\end{aligned}
+$$<h3 id="5.2-Efficiency-and-Scalability-Issues">5.2 Efficiency and Scalability Issues<a class="anchor-link" href="#5.2-Efficiency-and-Scalability-Issues">&para;</a></h3><p>Our beloved steganography techniques can sometimes suffer from efficiency and scalability issues, especially when applied to large-scale blockchain networks. For instance, the time complexity of the Least Significant Bit (LSB) steganography can be represented as:</p>
+$$
+\mathcal{O}(n^2)
+$$<p>Where $n$ is the number of pixels in the image. This quadratic time complexity might not be ideal for large-scale applications, and we should explore more efficient techniques.</p>
+<p>However, fear not! There are various optimization techniques that could be employed, such as parallel processing and efficient data structures<sup class="footnote-ref" id="fnref-3^"><a href="#fn-3^">3</a></sup>. For example, a more efficient algorithm for steganography could have a time complexity of:</p>
+$$
+\mathcal{O}(n \log n)
+$$<p>Which would significantly improve the efficiency of the process.</p>
+<h3 id="5.3-Ethical-and-Legal-Concerns">5.3 Ethical and Legal Concerns<a class="anchor-link" href="#5.3-Ethical-and-Legal-Concerns">&para;</a></h3><p>Oh, the tangled web we weave! When it comes to the intersection of steganography, blockchain, and ethics, things can get a bit murky. The confidentiality provided by steganography can be misused for malicious activities, such as hiding malware or facilitating illegal transactions<sup class="footnote-ref" id="fnref-4^"><a href="#fn-4^">4</a></sup>.</p>
+<p>To address these concerns, researchers should develop advanced detection techniques and establish clear ethical guidelines for the use of steganography in blockchain applications. As the wise mathematician and philosopher Pythagoras once said, "A good mathematician is a good ethical person" (probably).</p>
+<div class="footnotes">
+<hr/>
+<ol><li id="fn-1^"><p><a href="https://www.usenix.org/legacy/events/sec01/full_papers/provos/provos.pdf">Provos, N., &amp; Honeyman, P. (2001)</a>. Detecting Steganographic Content on the Internet.<a class="footnote" href="#fnref-1^">&larrhk;</a></p></li>
+<li id="fn-2^"><p><a href="https://ieeexplore.ieee.org/document/6234402">Fridrich, J., &amp; Kodovsk&yacute;, J. (2012)</a>. Rich Models for Steganalysis of Digital Images.<a class="footnote" href="#fnref-2^">&larrhk;</a></p></li>
+<li id="fn-3^"><p><a href="https://doi.org/10.1109/CISP-BMEI.2017.8302167">Wu, H., &amp; Wang, W. (2017)</a>. A Parallel Steganography Algorithm for JPEG Images.<a class="footnote" href="#fnref-3^">&larrhk;</a></p></li>
+<li id="fn-4^"><p><a href="https://doi.org/10.1016/j.cose.2006.09.005">Zander, S., Armitage, G., &amp; Branch, P. (2007)</a>. A Survey of Covert Channels and Countermeasures in Computer Network Protocols.<a class="footnote" href="#fnref-4^">&larrhk;</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Future-Prospects-of-Steganography-and-Blockchain">6. Future Prospects of Steganography and Blockchain<a class="anchor-link" href="#6.-Future-Prospects-of-Steganography-and-Blockchain">&para;</a></h2><p>Oh, the future! It's always full of exciting possibilities, and when it comes to steganography and blockchain, the prospects are no different. As we venture into the realm of what's to come, let's explore how steganography and blockchain could join forces to create some truly fascinating solutions.</p>
+<h3 id="6.1-Enhanced-Security-and-Privacy-Solutions">6.1 Enhanced Security and Privacy Solutions<a class="anchor-link" href="#6.1-Enhanced-Security-and-Privacy-Solutions">&para;</a></h3><p>One potential application of steganography in the blockchain space is the development of more secure and private transaction systems. By combining cryptographic techniques with steganographic methods, we could create a more resilient and private means of conducting transactions.</p>
+<p>For instance, consider a scenario where confidential transactions are protected using a combination of homomorphic encryption and image-based steganography. Suppose we have a simple transaction represented by the equation:</p>
+$$
+\begin{aligned}
+Y &amp;= aX + b \\
+\text{where}~ Y &amp;= \text{output amount} \\
+a &amp;= \text{scaling factor} \\
+X &amp;= \text{input amount} \\
+b &amp;= \text{random offset}
+\end{aligned}
+$$<p>Using homomorphic encryption, we could encrypt the transaction and embed it within an image, making it virtually undetectable. In this case, we could use a Python library like <code>stegano</code> to implement the steganography part:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stegano</span> <span class="kn">import</span> <span class="n">lsb</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">embed_data</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">secret_image</span> <span class="o">=</span> <span class="n">lsb</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">secret_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"secret_image.png"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">extract_data</span><span class="p">(</span><span class="n">image_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lsb</span><span class="o">.</span><span class="n">reveal</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+</pre></div>
+<p>By integrating such techniques, we're essentially making it more challenging for adversaries to decipher our transactions, thereby enhancing privacy and security <a href="https://arxiv.org/abs/1905.11919">Dutta et al</a>.</p>
+<h3 id="6.2-Integration-with-Other-Emerging-Technologies">6.2 Integration with Other Emerging Technologies<a class="anchor-link" href="#6.2-Integration-with-Other-Emerging-Technologies">&para;</a></h3><p>As technology progresses, the integration of steganography and blockchain with other emerging fields such as quantum computing, artificial intelligence, and the Internet of Things (IoT) presents an exciting prospect. Here's a fun example to illustrate this point:</p>
+<p>Imagine a world where IoT devices communicate securely using steganography and blockchain. In this scenario, data transmission between devices could be concealed using audio-based steganography, with the data being encrypted and hidden within seemingly innocuous sound files.</p>
+<p>To achieve this, we could use a Python library like <code>wavsteg</code> for audio steganography:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wavsteg</span>
+
+<span class="k">def</span> <span class="nf">embed_audio_data</span><span class="p">(</span><span class="n">audio_path</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">wavsteg</span><span class="o">.</span><span class="n">embed_data</span><span class="p">(</span><span class="n">audio_path</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">"secret_audio.wav"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">extract_audio_data</span><span class="p">(</span><span class="n">audio_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">wavsteg</span><span class="o">.</span><span class="n">extract_data</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
+</pre></div>
+<p>These sound files would then be securely transmitted over a decentralized network powered by blockchain technology, ensuring both privacy and data integrity <a href="https://doi.org/10.1109/ACCESS.2021.3101920">Zhang et al</a>.</p>
+<h3 id="6.3-Exploring-the-Boundaries-of-Human-Ingenuity">6.3 Exploring the Boundaries of Human Ingenuity<a class="anchor-link" href="#6.3-Exploring-the-Boundaries-of-Human-Ingenuity">&para;</a></h3><p>The future of steganography and blockchain is truly a testament to the boundless creativity of human minds. By pushing the limits of what we know and challenging the status quo, we are bound to uncover new and innovative ways to solve complex problems in the realms of privacy, security, and beyond.</p>
+<p>For example, it's not difficult to envision a future where advanced AI algorithms are employed to optimize steganographic techniques, making them even more resistant to detection. Alternatively, we could see the development of new cryptographic primitives that take advantage of quantum computing's unique properties, leading to even more robust security solutions for blockchain networks.</p>
+<p>So, as we look ahead with optimism (and a touch of humor, because who doesn't love a good laugh?), the potential for steganography and blockchain to revolutionize the way we think about privacy and security is truly exciting. Only time will tell what incredible innovations await us in this fascinating field, but one thing's for sure&mdash;our journey is just beginning.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&para;</a></h2><p>Eureka! We've reached the grand finale of our mathematical and cryptographic escapade through the world of Steganography and Blockchain. In this thrilling adventure, we've explored the fantastic fusion of these technologies and the possibilities they unveil.</p>
+<p>In a nutshell, we've seen how steganography techniques can enhance the privacy and security of blockchain transactions. It's like adding an extra layer of invisibility cloak to the already robust cryptography mechanisms that blockchain employs. From image-based to text-based and even audio-based steganography, the possibilities are as vast as the number of stars in the sky (well, not quite, but you get the point).</p>
+<p>We've delved into intriguing use cases such as confidential transactions, secure messaging, and data integrity verification, showcasing the versatility of this dynamic duo. But like all great heroes, they face their share of challenges, from detection and countermeasures to efficiency and scalability issues. Plus, let's not forget the ethical and legal concerns that come with walking the fine line of privacy and security.</p>
+<p>As optimistic explorers of the academic realm, we can't help but get excited about the future prospects of Steganography and Blockchain. Envision enhanced security and privacy solutions, along with the integration of other emerging technologies (like a magical academic fusion dance!).</p>
+<p>Now, let's dive into some advanced mathematical notions and formulas to cement our understanding. Consider the following cryptographic formula that could potentially improve steganographic techniques:</p>
+$$
+\begin{aligned}
+\text{Enc}(k, m) = c = m \oplus k \oplus \text{PRNG}(k) \\
+\text{Dec}(k, c) = m = c \oplus k \oplus \text{PRNG}(k)
+\end{aligned}
+$$<p>Here, $\text{Enc}$ and $\text{Dec}$ represent the encryption and decryption functions, respectively. The message $m$ is XORed with the key $k$ and a pseudorandom number generator (PRNG) seeded by the key $k$. This approach combines the strengths of steganography and cryptography, resulting in a robust and secure method of information hiding.</p>
+<p>For the Python enthusiasts among us, here's a fun example of how you could implement a simple steganography technique:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hide_message_in_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">binary_message</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">),</span> <span class="s1">'08b'</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="p">)</span>
+    <span class="n">img_data</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">getdata</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">binary_message</span><span class="p">:</span>
+        <span class="n">pixel</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="o">&amp;</span> <span class="mi">254</span> <span class="o">|</span> <span class="nb">int</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">img_data</span><span class="p">)]</span>
+        <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">img_data</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">pixel</span>
+</pre></div>
+<p>This code snippet is just the tip of the iceberg, but it illustrates the idea of hiding a message in the least significant bits of an image's pixel data.</p>
+<p>Of course, we can't forget the brilliant minds who've contributed to the development of these technologies. A special shout-out to <a href="https://doi.org/10.1007/3-540-38424-3_32">Chaum et al</a> for their pioneering work on privacy-enhancing technologies and <a href="https://bitcoin.org/bitcoin.pdf">Nakamoto</a> for giving us the revolutionary blockchain.</p>
+<p>In conclusion, Steganography and Blockchain's joint venture has the potential to revolutionize the way we approach privacy and security in the digital age. It's like adding a cherry on top of an already delightful cryptographic sundae. But remember, with great power comes great responsibility. Let's wield these tools wisely and march towards a brighter, more secure future, one bit at a time! 😄</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-References">8. References<a class="anchor-link" href="#8.-References">&para;</a></h2><ol>
+<li><p><a href="https://bitcoin.org/bitcoin.pdf">Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1007/3-540-38424-3_32">Chaum, D., Fiat, A., &amp; Naor, M. (1990). Untraceable Electronic Cash. In Advances in Cryptology &mdash; CRYPTO&rsquo; 88 (pp. 319-327). Springer.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1109/2.660187">Johnson, N. F., &amp; Jajodia, S. (1998). Exploring Steganography: Seeing the Unseen. IEEE Computer, 31(2), 26-34.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1007/978-3-030-02689-0">Zohuri, B. (2019). Blockchain Technology and Secured Transactions: A New Dawn. Springer International Publishing.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1109/MSECP.2003.1203220">Provos, N., &amp; Honeyman, P. (2003). Hide and Seek: An Introduction to Steganography. IEEE Security &amp; Privacy, 1(3), 32-44.</a></p>
+</li>
+<li><p><a href="https://www.ofnumbers.com/wp-content/uploads/2015/04/Permissioned-distributed-ledgers.pdf">Swanson, T. (2014). Consensus-as-a-service: a brief report on the emergence of permissioned, distributed ledger systems.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1109/EuroSPW.2017.49">Zhang, R., &amp; Preneel, B. (2017). On the Necessity of a Prescribed Block Validity Consensus: Analyzing Bitcoin Unlimited Mining Protocol. In 2017 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;PW) (pp. 91-99). IEEE.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1257/jep.29.2.213">B&ouml;hme, R., Christin, N., Edelman, B., &amp; Moore, T. (2015). Bitcoin: Economics, Technology, and Governance. Journal of Economic Perspectives, 29(2), 213-238.</a></p>
+</li>
+<li><p><a href="https://www.artechhouse.com/Information-Hiding-Techniques-for-Steganography-and-Digital-Watermarking-P1599.aspx">Bauer, M., &amp; Katzenbeisser, S. (2018). Information Hiding Techniques for Steganography and Digital Watermarking. Artech House.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1016/B978-0-08-050735-0.X5000-9">Cox, I. J., Miller, M. L., &amp; Bloom, J. A. (2002). Digital Watermarking. Morgan Kaufmann.</a></p>
+</li>
+<li><p><a href="https://doi.org/10.1201/9781439821916">Menezes, A. J., Van Oorschot, P. C., &amp; Vanstone, S. A. (1996). Handbook of Applied Cryptography. CRC Press.</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Steganography">Steganography - Wikipedia. (n.d.). Retrieved from https://en.wikipedia.org/wiki/Steganography</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Blockchain">Blockchain - Wikipedia. (n.d.). Retrieved from https://en.wikipedia.org/wiki/Blockchain</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/audio-based-steganography.html">audio-based steganography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/blockchain.html">blockchain</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/confidential-transactions.html">confidential transactions</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cryptography.html">cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/digital-age.html">digital age</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/image-based-steganography.html">image-based steganography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/privacy.html">privacy</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/security.html">security</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/steganography.html">steganography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/text-based-steganography.html">text-based steganography</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="/ai-and-information-theory-unlocking-the-secrets-of-the-black-box.html">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">AI and Information Theory: Unlocking the Secrets of the Black Box</p>
+          </div>
+        </a>
+      </div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/transforming-the-ai-landscape-a-comprehensive-guide-to-cutting-edge-transformer-research-updated-on-2021-11-09.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">Transforming the AI Landscape: A Comprehensive Guide to Cutting-Edge Transformer Research (updated on 2021-11-09)</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
