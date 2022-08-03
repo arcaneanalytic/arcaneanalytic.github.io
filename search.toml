@@ -3,6 +3,11 @@ html_selector = "main"
 base_directory = "output"
 
 [[input.files]]
+path = "omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html"
+url = "/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html"
+title = "Omni Layer Explained: A Deep Dive into the Crypto-Universe's Hidden Gem! 💎"
+
+[[input.files]]
 path = "the-mathematical-backbone-of-tokenomics-a-comprehensive-exploration.html"
 url = "/the-mathematical-backbone-of-tokenomics-a-comprehensive-exploration.html"
 title = "The Mathematical Backbone of Tokenomics: A Comprehensive Exploration"
