@@ -3,6 +3,11 @@ html_selector = "main"
 base_directory = "output"
 
 [[input.files]]
+path = "zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html"
+url = "/zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html"
+title = "🎯 zkEVM vs. EVM: Navigating the Labyrinth of Ethereum's Performance and Scalability"
+
+[[input.files]]
 path = "omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html"
 url = "/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html"
 title = "Omni Layer Explained: A Deep Dive into the Crypto-Universe's Hidden Gem! 💎"

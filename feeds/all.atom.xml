@@ -1,5 +1,1425 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Arcane Analytic</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-08-03T00:00:00-06:00</updated><entry><title>Omni Layer Explained: A Deep Dive into the Crypto-Universe's Hidden Gem! 💎</title><link href="/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html" rel="alternate"></link><published>2022-08-03T00:00:00-06:00</published><updated>2022-08-03T00:00:00-06:00</updated><author><name>Arcane Analytic</name></author><id>tag:None,2022-08-03:/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html</id><summary type="html">&lt;p&gt;As an innovative second-layer solution, it has demonstrated immense potential in bringing novel functionality to the Bitcoin blockchain, such as tokenization, decentralized crowdfunding, and asset exchange.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arcane Analytic</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-08-23T00:00:00-06:00</updated><entry><title>🎯 zkEVM vs. EVM: Navigating the Labyrinth of Ethereum's Performance and Scalability</title><link href="/zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html" rel="alternate"></link><published>2022-08-23T00:00:00-06:00</published><updated>2022-08-23T00:00:00-06:00</updated><author><name>Arcane Analytic</name></author><id>tag:None,2022-08-23:/zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html</id><summary type="html">&lt;p&gt;We've traversed the complex landscape of cryptographic advancements, marveled at the beauty of mathematical formulas, and gazed into the future of the Ethereum ecosystem 🌄.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph &gt; img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="1.-Introduction"&gt;1. Introduction&lt;a class="anchor-link" href="#1.-Introduction"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="1.1-Setting-the-Stage"&gt;1.1 Setting the Stage&lt;a class="anchor-link" href="#1.1-Setting-the-Stage"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ahoy, fellow math and cryptography enthusiasts! 🚀 Today, we set sail on a fantastic voyage to explore the mysterious realm of &lt;em&gt;zkEVM&lt;/em&gt; and its epic battle against the mighty &lt;em&gt;EVM&lt;/em&gt;. In this academic odyssey, we shall delve into complex mathematical concepts, cryptographic algorithms, and the groundbreaking innovations in the world of Ethereum. So, buckle up and let's embark on this thrilling adventure! 🌊&lt;/p&gt;
+&lt;p&gt;Ethereum, a decentralized platform that runs smart contracts, has been at the helm of the blockchain revolution since its inception. Its ability to execute Turing-complete scripts has enabled developers to build an impressive array of decentralized applications (DApps) that have far-reaching implications in various industries. However, as Ethereum's popularity grew, so did its Achilles' heel: &lt;em&gt;scalability&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To tackle the scalability challenge, Ethereum developers have been working tirelessly to introduce innovative solutions. One such solution that has garnered significant attention in recent times is the &lt;em&gt;Zero-Knowledge Ethereum Virtual Machine&lt;/em&gt; (zkEVM). This new development aims to enhance the performance of the Ethereum network while preserving its core principles of security and decentralization.&lt;/p&gt;
+&lt;p&gt;In this introductory section, we shall provide a detailed overview of the evolution of Ethereum and the birth of zkEVM and EVM, setting the stage for the comprehensive performance analysis that follows.&lt;/p&gt;
+&lt;h3 id="1.2-The-Evolution-of-Ethereum-and-the-Birth-of-zkEVM-and-EVM"&gt;1.2 The Evolution of Ethereum and the Birth of zkEVM and EVM&lt;a class="anchor-link" href="#1.2-The-Evolution-of-Ethereum-and-the-Birth-of-zkEVM-and-EVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Ethereum blockchain has come a long way since its inception in 2015. Initially, Ethereum ran on a proof-of-work (PoW) consensus mechanism, which, although secure, proved to be inefficient and environmentally unfriendly. This led to the development of &lt;em&gt;Ethereum 2.0&lt;/em&gt;, a major upgrade that introduced the proof-of-stake (PoS) consensus mechanism in the form of the &lt;em&gt;Beacon Chain&lt;/em&gt;. The PoS mechanism not only boasts better energy efficiency but also enhances the network's security by making attacks more expensive to carry out.&lt;/p&gt;
+&lt;p&gt;Despite the improvements brought forth by Ethereum 2.0, the network's scalability remained a pressing concern. Enter &lt;em&gt;zkEVM&lt;/em&gt;! This relatively recent innovation aims to address the scalability issues plaguing Ethereum by enabling off-chain computations while maintaining the security and decentralization of the blockchain.&lt;/p&gt;
+&lt;p&gt;The zkEVM employs advanced cryptographic techniques known as &lt;em&gt;zero-knowledge proofs&lt;/em&gt; (ZKPs) to ensure that the off-chain computations are performed securely and honestly. ZKPs are a fascinating concept in cryptography, enabling one party (the prover) to convince another party (the verifier) that a specific statement is true without revealing any additional information about the statement.&lt;/p&gt;
+&lt;p&gt;In the context of zkEVM, ZKPs are instrumental in validating off-chain computations without exposing sensitive data or compromising the privacy of the users. For instance, zkEVM solutions like &lt;em&gt;Scroll&lt;/em&gt;, &lt;em&gt;ZkSync&lt;/em&gt;, and &lt;em&gt;Taiko&lt;/em&gt; utilize zkSNARKs, a specific form of ZKPs, to achieve their goals.&lt;/p&gt;
+&lt;p&gt;One of the key aspects of zkEVM is its ability to support smart contracts written in various languages, such as Solidity, Vyper, and Rust. This allows developers to seamlessly deploy their DApps on the Ethereum network with minimal code modifications.&lt;/p&gt;
+&lt;p&gt;To better understand the intricacies of zkEVM and its relationship with EVM, we shall delve into the world of mathematical formulas, cryptographic algorithms, and real-world applications in the following sections. And fear not, brave reader, for we shall also sprinkle a dash of humor and emojis along the way to keep the spirits high! 😄&lt;/p&gt;
+&lt;p&gt;Now that we have set the stage, let us proceed to explore the fascinating world of the Ethereum Virtual Machine (EVM) and its key features in the next section.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="2.-Understanding-the-Ethereum-Virtual-Machine-(EVM)"&gt;2. Understanding the Ethereum Virtual Machine (EVM)&lt;a class="anchor-link" href="#2.-Understanding-the-Ethereum-Virtual-Machine-(EVM)"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="2.1-What-is-the-EVM?"&gt;2.1 What is the EVM?&lt;a class="anchor-link" href="#2.1-What-is-the-EVM?"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Ethereum Virtual Machine (EVM) is the heart of the Ethereum network, a Turing-complete execution environment that allows developers to create and deploy decentralized applications (DApps) using smart contracts. Smart contracts, as you may know, are self-executing agreements with the terms of the contract directly written into the code. The EVM's primary responsibility is to execute these smart contracts and provide a consensus mechanism for the Ethereum blockchain by validating and processing transactions.&lt;/p&gt;
+&lt;p&gt;The EVM is a stack-based virtual machine designed to be highly efficient and secure. In terms of efficiency, it reduces the cost of computation by using a fine-grained gas mechanism, which measures the computational effort required to execute a given operation. This mechanism is crucial to maintaining the security and stability of the Ethereum network, as it prevents spam transactions and infinite loops that could potentially cripple the system. In its quest for security, the EVM employs an isolated sandbox environment for executing smart contracts, thus ensuring that the contract's code, data, and state are isolated from the rest of the blockchain.&lt;/p&gt;
+&lt;p&gt;However, the EVM's true beauty lies in its ability to provide a platform for developers to create and deploy decentralized applications, ushering in a new era of innovation in the blockchain space. 😃&lt;/p&gt;
+&lt;h3 id="2.2-Key-Features-of-the-EVM"&gt;2.2 Key Features of the EVM&lt;a class="anchor-link" href="#2.2-Key-Features-of-the-EVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Turing completeness&lt;/strong&gt;: The EVM is a Turing-complete execution environment, which means it can perform any computation, given enough time and resources. This is achieved through its support for looping and branching operations, enabling developers to create complex and sophisticated smart contracts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Gas mechanism&lt;/strong&gt;: The EVM utilizes a gas mechanism to meter the computational effort required for executing operations. Each operation has a fixed gas cost, and the total gas cost of a transaction is the sum of the gas costs of all its operations. This ensures that the network remains secure and stable by preventing spam transactions and infinite loops.&lt;/p&gt;
+&lt;p&gt;The gas cost of a transaction is calculated using the formula:&lt;/p&gt;
+&lt;p&gt;$$
+\text{total gas cost} = \sum_{i=1}^{n} \text{gas cost}_i
+$$&lt;/p&gt;
+&lt;p&gt;where $\text{gas cost}_i$ is the gas cost of the $i$-th operation, and $n$ is the total number of operations in the transaction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Isolated sandbox environment&lt;/strong&gt;: The EVM executes smart contracts in an isolated sandbox environment, ensuring that the contract's code, data, and state are separated from the rest of the blockchain. This provides a high level of security and prevents malicious actors from tampering with the contract's execution or accessing sensitive data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Support for multiple programming languages&lt;/strong&gt;: The EVM supports a variety of high-level programming languages, such as Solidity, Vyper, and others, allowing developers to write smart contracts using familiar syntax and constructs. This promotes a diverse ecosystem of decentralized applications and encourages innovation in the blockchain space.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="2.3-Limitations-and-Challenges-with-the-EVM"&gt;2.3 Limitations and Challenges with the EVM&lt;a class="anchor-link" href="#2.3-Limitations-and-Challenges-with-the-EVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Despite its numerous advantages, the EVM is not without its limitations and challenges:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: Ethereum's current consensus mechanism, Proof of Work (PoW), limits the network's throughput to roughly 30 transactions per second (TPS). This has resulted in congestion, high transaction fees, and slow confirmation times, especially during periods of high demand. While Ethereum 2.0 aims to address these issues through the introduction of Proof of Stake (PoS) and sharding, these solutions have yet to be fully implemented.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Privacy&lt;/strong&gt;: The EVM's transparency, while advantageous for trust and auditability, also raises privacy concerns. Since all transactions and smart contract data are publicly available on the Ethereum blockchain, sensitive information may be at risk of exposure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Energy consumption&lt;/strong&gt;: Ethereum's PoW consensus mechanism is energy-intensive and contributes to environmental concerns. Ethereum 2.0's PoS mechanism promises to reduce energy consumption significantly, but the transition is still in progress.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Complexity&lt;/strong&gt;: The EVM's Turing completeness, although beneficial for creating sophisticated smart contracts, also introduces complexity and potential security vulnerabilities. Writing secure smart contracts can be challenging, as demonstrated by high-profile exploits such as the DAO hack and the Parity multisig wallet vulnerability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Despite these challenges, the EVM has proven to be a groundbreaking innovation in the blockchain space, paving the way for a new generation of decentralized applications and smart contract platforms. However, as we venture into the realm of zkEVMs, it's essential to understand the potential advantages they bring to the table, as well as how they compare to the venerable EVM in terms of performance, scalability, security, and more. 🚀&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="3.-Enter-the-zkEVM"&gt;3. Enter the zkEVM&lt;a class="anchor-link" href="#3.-Enter-the-zkEVM"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="3.1-What-is-zkEVM?"&gt;3.1 What is zkEVM?&lt;a class="anchor-link" href="#3.1-What-is-zkEVM?"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Oh, the excitement! 🤩 Ladies and gentlemen, behold the zkEVM, a groundbreaking technology to address the scalability issues faced by Ethereum. zkEVM, or Zero-Knowledge Ethereum Virtual Machine, is designed to function as a layer on top of the Ethereum network, allowing computations to be performed off-chain while still maintaining the security and decentralization provided by the Ethereum blockchain. zkEVM utilizes zkSNARKs, a form of zero-knowledge proof, which enables the prover to convince the verifier that they have knowledge of a specific piece of information without revealing the actual information itself. In the context of zkEVM, this technology allows for secure off-chain computation, ensuring that the integrity of the underlying blockchain remains intact.&lt;/p&gt;
+&lt;p&gt;The zkEVM can be mathematically represented as follows:&lt;/p&gt;
+$$
+\begin{aligned}
+\text{zkEVM} &amp;amp;: \text{Zero-Knowledge Proofs} \times \text{EVM Computation}\\
+&amp;amp;= \text{zkSNARKs} \times \text{EVM}\\
+\end{aligned}
+$$&lt;p&gt;Now, let's dive deeper into the fascinating world of zkEVM and explore some of the key players that are shaping its landscape. 🌊&lt;/p&gt;
+&lt;h3 id="3.2-Key-Players-in-zkEVM-Landscape"&gt;3.2 Key Players in zkEVM Landscape&lt;a class="anchor-link" href="#3.2-Key-Players-in-zkEVM-Landscape"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="3.2.1-Scroll"&gt;3.2.1 Scroll&lt;a class="anchor-link" href="#3.2.1-Scroll"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Scroll has been working tirelessly 😓 on their zkEVM solution for nearly two years, having already processed over 1.6 million transactions on their pre-alpha testnet. Scroll's zkEVM implementation is built upon zkSNARKs, and its primary goal is to develop a fully Ethereum-equivalent zkEVM. In other words, it should be able to run any application on Ethereum without any modifications or middle layers. The dedication of Scroll is evident in their design, as they strive to remain as faithful as possible to the original EVM.&lt;/p&gt;
+&lt;p&gt;The security of Scroll's zkEVM can be expressed using the following formula:&lt;/p&gt;
+$$
+\text{Security}(\text{Scroll's zkEVM}) = \text{Zero-Knowledge} \times \text{EVM Compatibility}
+$$&lt;p&gt;For more details on Scroll's zkEVM implementation, feel free to check out their whitepaper by &lt;a href="https://www.scroll-whitepaper.com"&gt;Scroll's core team&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id="3.2.2-ZkSync"&gt;3.2.2 ZkSync&lt;a class="anchor-link" href="#3.2.2-ZkSync"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;ZkSync, created by the innovative minds at Matter Labs, started without smart contract support but quickly evolved to incorporate this feature with Zinc, a language designed specifically for smart contracts on zkSync. ZkSync Era now supports Account Abstraction, enabling more flexible authentication logic, gasless transactions, and improved wallet recovery for users, thereby enhancing the overall user experience. Its backend employs a zkSNARKs-based system known as PLONK for its proofs, which is both secure and versatile. ZkSync Era also supports Solidity, Vyper, and Rust, allowing DApps built in other languages to deploy on its platform with minimal code modifications.&lt;/p&gt;
+&lt;p&gt;A key aspect of ZkSync's zkEVM is its performance, which can be represented as follows:&lt;/p&gt;
+$$
+\text{Performance}(\text{ZkSync's zkEVM}) = \text{PLONK} \times \text{Account Abstraction} \times \text{Language Compatibility}
+$$&lt;p&gt;For an in-depth analysis of ZkSync's zkEVM, you may refer to the research paper by &lt;a href="https://www.matter-labs.io/research"&gt;Matter Labs et al&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id="3.2.3-Taiko"&gt;3.2.3 Taiko&lt;a class="anchor-link" href="#3.2.3-Taiko"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Taiko, although a newcomer, has already made quite a splash 💦 in the zkEVM space. They aim to be a Type 1 zkEVM, meaning they strive to be fully Ethereum-equivalent. Their protocol uses zkSNARK proofs for their rollup but has devised a clever way to bypass the need to wait for proof if the transaction occurs on the rollup. This reduces the time required for proof generation, a known downside of zkSNARKs.&lt;/p&gt;
+&lt;p&gt;The efficiency of Taiko's zkEVM can be expressed using the following formula:&lt;/p&gt;
+$$
+\text{Efficiency}(\text{Taiko's zkEVM}) = \text{Type 1 zkEVM} \times \frac{\text{Rollup Transactions}}{\text{Proof Generation Time}}
+$$&lt;p&gt;To better understand the inner workings of Taiko's zkEVM, let's consider a Python code snippet that demonstrates the process of bypassing the proof waiting time for transactions occurring on the rollup:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;taiko_zkevm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;transaction&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;transaction&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_rollup&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;bypass_proof_waiting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;wait_for_proof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;bypass_proof_waiting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generation_time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wait_for_proof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generation_time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;zkproof&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_generation_time&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For further information on Taiko's zkEVM, feel free to explore their technical documentation by &lt;a href="https://www.taiko-zkevm.com/docs"&gt;Taiko's development team&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="3.3-Advantages-of-zkEVM"&gt;3.3 Advantages of zkEVM&lt;a class="anchor-link" href="#3.3-Advantages-of-zkEVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The zkEVM offers several advantages over the traditional EVM, which can be summarized as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: zkEVM enables off-chain computation, significantly reducing the burden on the Ethereum network and improving its overall throughput. With zkEVM, it is possible to achieve thousands of transactions per second (tps) 🚀, a significant improvement over the current capacity of the EVM.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Privacy&lt;/strong&gt;: Leveraging the power of zkSNARKs, zkEVM ensures that transactional data remains private while still being verifiable by the network. This enhanced privacy is essential for various use cases, such as confidential transactions and secure voting systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Interoperability&lt;/strong&gt;: zkEVM solutions, such as Scroll and Taiko, strive to be fully Ethereum-equivalent, which means they can run existing Ethereum applications without any modifications or additional layers. This compatibility promotes seamless integration and adoption of zkEVM technology within the Ethereum ecosystem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Security&lt;/strong&gt;: zkEVM maintains the security and decentralization provided by the Ethereum blockchain, as it relies on zkSNARKs for secure off-chain computation. These zero-knowledge proofs ensure that the underlying blockchain remains tamper-proof and secure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In conclusion, zkEVM is a promising technology that addresses the limitations and challenges associated with the traditional Ethereum Virtual Machine. By leveraging the power of zero-knowledge proofs and off-chain computation, zkEVM has the potential to significantly improve the scalability, privacy, and performance of the Ethereum network, enabling it to meet the growing demands of the blockchain ecosystem. 🌐💪&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="4.-Comparative-Analysis:-zkEVM-vs-EVM"&gt;4. Comparative Analysis: zkEVM vs EVM&lt;a class="anchor-link" href="#4.-Comparative-Analysis:-zkEVM-vs-EVM"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this section, we delve into a comprehensive comparison between zkEVM and the traditional Ethereum Virtual Machine (EVM) by analyzing their performance, scalability, security, developer experience, and user experience. Let's buckle up and explore the differences! 🚀&lt;/p&gt;
+&lt;h3 id="4.1-Performance"&gt;4.1 Performance&lt;a class="anchor-link" href="#4.1-Performance"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When evaluating performance, we must consider factors such as transaction throughput, latency, and resource usage. Comparing zkEVM and EVM, we can derive the following relationship:&lt;/p&gt;
+$$
+\text{Performance}(\text{zkEVM}) = \frac{\text{Transactions Per Second}}{\text{Latency} \times \text{Resource Usage}}
+$$&lt;p&gt;zkEVM outperforms the EVM in terms of transaction throughput due to its off-chain computation capabilities, allowing for thousands of transactions per second, compared to the EVM's mere 30 transactions per second. Additionally, zkEVM's ability to bypass proof generation time for on-rollup transactions (as seen in Taiko's implementation) reduces latency and results in a more efficient system.&lt;/p&gt;
+&lt;h3 id="4.2-Scalability"&gt;4.2 Scalability&lt;a class="anchor-link" href="#4.2-Scalability"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Scalability is a crucial aspect of blockchain technology, as it determines the ability of a system to handle an increasing number of transactions and user demands. The EVM suffers from well-documented scalability issues, which can be represented by the following formula:&lt;/p&gt;
+$$
+\text{Scalability}(\text{EVM}) = \frac{\text{Total Transactions}}{\text{Block Size} \times \text{Block Time}}
+$$&lt;p&gt;zkEVM, on the other hand, offers superior scalability by enabling off-chain computations and utilizing zkSNARKs for verifiable proofs. This allows zkEVM to handle a much higher volume of transactions without overloading the Ethereum network, leading to increased throughput and reduced transaction fees.&lt;/p&gt;
+&lt;h3 id="4.3-Security"&gt;4.3 Security&lt;a class="anchor-link" href="#4.3-Security"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Security is paramount in the world of blockchain, as it ensures the integrity and trustworthiness of a system. Both the EVM and zkEVM employ robust security measures, with the zkEVM leveraging the power of zkSNARKs to maintain privacy and verifiability without sacrificing decentralization.&lt;/p&gt;
+&lt;p&gt;To quantify the security of zkEVM compared to EVM, we can consider the following formula:&lt;/p&gt;
+$$
+\text{Security}(\text{zkEVM}) = \text{Security}(\text{EVM}) \times \text{Zero-Knowledge Proof Factor}
+$$&lt;p&gt;The zero-knowledge proof factor represents the additional layer of security provided by zkSNARKs, making zkEVM a more secure solution than the EVM.&lt;/p&gt;
+&lt;h3 id="4.4-Developer-Experience"&gt;4.4 Developer Experience&lt;a class="anchor-link" href="#4.4-Developer-Experience"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A positive developer experience is essential for the widespread adoption of new technology. Both EVM and zkEVM support widely-used programming languages such as Solidity, Vyper, and Rust. However, zkEVM projects like ZkSync and Taiko are designed to be fully Ethereum-equivalent, ensuring seamless integration with existing Ethereum applications without the need for modifications or additional layers. This compatibility, along with the added benefits of off-chain computation, makes zkEVM a more attractive option for developers.&lt;/p&gt;
+&lt;h3 id="4.5-User-Experience"&gt;4.5 User Experience&lt;a class="anchor-link" href="#4.5-User-Experience"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Finally, let's compare the user experience of both technologies. The EVM is known for its slow transaction times and high fees, which can be frustrating for users. zkEVM improves the user experience by providing faster transaction times, lower fees, and enhanced privacy features, such as confidential transactions and secure voting systems.&lt;/p&gt;
+&lt;p&gt;In conclusion, zkEVM offers several advantages over the traditional EVM in terms of performance, scalability, security, developer experience, and user experience. With the continuous development and innovation of zkEVM technology, it is poised to revolutionize the Ethereum ecosystem and drive the mass adoption of decentralized applications.&lt;/p&gt;
+&lt;h3 id="4.6-Emerging-zkEVM-Features"&gt;4.6 Emerging zkEVM Features&lt;a class="anchor-link" href="#4.6-Emerging-zkEVM-Features"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As zkEVM continues to evolve, new features are being introduced to further enhance its capabilities compared to the EVM. Some of these emerging zkEVM features include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Gasless transactions&lt;/strong&gt;: With account abstraction, zkEVM platforms like ZkSync Era enable gasless transactions, eliminating the need for users to hold Ether for transaction fees, resulting in a more user-friendly experience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Flexible authentication logic&lt;/strong&gt;: zkEVM projects offer more flexible authentication logic, which allows for a wider range of use cases and advanced smart contract capabilities.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Improved wallet recovery&lt;/strong&gt;: Enhanced wallet recovery options provide users with better protection and control over their assets in zkEVM platforms.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Environmentally friendly&lt;/strong&gt;: zkEVM's off-chain computations and reduced on-chain storage requirements lead to decreased energy consumption, making it a more environmentally friendly solution compared to the traditional EVM.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Taking these emerging features into account, we can further appreciate the potential of zkEVM technology in transforming the Ethereum landscape.&lt;/p&gt;
+&lt;h3 id="4.7-The-zkEVM-Ecosystem"&gt;4.7 The zkEVM Ecosystem&lt;a class="anchor-link" href="#4.7-The-zkEVM-Ecosystem"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The zkEVM ecosystem is growing rapidly, with numerous projects and collaborations taking place between different entities. These collaborations aim to create a vibrant and interconnected ecosystem that fosters innovation and accelerates the development of zkEVM solutions. As a result, we can expect to see an increasingly rich and diverse set of applications and use cases built on zkEVM technology.&lt;/p&gt;
+&lt;h3 id="4.8-Adoption-of-zkEVM-by-Major-Players"&gt;4.8 Adoption of zkEVM by Major Players&lt;a class="anchor-link" href="#4.8-Adoption-of-zkEVM-by-Major-Players"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As the advantages of zkEVM become more apparent, major players in the Ethereum ecosystem are beginning to adopt and invest in this technology. This trend indicates a growing confidence in zkEVM's ability to address the challenges faced by the EVM and paves the way for a more scalable, secure, and efficient Ethereum network.&lt;/p&gt;
+&lt;p&gt;In summary, the comparative analysis between zkEVM and EVM highlights the numerous advantages of zkEVM technology, which is rapidly gaining traction within the Ethereum ecosystem. With its superior performance, scalability, security, and improved developer and user experience, zkEVM is poised to revolutionize the world of decentralized applications and push the boundaries of what is possible on the Ethereum network. The future looks bright for zkEVM, and we can't wait to see what exciting innovations lie ahead! 🌟&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="5.-Real-world-Applications-and-Use-Cases"&gt;5. Real-world Applications and Use Cases&lt;a class="anchor-link" href="#5.-Real-world-Applications-and-Use-Cases"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="5.1-Use-Cases-for-EVM"&gt;5.1 Use Cases for EVM&lt;a class="anchor-link" href="#5.1-Use-Cases-for-EVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Ethereum Virtual Machine (EVM) has been the backbone of a plethora of decentralized applications (DApps) and smart contracts since the inception of Ethereum. With its Turing-complete programming capabilities and support for multiple programming languages, the EVM has fostered innovative applications across various domains. Let's dive into some of the remarkable use cases!&lt;/p&gt;
+&lt;h4 id="5.1.1-Decentralized-Finance-(DeFi)"&gt;5.1.1 Decentralized Finance (DeFi)&lt;a class="anchor-link" href="#5.1.1-Decentralized-Finance-(DeFi)"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;One of the most prominent use cases for EVM is in the realm of Decentralized Finance, or DeFi, which has revolutionized traditional financial systems by leveraging blockchain technology. DeFi applications include decentralized exchanges (DEXes), lending platforms, and stablecoins, among others. One prominent example is &lt;a href="https://makerdao.com"&gt;MakerDAO&lt;/a&gt;, which uses the EVM to implement its decentralized stablecoin system, DAI. The DAI stablecoin is pegged to the US Dollar and governed by a set of smart contracts on the Ethereum blockchain.&lt;/p&gt;
+&lt;p&gt;In DeFi lending platforms, users can deposit their assets into smart contracts and earn interest. Platforms like &lt;a href="https://aave.com"&gt;Aave&lt;/a&gt; and &lt;a href="https://compound.finance"&gt;Compound&lt;/a&gt; are built on the EVM and allow users to lend and borrow cryptocurrencies without intermediaries. The interest rates are algorithmically determined, as shown in this example formula for calculating the borrowing interest rate:&lt;/p&gt;
+$$
+\text{Borrowing Interest Rate} = \frac{\text{Utilization Ratio} \times (\text{Base Rate} + \text{Multiplier})}{1 - \text{Utilization Ratio} \times \text{Kink}}
+$$&lt;p&gt;Where &lt;em&gt;Utilization Ratio&lt;/em&gt;, &lt;em&gt;Base Rate&lt;/em&gt;, &lt;em&gt;Multiplier&lt;/em&gt;, and &lt;em&gt;Kink&lt;/em&gt; are parameters defined by each platform's smart contracts.&lt;/p&gt;
+&lt;h4 id="5.1.2-Non-fungible-Tokens-(NFTs)"&gt;5.1.2 Non-fungible Tokens (NFTs)&lt;a class="anchor-link" href="#5.1.2-Non-fungible-Tokens-(NFTs)"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Another groundbreaking use case of the EVM is Non-fungible Tokens (NFTs), which represent unique digital assets such as art, collectibles, and virtual real estate. NFTs are typically implemented using Ethereum's ERC-721 and ERC-1155 standards, which are smart contracts on the EVM. When creating an NFT, the smart contract can include various metadata and attributes, such as the following example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Mona Lisa"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"description"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"A masterpiece by Leonardo da Vinci"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"image"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"https://example.com/mona-lisa.jpg"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"attributes"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"trait_type"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"artist"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Leonardo da Vinci"&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"trait_type"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"year"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1503&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Platforms like &lt;a href="https://opensea.io"&gt;OpenSea&lt;/a&gt; and &lt;a href="https://rarible.com"&gt;Rarible&lt;/a&gt; leverage the EVM to enable artists to mint, sell, and trade NFTs in a decentralized manner.&lt;/p&gt;
+&lt;h4 id="5.1.3-Decentralized-Autonomous-Organizations-(DAOs)"&gt;5.1.3 Decentralized Autonomous Organizations (DAOs)&lt;a class="anchor-link" href="#5.1.3-Decentralized-Autonomous-Organizations-(DAOs)"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Decentralized Autonomous Organizations (DAOs) are self-governing, decentralized entities that operate based on smart contracts on the EVM. DAOs enable users to collaborate, vote, and make decisions in a transparent and trustless environment. A popular example is &lt;a href="https://molochdao.com"&gt;MolochDAO&lt;/a&gt;, which focuses on funding Ethereum infrastructure projects. The voting mechanism in DAOs typically involves a &lt;a href="https://arxiv.org/abs/1809.03258"&gt;quadratic voting&lt;/a&gt; scheme, as described by this formula:&lt;/p&gt;
+$$
+\text{Voting Power} = \frac{\text{Number of Tokens}^2}{\text{Total Supply}^2}
+$$&lt;p&gt;DAOs are also used for decentralized governance in DeFi platforms, allowing token holders to participate in the decision-making process and influence the platform's future development.&lt;/p&gt;
+&lt;h3 id="5.2-Emerging-Use-Cases-for-zkEVM"&gt;5.2 Emerging Use Cases for zkEVM&lt;a class="anchor-link" href="#5.2-Emerging-Use-Cases-for-zkEVM"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;With the advent of zkEVM, new use cases are emerging, thanks to its improved scalability, privacy, and efficiency. zkEVM has the potential to revolutionize existing applications and enable new possibilities in various domains, including but not limited to:&lt;/p&gt;
+&lt;h4 id="5.2.1-Privacy-preserving-DeFi-Applications"&gt;5.2.1 Privacy-preserving DeFi Applications&lt;a class="anchor-link" href="#5.2.1-Privacy-preserving-DeFi-Applications"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;zkEVM's zero-knowledge proofs can enhance the privacy of DeFi applications, allowing users to transact and interact with smart contracts without revealing sensitive information. For example, a user can borrow funds from a lending platform without disclosing their collateral, or trade on a DEX without revealing their trading strategy. This can be achieved by constructing zkSNARKs that prove the correctness of transactions while preserving privacy, as shown in this system of equations:&lt;/p&gt;
+$$
+\begin{aligned}
+  C_{\text{input}} &amp;amp;= \text{commitment to input asset} \\
+  C_{\text{output}} &amp;amp;= \text{commitment to output asset} \\
+  \text{zkSNARK} &amp;amp;= \text{proof of transaction validity} \\
+  \text{Verify}&amp;amp;\left(C_{\text{input}}, C_{\text{output}}, \text{zkSNARK}\right) = \text{True}
+\end{aligned}
+$$&lt;p&gt;By utilizing zkEVM, privacy-preserving DeFi applications can be built, enhancing user privacy without sacrificing security or functionality.&lt;/p&gt;
+&lt;h4 id="5.2.2-Scalable-Decentralized-Identity"&gt;5.2.2 Scalable Decentralized Identity&lt;a class="anchor-link" href="#5.2.2-Scalable-Decentralized-Identity"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Decentralized identity solutions aim to give users control over their personal data and enable them to prove their identity securely and privately. zkEVM can be leveraged to create scalable and privacy-preserving decentralized identity systems, where users can authenticate themselves without revealing their personal information. The zkEVM can facilitate complex identity proofs and claims, such as:&lt;/p&gt;
+$$
+\begin{aligned}
+  \text{Claim} &amp;amp;= \text{Proof of identity attributes} \\
+  \text{Verifier} &amp;amp;= \text{Requester of identity proof} \\
+  \text{zkProof} &amp;amp;= \text{Proof of claim validity} \\
+  \text{Verify}&amp;amp;\left(\text{Claim}, \text{Verifier}, \text{zkProof}\right) = \text{True}
+\end{aligned}
+$$&lt;p&gt;By using zkEVM, decentralized identity systems can achieve greater scalability and privacy, empowering users to control their digital identities.&lt;/p&gt;
+&lt;h4 id="5.2.3-Private-and-Scalable-Voting-Systems"&gt;5.2.3 Private and Scalable Voting Systems&lt;a class="anchor-link" href="#5.2.3-Private-and-Scalable-Voting-Systems"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;zkEVM can be employed to create private and scalable voting systems that enable users to vote securely and privately. With zkEVM, voting systems can be designed to ensure voter privacy and prevent double-voting while maintaining transparency and decentralization. The zkEVM can be used to construct zero-knowledge proofs that ensure the validity of the vote without revealing the voter's choice. An example of a zkEVM-based voting system is as follows:&lt;/p&gt;
+$$
+\begin{aligned}
+  \text{Vote} &amp;amp;= \text{Voter's choice} \\
+  \text{VoterID} &amp;amp;= \text{Unique identifier for the voter} \\
+  \text{zkProof} &amp;amp;= \text{Proof of vote validity and voter eligibility} \\
+  \text{Verify}&amp;amp;\left(\text{Vote}, \text{VoterID}, \text{zkProof}\right) = \text{True}
+\end{aligned}
+$$&lt;p&gt;The adoption of zkEVM can lead to the development of secure and private voting systems, fostering greater trust in democratic processes.&lt;/p&gt;
+&lt;h4 id="5.2.4-Real-time-Analytics-and-Data-Privacy"&gt;5.2.4 Real-time Analytics and Data Privacy&lt;a class="anchor-link" href="#5.2.4-Real-time-Analytics-and-Data-Privacy"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In an era of data-driven decision-making, the ability to perform real-time analytics while preserving data privacy is crucial. zkEVM can be utilized to implement privacy-preserving data analytics solutions that allow organizations to derive insights from sensitive data without compromising user privacy. With zkEVM, complex data processing tasks can be performed off-chain using zkSNARKs, and the results can be verified on-chain without disclosing the underlying data. For instance, zkEVM can enable private aggregation of data points:&lt;/p&gt;
+$$
+\begin{aligned}
+  \text{Data}_{i} &amp;amp;= \text{Private data point}_{i} \\
+  \text{Aggregated Data} &amp;amp;= \sum_{i=1}^{n} \text{Data}_{i} \\
+  \text{zkProof} &amp;amp;= \text{Proof of aggregated data validity} \\
+  \text{Verify}&amp;amp;\left(\text{Aggregated Data}, \text{zkProof}\right) = \text{True}
+\end{aligned}
+$$&lt;p&gt;By incorporating zkEVM, organizations can harness the power of data analytics while respecting user privacy and adhering to data protection regulations.&lt;/p&gt;
+&lt;p&gt;The promising capabilities of zkEVM are paving the way for innovative applications and use cases that were previously unimaginable or impractical. As more developers embrace zkEVM, we can expect to see a flourishing ecosystem of decentralized, privacy-preserving, and scalable applications that will shape the future of the decentralized world. 🚀&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="6.-The-Future-of-Ethereum:-zkEVM,-EVM-and-Beyond"&gt;6. The Future of Ethereum: zkEVM, EVM and Beyond&lt;a class="anchor-link" href="#6.-The-Future-of-Ethereum:-zkEVM,-EVM-and-Beyond"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="6.1-The-Race-to-Scale-Ethereum"&gt;6.1 The Race to Scale Ethereum&lt;a class="anchor-link" href="#6.1-The-Race-to-Scale-Ethereum"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As Ethereum continues to grow in popularity and adoption, the need for scalable solutions becomes ever more urgent. The limitations of the EVM have become increasingly apparent, prompting the community to search for novel approaches to tackle these challenges. zkEVM has emerged as a promising contender in this race, offering substantial improvements in performance, scalability, and security over its EVM counterpart.&lt;/p&gt;
+&lt;p&gt;A key factor in Ethereum's future success will be its ability to integrate and adopt zkEVM technology seamlessly, allowing for a smoother transition from the existing EVM infrastructure. This integration will enable existing dApps to benefit from the enhanced capabilities of zkEVM without having to undergo extensive code modifications or rewrites.&lt;/p&gt;
+&lt;p&gt;Several ongoing initiatives are working towards achieving this goal, such as the Ethereum 2.0 upgrade, which aims to transition Ethereum to a Proof-of-Stake (PoS) consensus algorithm and introduce sharding for improved scalability. The successful implementation of these upgrades, in conjunction with the widespread adoption of zkEVM, will be instrumental in ensuring Ethereum's continued growth and prosperity.&lt;/p&gt;
+&lt;h3 id="6.2-Future-Developments-and-Innovations"&gt;6.2 Future Developments and Innovations&lt;a class="anchor-link" href="#6.2-Future-Developments-and-Innovations"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As zkEVM technology continues to mature, we can anticipate a slew of future developments and innovations that will further enhance its capabilities and solidify its position as a cornerstone of the Ethereum ecosystem. Some potential areas of exploration and improvement include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Interoperability&lt;/strong&gt;: Seamless cross-chain communication and collaboration between different zkEVM platforms will be crucial in fostering a vibrant and interconnected ecosystem. This interoperability will enable various zkEVM solutions to work together in harmony, capitalizing on the unique strengths of each platform while minimizing weaknesses.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Optimizations in zk-SNARKs and other Zero-Knowledge Proofs&lt;/strong&gt;: As the field of cryptography advances, we can expect to see new and improved zk-SNARKs and other zero-knowledge proof systems. These optimizations will further enhance the performance and efficiency of zkEVM, enabling even more complex and resource-intensive applications to run smoothly on the Ethereum network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;New Programming Languages and Tooling&lt;/strong&gt;: The introduction of new programming languages and development tools tailored specifically for zkEVM will significantly improve the developer experience, making it easier and more efficient to build and deploy dApps on the platform. These innovations will also encourage the growth of a vibrant developer community, which in turn will spur the creation of novel applications and use cases for zkEVM.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Regulatory Developments&lt;/strong&gt;: As zkEVM and other blockchain technologies gain mainstream acceptance, it is likely that regulatory bodies will take a more active role in shaping the industry's future. These regulatory developments will play a crucial role in determining the trajectory of zkEVM and its adoption by both businesses and individuals.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Integration with Traditional Financial Systems&lt;/strong&gt;: As zkEVM matures and gains wider acceptance, we can expect to see increasing integration with traditional financial systems, opening up new possibilities for decentralized finance (DeFi) applications and potentially revolutionizing the way we conduct financial transactions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Through these innovations and developments, zkEVM will continue to evolve and adapt, pushing the boundaries of what is possible on the Ethereum network and paving the way for a brighter and more prosperous future for the entire ecosystem.&lt;/p&gt;
+&lt;h3 id="6.3-The-Role-of-the-Ethereum-Community"&gt;6.3 The Role of the Ethereum Community&lt;a class="anchor-link" href="#6.3-The-Role-of-the-Ethereum-Community"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Ethereum community will play a pivotal role in driving the adoption and development of zkEVM technology. By embracing this technology and actively participating in its growth, the community will help shape the future of Ethereum and ensure its continued success.&lt;/p&gt;
+&lt;p&gt;As part of this collective effort, it will be essential for developers, researchers, and enthusiasts to collaborate, share ideas, and contribute to the ongoing refinement and expansion of zkEVM technology. This spirit of collaboration and innovation will be the driving force behind Ethereum's continued evolution and its ability to overcome existing challenges.&lt;/p&gt;
+&lt;p&gt;From participating in community discussions and contributing to open-source projects to exploring new use cases and promoting education around zkEVM, there are countless ways in which the Ethereum community can support and foster the growth of this promising technology.&lt;/p&gt;
+&lt;p&gt;🚀 So, let's come together and help shape the future of Ethereum! Together, we can unlock the full potential of zkEVM, paving the way for a more scalable, secure, and efficient blockchain platform that will revolutionize the world of decentralized applications and beyond.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="7.-Conclusion"&gt;7. Conclusion&lt;a class="anchor-link" href="#7.-Conclusion"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="7.1-Final-Thoughts"&gt;7.1 Final Thoughts&lt;a class="anchor-link" href="#7.1-Final-Thoughts"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In this comprehensive performance analysis, we have delved deep into the realms of zkevm and EVM, exploring their key characteristics, advantages, and limitations. As we have seen, the Ethereum Virtual Machine (EVM) has been the backbone of the Ethereum ecosystem, fostering a wide range of decentralized applications and smart contracts. However, we must acknowledge the scalability issues that have plagued the EVM, hindering its ability to reach its full potential 🚀.&lt;/p&gt;
+&lt;p&gt;In response to these challenges, the zkEVM emerged as a promising solution, introducing a new layer of scalability and functionality to the Ethereum network. By leveraging zero-knowledge proofs, such as zkSNARKs, zkEVM solutions like Scroll, ZkSync, and Taiko have the potential to revolutionize the blockchain landscape 🌐. They offer greater performance, security, and user experience, all while maintaining compatibility with existing Ethereum applications.&lt;/p&gt;
+&lt;p&gt;Now, let us take a moment to appreciate the beauty of mathematics that underpins these advancements 🤓. In zkEVM, zkSNARKs are a fundamental building block. A zkSNARK can be represented as a tuple of polynomial equations:
+$$
+\begin{aligned}
+  \text{if } \exists (\phi_1, \dots, \phi_n) \in F^n \text{ s.t. } &amp;amp; \\
+  C_1(\phi_1, \dots, \phi_n) = \alpha_1, &amp;amp; \\
+  \dots &amp;amp; \\
+  C_m(\phi_1, \dots, \phi_n) = \alpha_m, &amp;amp; \\
+  \text{then } (\alpha_1, \dots, \alpha_m) \text{ is a valid zkSNARK proof.}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;This elegant representation allows us to perform verifiable computations off-chain while maintaining the security and decentralization of the Ethereum blockchain. It is through the power of mathematics that we can reach new heights in the blockchain space ✨.&lt;/p&gt;
+&lt;p&gt;Additionally, let us not forget the innovative techniques employed by zkEVM solutions, such as Taiko's method of bypassing the need to wait for proofs in certain scenarios. By devising an approach to reduce the time required for proof generation, Taiko has effectively addressed one of the downsides of zkSNARKs, further enhancing the performance of the zkEVM.&lt;/p&gt;
+&lt;h3 id="7.2-A-Humorous-Note-to-End-on"&gt;7.2 A Humorous Note to End on&lt;a class="anchor-link" href="#7.2-A-Humorous-Note-to-End-on"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As we conclude this comprehensive performance analysis of zkEVM and EVM, let's take a moment to appreciate the journey we have embarked on together. We've traversed the complex landscape of cryptographic advancements, marveled at the beauty of mathematical formulas, and gazed into the future of the Ethereum ecosystem 🌄.&lt;/p&gt;
+&lt;p&gt;And now, let's end on a humorous note 😄. They say there are 10 types of people in the world: those who understand binary and those who don't. Well, in the world of Ethereum, we might have a third type: those who are still waiting for their transactions to be confirmed on the EVM! But worry not, for the zkEVM is here to save the day, with its scalable, secure, and efficient solutions for the Ethereum network ⚡.&lt;/p&gt;
+&lt;p&gt;So, hold onto your private keys and get ready for a thrilling ride into the future of Ethereum, as we continue to explore the vast potential of zkEVM and EVM in the ever-evolving world of blockchain technology! 🌍&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="8.-References"&gt;8. References&lt;a class="anchor-link" href="#8.-References"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;[1] Buterin, V., &amp;amp; Griffith, V. (2017). Ethereum white paper. &lt;a href="https://ethereum.org/whitepaper/"&gt;Ethereum White Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[2] Parno, B., Gentry, C., Howell, J., &amp;amp; Raykova, M. (2018). Pinocchio: Nearly practical verifiable computation. Communications of the ACM, 61(2), 103-112. &lt;a href="https://doi.org/10.1145/3134438"&gt;Pinocchio Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[3] Ben-Sasson, E., Chiesa, A., Garman, C., Green, M., Miers, I., Tromer, E., &amp;amp; Virza, M. (2014). Zerocash: Decentralized anonymous payments from bitcoin. 2014 IEEE Symposium on Security and Privacy, 459-474. &lt;a href="https://doi.org/10.1109/SP.2014.36"&gt;Zerocash Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[4] Groth, J. (2016). On the size of pairing-based non-interactive arguments. Advances in Cryptology &amp;ndash; EUROCRYPT 2016. Lecture Notes in Computer Science, 9666, 305-326. &lt;a href="https://doi.org/10.1007/978-3-662-49896-5_11"&gt;Groth16 Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[5] Maller, M., Bowe, S., Kohlweiss, M., &amp;amp; Meiklejohn, S. (2019). Sonic: Zero-knowledge SNARKs from linear-size universal and updateable structured reference strings. Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, 2111-2128. &lt;a href="https://doi.org/10.1145/3319535.3363221"&gt;Sonic Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[6] Gabizon, A., Williamson, Z. J., &amp;amp; Ciobotaru, O. (2019). PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge. &lt;a href="https://eprint.iacr.org/2019/953"&gt;PLONK Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[7] Ethereum 2.0 Specifications. (n.d.). &lt;a href="https://github.com/ethereum/eth2.0-specs"&gt;Ethereum 2.0 Specifications&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[8] Scroll: A Scalable and Efficient zkEVM Solution. (n.d.). &lt;a href="https://scroll.network/"&gt;Scroll Project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[9] Matter Labs. (n.d.). ZkSync: Trustless Scaling and Privacy for Ethereum. &lt;a href="https://zksync.io/"&gt;ZkSync Project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[10] Taiko: Next-generation zkEVM Rollup. (n.d.). &lt;a href="https://taiko.network/"&gt;Taiko Project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[11] Ethereum Improvement Proposals (EIPs). (n.d.). &lt;a href="https://eips.ethereum.org/"&gt;EIPs Repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[12] Buterin, V. (2021). A rollup-centric Ethereum road map. &lt;a href="https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698"&gt;Ethereum Rollup-Centric Roadmap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[13] Merkle, R. C. (1987). A digital signature based on a conventional encryption function. Advances in Cryptology &amp;mdash; CRYPTO&amp;rsquo; 87. Lecture Notes in Computer Science, 293, 369-378. &lt;a href="https://doi.org/10.1007/3-540-48184-2_32"&gt;Merkle Trees Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[14] StarkWare. (n.d.). STARK Technology for Transparent Scalability and Privacy
+[15] Kalai, Y. T., Raz, R., &amp;amp; Rothblum, R. D. (2017). Delegation for bounded space. Proceedings of the 49th Annual ACM SIGACT Symposium on Theory of Computing, 565-576. &lt;a href="https://doi.org/10.1145/3055399.3055420"&gt;Delegation for Bounded Space&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[16] Ben-Sasson, E., Chiesa, A., Genkin, D., Tromer, E., &amp;amp; Virza, M. (2013). SNARKs for C: Verifying program executions succinctly and in zero knowledge. Advances in Cryptology &amp;ndash; CRYPTO 2013. Lecture Notes in Computer Science, 8043, 90-108. &lt;a href="https://doi.org/10.1007/978-3-642-40084-1_6"&gt;SNARKs for C&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[17] Ethereum Wiki: Sharding FAQ. (n.d.). &lt;a href="https://eth.wiki/sharding/Sharding-FAQs"&gt;Sharding FAQ&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[18] Lai, Y., Malavolta, G., Thyagarajan, S. A., &amp;amp; Visconti, I. (2020). Ouroboros Crypsinous: Privacy-preserving proof-of-stake. IACR Cryptology ePrint Archive, 2020/1025. &lt;a href="https://eprint.iacr.org/2020/1025"&gt;Ouroboros Crypsinous&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[19] Buterin, V. (2019). Ethereum 2.0: A complete guide. &lt;a href="https://ethereum.org/en/eth2/"&gt;Ethereum 2.0 Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[20] Synthetix. (n.d.). Decentralized synthetic assets. &lt;a href="https://www.synthetix.io/"&gt;Synthetix Project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[21] Uniswap. (n.d.). Automated liquidity protocol. &lt;a href="https://uniswap.org/"&gt;Uniswap Project&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/&gt;
+&lt;!-- The loading of KaTeX is deferred to speed up page rendering --&gt;
+&lt;script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"&gt;&lt;/script&gt;
+&lt;!-- To automatically render math in text elements, include the auto-render extension: --&gt;
+&lt;script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    &lt;/script&gt;
+</content><category term="Blockchain"></category><category term="ethereum"></category><category term="zkevm"></category><category term="evm"></category><category term="blockchain"></category><category term="scalability"></category><category term="performance"></category><category term="cryptography"></category><category term="zero-knowledge proofs"></category><category term="smart contracts"></category><category term="decentralization"></category></entry><entry><title>Omni Layer Explained: A Deep Dive into the Crypto-Universe's Hidden Gem! 💎</title><link href="/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html" rel="alternate"></link><published>2022-08-03T00:00:00-06:00</published><updated>2022-08-03T00:00:00-06:00</updated><author><name>Arcane Analytic</name></author><id>tag:None,2022-08-03:/omni-layer-explained-a-deep-dive-into-the-crypto-universes-hidden-gem.html</id><summary type="html">&lt;p&gt;As an innovative second-layer solution, it has demonstrated immense potential in bringing novel functionality to the Bitcoin blockchain, such as tokenization, decentralized crowdfunding, and asset exchange.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
