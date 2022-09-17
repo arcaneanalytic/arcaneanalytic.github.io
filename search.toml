@@ -3,6 +3,11 @@ html_selector = "main"
 base_directory = "output"
 
 [[input.files]]
+path = "ai-models-in-the-encrypted-domain-a-possibility.html"
+url = "/ai-models-in-the-encrypted-domain-a-possibility.html"
+title = "AI Models in the Encrypted Domain: A Possibility?"
+
+[[input.files]]
 path = "zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html"
 url = "/zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html"
 title = "🎯 zkEVM vs. EVM: Navigating the Labyrinth of Ethereum's Performance and Scalability"

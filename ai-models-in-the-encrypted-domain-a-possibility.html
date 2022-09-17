@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="Arcane Analytic, a distinguished research institution dedicated to the exploration of cutting-edge subdomains within the realm of artificial intelligence and cryptography.">
+    <title>AI Models in the Encrypted Domain: A Possibility?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/css/stork.css">
+    <link
+        href="/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Arcane Analytic Atom Feed" />
+<meta name="description" content="Recent advancements in both HE libraries and techniques have made it possible to train and deploy complex AI models on encrypted data, albeit at a..." />
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="/">Arcane Analytic</a></h1>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        Home
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="/category/artificial-intelligence.html">Artificial Intelligence</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">AI Models in the Encrypted Domain: A Possibility?</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>September 17, 2022</time>
+        <div>
+          <span>&nbsp;·&nbsp;46 min read</span>
+        </div>
+        <div>
+          <span>&nbsp;·&nbsp;Arcane Analytic</span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#1.-Introduction" title="1. Introduction&para;">1. Introduction&para;</a></li><li><a class="toc-href" href="#2.-Homomorphic-Encryption-&ndash;-Unmasking-the-Superhero-of-Cryptography" title="2. Homomorphic Encryption &ndash; Unmasking the Superhero of Cryptography&para;">2. Homomorphic Encryption &ndash; Unmasking the Superhero of Cryptography&para;</a></li><li><a a="" class="toc-href" good="" href="#3.-The-Role-of-Homomorphic-Encryption-in-AI-&ndash;-Because-Who-Doesn" love="" mystery?="" t="" t-love-a-good-mystery?-🕵️‍♀️'="" title="3. The Role of Homomorphic Encryption in AI &ndash; Because Who Doesn" 🕵️‍♀️¶'="">3. The Role of Homomorphic Encryption in AI &ndash; Because Who Doesn't Love a Good Mystery? 🕵️&zwj;&female;️&para;</a></li><li><a ai="" class="toc-href" href="#4.-The-Challenges-&ndash;-It" is="" it?="" not="" or="" rocket="" s="" s-not-ai-rocket-science,-or-is-it?-🚀'="" science,="" title="4. The Challenges &ndash; It" 🚀¶'="">4. The Challenges &ndash; It's Not AI Rocket Science, Or Is It? 🚀&para;</a></li><li><a class="toc-href" href="#5.-Overcoming-the-Challenges-&ndash;-The-Persistent-Pursuit-of-Progress-🏃&zwj;&male;️💨" title="5. Overcoming the Challenges &ndash; The Persistent Pursuit of Progress 🏃&zwj;&male;️💨&para;">5. Overcoming the Challenges &ndash; The Persistent Pursuit of Progress 🏃&zwj;&male;️💨&para;</a></li><li><a class="toc-href" href="#6.-Conclusion" title="6. Conclusion&para;">6. Conclusion&para;</a></li><li><a class="toc-href" href="#7.-References" title="7. References&para;">7. References&para;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&para;</a></h2><h3 id="1.1-A-Brief-Glimpse-into-the-Exciting-World-of-AI-and-Cryptography">1.1 A Brief Glimpse into the Exciting World of AI and Cryptography<a class="anchor-link" href="#1.1-A-Brief-Glimpse-into-the-Exciting-World-of-AI-and-Cryptography">&para;</a></h3><p>AI and cryptography: two fields that have captivated the hearts and minds of researchers, mathematicians, and computer scientists around the globe 🌎. Artificial intelligence, the science of making machines that can think and learn, has made tremendous strides in recent years. From self-driving cars 🚗 to digital personal assistants, AI has been transforming the way we live, work, and communicate. Cryptography, on the other hand, is an ancient and noble art that protects our most valuable secrets 💼 by scrambling them into indecipherable code. Together, these two fields present the tantalizing possibility of developing AI systems that can operate securely on sensitive data without ever revealing its contents.</p>
+<p>The marriage of AI and cryptography can be seen as a grand union of two seemingly disparate disciplines. On one hand, we have AI's thirst for data and learning, driven by powerful algorithms capable of identifying patterns and generating insights from massive amounts of information. On the other hand, we have cryptography's unwavering commitment to privacy and security, which ensures that our data remains confidential and untampered with even as it traverses the uncharted waters of cyberspace 🌊. The question, then, is how to reconcile these seemingly conflicting objectives and develop AI models that can operate in the encrypted domain without compromising either functionality or security.</p>
+<p>Mathematically speaking, AI models are essentially functions that take in data as input and produce a corresponding output. These functions can be represented as a series of mathematical operations, such as additions, multiplications, and more complex operations like matrix multiplications and nonlinear transformations. In a traditional AI model, these operations are performed on plaintext data, which means that both the input and output are readily accessible and can potentially be exploited by malicious actors 😈. The challenge lies in developing AI models that can perform these operations directly on encrypted data, such that the encryption remains intact and the sensitive information is never exposed.</p>
+<p>To fully appreciate the complexity of this task, let's consider an example from the realm of linear algebra. Suppose we have two matrices, $A$ and $B$, and we wish to compute their product, $C = AB$. In the plaintext domain, this computation is straightforward: we simply perform the standard matrix multiplication algorithm, which involves a series of additions and multiplications. Now, let's imagine that the matrices $A$ and $B$ are encrypted using some encryption scheme, denoted by $Enc()$. The encrypted matrices are given by $Enc(A)$ and $Enc(B)$. The challenge is to develop an AI model that can compute the product of these encrypted matrices, $Enc(C) = Enc(AB)$, without ever decrypting the input matrices or exposing their contents. This is the crux of the problem when it comes to AI models in the encrypted domain.</p>
+<h3 id="1.2-The-Age-Old-Question:-Can-We-Have-Our-AI-Cake-and-Encrypt-It-Too?-🎂">1.2 The Age-Old Question: Can We Have Our AI Cake and Encrypt It Too? 🎂<a class="anchor-link" href="#1.2-The-Age-Old-Question:-Can-We-Have-Our-AI-Cake-and-Encrypt-It-Too?-🎂">&para;</a></h3><p>Enter Homomorphic Encryption (HE), a powerful cryptographic technique that enables computations directly on encrypted data, with the encrypted result being correct as if it were produced by the traditional method (decryption, computation, and encryption) <a href="https://doi.org/10.1145/1536414.1536440">Gentry et al</a>. The beauty of HE lies in its ability to preserve both input and output privacy, as well as model privacy if one chooses to encrypt an AI model in the cloud ☁️. In a sense, HE can be seen as a mathematical superhero 🦸, swooping in to save the day by allowing us to perform complex computations on encrypted data while keeping our most precious secrets safe and sound.</p>
+<p>To illustrate the power of HE, let's return to our matrix multiplication example. With HE, we can perform the computation $Enc(C) = Enc(A) \cdot Enc(B)$ directly on the encrypted matrices, without ever decrypting them. The result, $Enc(C)$, is also encrypted and can only be decrypted by the party holding the appropriate decryption key. This ability to compute directly on encrypted data is what sets HE apart from other cryptographic techniques and makes it uniquely suited for AI applications in the encrypted domain.</p>
+<p>Mathematically, the core idea behind HE is to find an encryption function $Enc()$ and a corresponding decryption function $Dec()$ such that the following equation holds:</p>
+$$
+Dec(Enc(A) \cdot Enc(B)) = AB
+$$<p>In other words, the product of the encrypted matrices should decrypt to the same result as the product of the plaintext matrices. This property is known as homomorphism and is the cornerstone of HE.</p>
+<p>To better understand the inner workings of HE, we need to delve deeper into its mathematical underpinnings. HE schemes are typically based on lattice cryptography, which involves working with objects called lattices in high-dimensional spaces. Lattices are sets of regularly spaced points in an n-dimensional space, and they can be defined using a set of linearly independent vectors called a basis. HE schemes make use of the inherent structure of lattices to perform operations on encrypted data, while preserving the encryption and ensuring that the underlying plaintext data remains hidden.</p>
+<p>At the heart of HE is the concept of noise, which refers to the random perturbations that are added to the data during the encryption process. The noise serves to obscure the plaintext data and make it resistant to cryptanalysis. In the context of HE, noise has both a practical and a theoretical significance. On the practical side, it ensures that the encrypted data remains secure and confidential. On the theoretical side, it plays a crucial role in the homomorphic properties of the encryption scheme, as it allows for the performance of arithmetic operations on encrypted data without revealing the underlying plaintext.</p>
+<p>The noise is introduced into the ciphertext through a process called "masking", which involves adding a random element to the plaintext data before encryption. This random element is drawn from a carefully chosen distribution, which ensures that the noise is both statistically indistinguishable from the plaintext data and amenable to homomorphic operations. The masking process can be represented mathematically as follows:</p>
+$$
+Enc(m) = m + r \cdot p
+$$<p>where $m$ is the plaintext message, $r$ is the random noise, and $p$ is a public parameter known as the masking factor.</p>
+<p>With this understanding of the mathematical foundations of HE, we can begin to see how it might be applied to AI models in the encrypted domain. The key lies in finding a way to represent the AI model as a series of homomorphic operations that can be performed directly on the encrypted data, without ever exposing the plaintext. This requires a deep understanding of both the AI model and the underlying HE scheme, as well as a healthy dose of ingenuity and creativity 😊.</p>
+<p>In the following sections, we will explore the fascinating world of HE in greater detail, charting its evolution from a theoretical curiosity to a practical tool for privacy-preserving AI. We will also examine the challenges and opportunities that lie ahead, as we embark on a thrilling journey into the encrypted domain of AI models. So strap on your seatbelts, folks, and prepare for an exhilarating ride through the cutting-edge landscape of AI and cryptography! 🚀</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Homomorphic-Encryption-&ndash;-Unmasking-the-Superhero-of-Cryptography">2. Homomorphic Encryption &ndash; Unmasking the Superhero of Cryptography<a class="anchor-link" href="#2.-Homomorphic-Encryption-&ndash;-Unmasking-the-Superhero-of-Cryptography">&para;</a></h2><p>In this thrilling adventure, we shall embark on a journey to unravel the mysteries of Homomorphic Encryption (HE), a superhero in the world of cryptography that possesses the awe-inspiring power of performing computations directly on encrypted data! 😮</p>
+<h3 id="2.1-A-Little-Trip-Down-Memory-Lane:-The-Evolution-of-Homomorphic-Encryption">2.1 A Little Trip Down Memory Lane: The Evolution of Homomorphic Encryption<a class="anchor-link" href="#2.1-A-Little-Trip-Down-Memory-Lane:-The-Evolution-of-Homomorphic-Encryption">&para;</a></h3><p>The tale of Homomorphic Encryption began in 1978 when Rivest, Adleman, and Dertouzos<sup class="footnote-ref" id="fnref-1^"><a href="#fn-1^">1</a></sup> first proposed the concept. The early days of HE were quite humble, with only Partially Homomorphic Encryption (PHE) schemes available, which allowed for either additions or multiplications but not both. However, like any superhero origin story, HE underwent a dramatic transformation in 2009 when Craig Gentry<sup class="footnote-ref" id="fnref-2^"><a href="#fn-2^">2</a></sup> discovered the bootstrapping procedure. This breakthrough led to the construction of the first Fully Homomorphic Encryption (FHE) scheme, enabling an unlimited number of additions <em>and</em> multiplications on encrypted data. Talk about a power-up! 💪</p>
+<p>Let's take a closer look at the inner workings of this remarkable cryptographic hero. FHE schemes can be represented mathematically as a tuple of algorithms $(\textsf{KeyGen}, \textsf{Enc}, \textsf{Dec}, \textsf{Eval})$:</p>
+<ul>
+<li>$\textsf{KeyGen}$: Key generation algorithm that outputs a public key $\textsf{pk}$ and a secret key $\textsf{sk}$.</li>
+<li>$\textsf{Enc}$: Encryption algorithm that takes $\textsf{pk}$ and a plaintext message $m$ as input and outputs a ciphertext $c$.</li>
+<li>$\textsf{Dec}$: Decryption algorithm that takes $\textsf{sk}$ and a ciphertext $c$ as input and outputs the plaintext message $m$.</li>
+<li>$\textsf{Eval}$: Evaluation algorithm that takes $\textsf{pk}$, a function $f$, and ciphertexts $c_1, \dots, c_n$ as input and outputs another ciphertext $c_f$.</li>
+</ul>
+<p>The magic lies in the $\textsf{Eval}$ algorithm, which allows for the computation of an arbitrary function $f$ on encrypted data. It's the secret sauce that gives HE its mind-blowing ability to do math on secret messages! 🤯</p>
+<p>To fully appreciate the power of FHE, let's take a look at a classic example involving the addition and multiplication of encrypted messages:</p>
+$$
+\begin{aligned}
+  c_1 &amp;= \textsf{Enc}(\textsf{pk}, m_1) \\
+  c_2 &amp;= \textsf{Enc}(\textsf{pk}, m_2) \\
+  c_{\text{add}} &amp;= \textsf{Eval}(\textsf{pk}, f_\text{add}(x, y) = x + y, c_1, c_2) \\
+  c_{\text{mul}} &amp;= \textsf{Eval}(\textsf{pk}, f_\text{mul}(x, y) = x \cdot y, c_1, c_2) \\
+  m_{\text{add}} &amp;= \textsf{Dec}(\textsf{sk}, c_{\text{add}}) \\
+  m_{\text{mul}} &amp;= \textsf{Dec}(\textsf{sk}, c_{\text{mul}})
+\end{aligned}
+$$<p>In this example, the encrypted messages $c_1$ and $c_2$ are combined using the $\textsf{Eval}$ algorithm, resulting in new ciphertexts $c_{\text{add}}$ and $c_{\text{mul}}$ representing the addition and multiplication of the original plaintext messages $m_1$ and $m_2$. After decryption, we obtain the correct results $m_{\text{add}} = m_1 + m_2$ and $m_{\text{mul}} = m_1 \cdot m_2$. It's like magic! ✨</p>
+<h3 id="2.2-Homomorphic-Encryption:-So-Cool-It-Does-Math-on-Secret-Messages!">2.2 Homomorphic Encryption: So Cool It Does Math on Secret Messages!<a class="anchor-link" href="#2.2-Homomorphic-Encryption:-So-Cool-It-Does-Math-on-Secret-Messages!">&para;</a></h3><p>Now that we've explored the origin story and spectacular powers of our cryptographic superhero, let's dive deeper into the mechanics of Homomorphic Encryption schemes, such as the Learning With Errors (LWE) problem<sup class="footnote-ref" id="fnref-3^"><a href="#fn-3^">3</a></sup> and the Ring Learning With Errors (RLWE) problem<sup class="footnote-ref" id="fnref-4^"><a href="#fn-4^">4</a></sup>. These problems are the foundation of many modern FHE schemes and are believed to be resistant to quantum attacks. How's that for a superpower? 🛡️</p>
+<p>The LWE problem can be formulated as follows: Given a random matrix $A \in \mathbb{Z}_q^{n \times m}$, a secret vector $s \in \mathbb{Z}_q^n$, and a noise vector $e \in \mathbb{Z}_q^m$ with small entries, distinguish between the pair $(A, As + e)$ and a pair of uniformly random vectors in $\mathbb{Z}_q^{n \times m} \times \mathbb{Z}_q^m$. The hardness of LWE stems from the fact that this task is computationally difficult even for quantum algorithms. In a nutshell, it's like trying to find a needle in a haystack while wearing a blindfold! 🕵️&zwj;&male;️</p>
+<p>The RLWE problem takes the LWE problem to the next level by considering the elements in a ring $R = \mathbb{Z}[x]/\langle x^n + 1 \rangle$. Given a random polynomial $a(x) \in R_q$, a secret polynomial $s(x) \in R_q$, and a noise polynomial $e(x) \in R_q$ with small coefficients, distinguish between the pair $(a(x), a(x)s(x) + e(x))$ and a pair of uniformly random polynomials in $R_q \times R_q$. The RLWE problem is significantly more efficient than its LWE counterpart due to the use of polynomial arithmetic, which allows for faster operations and smaller key sizes. It's like giving our cryptographic superhero a high-tech suit of armor! 🦾</p>
+<p>To provide a clearer understanding of the inner workings of FHE schemes based on LWE and RLWE, let's examine the Brakerski-Vaikuntanathan (BV) scheme[^5^], a popular FHE scheme derived from the RLWE problem. The BV scheme can be described by the following algorithms:</p>
+<ul>
+<li>$\textsf{KeyGen}_{\text{BV}}$: Generates the public key $\textsf{pk}_{\text{BV}} = (a(x), b(x))$ and the secret key $\textsf{sk}_{\text{BV}} = s(x)$.</li>
+<li>$\textsf{Enc}_{\text{BV}}$: Encrypts a message $m \in \mathbb{Z}_q$ as the ciphertext $c_{\text{BV}} = (u(x), v(x))$.</li>
+<li>$\textsf{Dec}_{\text{BV}}$: Decrypts a ciphertext $c_{\text{BV}} = (u(x), v(x))$ to obtain the plaintext message $m$.</li>
+<li>$\textsf{Eval}_{\text{BV}}$: Evaluates a function $f$ on ciphertexts $c_{\text{BV},1}, \dots, c_{\text{BV},n}$ to produce a new ciphertext $c_{\text{BV},f}$.</li>
+</ul>
+<p>The encryption and decryption processes in the BV scheme are based on the RLWE problem and involve polynomial arithmetic. This results in ciphertexts that are significantly more compact than those of LWE-based schemes, making the BV scheme more efficient for practical applications. However, it's worth noting that the BV scheme is still computationally expensive compared to traditional encryption methods, as it involves complex arithmetic operations over large polynomial rings. But hey, with great power comes great responsibility, right? 🕸️</p>
+<p>Now that we have a deeper understanding of the inner workings of Homomorphic Encryption, it's time to step back and marvel at its extraordinary potential. Whether it's training AI models on encrypted data, preserving privacy in AI applications, or even securing cloud computing environments, HE is a true superhero in the world of cryptography. And who knows, maybe one day, our cryptographic superhero will join forces with other advanced technologies like Differential Privacy, and together, they will save the world from the forces of data breaches and privacy violations! 🌍💪🦸&zwj;&female;️</p>
+<div class="footnotes">
+<hr/>
+<ol><li id="fn-1^"><p>Rivest, R. L., Adleman, L., &amp; Dertouzos, M. L. (1978). <a href="https://doi.org/10.1007/978-1-4684-9342-7_6">On data banks and privacy homomorphisms</a>. Foundations of Secure Computation.<a class="footnote" href="#fnref-1^">&larrhk;</a></p></li>
+<li id="fn-2^"><p>Gentry, C. (2009). <a href="https://doi.org/10.1145/1536414.1536440">Fully homomorphic encryption using ideal lattices</a>. Proceedings of the 41st Annual ACM Symposium on Theory of Computing.<a class="footnote" href="#fnref-2^">&larrhk;</a></p></li>
+<li id="fn-3^"><p>Regev, O. (2005). <a href="https://doi.org/10.1145/1060590.1060603">On lattices, learning with errors, random linear codes, and cryptography</a>. Proceedings of the 37th Annual ACM Symposium on Theory of Computing.<a class="footnote" href="#fnref-3^">&larrhk;</a></p></li>
+<li id="fn-4^"><p>Lyubashevsky, V., Peikert, C., &amp; Regev, O. (2010). <a href="https://doi.org/10.1007/978-3-642-14623-7_1">On ideal lattices and learning with errors over rings</a>. Advances in Cryptology<a class="footnote" href="#fnref-4^">&larrhk;</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-The-Role-of-Homomorphic-Encryption-in-AI-&ndash;-Because-Who-Doesn't-Love-a-Good-Mystery?-🕵️&zwj;&female;️">3. The Role of Homomorphic Encryption in AI &ndash; Because Who Doesn't Love a Good Mystery? 🕵️&zwj;&female;️<a class="anchor-link" href="#3.-The-Role-of-Homomorphic-Encryption-in-AI-&ndash;-Because-Who-Doesn't-Love-a-Good-Mystery?-🕵️&zwj;&female;️">&para;</a></h2><h3 id="3.1-Training-AI-Models-on-Encrypted-Data:-Sounds-Crazy,-Right?">3.1 Training AI Models on Encrypted Data: Sounds Crazy, Right?<a class="anchor-link" href="#3.1-Training-AI-Models-on-Encrypted-Data:-Sounds-Crazy,-Right?">&para;</a></h3><p>If you're wondering how Homomorphic Encryption (HE) can be applied to AI models, you're in for a wild ride. It may sound like science fiction, but training AI models on encrypted data is not only possible but is becoming increasingly more practical.</p>
+<p>Typically, when training an AI model, we feed it raw data (plaintext) and use various algorithms to optimize its performance. This process can potentially expose sensitive data to unintended parties, which is where HE comes to the rescue.</p>
+<p>The magic of HE is that it allows us to perform mathematical operations directly on encrypted data without ever decrypting it. So, how do we train an AI model on encrypted data? Well, it's all about transforming the AI model's operations into their homomorphic equivalents. Let's consider a simple linear regression model. The goal is to learn the weights $w$ and bias $b$ that minimize the loss function $L$:</p>
+$$
+L(w, b) = \frac{1}{N} \sum_{i=1}^{N} (y_i - (w \cdot x_i + b))^2
+$$<p>Training the model involves minimizing the loss function with respect to the weights and bias. With HE, we can replace the plaintext data $x_i$ and $y_i$ with their encrypted counterparts $Enc(x_i)$ and $Enc(y_i)$. The challenge lies in adapting the loss function and optimization algorithm to work with encrypted data. One way to achieve this is by expressing the operations in the loss function as homomorphic equivalents, such as homomorphic additions and multiplications.</p>
+<p>Furthermore, recent advances in AI and cryptography have given rise to new techniques, such as Secure Multi-Party Computation (SMPC) and Privacy-Preserving Machine Learning (PPML), which can be combined with HE to create even more powerful privacy-preserving AI solutions.</p>
+<p>Imagine the possibilities: healthcare providers training AI models on encrypted patient data without risking privacy breaches, financial institutions safeguarding their customers' confidential information while still leveraging the power of AI, and governments maintaining the highest levels of secrecy as they train AI models on sensitive national security data. The future is bright, my friends! 😎</p>
+<h3 id="3.2-Preserving-Privacy-in-AI:-Encrypting-Models-and-Why-It's-Like-a-Mathematically-Complex-Cloak-of-Invisibility">3.2 Preserving Privacy in AI: Encrypting Models and Why It's Like a Mathematically Complex Cloak of Invisibility<a class="anchor-link" href="#3.2-Preserving-Privacy-in-AI:-Encrypting-Models-and-Why-It's-Like-a-Mathematically-Complex-Cloak-of-Invisibility">&para;</a></h3><p>Privacy preservation in AI isn't limited to just training models on encrypted data. It extends to protecting the AI models themselves, which can be valuable intellectual property or reveal sensitive information about the training data. The good news is that HE can help us here, too.</p>
+<p>Encrypting the AI model involves converting its parameters (e.g., weights and biases) into their encrypted counterparts. This is achieved by applying the encryption function $Enc()$ to each parameter:</p>
+$$
+Enc(w) = w + r_w \cdot p_w
+$$$$
+Enc(b) = b + r_b \cdot p_b
+$$<p>where $w$ and $b$ are the weights and biases, respectively, $r_w$ and $r_b$ are the random noise values, and $p_w$ and $p_b$ are the masking factors.</p>
+<p>Once the model is encrypted, it can be safely deployed in the cloud or shared among multiple parties without revealing its structure or the data it was trained on. When making predictions, the encrypted model can perform computations directly on encrypted input data, and the encrypted output can be decrypted by the party holding the appropriate decryption key. The entire process remains confidential, and the AI model stays securely hidden under its mathematically complex cloak of invisibility. 🧙&zwj;&male;️</p>
+<p>In the case of deep learning models, preserving privacy becomes more challenging due to the presence of non-linear activation functions. Since HE primarily supports addition and multiplication operations, approximating non-linear functions such as ReLU or sigmoid using polynomial functions can be a viable solution. For instance, the sigmoid function can be approximated by a Taylor series expansion:</p>
+$$
+\sigma(x) \approx \frac{1}{2} + \frac{1}{4}x - \frac{1}{48}x^3 + \frac{1}{480}x^5
+$$<p>By replacing the non-linear functions with their polynomial approximations, we can adapt deep learning models to work in the encrypted domain.</p>
+<p>It's worth noting that combining HE with other privacy-preserving techniques, such as Differential Privacy and Federated Learning, can lead to even stronger privacy guarantees. For example, <a href="https://arxiv.org/abs/1602.05629">Bonawitz et al.</a> proposed Secure Aggregation, a protocol that combines Federated Learning and Secure Multi-Party Computation to protect both model and data privacy.</p>
+<p>Now, it's important to mention that the implementation of these encrypted AI models comes with its challenges. The increased complexity of computations, the overhead of homomorphic operations, and the need for approximating non-linear functions are some of the hurdles that researchers are actively working to overcome. But rest assured, these challenges are being tackled head-on by the brightest minds in the field, and we are continuously moving closer to a world where privacy-preserving AI is not just a possibility, but a reality. 💪🚀</p>
+<p>As we dive deeper into the mysterious realm of AI models in the encrypted domain, it becomes increasingly evident that Homomorphic Encryption plays a crucial role in preserving the privacy of both data and models. The combination of HE with other cutting-edge techniques continues to push the boundaries of what's possible, opening up exciting new opportunities for AI applications across various industries while keeping sensitive information safe and secure. After all, who doesn't love a good mystery? 😉</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-The-Challenges-&ndash;-It's-Not-AI-Rocket-Science,-Or-Is-It?-🚀">4. The Challenges &ndash; It's Not AI Rocket Science, Or Is It? 🚀<a class="anchor-link" href="#4.-The-Challenges-&ndash;-It's-Not-AI-Rocket-Science,-Or-Is-It?-🚀">&para;</a></h2><h3 id="4.1-Larger-Than-Life:-The-Data-Size-Dilemma">4.1 Larger Than Life: The Data Size Dilemma<a class="anchor-link" href="#4.1-Larger-Than-Life:-The-Data-Size-Dilemma">&para;</a></h3><p>When it comes to Homomorphic Encryption, one of the most significant challenges is the dramatic increase in data size. The encrypted data, or ciphertext, can be 100x to 10,000x larger than its unencrypted counterpart, depending on the security level and chosen parameters. 😮 This enlargement of data size poses a considerable challenge, especially when dealing with massive datasets in AI applications.</p>
+<p>The ciphertext size expansion can be attributed to the need for maintaining a high level of security while performing homomorphic operations. To illustrate this, let's consider the noise growth in ciphertexts. During homomorphic operations, the noise in the ciphertext increases, and if the noise exceeds a certain threshold, decryption becomes infeasible. To ensure decryption remains possible, the ciphertext modulus $q$ must be large enough to accommodate the noise growth:</p>
+$$
+q \geq B \cdot \text{noise\_bound}
+$$<p>Where $B$ is the growth factor of the noise and $\text{noise\_bound}$ is an upper bound on the noise.</p>
+<p>This relationship between the ciphertext modulus and the noise growth implies that the ciphertext size is directly proportional to the security level. As a result, increasing security comes at the cost of larger ciphertexts and increased memory requirements.</p>
+<h3 id="4.2-Time-is-Money,-Friend:-The-Computational-Cost-Conundrum-⏰💸">4.2 Time is Money, Friend: The Computational Cost Conundrum ⏰💸<a class="anchor-link" href="#4.2-Time-is-Money,-Friend:-The-Computational-Cost-Conundrum-⏰💸">&para;</a></h3><p>Another significant challenge in using Homomorphic Encryption for AI models is the computational cost. Performing operations on encrypted data takes considerably longer than working with unencrypted data, often 100x or more. This slowdown is due to the complexity of the arithmetic operations required for homomorphic encryption and decryption.</p>
+<p>Let's take a closer look at the computational cost of homomorphic operations. We can measure the complexity using the <em>ring dimension</em> $n$ and the <em>ciphertext modulus</em> $q$. The complexity of the homomorphic addition operation is proportional to $n$:</p>
+$$
+\mathcal{O}(\text{HE\_add}) \propto n
+$$<p>On the other hand, the complexity of the homomorphic multiplication operation depends on both $n$ and $\log_2{q}$:</p>
+$$
+\mathcal{O}(\text{HE\_mult}) \propto n \log_2{q}
+$$<p>As we've seen earlier, increasing the security level requires a larger ciphertext modulus $q$, which in turn increases the complexity of homomorphic operations. The relationship between security, data size, and computational cost creates a trade-off that researchers need to balance when designing privacy-preserving AI models.</p>
+<p>Moreover, the limited set of available operations (i.e., addition and multiplication) in Homomorphic Encryption forces researchers to approximate non-linear functions with polynomials. These approximations add another layer of computational complexity and may reduce the accuracy of the AI model.</p>
+<p>To mitigate these challenges, researchers have proposed various techniques, such as batching, which leverages the SIMD (Single Instruction, Multiple Data) paradigm to process multiple data points in parallel, thus reducing the overall computational cost. Another approach is to use hardware accelerators, such as GPUs, FPGAs, or ASICs, to speed up homomorphic operations. For example, the HE-Transformer framework <a href="https://arxiv.org/abs/1811.07431">Halevi et al.</a> utilizes Intel's nGraph compiler to accelerate HE operations on CPUs and GPUs.</p>
+<p>Despite these hurdles, the research community remains undeterred in its pursuit of practical and efficient privacy-preserving AI models. As we forge ahead, we will undoubtedly continue to uncover novel techniques and optimizations that bring us closer to the dream of AI models in the encrypted domain. 🌠</p>
+<h3 id="4.3-The-Bootstrapping-Bottleneck:-A-Necessary-Evil?-😈">4.3 The Bootstrapping Bottleneck: A Necessary Evil? 😈<a class="anchor-link" href="#4.3-The-Bootstrapping-Bottleneck:-A-Necessary-Evil?-😈">&para;</a></h3><p>An essential aspect of Fully Homomorphic Encryption (FHE) schemes is the ability to perform an unlimited number of additions and multiplications on encrypted data, allowing for the computation of arbitrary functions. To achieve this feat, FHE schemes rely on a technique called <em>bootstrapping</em>. Bootstrapping is a process that refreshes the ciphertext by removing the accumulated noise, enabling further computations without exceeding the noise threshold. While bootstrapping is a powerful tool, it comes with its own set of challenges.</p>
+<p>The primary issue with bootstrapping is its high computational cost. The procedure is several orders of magnitude slower than other homomorphic operations, making it a significant bottleneck in FHE applications. The cost of bootstrapping is mainly attributed to the homomorphic evaluation of the decryption circuit, which is a complex and resource-intensive operation.</p>
+<p>To provide some intuition, let's consider the complexity of the bootstrapping operation, which is proportional to the product of the ring dimension $n$ and the logarithm of the ciphertext modulus $q$:</p>
+$$
+\mathcal{O}(\text{Bootstrapping}) \propto n \log_2{q}
+$$<p>Given the direct relationship between security, $q$, and bootstrapping complexity, it becomes clear that achieving high-security levels while maintaining efficient bootstrapping is a delicate balancing act.</p>
+<p>Several approaches have been proposed to alleviate the bootstrapping bottleneck. One such method is to design FHE schemes that do not rely on bootstrapping, also known as <em>bootstrapping-free</em> or <em>levelled</em> FHE schemes. These schemes limit the number of homomorphic operations that can be performed but offer improved efficiency in comparison to schemes that require bootstrapping.</p>
+<p>Another strategy is to optimize the bootstrapping procedure itself. For example, Gentry and Halevi <a href="https://eprint.iacr.org/2011/277.pdf">Gentry et al.</a> introduced a technique called <em>modulus switching</em>, which reduces the ciphertext modulus $q$ and the noise after each homomorphic multiplication, effectively lowering the cost of bootstrapping. More recent advancements, such as the CKKS scheme <a href="https://eprint.iacr.org/2016/421.pdf">Cheon et al.</a>, provide efficient bootstrapping for approximate arithmetic, which is particularly suitable for AI applications that can tolerate a certain level of approximation.</p>
+<p>In conclusion, the challenges of data size expansion, computational cost, and bootstrapping complexity remain significant obstacles in the path to practical AI models in the encrypted domain. However, with the unwavering dedication of the research community and the relentless pursuit of progress, these challenges are gradually being addressed, bringing us ever closer to a world where privacy-preserving AI is not only possible but also efficient and widely adopted. 🚀🌟</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Overcoming-the-Challenges-&ndash;-The-Persistent-Pursuit-of-Progress-🏃&zwj;&male;️💨">5. Overcoming the Challenges &ndash; The Persistent Pursuit of Progress 🏃&zwj;&male;️💨<a class="anchor-link" href="#5.-Overcoming-the-Challenges-&ndash;-The-Persistent-Pursuit-of-Progress-🏃&zwj;&male;️💨">&para;</a></h2><h3 id="5.1-Hybrid-Memory-Systems:-The-Dynamic-Duo-of-DRAM-and-Persistent-Memory-🦸&zwj;&male;️🦸&zwj;&female;️">5.1 Hybrid Memory Systems: The Dynamic Duo of DRAM and Persistent Memory 🦸&zwj;&male;️🦸&zwj;&female;️<a class="anchor-link" href="#5.1-Hybrid-Memory-Systems:-The-Dynamic-Duo-of-DRAM-and-Persistent-Memory-🦸&zwj;&male;️🦸&zwj;&female;️">&para;</a></h3><p>As we've discussed, one of the major challenges in running AI models in the encrypted domain is the increased data size and the memory overheads that come with it. Fear not, for the research community has our back! 🤜🤛 To tackle this issue, recent work has focused on leveraging hybrid memory systems that combine DRAM and persistent memory to handle the large memory requirements of encrypted AI models.</p>
+<p>The idea behind this approach is to exploit the complementary strengths of DRAM and persistent memory. DRAM is known for its low latency and high bandwidth, making it ideal for storing and accessing the most frequently used data. On the other hand, persistent memory provides large capacity and non-volatility, ensuring that the data remains intact even when the power is off. By cleverly orchestrating these two types of memory, we can achieve a high-performance and efficient memory system that accommodates the demands of large encrypted AI models.</p>
+<p>One way to make this happen is by using a <em>two-level memory hierarchy</em> that stores the most performance-critical data in DRAM and the remaining data in persistent memory. The key is to identify the optimal data partitioning strategy that maximizes the utilization of DRAM while minimizing the performance overheads of accessing persistent memory.</p>
+<p>Let's denote the fraction of data stored in DRAM as $\alpha$, and the remaining fraction of data in persistent memory as $1 - \alpha$. We can model the overall memory access time as:</p>
+$$
+\text{Memory Access Time} = \alpha \cdot \text{DRAM Access Time} + (1 - \alpha) \cdot \text{Persistent Memory Access Time}
+$$<p>To find the optimal value of $\alpha$, we can minimize the memory access time with respect to $\alpha$, taking into account the constraints on DRAM capacity and the total data size. This can be formulated as an optimization problem:</p>
+$$
+\begin{aligned}
+&amp; \min_{\alpha} \quad \text{Memory Access Time} \\
+&amp; \text{subject to} \quad \alpha \cdot \text{Total Data Size} \leq \text{DRAM Capacity}
+\end{aligned}
+$$<p>By solving this optimization problem, we can find the optimal data partitioning strategy that strikes the perfect balance between DRAM and persistent memory, allowing us to run large AI models in the encrypted domain with improved efficiency 🎯.</p>
+<h3 id="5.2-Large-Neural-Networks-in-the-Encrypted-Domain:-MobileNetV2-and-ResNet-50-to-the-Rescue!-🚑">5.2 Large Neural Networks in the Encrypted Domain: MobileNetV2 and ResNet-50 to the Rescue! 🚑<a class="anchor-link" href="#5.2-Large-Neural-Networks-in-the-Encrypted-Domain:-MobileNetV2-and-ResNet-50-to-the-Rescue!-🚑">&para;</a></h3><p>Thanks to the relentless efforts of researchers worldwide, we now have solutions that enable the execution of large neural networks in the encrypted domain. Among these solutions, two notable examples are MobileNetV2 and ResNet-50, which have been adapted for use with Homomorphic Encryption.</p>
+<p>MobileNetV2, a lightweight and efficient neural network designed for mobile devices, has been modified for use with the CKKS scheme <a href="https://arxiv.org/abs/2006.04579">Wang et al.</a>. The key idea is to reduce the precision of weights and activations to minimize the data size and computation overheads while maintaining acceptable accuracy. To this end, the authors proposed a <em>quantization-aware training</em> approach that jointly optimizes the model and the quantization parameters during training. This results in an encrypted model that strikes a balance between efficiency and accuracy.</p>
+<p>On the other hand, ResNet-50, a more powerful and deeper neural network, has been adapted for use with Homomorphic Encryption by <a href="https://arxiv.org/abs/1806.01838">Kim et al.</a>. In their work, the authors employed a <em>compressed convolution</em> technique that reduces the number of multiplications required for convolutions, one of the most computationally expensive operations in deep learning. By doing so, they managed to significantly reduce the computational costs associated with running ResNet-50 in the encrypted domain.</p>
+<p>Both MobileNetV2 and ResNet-50 have been successfully run using state-of-the-art HE libraries such as HEAAN and PALISADE. For instance, the following Python code snippet demonstrates how to use the PALISADE library to perform encrypted convolution operations in the ResNet-50 architecture:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pypalisade</span> <span class="kn">import</span> <span class="n">lattigo_ckks</span>
+
+<span class="c1"># Initialize PALISADE CKKS parameters</span>
+<span class="n">ckks_params</span> <span class="o">=</span> <span class="n">lattigo_ckks</span><span class="o">.</span><span class="n">CkksParams</span><span class="p">()</span>
+
+<span class="c1"># Encrypt input data</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
+<span class="n">encrypted_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">ckks_params</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">input_data</span><span class="p">]</span>
+
+<span class="c1"># Perform encrypted convolution</span>
+<span class="n">encrypted_output</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">encrypted_input</span> <span class="ow">in</span> <span class="n">encrypted_data</span><span class="p">:</span>
+    <span class="n">encrypted_conv</span> <span class="o">=</span> <span class="n">ckks_params</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">encrypted_input</span><span class="p">,</span> <span class="n">encrypted_weights</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">padding</span><span class="p">)</span>
+    <span class="n">encrypted_output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">encrypted_conv</span><span class="p">)</span>
+
+<span class="c1"># Decrypt output data</span>
+<span class="n">output_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">ckks_params</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">encrypted_output</span><span class="p">]</span>
+</pre></div>
+<p>Although the execution of large neural networks using Homomorphic Encryption is still slower than their unencrypted counterparts, these advancements represent a significant step forward in the pursuit of privacy-preserving AI. By continuing to explore novel techniques and optimize existing ones, we can expect further improvements in the efficiency and scalability of AI models in the encrypted domain 🚀.</p>
+<p>With the dynamic duo of DRAM and persistent memory, as well as the successful execution of large neural networks like MobileNetV2 and ResNet-50, we are steadily paving the way to a future where privacy-preserving AI becomes not just a possibility, but a practical reality! 🌟</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Conclusion">6. Conclusion<a class="anchor-link" href="#6.-Conclusion">&para;</a></h2><h3 id="6.1-AI-Models-in-the-Encrypted-Domain:-A-Possibility?-Absolutely!">6.1 AI Models in the Encrypted Domain: A Possibility? Absolutely!<a class="anchor-link" href="#6.1-AI-Models-in-the-Encrypted-Domain:-A-Possibility?-Absolutely!">&para;</a></h3><p>In this enthralling journey through the realms of Homomorphic Encryption and Artificial Intelligence, we have witnessed the seemingly impossible become possible 🌈. While the challenges of data size and computational cost initially seemed insurmountable, the combined efforts of researchers and the evolution of technology have propelled us into a new era of privacy-preserving AI. The hybrid memory systems and successful execution of large neural networks, such as MobileNetV2 and ResNet-50, are living proof of our indomitable human spirit to innovate and excel 🚀.</p>
+<p>Our exploration of the cryptographic landscape has shown that Homomorphic Encryption holds the 🔑 to unlocking the potential of AI models in the encrypted domain. Its ability to perform computations on encrypted data while preserving privacy is nothing short of extraordinary, akin to a mathematical superhero saving the day 💪.</p>
+<p>As we have seen, recent advancements in both HE libraries and techniques have made it possible to train and deploy complex AI models on encrypted data, albeit at a higher computational cost than their unencrypted counterparts. But fear not, for we shall continue to optimize and innovate, with the ultimate goal of making privacy-preserving AI a practical reality, accessible to all 🌍.</p>
+<h3 id="6.2-Looking-Forward:-The-Future-of-AI-and-Homomorphic-Encryption-Is-So-Bright,-I-Gotta-Wear-Shades!-😎">6.2 Looking Forward: The Future of AI and Homomorphic Encryption Is So Bright, I Gotta Wear Shades! 😎<a class="anchor-link" href="#6.2-Looking-Forward:-The-Future-of-AI-and-Homomorphic-Encryption-Is-So-Bright,-I-Gotta-Wear-Shades!-😎">&para;</a></h3><p>Peering into the future, one can only marvel at the endless possibilities that lay ahead in the rapidly evolving intersection of AI and cryptography. As we forge onward, our constant thirst for knowledge and improvement will drive us to explore new techniques and optimizations, further reducing the computational overheads associated with Homomorphic Encryption. The fusion of HE with other privacy-preserving technologies, such as Differential Privacy and Secure Multi-Party Computation, will undoubtedly yield even more robust and efficient solutions for privacy-preserving AI.</p>
+<p>In this era of ubiquitous data collection and surveillance, privacy has become a precious commodity that we must fiercely protect. The combination of AI and Homomorphic Encryption offers a promising avenue to preserve privacy while harnessing the full power of data-driven insights. As researchers, technologists, and visionaries, it is our collective responsibility to ensure that this potential is realized, paving the way for a future where privacy and utility coexist harmoniously 🕊️.</p>
+<p>So, let us embark on this thrilling adventure with courage and determination, for the future of AI and Homomorphic Encryption is indeed bright and full of promise. With every stride we take towards overcoming challenges, we draw closer to the dream of a world where AI models in the encrypted domain become not just a possibility, but a practical, everyday reality. And in that world, my friends, we will all be wearing shades 😎.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-References">7. References<a class="anchor-link" href="#7.-References">&para;</a></h2><ol>
+<li><p>Rivest, R. L., Adleman, L., &amp; Dertouzos, M. L. (1978). On Data Banks and Privacy Homomorphisms. In <em>Foundations of Secure Computation</em> (pp. 169&ndash;180). Academic Press. <a href="https://doi.org/10.1016/B978-0-12-425970-7.50016-1">Link</a></p>
+</li>
+<li><p>Gentry, C. (2009). A Fully Homomorphic Encryption Scheme. PhD thesis, Stanford University. <a href="https://crypto.stanford.edu/craig/craig-thesis.pdf">Link</a></p>
+</li>
+<li><p>Ducas, L., &amp; Micciancio, D. (2015). FHEW: Bootstrapping Homomorphic Encryption in Less Than a Second. In <em>Advances in Cryptology &ndash; EUROCRYPT 2015</em> (pp. 617&ndash;640). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-662-46803-6_21">Link</a></p>
+</li>
+<li><p>Brakerski, Z., &amp; Vaikuntanathan, V. (2011). Efficient Fully Homomorphic Encryption from (Standard) LWE. In <em>2011 IEEE 52nd Annual Symposium on Foundations of Computer Science</em> (pp. 97&ndash;106). IEEE. <a href="https://doi.org/10.1109/FOCS.2011.12">Link</a></p>
+</li>
+<li><p>Chen, H., Gilad-Bachrach, R., Han, K., Huang, Z., Jalali, A., Laine, K., &amp; Lauter, K. (2017). LOGAN: Evaluating Privacy Leakage of Logistic Regression Models in the Encrypted Domain. <a href="https://eprint.iacr.org/2017/954">Link</a></p>
+</li>
+<li><p>Fan, J., &amp; Vercauteren, F. (2012). Somewhat Practical Fully Homomorphic Encryption. IACR Cryptology ePrint Archive, 2012, 144. <a href="https://eprint.iacr.org/2012/144">Link</a></p>
+</li>
+<li><p>HEAAN library. <a href="https://github.com/snucrypto/HEAAN">Link</a></p>
+</li>
+<li><p>PALISADE library. <a href="https://palisade-crypto.org/">Link</a></p>
+</li>
+<li><p>Bourse, F., Minelli, M., Minihold, M., &amp; Paillier, P. (2018). Fast Homomorphic Evaluation of Deep Discretized Neural Networks. In <em>Advances in Cryptology &ndash; CRYPTO 2018</em> (pp. 483&ndash;512). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-96884-1_16">Link</a></p>
+</li>
+<li><p>Chabanne, H., de Wargny, A., Milgram, J., Morel, C., &amp; Prouff, E. (2017). Privacy-Preserving Classification on Deep Neural Network. IACR Cryptology ePrint Archive, 2017, 35. <a href="https://eprint.iacr.org/2017/035">Link</a></p>
+</li>
+<li><p>Homomorphic Encryption. (n.d.). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Homomorphic_encryption">Link</a></p>
+</li>
+<li><p>MobileNetV2. (n.d.). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/MobileNetV2">Link</a></p>
+</li>
+<li><p>He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep Residual Learning for Image Recognition. In <em>2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em> (pp. 770&ndash;778). IEEE.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script crossorigin="anonymous" defer="" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" onload="renderMathInElement(document.body);" src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+            ],
+            throwOnError : false
+        });
+    });
+    </script>
+
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/artificial-intelligence.html">artificial intelligence</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/computational-cost.html">computational cost</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/cryptography.html">cryptography</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/data-privacy.html">data privacy</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/differential-privacy.html">differential privacy</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/encrypted-domain.html">encrypted domain</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/homomorphic-encryption.html">homomorphic encryption</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/hybrid-memory-systems.html">hybrid memory systems</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/neural-networks.html">neural networks</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="/tag/privacy-preserving-ai.html">privacy-preserving ai</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 rounded-l-lg"></div>
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="/zkevm-vs-evm-navigating-the-labyrinth-of-ethereums-performance-and-scalability.html">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">🎯 zkEVM vs. EVM: Navigating the Labyrinth of Ethereum's Performance and Scalability</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>Arcane Analytic &#169; 2023</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
